@@ -63,7 +63,7 @@ textdomain( PACKAGE )
 gentcos="bash gentcos"
 
 # Default tcos suffix
-tcos_suffix="-tcos1"
+tcos_suffix=""
 
 # selectable values and his keys (for tcos.conf file)
 # using a bidimensional list

@@ -7,7 +7,7 @@ glade:
 	make fix-glade
 
 fix-glade:
-	sh fix-glade.sh
+	bash fix-glade.sh
 
 exec:
 	python $(project).py 
