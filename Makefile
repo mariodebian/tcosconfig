@@ -17,6 +17,7 @@ gedit:
 
 clean:
 	rm -f *~ *.pyc *.orig *.bak *-stamp
+	rm -rf po/es
 	dh_clean
 
 pot:

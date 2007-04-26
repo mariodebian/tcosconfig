@@ -97,7 +97,37 @@ class TcosGui:
         self.aboutbutton.connect('clicked', self.on_aboutbutton_click )
         self.startbutton.connect('clicked', self.on_startbutton_click )
 
+
+        """
+        http://www.pygtk.org/pygtk2tutorial-es/sec-ExpanderWidget.html
+        """
+        # put all expanders into a list
+        self.expanders=[self.expander_debug,
+                         self.expander_services,
+                         self.expander_wifi,
+                         self.expander_xorg, 
+                         self.expander_sound,
+                         self.expander_remote]
+        # connect signal expanded and call on_expander_click to close others
+        for exp in self.expanders:
+            exp.connect('notify::expanded', self.on_expander_click)
+        
+        # by default all expanders closed
+        for expander in self.expanders:
+            #print_debug ( "closing expander %s" %(expander) )
+            expander.set_expanded(False)
+            
         self.settings_loaded=False
+
+    def on_expander_click(self, expander, params):
+        """
+        close all expanders except actual when clicked
+        """
+        # exit if calling when close
+        if not expander.get_expanded(): return
+        for exp in self.expanders:
+            if exp != expander:
+                exp.set_expanded(False)
 
     def on_backbutton_click(self, widget):
         #print_debug ("Back clicked")
@@ -180,7 +210,7 @@ class TcosGui:
         #print "DEBUG: creating thread with \"%s\"" %(cmd)
         ob=thread_controller( cmd, self )
         finish=True
-        counter=0.3
+        counter=0.2
         while finish:
             while gtk.events_pending():
                 gtk.main_iteration(False)
@@ -194,7 +224,7 @@ class TcosGui:
                 except:
                     print_debug ( "TcosGui::read_exec() Exception found" )
             self.updateprogressbar(counter)
-            counter=counter+0.04
+            counter=counter+0.03
             time.sleep(0.1)
 
 
@@ -436,10 +466,14 @@ class TcosGui:
             else:
                 value=""
 
-        elif wtype == "GtkSpinButton":
+        elif wtype == "GtkSpinButton" and widget.name == "TCOS_VOLUME":
             # add % to TCOS_VOLUME
             value=str( int( widget.get_value() ) )
             value=value+"%"
+        
+        elif wtype == "GtkSpinButton" and widget.name != "TCOS_VOLUME":
+            value=str( int( widget.get_value() ) )
+
 
         else:
             print_debug ("TcosGui::readguiconf() __ERROR__ unknow %s of type %s" %(varname, wtype) )
@@ -542,7 +576,8 @@ class TcosGui:
                 self.set_active_select( widget, exp, value )
 
             elif wtype == gtk.Entry:
-                #print_debug ( "%s is a Entry" %(exp) )
+                #print_debug ( "%s is a Entry, putting value=%s" %(exp, value) )
+                if value == False: value = ""
                 widget.set_text(value)
 
             elif wtype == gtk.CheckButton:
@@ -552,7 +587,7 @@ class TcosGui:
                 else:
                     widget.set_active(0)
 
-            elif wtype == gtk.SpinButton:
+            elif wtype == gtk.SpinButton and widget.name == "TCOS_VOLUME":
                 # change %
                 if value.find("%") > 0:
                     # give % value
@@ -563,6 +598,10 @@ class TcosGui:
                     #give a value between 1-31, change to 1-100
                     value=float(value)*100/31
                     widget.set_value( float(value) )
+            
+            elif wtype == gtk.SpinButton and widget.name != "TCOS_VOLUME":
+                widget.set_value( int(value) )
+
 
 
             else:

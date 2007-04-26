@@ -134,6 +134,7 @@ class ConfigReader:
 
     def getvalue(self, varname):
         index=self.getindex(varname)
+        #print_debug ("ConfigReader()::get_value() %s" %(varname))
         if index == -1:
             print_debug ( "ConfigReader::getvalue() %s var NOT FOUND" %(varname) )
             return

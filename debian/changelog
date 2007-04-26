@@ -1,3 +1,11 @@
+tcosconfig (0.0.10) unstable; urgency=low
+
+  * Add more params (wireless, rdesktop, ...)
+  * Close all expanders by default
+  * When open one expander close others
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 14 Feb 2007 18:16:44 +0100
+
 tcosconfig (0.0.9) unstable; urgency=low
 
   * Change /bin/sh to /bin/bash (solve ubuntu dash problem)
