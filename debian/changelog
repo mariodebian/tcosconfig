@@ -1,3 +1,9 @@
+tcosconfig (0.0.13) unstable; urgency=low
+
+  * Add tcosconfig.1 man page
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 Mar 2007 15:23:24 +0100
+
 tcosconfig (0.0.12) unstable; urgency=low
 
   * Fix some typo errors in shared.py

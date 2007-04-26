@@ -1,3 +1,24 @@
+tcosconfig (0.0.13) unstable; urgency=low
+
+  * Add tcosconfig.1 man page
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 11 Mar 2007 15:23:24 +0100
+
+tcosconfig (0.0.12) unstable; urgency=low
+
+  * Fix some typo errors in shared.py
+  * Add rDesktop remote connection
+  * Update spanish translation
+  * Update tcos.conf from initramfs-tools-tcos 0.63
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat,  3 Mar 2007 10:35:17 +0100
+
+tcosconfig (0.0.11) unstable; urgency=low
+
+  * Build package with python-support
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 Feb 2007 15:49:12 +0100
+
 tcosconfig (0.0.10) unstable; urgency=low
 
   * Add more params (wireless, rdesktop, ...)
