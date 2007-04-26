@@ -1,0 +1,4 @@
+usr/bin/tcosconfig
+usr/share/tcos-config/*
+usr/share/locale/*
+usr/share/applications/*

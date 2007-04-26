@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=TCOS-config
+Name[en_GB]=TCOS-config
+Name[es]=TCOS-config
+Comment=Configure and make bootable initramfs images for thin client networks
+Comment[en_GB]=Configure and make bootable initramfs images for thin client networks
+Comment[es]=Configurar y crear imagenes arrancables initramfs pararedes de clientes ligeros
+Exec=/usr/bin/tcosconfig $@
+Terminal=false
+Type=Application
+Icon=/usr/share/tcos-config/images/tcos-icon.png
+Categories=GNOME;Application;System;Utility;
+GenericName[es_ES]=TCOS-config

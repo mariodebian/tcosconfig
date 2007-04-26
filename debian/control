@@ -1,0 +1,19 @@
+Source: tcos-config
+Section: gnome
+Priority: optional
+Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: tcos-config
+Architecture: any
+Depends:  sudo | gksu | kdesu, python2.4-gtk2, python2.4-glade2, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Description: Small python app to configure and create boot image of TCOS.
+ TCOS, thin Client Operating System is a method to create small embedded os
+ based on debian/ubuntu with normal debian kernel's.
+ .
+ tcos-config is a small pygtk configure and create tool.
+ .
+ Project pages:
+ http://soleup.eup.uva.es/mediawiki/index.php/TCOS
+ http://soleup.eup.uva.es/mediawiki/index.php/TCOS-config

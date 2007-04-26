@@ -1,0 +1,73 @@
+tcos-config (0.0.6) unstable; urgency=low
+
+  * Add TCOS_USENFS(ComboBox) and TCOS_PULSEAUDIO(CheckBox)
+  * Change *.py header enconding is now UTF-8 and not UTF8, xgettext don't work with UTF8
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 31 Aug 2006 11:39:15 +0200
+
+tcos-config (0.0.5) unstable; urgency=low
+
+  * New stable release.
+  * Add about dialog and logo (tcos_config.png)
+  * fix-glade.sh script is broken, need to edita glade by hand.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri,  7 Jul 2006 16:25:28 +0200
+
+tcos-config (0.0.4-b3) unstable; urgency=low
+
+  * Change GtkComboBox glade values with bidimensional list in shared file
+    this allow to translate strings ans simplify upgrades.
+  * Clean python code (remove TcosConfig unnecesary class)
+  * Begin to document some functions
+  * Fix ConfigReader::changevalue() reset after save to reload settings
+  * Remove unnecesary modules
+  * Fix some dirs problems (exec in sources based on tcosconfig.py file exists and not in .svn dir)
+  * Change tcosconfig.sh script.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri,  7 Jul 2006 15:37:32 +0200
+
+tcos-config (0.0.4-b2) unstable; urgency=low
+
+  * Updated dependencies to python2.4-gtk and python2.4-glade
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 31 May 2006 11:21:06 +0200
+
+tcos-config (0.0.4-b1) unstable; urgency=low
+
+  * Add TCOS_REMOTEFS selector
+  * Add TCOS_ADMIN_USER entry
+  * Add TCOS_SHOW_NEEDED MODULES checkbox
+  * Delete TCOS_BIG_BUSYBOX checkbox
+  * Delete TCOS_SSH_KEYS filechooser
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 30 May 2006 16:29:19 +0200
+
+tcos-config (0.0.4) unstable; urgency=low
+
+  * Fixed BUG tcos.conf duplicate entries, need clean self.newvars before save it
+  * TCOS_KERNEL now works.
+  * Add new vars ex: TCOS_X11VNC checkbox
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 25 May 2006 20:48:33 +0200
+
+tcos-config (0.0.3) unstable; urgency=low
+
+  * First usable release.
+  * Save config works.
+  * TCOS_KERNEL and TCOS_SSH_KEYS not supported yet
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 14 May 2006 20:04:19 +0200
+
+tcos-config (0.0.2) unstable; urgency=low
+
+  * New improvements.
+  * GUI based on guadalinex/ubuntu-express installer (glade file)
+  * Split python in some classes.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 12 May 2006 23:38:44 +0200
+
+tcos-config (0.0.1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 19 Apr 2006 09:22:47 +0200

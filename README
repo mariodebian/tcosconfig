@@ -1,0 +1,31 @@
+=====================================
+          tcos-config
+=====================================
+
+ TCOS, thin Client Operating System is a method to
+ create small embedded OS.
+ Based on debian/ubuntu with normal debian kernel's.
+
+ tcos-config is a small pygtk configure and create tool based
+ on guadalinex/ubuntu-express installer (glade file)
+
+
+IMPORTANT:
+
+   gentcos don't install all packages needed because
+   some of them are not necesary.
+
+
+Some interesting packages:
+
+  * ltspfs-client and autofs: give automount support for devices in terminal
+  * dropbear: start ssh server in terminal
+  * esound and alsa-utils: give sound support in terminal
+  * discover: load hardware modules
+  * dillo: light web browser
+  * links2: lighter web browser
+  * italc-client: connect from iTALC to terminal throught VNC
+
+
+
+Mario Izquierdo <mariodebian@gmail.com>

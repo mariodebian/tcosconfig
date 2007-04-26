@@ -1,0 +1,27 @@
+Version 0.0.4
+
+  * Change GtkComboBox glade values with bidimensional list in shared file
+    this allow to translate strings ans simplify upgrades.
+  * Clean python code (remove TcosConfig unnecesary class)
+  * Begin to document some functions
+  * Fix ConfigReader::changevalue() reset after save to reload settings
+  * Remove unnecesary modules
+  * Fix some dirs problems (exec in sources based on tcosconfig.py file exists and not in .svn dir)
+
+
+
+ * First usable release 0.0.3
+
+ * New interface inspired in guadalinex/ubuntu-express installer
+ * ConfigReader.py python parser of /etc/tcos/tcos.conf file
+ * TcosGui.py python class to TcosConfig in glade gtk2
+ * TcosExe.py python class to call gentcos and make initramfs images
+
+=============== BETA changelog =================
+
+
+ * Added l10n support with gettext python modules
+ * Spanish translation
+ * New version
+
+   Mario Izquierdo 19 Apr 2006

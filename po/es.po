@@ -1,0 +1,546 @@
+# Spanish translations for tcosconfig package
+# Traducciones al español para el paquete tcosconfig.
+# Copyright (C) 2006 ORGANIZATION
+# <mariodebian@gmail.com>, 2006.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: tcosconfig 0.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-31 11:30+0200\n"
+"PO-Revision-Date: 2006-08-31 11:32+0200\n"
+"Last-Translator:  <mariodebian@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+
+#: TcosGui.py:137
+msgid "Backup configuration settings."
+msgstr "Haciendo copia de los ajustes de configuración."
+
+#: TcosGui.py:143
+msgid "Overwriting it with your own settings."
+msgstr "Sobreescribiéndola con tus ajustes."
+
+#: TcosGui.py:153
+msgid ""
+"Something wrong ocurred while parsing command line options for gentcos.\n"
+"\n"
+"Select boot method??"
+msgstr ""
+"Error al leer configuración durante la generación de la los argumentos de "
+"línea\n"
+"de comandos de gentcos.\n"
+"¿Ha seleccionado método de arranque?"
+
+#: TcosGui.py:160
+#, python-format
+msgid ""
+"EXEC: %s\n"
+"\n"
+msgstr ""
+"Ejecutar: %s\n"
+"\n"
+
+#: TcosGui.py:173
+msgid "Restore configuration settings."
+msgstr "Configuración restaurada."
+
+#: TcosGui.py:207
+msgid "Complete"
+msgstr "Completado"
+
+#: TcosGui.py:254
+#, python-format
+msgid ""
+"Configuration saved succesfully.\n"
+"Changed values are:\n"
+" %s"
+msgstr ""
+"Configuración guardada correctamente.\n"
+"Las variables cambiadas son:\n"
+"%s"
+
+#: tcosconfig.glade:10
+msgid "Tcos Config"
+msgstr "Configurador TCOS"
+
+#: tcosconfig.glade:49
+msgid ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" foreground=\"black\" ><b>0. Welcome</b></span> » <span size="
+"\"x-large\">1. Config</span> » <span size=\"x-large\">2. Make image</span> » "
+"<span size=\"x-large\">3. Finish!</span> </span>"
+msgstr ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" foreground=\"black\" ><b>0. Bienvenido</b></span> » <span "
+"size=\"x-large\">1. Configurar</span> » <span size=\"x-large\">2. Hacer "
+"imagen</span> » <span size=\"x-large\">3. Terminar</span> </span>"
+
+#: tcosconfig.glade:90
+msgid ""
+"<span size=\"xx-large\"><b>Welcome to TCOS Config assistant</b></span>\n"
+"\n"
+"This assistant will prepare some config setting to \n"
+"generate bootable images to thin client networks."
+msgstr ""
+"<span size=\"xx-large\"><b>Bienvenido al asistente TCOS Config</b></span>\n"
+"\n"
+"Este asistente preparará algunos ajustes de configuración\n"
+"y generará imágenes arrancables para redes de clientes ligeros."
+
+#: tcosconfig.glade:124
+msgid "0"
+msgstr "0"
+
+#: tcosconfig.glade:153 tcosconfig.glade:1196 tcosconfig.glade:2095
+msgid ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" "
+"foreground=\"black\"><b>1. Config</b></span> » <span size=\"x-large\">2. "
+"Make image</span> » <span size=\"x-large\">3. Finish!</span> </span>"
+msgstr ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" ><b>0. Bienvenido</b></span> » <span size=\"x-large\" "
+"foreground=\"black\"><b>1. Configurar</b></span> » <span size=\"x-large\">2. "
+"Hacer imagen</span> » <span size=\"x-large\">3. Terminar!</span> </span>"
+
+#: tcosconfig.glade:178
+msgid "<span size=\"xx-large\"><b>Basic Settings</b></span>"
+msgstr "<span size=\"xx-large\"><b>Configuración básica</b></span>"
+
+#: tcosconfig.glade:224
+msgid "Debug building of images"
+msgstr "Depurar la construcción de imágenes"
+
+#: tcosconfig.glade:253
+msgid "debug enable"
+msgstr "activar depuración"
+
+#: tcosconfig.glade:274
+msgid "Disable Squashfs support"
+msgstr "Deshabilitar soporte de squashfs"
+
+#: tcosconfig.glade:303
+msgid "squashfs disabled (requires more ram)"
+msgstr "deshabilitar squashfs (necesita más ram)"
+
+#: tcosconfig.glade:324
+msgid "External squashfs (download with tftp)"
+msgstr "Archivo externo squashfs (descargar por tftp)"
+
+#: tcosconfig.glade:353
+msgid "external squashfs (less ram)"
+msgstr "archivo squashfs externo  (menos ram)"
+
+#: tcosconfig.glade:374
+msgid "Inetd support"
+msgstr "Soporte inetd"
+
+#: tcosconfig.glade:403
+msgid "enable inetd"
+msgstr "activar inetd"
+
+#: tcosconfig.glade:424
+msgid "Run SSH server in terminal"
+msgstr "Ejecutar servidor SSH en el terminal"
+
+#: tcosconfig.glade:453
+msgid "ssh enable"
+msgstr "activar ssh"
+
+#: tcosconfig.glade:474
+msgid "Xorg support"
+msgstr "Soporte Xorg"
+
+#: tcosconfig.glade:503
+msgid "enable Xorg"
+msgstr "activar Xorg"
+
+#: tcosconfig.glade:524
+msgid "FreeNX support"
+msgstr "Soporte FreeNX"
+
+#: tcosconfig.glade:553
+msgid "enable freenx"
+msgstr "activar freenx"
+
+#: tcosconfig.glade:574
+msgid "Server IP address"
+msgstr "Dirección IP del servidor (autodetectada)"
+
+#: tcosconfig.glade:602
+msgid "USB devices support"
+msgstr "Soporte para dispositivos USB"
+
+#: tcosconfig.glade:631
+msgid "enable USB devices"
+msgstr "activar dispositivos USB"
+
+#: tcosconfig.glade:652
+msgid "Sound support"
+msgstr "Soporte de sonido"
+
+#: tcosconfig.glade:681
+msgid "enable sound (alsa files)"
+msgstr "activar sonido (archivos de alsa)"
+
+#: tcosconfig.glade:702
+msgid "iTALC MasterEye Support"
+msgstr "Soporte para iTALC MasterEye"
+
+#: tcosconfig.glade:731
+msgid "enable ivs daemon on thin client"
+msgstr "activar demonio ivs en el cliente ligero"
+
+#: tcosconfig.glade:752
+msgid "Support for discover"
+msgstr "Soporte para discover"
+
+#: tcosconfig.glade:781
+msgid "enable discover hardware autodetect"
+msgstr "activar reconocimiento de hardware Discover"
+
+#: tcosconfig.glade:828
+msgid "Server IP (autodetected)"
+msgstr "IP del servidor (autodetectada)"
+
+#: tcosconfig.glade:863
+msgid "Disable ACPI and RAID"
+msgstr "Deshabilitar ACPI y RAID"
+
+#: tcosconfig.glade:892
+msgid "delete all acpi and raid modules and bins"
+msgstr "borrar todos los modulos y binarios de ACPI y RAID"
+
+#: tcosconfig.glade:913
+msgid "X11VNC support"
+msgstr "Soporte X11VNC"
+
+#: tcosconfig.glade:942
+msgid "enable x11vnc server"
+msgstr "activar servidor x11vnc"
+
+#: tcosconfig.glade:963
+msgid "Server admin username"
+msgstr "Usuario administrador del servidor"
+
+#: tcosconfig.glade:1017
+msgid "user to be admin of thin clients"
+msgstr "usuario que será administrador de la red"
+
+#: tcosconfig.glade:1052
+msgid "Show needed modules"
+msgstr "Mostrar módulos necesarios"
+
+#: tcosconfig.glade:1081
+msgid "show a message with not found modules"
+msgstr "mostrar mensaje con módulos no encontrados"
+
+#: tcosconfig.glade:1102
+msgid "PulseAudio sound server"
+msgstr "Servidor de sonido PulseAudio"
+
+#: tcosconfig.glade:1131
+msgid "if checked use PulseAudio, if not use ESound"
+msgstr "activado se usa PulseAudio, sino se usa ESound"
+
+#: tcosconfig.glade:1167
+msgid "1"
+msgstr "1"
+
+#: tcosconfig.glade:1221
+msgid "<span size=\"xx-large\"><b>Advanced Settings</b></span>"
+msgstr "<span size=\"xx-large\"><b>Configuración avanzada</b></span>"
+
+#: tcosconfig.glade:1267
+msgid ""
+"Default build\n"
+"kernel version"
+msgstr ""
+"Versión del kernel\n"
+"por defecto"
+
+#: tcosconfig.glade:1296
+msgid ""
+"Default command\n"
+"line append \n"
+"(for NBI images)"
+msgstr ""
+"Parámetros de\n"
+"arranque\n"
+"(imagenes NBI)"
+
+#: tcosconfig.glade:1326
+msgid ""
+"Root password\n"
+"of thin client"
+msgstr ""
+"Contraseña de\n"
+"root del terminal"
+
+#: tcosconfig.glade:1355
+msgid "Type of Xorg session"
+msgstr "Tipo de sesión de Xorg"
+
+#: tcosconfig.glade:1383
+msgid ""
+"Enable local \n"
+"web browser"
+msgstr ""
+"Activar navegador\n"
+"web local"
+
+#: tcosconfig.glade:1470
+msgid "Select kernel version"
+msgstr ""
+"Seleccionar versión\n"
+"del kernel"
+
+#: tcosconfig.glade:1692
+msgid ""
+"Put here thin client root \n"
+"passwd or leave empty to\n"
+"use server root password."
+msgstr ""
+"Escribe aquí la contraseña\n"
+"de root o déjalo vacío para\n"
+"usar la del servidor."
+
+#: tcosconfig.glade:1729
+msgid ""
+"Remote filesystem\n"
+"method"
+msgstr ""
+"Método de sistema\n"
+"de archivos remoto"
+
+#: tcosconfig.glade:1827
+msgid "Modify this cmdline append to yours needs"
+msgstr "Cambiar estas opciones de arranque por las que necesite"
+
+#: tcosconfig.glade:1852
+msgid "Mixer volume levels "
+msgstr "Nivel de volumen del mezclador"
+
+#: tcosconfig.glade:1954
+msgid ""
+"Use NFS\n"
+"(for lowmem)"
+msgstr ""
+"Usar NFS\n"
+"(menos memoria)"
+
+#: tcosconfig.glade:2120 tcosconfig.glade:2154
+msgid "<span size=\"x-large\"><b>Boot method</b></span>"
+msgstr "<span size=\"x-large\"><b>Método de aranque</b></span>"
+
+#: tcosconfig.glade:2182
+msgid ""
+"<span size=\"xx-large\">\n"
+"Thin clients can boot with many methods:\n"
+"</span>\n"
+"<span size=\"large\"> \n"
+"» PXE, some special network cards, \n"
+"   boot from his own ROM\n"
+"» Etherboot, some network cards, \n"
+"   can be booted from a floppy drive\n"
+"» All of network cards unsupported \n"
+"   can be booted with cdrom image.\n"
+"</span>"
+msgstr ""
+"<span size=\"xx-large\">\n"
+"Los clientes ligeros puede arrancar por varios métodos:\n"
+"</span>\n"
+"<span size=\"large\"> \n"
+"» PXE, algunas tarjetas de red especiales\n"
+"   arrancan desde su propia ROM\n"
+"» Etherboot, algunas tarjetas de red\n"
+"   pueden arrancar desde un disquete universal\n"
+"» Todas las tarjetas de red no soportadas\n"
+"   pueden ser arrancadas desde una imagen de cdrom\n"
+"</span>"
+
+#: tcosconfig.glade:2276
+msgid "<span size=\"x-large\"><b>Images sufix</b></span>"
+msgstr "<span size=\"x-large\"><b>Sufijo de imágenes</b></span>"
+
+#: tcosconfig.glade:2304
+msgid "Select boot method from list"
+msgstr "Seleccionar método de arranque de la lista"
+
+#: tcosconfig.glade:2360
+msgid ""
+"Sufix is a string to be added to images filenames:\n"
+"Examples:\n"
+"\n"
+"sufix:                        <b>-pc3</b>\n"
+"filenames:        initramfs<b>-pc3</b> linux<b>-pc3</b>.nbi"
+msgstr ""
+"El sufijo es una cadena de texto que será añadido\n"
+"al final del nombre de archivo de las imágenes.\n"
+"Ejemplos:\n"
+"sufijo:                        <b>-pc3</b>\n"
+"archivos:        initramfs<b>-pc3</b> linux<b>-pc3</b>.nbi"
+
+#: tcosconfig.glade:2475
+msgid ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
+"Config</b></span> » <span size=\"x-large\" foreground=\"black\"><b>2. Make "
+"image</b></span> » <span size=\"x-large\">3. Finish!</span> </span>"
+msgstr ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" ><b>0. Bienvenido</b></span> » <span size=\"x-large\" "
+"><b>1. Configurar</b></span> » <span size=\"x-large\" foreground=\"black"
+"\"><b>2. Hacer imagen</b></span> » <span size=\"x-large\">3. Terminar</span> "
+"</span>"
+
+#: tcosconfig.glade:2513
+msgid "<span size=\"xx-large\">Building init images</span>"
+msgstr "<span size=\"xx-large\">Creando imágenes de arranque</span>"
+
+#: tcosconfig.glade:2551
+msgid "Press <b>Start</b> to begin image generation."
+msgstr "Pulsa <b>Comenzar</b> para generar la imagen."
+
+#: tcosconfig.glade:2608
+msgid "Press here to start generation process"
+msgstr "Pulsar aquí para empezar el proceso de generación"
+
+#: tcosconfig.glade:2651
+msgid "Start"
+msgstr "Comenzar"
+
+#: tcosconfig.glade:2757
+msgid "View Process"
+msgstr "Ver proceso"
+
+#: tcosconfig.glade:2797
+msgid "Generation progress"
+msgstr "Proceso de generación"
+
+#: tcosconfig.glade:2824
+msgid "3"
+msgstr "3"
+
+#: tcosconfig.glade:2853
+msgid ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
+"Config</b></span> » <span size=\"x-large\"><b>2. Make image</b></span> » "
+"<span size=\"x-large\" foreground=\"black\"><b>3. Finish!</b></span> </span>"
+msgstr ""
+"<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
+"size=\"x-large\" ><b>0. Bienvenido</b></span> » <span size=\"x-large\" "
+"><b>1. Configurar</b></span> » <span size=\"x-large\"><b>2. Hacer imagen</"
+"b></span> » <span size=\"x-large\" foreground=\"black\"><b>3. Terminar</b></"
+"span> </span>"
+
+#: tcosconfig.glade:2891
+msgid "<span size=\"xx-large\">Congratulations!</span>"
+msgstr "<span size=\"xx-large\">¡Enhorabuena!</span>"
+
+#: tcosconfig.glade:2923
+msgid ""
+"The generation has been successfully completed.\n"
+"\n"
+"In order to boot this images in thin clients you have to configure your "
+"<b>DHCP server</b> and <b>pxelinux.cfg default</b> file."
+msgstr ""
+"El proceso de generación se ha completado correctamente\n"
+"\n"
+"Para arrancar estas imágenes en los clientes ligeros, tiene que configurar "
+"el <b>servidor DHCP</b> y el fichero de <b>configuración de pxelinux.cfg</b>."
+
+#: tcosconfig.glade:2950
+msgid ""
+"Press <b>Finish and Save</b> button to save this build settings or "
+"<b>Cancel</b> to quit."
+msgstr ""
+"Pulsar el botón <b>Finalizar y guardar</b> para guardar estos ajustes o "
+"pulse <b>Cancelar</b> para salir."
+
+#: tcosconfig.glade:2988
+msgid "Ready"
+msgstr "Preparado"
+
+#: tcosconfig.glade:3174
+msgid "Finish and save"
+msgstr "Terminar y guardar"
+
+#: tcosconfig.glade:3229
+msgid "License GNU/GPL"
+msgstr "Licencia GNU/GPL"
+
+#: tcosconfig.glade:3230
+msgid "TCOS Network image generator"
+msgstr "Generador de imágenes de red TcosConfig"
+
+#: tcosconfig.glade:3234
+msgid "TcosConfig web site"
+msgstr "Página web TcosConfig"
+
+#: tcosconfig.glade:3237
+msgid "translator-credits"
+msgstr ""
+"Mario Izquierdo (mariodebian)\n"
+"<mariodebian@gmail.com>"
+
+#: shared.py:75
+msgid "Remote XDMCP"
+msgstr "XMDCP Remoto"
+
+#: shared.py:76
+msgid "Local X"
+msgstr "X local"
+
+#: shared.py:77
+msgid "SSH -X"
+msgstr "X por SSH"
+
+#: shared.py:78 shared.py:83 shared.py:90
+msgid "Disable"
+msgstr "Desactivar"
+
+#: shared.py:84
+msgid "Links2 browser"
+msgstr "Navegador links2"
+
+#: shared.py:85
+msgid "Dillo browser"
+msgstr "Navegador dillo"
+
+#: shared.py:91
+msgid "LTSP filesystem"
+msgstr "Sistema LTSP"
+
+#: shared.py:92
+msgid "SH filesystem"
+msgstr "Sistema SHFS"
+
+#: shared.py:97
+msgid "Eherboot floppy"
+msgstr "Disquete Etherboot"
+
+#: shared.py:98
+msgid "PXE booting"
+msgstr "Arranque PXE"
+
+#: shared.py:99
+msgid "CDROM booting"
+msgstr "Arranque por CDROM"
+
+#: shared.py:104
+msgid "None"
+msgstr "Ninguno"
+
+#: shared.py:105
+msgid "Use NFS server"
+msgstr "Usar servidor NFS"
+
+#~ msgid "Test"
+#~ msgstr "Prueba"

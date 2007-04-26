@@ -1,0 +1,5 @@
+tcosconfig.py
+ConfigReader.py
+TcosGui.py
+tcosconfig.glade
+shared.py
