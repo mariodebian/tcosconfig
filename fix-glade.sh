@@ -8,7 +8,7 @@
 
 
 # EDIT THIS VARS
-abs_path=/usr/share/tcos-config/images/
+abs_path=/usr/share/tcosconfig/images/
 _file=tcosconfig.glade
 
 # all images separated by spaces

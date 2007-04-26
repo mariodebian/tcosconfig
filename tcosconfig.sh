@@ -2,12 +2,12 @@
 
 _ARGS=$@
 _PYTHON=/usr/bin/python2.4
-_CMD="${_PYTHON} /usr/share/tcos-config/tcosconfig.py ${_ARGS}"
+_CMD="${_PYTHON} /usr/share/tcosconfig/tcosconfig.py ${_ARGS}"
 _DESKTOP=/usr/share/applications/tcosconfig.desktop
 
 
 
-# launcher script of tcos-config python tool
+# launcher script of tcosconfig python tool
 
 if [ $UID = 0 ]; then
   #echo "Run as root, good !!!"

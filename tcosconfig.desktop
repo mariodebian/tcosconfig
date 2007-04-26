@@ -10,6 +10,6 @@ Comment[es]=Configurar y crear imagenes arrancables initramfs pararedes de clien
 Exec=/usr/bin/tcosconfig $@
 Terminal=false
 Type=Application
-Icon=/usr/share/tcos-config/images/tcos-icon.png
+Icon=/usr/share/tcosconfig/images/tcos-icon.png
 Categories=GNOME;Application;System;Utility;
 GenericName[es_ES]=TCOS-config

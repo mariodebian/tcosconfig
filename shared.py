@@ -50,7 +50,7 @@ if os.path.isfile('./tcosconfig.py'):
     print "TcosConfig not installed, exec in SVN place"
 else:
     tcos_config_file="/etc/tcos/tcos.conf"
-    GLADE_DIR = "/usr/share/tcos-config/"
+    GLADE_DIR = "/usr/share/tcosconfig/"
     LOCALE_DIR = "/usr/share/locale"
 
 

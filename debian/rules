@@ -54,8 +54,8 @@ install: build
 	dh_clean -k 
 	dh_installdirs
 
-	# Add here commands to install the package into debian/tcos-config
-	$(MAKE) install DESTDIR=`pwd`/debian/tcos-config
+	# Add here commands to install the package into debian/tcosconfig
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tcosconfig
 
 
 # Build architecture-independent files here.

@@ -1,3 +1,9 @@
+tcosconfig (0.0.7) unstable; urgency=low
+
+  * Rename source package tcos-config => tcosconfig
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 28 Oct 2006 22:55:11 +0200
+
 tcos-config (0.0.6) unstable; urgency=low
 
   * Add TCOS_USENFS(ComboBox) and TCOS_PULSEAUDIO(CheckBox)

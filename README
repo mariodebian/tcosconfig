@@ -1,12 +1,12 @@
 =====================================
-          tcos-config
+          tcosconfig
 =====================================
 
  TCOS, thin Client Operating System is a method to
  create small embedded OS.
  Based on debian/ubuntu with normal debian kernel's.
 
- tcos-config is a small pygtk configure and create tool based
+ tcosconfig is a small pygtk configure and create tool based
  on guadalinex/ubuntu-express installer (glade file)
 
 
