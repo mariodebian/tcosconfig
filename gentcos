@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "THIS gentcos script is for testing TcosConfig !!!!"
 echo "Creating initramfs with 2.6.16-1-486 kernel"

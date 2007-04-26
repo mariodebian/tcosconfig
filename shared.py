@@ -60,7 +60,7 @@ bindtextdomain( PACKAGE, LOCALE_DIR )
 textdomain( PACKAGE )
 
 # gentcos command (if svn exec in ./ path else use /usr/sbin/)
-gentcos="sh gentcos"
+gentcos="bash gentcos"
 
 # Default tcos suffix
 tcos_suffix="-tcos1"

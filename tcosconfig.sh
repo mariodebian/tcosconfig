@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 _ARGS=$@
 _PYTHON=/usr/bin/python2.4
