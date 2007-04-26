@@ -10,7 +10,7 @@ fix-glade:
 	bash fix-glade.sh
 
 exec:
-	python $(project).py 
+	python $(project).py --debug
 
 gedit:
 	gedit-cvs tcosconfig.py Tcos*py ConfigReader.py >/dev/null 2>&1 &

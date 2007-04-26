@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-14 18:10+0100\n"
+"POT-Creation-Date: 2007-03-03 10:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,7 +163,7 @@ msgid "Terminal password"
 msgstr ""
 
 #: tcosconfig.glade:814
-msgid "root's terminal password"
+msgid "root's terminal password (if empty this is root)"
 msgstr ""
 
 #: tcosconfig.glade:851
@@ -565,42 +565,50 @@ msgstr ""
 msgid "SSH -X"
 msgstr ""
 
-#: shared.py:78 shared.py:83 shared.py:90
+#: shared.py:78
+msgid "rDesktop"
+msgstr ""
+
+#: shared.py:79 shared.py:84 shared.py:91
 msgid "Disable"
 msgstr ""
 
-#: shared.py:84
+#: shared.py:85
 msgid "Links2 browser"
 msgstr ""
 
-#: shared.py:85
+#: shared.py:86
 msgid "Dillo browser"
 msgstr ""
 
-#: shared.py:91
+#: shared.py:92
 msgid "LTSP filesystem"
 msgstr ""
 
-#: shared.py:92
-msgid "SH filesystem"
-msgstr ""
-
-#: shared.py:97
-msgid "Eherboot floppy"
+#: shared.py:93
+msgid "SSH filesystem"
 msgstr ""
 
 #: shared.py:98
-msgid "PXE booting"
+msgid "Eherboot floppy"
 msgstr ""
 
 #: shared.py:99
+msgid "PXE booting"
+msgstr ""
+
+#: shared.py:100
 msgid "CDROM booting"
 msgstr ""
 
-#: shared.py:104
+#: shared.py:101
+msgid "NFS booting (mem < 38)"
+msgstr ""
+
+#: shared.py:106
 msgid "None"
 msgstr ""
 
-#: shared.py:105
+#: shared.py:107
 msgid "Use NFS server"
 msgstr ""

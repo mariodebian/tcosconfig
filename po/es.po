@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-02-14 18:10+0100\n"
-"PO-Revision-Date: 2007-02-14 18:14+0100\n"
+"POT-Creation-Date: 2007-03-03 10:32+0100\n"
+"PO-Revision-Date: 2007-03-03 10:33+0100\n"
 "Last-Translator:  <mariodebian@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -189,8 +189,8 @@ msgid "Terminal password"
 msgstr "Contraseña del terminal"
 
 #: tcosconfig.glade:814
-msgid "root's terminal password"
-msgstr "contraseña de root del terminal"
+msgid "root's terminal password (if empty this is root)"
+msgstr "contraseña de root del terminal (vacío root)"
 
 #: tcosconfig.glade:851
 msgid "<b>Debug settings</b>"
@@ -648,43 +648,51 @@ msgstr "X local"
 msgid "SSH -X"
 msgstr "X por SSH"
 
-#: shared.py:78 shared.py:83 shared.py:90
+#: shared.py:78
+msgid "rDesktop"
+msgstr "rDesktop"
+
+#: shared.py:79 shared.py:84 shared.py:91
 msgid "Disable"
 msgstr "Desactivar"
 
-#: shared.py:84
+#: shared.py:85
 msgid "Links2 browser"
 msgstr "Navegador links2"
 
-#: shared.py:85
+#: shared.py:86
 msgid "Dillo browser"
 msgstr "Navegador dillo"
 
-#: shared.py:91
+#: shared.py:92
 msgid "LTSP filesystem"
 msgstr "Sistema LTSP"
 
-#: shared.py:92
-msgid "SH filesystem"
-msgstr "Sistema SHFS"
+#: shared.py:93
+msgid "SSH filesystem"
+msgstr "Sistema SSHFS"
 
-#: shared.py:97
+#: shared.py:98
 msgid "Eherboot floppy"
 msgstr "Disquete Etherboot"
 
-#: shared.py:98
+#: shared.py:99
 msgid "PXE booting"
 msgstr "Arranque PXE"
 
-#: shared.py:99
+#: shared.py:100
 msgid "CDROM booting"
 msgstr "Arranque por CDROM"
 
-#: shared.py:104
+#: shared.py:101
+msgid "NFS booting (mem < 38)"
+msgstr "Arranque NFS (memoria < 38)"
+
+#: shared.py:106
 msgid "None"
 msgstr "Ninguno"
 
-#: shared.py:105
+#: shared.py:107
 msgid "Use NFS server"
 msgstr "Usar servidor NFS"
 

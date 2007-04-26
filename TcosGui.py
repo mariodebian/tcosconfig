@@ -302,7 +302,7 @@ class TcosGui:
         """
         # for gentcos cmdline need:
         # TCOS_KERNEL -vmlinuz
-        # TCOS_METHOD -tftp -nbi -cdrom
+        # TCOS_METHOD -tftp -nbi -cdrom -nfs
         # TCOS_SUFFIX -suffix=foo
         # TCOS_APPEND -extra-append="foo"
         # TCOS_DEBUG -size (show ramdisk and usr.squashfs sizes)
@@ -341,6 +341,8 @@ class TcosGui:
         # get TCOS_DEBUG
         if self.TCOS_DEBUG.get_active():
             cmdline+=" -size"
+
+        print_debug ("getcmdline() cmdline=%s" %(cmdline) )
 
         return cmdline
 

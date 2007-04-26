@@ -71,39 +71,39 @@ tcos_suffix=""
 # value is saved in tcos.conf
 # text can be translatable with _("translatable text")
 
-TCOS_XORG_TYPE_VALUES=[ \
-['R', _("Remote XDMCP") ] , \
-['L', _("Local X") ], \
-['S', _("SSH -X") ] , \
-['W', _("rDesktop") ] \
-['N', _("Disable") ] \
+TCOS_XORG_TYPE_VALUES=[ 
+['R', _("Remote XDMCP") ] , 
+['L', _("Local X") ], 
+['S', _("SSH -X") ] , 
+['W', _("rDesktop") ], 
+['N', _("Disable") ] 
 ]
 
 
-TCOS_WEB_BROWSER_VALUES=[ \
-['none', _("Disable") ] , \
-['links2', _("Links2 browser") ], \
-['dillo', _("Dillo browser") ] \
+TCOS_WEB_BROWSER_VALUES=[
+['none', _("Disable") ] ,
+['links2', _("Links2 browser") ],
+['dillo', _("Dillo browser") ] 
 ]
 
 
-TCOS_REMOTEFS_VALUES=[ \
-['none', _("Disable")], \
-['ltspfs', _("LTSP filesystem") ], \
-['shfs', _("SH filesystem") ] \
+TCOS_REMOTEFS_VALUES=[ 
+['none', _("Disable")], 
+['ltspfs', _("LTSP filesystem") ], 
+['shfs', _("SSH filesystem") ] 
 ]
 
 
 TCOS_METHOD_VALUES=[ \
-['-nbi', _("Eherboot floppy") ], \
-['-tftp', _("PXE booting") ], \
-['-cdrom', _("CDROM booting") ] \
-['-nfs', _("NFS booting") ] \
+['-nbi', _("Eherboot floppy") ], 
+['-tftp', _("PXE booting") ],
+['-cdrom', _("CDROM booting") ], 
+['-nfs -rootfs', _("NFS booting (mem < 38)") ]
 ]
 
 
-TCOS_USENFS_VALUES=[ \
-['none', _("None") ], \
-['nfs', _("Use NFS server") ], \
+TCOS_USENFS_VALUES=[ 
+['none', _("None") ], 
+['nfs', _("Use NFS server") ]
 ]
 #pass
