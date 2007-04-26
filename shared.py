@@ -75,6 +75,7 @@ TCOS_XORG_TYPE_VALUES=[ \
 ['R', _("Remote XDMCP") ] , \
 ['L', _("Local X") ], \
 ['S', _("SSH -X") ] , \
+['W', _("rDesktop") ] \
 ['N', _("Disable") ] \
 ]
 
@@ -97,6 +98,7 @@ TCOS_METHOD_VALUES=[ \
 ['-nbi', _("Eherboot floppy") ], \
 ['-tftp', _("PXE booting") ], \
 ['-cdrom', _("CDROM booting") ] \
+['-nfs', _("NFS booting") ] \
 ]
 
 

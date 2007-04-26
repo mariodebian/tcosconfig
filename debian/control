@@ -2,12 +2,14 @@ Source: tcosconfig
 Section: gnome
 Priority: optional
 Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
-Build-Depends: debhelper (>= 4.0.0)
-Standards-Version: 3.6.2
+Build-Depends:  debhelper (>= 5.0.37.2), python, python-support (>= 0.3)
+Standards-Version: 3.7.2
+XS-Python-Version: >= 2.4
 
 Package: tcosconfig
 Architecture: any
-Depends:  sudo | gksu | kdesu, python2.4-gtk2, python2.4-glade2, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Depends:  gksu | kdesu, python-gtk2, python-glade2, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+XB-Python-Version: ${python:Versions}
 Description: Small python app to configure and create boot image of TCOS.
  TCOS, thin Client Operating System is a method to create small embedded os
  based on debian/ubuntu with normal debian kernel's.
@@ -21,6 +23,7 @@ Description: Small python app to configure and create boot image of TCOS.
 Package: tcos-config
 Architecture: any
 Depends:  tcosconfig
+XB-Python-Version: ${python:Versions}
 Description: dummy upgrade to new package name tcosconfig
  It is safe to remove this package.
  .

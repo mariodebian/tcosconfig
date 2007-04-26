@@ -42,7 +42,7 @@ install:
 	install -d $(DESTDIR)/usr/share/$(project)/images
 	install -d $(DESTDIR)/usr/share/applications/
 	install -d $(DESTDIR)/usr/share/locale/es/LC_MESSAGES/
-	install -d $(DESTDIR)/usr/sbin
+	install -d $(DESTDIR)/usr/bin
 
 	# Installing tcosconfig in  $(DESTDIR)
 	install -m 644 $(project).glade $(DESTDIR)/usr/share/$(project)

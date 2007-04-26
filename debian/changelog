@@ -1,3 +1,9 @@
+tcosconfig (0.0.11) unstable; urgency=low
+
+  * Build package with python-support
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 18 Feb 2007 15:49:12 +0100
+
 tcosconfig (0.0.10) unstable; urgency=low
 
   * Add more params (wireless, rdesktop, ...)
