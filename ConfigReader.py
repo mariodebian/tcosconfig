@@ -40,6 +40,7 @@ class ConfigReader:
         self.getvars()
         self.kernels=[]
         self.getkernels()
+        self.getusplash()
 
     def reset(self):
         print_debug("ConfigReader::reset() reset data...")
@@ -120,6 +121,15 @@ class ConfigReader:
                 else:
                     print_debug( "ConfigReader::getkernels() INVALID OLD kernel %s" %(kernel) )
         return
+
+    def getusplash(self):
+        self.usplash_themes=[]
+        for _file in os.listdir("/usr/lib/usplash/"):
+            if _file.find("usplash-artwork.so") == -1:
+                print_debug( "ConfigReader::getusplash() VALID usplash %s" %(_file) )
+                self.usplash_themes.append( [_file, _file.split(".so")[0]] )
+                
+        shared.TCOS_USPLASH_VALUES = self.usplash_themes
 
 
     def getindex(self,varname):

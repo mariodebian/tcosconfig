@@ -79,6 +79,14 @@ TCOS_XORG_TYPE_VALUES=[
 ['N', _("Disable") ] 
 ]
 
+TCOS_XORG_XKB_VALUES=[ 
+['gb', _("English - gb") ] , 
+['es', _("Spanish - es") ], 
+['fr', _("French - fr") ] , 
+['de', _("German - de") ]
+]
+
+
 
 TCOS_WEB_BROWSER_VALUES=[
 ['none', _("Disable") ] ,
