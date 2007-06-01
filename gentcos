@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "THIS gentcos script is for testing TcosConfig !!!!"
-echo "Creating initramfs with 2.6.16-1-486 kernel"
-echo "INITRAMFS => BOOT=tcos"
+#echo "Creating initramfs with 2.6.16-1-486 kernel"
+#echo "INITRAMFS => BOOT=tcos"
 #echo "Package LTSPFS get 1224 Kb." && sleep 1
 #echo "Package Autofs mounter get 180 Kb." && sleep 1
 #echo "Package Init binaries get 4 Kb." && sleep 1
@@ -15,15 +15,16 @@ echo "INITRAMFS => BOOT=tcos"
 #echo "Package iTALC get 2312 Kb." && sleep 1
 
 # for testing save config
-set -x
+#set -x
 . ./tcos.conf
-set +x
+#set +x
+echo TCOS_XORG_XKB=$TCOS_XORG_XKB
 
-echo "Package Alsa and Esound get 1368 Kb." && sleep 1
-echo "Package Discover get 2452 Kb." && sleep 1
-echo "Creating squashfs of /usr" && sleep 1
-echo "Moving usr.squashfs to /tftpboot/tcos" && sleep 1
-echo "Moving initramfs to /tftpboot/tcos/initramfs" && sleep 1
+#echo "Package Alsa and Esound get 1368 Kb." && sleep 1
+#echo "Package Discover get 2452 Kb." && sleep 1
+#echo "Creating squashfs of /usr" && sleep 1
+#echo "Moving usr.squashfs to /tftpboot/tcos" && sleep 1
+#echo "Moving initramfs to /tftpboot/tcos/initramfs" && sleep 1
 sleep 2
 echo ""
 sleep 1

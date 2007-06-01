@@ -1,3 +1,10 @@
+tcosconfig (0.0.14) unstable; urgency=low
+
+  * Add TCOS_XORG_XKB and TCOS_USPLASH combos
+  * Update translations and tcos.conf
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 01 Jun 2007 23:42:56 +0200
+
 tcosconfig (0.0.13) unstable; urgency=low
 
   * Add tcosconfig.1 man page
