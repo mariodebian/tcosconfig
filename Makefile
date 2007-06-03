@@ -87,3 +87,29 @@ tcos:
 	rm -f ../tcosconfig_*deb
 	debuild -uc -us; true
 	sudo dpkg -i ../tcosconfig_*deb
+
+
+patch_version:
+	# PATCHING VERSION
+	sed -i 's/__VERSION__/$(VERSION)/g' shared.py
+
+patch_dapper: patch_version
+	# PATCHING TcosConfig in Ubuntu DAPPER
+	sed -i '/^Build/s/5.0.37.2/5.0.7ubuntu13/g' debian/control
+	sed -i '/python-support/s/0.3/0.1.1ubuntu1/g' debian/control
+	sed -i '/dh_pysupport/s/dh_pysupport/dh_python/g' debian/rules
+
+
+patch_edgy: patch_version
+	# nothing to patch
+
+patch_feisty: patch_version
+	# nothing to patch
+
+patch_etch: patch_version
+	# nothing to patch
+
+patch_unstable: patch_version
+	# nothing to patch
+
+
