@@ -2,7 +2,7 @@
 ##########################################################################
 # tcos_config writen by MarioDebian <mariodebian@gmail.com>
 #
-#    tcos_config version 0.1
+#    TcosConfig version __VERSION__
 #
 # Copyright (c) 2005 Mario Izquierdo <mariodebian@gmail.com>
 # All rights reserved.
@@ -82,6 +82,10 @@ class TcosGui:
             setattr(self, widget.get_name(), widget)
 
         self.aboutdialog = self.ui.get_widget("aboutdialog")
+        self.aboutdialog.connect("response", self.on_aboutdialog_response)
+        self.aboutdialog.connect("close", self.on_aboutdialog_close)
+        self.aboutdialog.connect("delete_event", self.on_aboutdialog_close)
+        self.aboutdialog.set_version(shared.VERSION)
 
         # set initial bottom status
         self.backbutton.hide()
@@ -156,6 +160,17 @@ class TcosGui:
         print_debug ("TcosGui::on_aboutbutton_click() About clicked")
         self.aboutdialog.show()
         return
+
+    def on_aboutdialog_close(self, widget, event=None):
+        print_debug ("TcosGui::on_aboutdialog_close() Closing about")
+        self.aboutdialog.hide()
+        return True
+
+    def on_aboutdialog_response(self, dialog, response, *args):
+        #http://www.async.com.br/faq/pygtk/index.py?req=show&file=faq10.013.htp
+        if response < 0:
+            dialog.hide()
+            dialog.emit_stop_by_name('response')
 
     def on_startbutton_click(self, widget):
         #print_debug("Start clicked")

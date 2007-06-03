@@ -1,3 +1,12 @@
+tcosconfig (0.0.15.1) unstable; urgency=low
+
+  * TcosGui.py:
+    - Fix AboutDialog close and destry with gtk > 2.10
+  * Change default Homepage to http://www.tcosproject.org
+  * Add __VERSION__ header in python files.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 03 Jun 2007 23:35:34 +0200
+
 tcosconfig (0.0.15) unstable; urgency=low
 
   * Update Makefile to support new pbuilder targets

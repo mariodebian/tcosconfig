@@ -4665,12 +4665,12 @@ In order to boot this images in thin clients you have to configure your &lt;b&gt
 
 <widget class="GtkAboutDialog" id="aboutdialog">
   <property name="destroy_with_parent">False</property>
-  <property name="name">TcosConfig 0.0.10</property>
+  <property name="name">TcosConfig</property>
   <property name="copyright" translatable="yes">License GNU/GPL</property>
   <property name="comments" translatable="yes">TCOS Network image generator</property>
   <property name="license">GNU/GPL</property>
   <property name="wrap_license">False</property>
-  <property name="website">http://soleup.eup.uva.es/mediawiki/index.php/Tcos-Config</property>
+  <property name="website">http://www.tcosproject.org</property>
   <property name="website_label" translatable="yes">TcosConfig web site</property>
   <property name="authors">Mario Izquierdo (mariodebian)
 &lt;mariodebian@gmail.com&gt;</property>

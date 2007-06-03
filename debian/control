@@ -16,9 +16,7 @@ Description: Small python GUI that configure and create TCOS boot images.
  .
  tcosconfig is a small pygtk configure and create tool.
  .
- Project pages:
- http://soleup.eup.uva.es/mediawiki/index.php/TCOS
- http://soleup.eup.uva.es/mediawiki/index.php/TCOS-config
+  Homepage: http://www.tcosproject.org
 
 Package: tcos-config
 Architecture: any
@@ -27,6 +25,4 @@ XB-Python-Version: ${python:Versions}
 Description: dummy upgrade to new package name tcosconfig
  It is safe to remove this package.
  .
- Project pages:
- http://soleup.eup.uva.es/mediawiki/index.php/TCOS
- http://soleup.eup.uva.es/mediawiki/index.php/TCOS-config
+  Homepage: http://www.tcosproject.org

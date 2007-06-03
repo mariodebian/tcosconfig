@@ -3,7 +3,7 @@
 ##########################################################################
 # tcos_config writen by MarioDebian <mariodebian@gmail.com>
 #
-#    tcos_config version 0.1
+#    TcosConfig version __VERSION__
 #
 # Copyright (c) 2005 Mario Izquierdo <mariodebian@gmail.com>
 # All rights reserved.

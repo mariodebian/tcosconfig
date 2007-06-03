@@ -2,7 +2,7 @@
 ##########################################################################
 # tcos_config writen by MarioDebian <mariodebian@gmail.com>
 #
-#    tcos_config version 0.1
+#    TcosConfig version __VERSION__
 #
 # Copyright (c) 2005 Mario Izquierdo <mariodebian@gmail.com>
 # All rights reserved.
@@ -32,6 +32,7 @@ from locale import setlocale, LC_ALL
 
 # program name to use in gettext .mo
 PACKAGE = "tcosconfig"
+VERSION = "__VERSION__"
 
 # constant to font sizes
 PANGO_SCALE=1024
@@ -114,4 +115,4 @@ TCOS_USENFS_VALUES=[
 ['none', _("None") ], 
 ['nfs', _("Use NFS server") ]
 ]
-#pass
+
