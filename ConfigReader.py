@@ -110,9 +110,10 @@ class ConfigReader:
             # http://libertonia.escomposlinux.org/story/2006/1/5/223624/2276
             if _file.find('vmlinuz') == 0 :
                 kernel=_file.replace('vmlinuz-','')
-                (kmay, kmed, kmin) = kernel.split('.')
+                # split only 3 times
+                (kmay, kmed, kmin) = kernel.split('.',2)
                 import re
-                pattern = re.compile ('[-_]')
+                pattern = re.compile ('[-_.]')
                 (kmin, kextra) = pattern.split(kmin,1)
                 # need kernel >= 2.6.12
                 if int(kmay)==2 and int(kmed)==6 and int(kmin)>=12:

@@ -1,3 +1,10 @@
+tcosconfig (0.0.15.2) unstable; urgency=low
+
+  * ConfigReader.py:
+    - Support more dots in kernel version split function 
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 18 Jun 2007 10:37:03 +0200
+
 tcosconfig (0.0.15.1) unstable; urgency=low
 
   * TcosGui.py:
