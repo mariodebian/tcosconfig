@@ -113,7 +113,7 @@ class ConfigReader:
                 # split only 3 times
                 (kmay, kmed, kmin) = kernel.split('.',2)
                 import re
-                pattern = re.compile ('[-_.]')
+                pattern = re.compile ('[-_.+]')
                 (kmin, kextra) = pattern.split(kmin,1)
                 # need kernel >= 2.6.12
                 if int(kmay)==2 and int(kmed)==6 and int(kmin)>=12:
