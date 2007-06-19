@@ -109,6 +109,9 @@ patch_edgy: patch_version
 patch_feisty: patch_version
 	# nothing to patch
 
+patch_gutsy: patch_version
+	# nothing to patch
+
 patch_etch: patch_version
 	# nothing to patch
 
