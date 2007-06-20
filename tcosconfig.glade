@@ -222,7 +222,7 @@ generate bootable images to thin client networks.</property>
 			<widget class="GtkExpander" id="expander_debug">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
-			  <property name="expanded">True</property>
+			  <property name="expanded">False</property>
 			  <property name="spacing">0</property>
 
 			  <child>
@@ -1452,7 +1452,7 @@ others always ask for password</property>
 			<widget class="GtkExpander" id="expander_xorg">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
-			  <property name="expanded">True</property>
+			  <property name="expanded">False</property>
 			  <property name="spacing">0</property>
 
 			  <child>
@@ -2889,7 +2889,7 @@ of Windows Terminal Server</property>
 		  <child>
 		    <widget class="GtkTable" id="table13">
 		      <property name="visible">True</property>
-		      <property name="n_rows">8</property>
+		      <property name="n_rows">6</property>
 		      <property name="n_columns">2</property>
 		      <property name="homogeneous">False</property>
 		      <property name="row_spacing">0</property>
@@ -2975,8 +2975,8 @@ line append
 			<packing>
 			  <property name="left_attach">0</property>
 			  <property name="right_attach">1</property>
-			  <property name="top_attach">3</property>
-			  <property name="bottom_attach">4</property>
+			  <property name="top_attach">2</property>
+			  <property name="bottom_attach">3</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options"></property>
 			</packing>
@@ -3004,8 +3004,8 @@ web browser</property>
 			<packing>
 			  <property name="left_attach">0</property>
 			  <property name="right_attach">1</property>
-			  <property name="top_attach">4</property>
-			  <property name="bottom_attach">5</property>
+			  <property name="top_attach">3</property>
+			  <property name="bottom_attach">4</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options"></property>
 			</packing>
@@ -3190,8 +3190,8 @@ web browser</property>
 			<packing>
 			  <property name="left_attach">1</property>
 			  <property name="right_attach">2</property>
-			  <property name="top_attach">3</property>
-			  <property name="bottom_attach">4</property>
+			  <property name="top_attach">2</property>
+			  <property name="bottom_attach">3</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options">fill</property>
 			</packing>
@@ -3258,8 +3258,8 @@ web browser</property>
 			<packing>
 			  <property name="left_attach">1</property>
 			  <property name="right_attach">2</property>
-			  <property name="top_attach">4</property>
-			  <property name="bottom_attach">5</property>
+			  <property name="top_attach">3</property>
+			  <property name="bottom_attach">4</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options">fill</property>
 			</packing>
@@ -3287,8 +3287,8 @@ method</property>
 			<packing>
 			  <property name="left_attach">0</property>
 			  <property name="right_attach">1</property>
-			  <property name="top_attach">5</property>
-			  <property name="bottom_attach">6</property>
+			  <property name="top_attach">4</property>
+			  <property name="bottom_attach">5</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options"></property>
 			</packing>
@@ -3355,8 +3355,8 @@ method</property>
 			<packing>
 			  <property name="left_attach">1</property>
 			  <property name="right_attach">2</property>
-			  <property name="top_attach">5</property>
-			  <property name="bottom_attach">6</property>
+			  <property name="top_attach">4</property>
+			  <property name="bottom_attach">5</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options">fill</property>
 			</packing>
@@ -3410,8 +3410,8 @@ method</property>
 			<packing>
 			  <property name="left_attach">0</property>
 			  <property name="right_attach">1</property>
-			  <property name="top_attach">6</property>
-			  <property name="bottom_attach">7</property>
+			  <property name="top_attach">5</property>
+			  <property name="bottom_attach">6</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options"></property>
 			</packing>
@@ -3478,8 +3478,8 @@ method</property>
 			<packing>
 			  <property name="left_attach">1</property>
 			  <property name="right_attach">2</property>
-			  <property name="top_attach">6</property>
-			  <property name="bottom_attach">7</property>
+			  <property name="top_attach">5</property>
+			  <property name="bottom_attach">6</property>
 			  <property name="x_options">fill</property>
 			  <property name="y_options">fill</property>
 			</packing>
@@ -3617,72 +3617,6 @@ method</property>
 		  </child>
 
 		  <child>
-		    <widget class="GtkLabel" id="label91">
-		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">&lt;span size=&quot;xx-large&quot;&gt;
-Thin clients can boot with many methods:
-&lt;/span&gt;
-&lt;span size=&quot;large&quot;&gt; 
-» PXE, some special network cards, 
-   boot from his own ROM
-» Etherboot, some network cards, 
-   can be booted from a floppy drive
-» All of network cards unsupported 
-   can be booted with cdrom image.
-&lt;/span&gt;</property>
-		      <property name="use_underline">False</property>
-		      <property name="use_markup">True</property>
-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
-		      <property name="wrap">True</property>
-		      <property name="selectable">False</property>
-		      <property name="xalign">0.5</property>
-		      <property name="yalign">0.5</property>
-		      <property name="xpad">0</property>
-		      <property name="ypad">0</property>
-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-		      <property name="width_chars">0</property>
-		      <property name="single_line_mode">False</property>
-		      <property name="angle">0</property>
-		    </widget>
-		    <packing>
-		      <property name="left_attach">1</property>
-		      <property name="right_attach">2</property>
-		      <property name="top_attach">0</property>
-		      <property name="bottom_attach">1</property>
-		      <property name="x_options">fill</property>
-		      <property name="y_options"></property>
-		    </packing>
-		  </child>
-
-		  <child>
-		    <widget class="GtkLabel" id="label92">
-		      <property name="visible">True</property>
-		      <property name="label" translatable="yes"></property>
-		      <property name="use_underline">False</property>
-		      <property name="use_markup">False</property>
-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
-		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
-		      <property name="xalign">0</property>
-		      <property name="yalign">0.5</property>
-		      <property name="xpad">0</property>
-		      <property name="ypad">0</property>
-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-		      <property name="width_chars">-1</property>
-		      <property name="single_line_mode">False</property>
-		      <property name="angle">0</property>
-		    </widget>
-		    <packing>
-		      <property name="left_attach">0</property>
-		      <property name="right_attach">1</property>
-		      <property name="top_attach">0</property>
-		      <property name="bottom_attach">1</property>
-		      <property name="x_options">fill</property>
-		      <property name="y_options"></property>
-		    </packing>
-		  </child>
-
-		  <child>
 		    <widget class="GtkLabel" id="label93">
 		      <property name="visible">True</property>
 		      <property name="label" translatable="yes"></property>
@@ -3741,9 +3675,9 @@ Thin clients can boot with many methods:
 		  <child>
 		    <widget class="GtkLabel" id="label152">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">Select boot method from list</property>
+		      <property name="label" translatable="yes">&lt;b&gt;Select boot method from list&lt;/b&gt;</property>
 		      <property name="use_underline">False</property>
-		      <property name="use_markup">False</property>
+		      <property name="use_markup">True</property>
 		      <property name="justify">GTK_JUSTIFY_CENTER</property>
 		      <property name="wrap">False</property>
 		      <property name="selectable">False</property>
@@ -3795,38 +3729,6 @@ Thin clients can boot with many methods:
 		  </child>
 
 		  <child>
-		    <widget class="GtkLabel" id="label154">
-		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">Sufix is a string to be added to images filenames:
-Examples:
-
-sufix:                        &lt;b&gt;-pc3&lt;/b&gt;
-filenames:        initramfs&lt;b&gt;-pc3&lt;/b&gt; linux&lt;b&gt;-pc3&lt;/b&gt;.nbi</property>
-		      <property name="use_underline">False</property>
-		      <property name="use_markup">True</property>
-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
-		      <property name="wrap">False</property>
-		      <property name="selectable">False</property>
-		      <property name="xalign">0</property>
-		      <property name="yalign">0.5</property>
-		      <property name="xpad">40</property>
-		      <property name="ypad">0</property>
-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
-		      <property name="width_chars">-1</property>
-		      <property name="single_line_mode">False</property>
-		      <property name="angle">0</property>
-		    </widget>
-		    <packing>
-		      <property name="left_attach">1</property>
-		      <property name="right_attach">2</property>
-		      <property name="top_attach">4</property>
-		      <property name="bottom_attach">5</property>
-		      <property name="x_options">fill</property>
-		      <property name="y_options"></property>
-		    </packing>
-		  </child>
-
-		  <child>
 		    <widget class="GtkEntry" id="TCOS_SUFFIX">
 		      <property name="width_request">250</property>
 		      <property name="visible">True</property>
@@ -3864,6 +3766,75 @@ filenames:        initramfs&lt;b&gt;-pc3&lt;/b&gt; linux&lt;b&gt;-pc3&lt;/b&gt;.
 		      <property name="bottom_attach">2</property>
 		      <property name="x_options"></property>
 		      <property name="y_options">fill</property>
+		    </packing>
+		  </child>
+
+		  <child>
+		    <widget class="GtkLabel" id="label243">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">&lt;span size=&quot;xx-large&quot;&gt;
+Thin clients can boot with many methods:
+&lt;/span&gt;
+&lt;span size=&quot;large&quot;&gt; 
+» PXE, some special network cards, boot from his own ROM
+» Etherboot, some network cards, can be booted from a floppy drive
+   (latest version of Etherboot can simulate PXE network support)
+» All of network cards unsupported can be booted with cdrom image
+   or hard disk.
+&lt;/span&gt;</property>
+		      <property name="use_underline">False</property>
+		      <property name="use_markup">True</property>
+		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+		      <property name="wrap">False</property>
+		      <property name="selectable">False</property>
+		      <property name="xalign">0</property>
+		      <property name="yalign">0.5</property>
+		      <property name="xpad">20</property>
+		      <property name="ypad">10</property>
+		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		      <property name="width_chars">-1</property>
+		      <property name="single_line_mode">False</property>
+		      <property name="angle">0</property>
+		    </widget>
+		    <packing>
+		      <property name="left_attach">0</property>
+		      <property name="right_attach">2</property>
+		      <property name="top_attach">0</property>
+		      <property name="bottom_attach">1</property>
+		      <property name="x_options">fill</property>
+		      <property name="y_options"></property>
+		    </packing>
+		  </child>
+
+		  <child>
+		    <widget class="GtkLabel" id="label154">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">Sufix is a string to be added to images filenames:
+Examples:
+
+sufix:                        &lt;b&gt;-pc3&lt;/b&gt;
+filenames:        initramfs&lt;b&gt;-pc3&lt;/b&gt; linux&lt;b&gt;-pc3&lt;/b&gt;.nbi</property>
+		      <property name="use_underline">False</property>
+		      <property name="use_markup">True</property>
+		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+		      <property name="wrap">False</property>
+		      <property name="selectable">False</property>
+		      <property name="xalign">0</property>
+		      <property name="yalign">0.5</property>
+		      <property name="xpad">40</property>
+		      <property name="ypad">0</property>
+		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+		      <property name="width_chars">-1</property>
+		      <property name="single_line_mode">False</property>
+		      <property name="angle">0</property>
+		    </widget>
+		    <packing>
+		      <property name="left_attach">0</property>
+		      <property name="right_attach">2</property>
+		      <property name="top_attach">4</property>
+		      <property name="bottom_attach">5</property>
+		      <property name="x_options">fill</property>
+		      <property name="y_options"></property>
 		    </packing>
 		  </child>
 		</widget>
@@ -4358,20 +4329,20 @@ filenames:        initramfs&lt;b&gt;-pc3&lt;/b&gt; linux&lt;b&gt;-pc3&lt;/b&gt;.
 		  </child>
 
 		  <child>
-		    <widget class="GtkLabel" id="goodbye_label">
+		    <widget class="GtkLabel" id="label245">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">The generation has been successfully completed.
+		      <property name="label" translatable="yes">&lt;span size=&quot;xx-large&quot;&gt;The generation has been successfully completed.&lt;/span&gt;
 
-In order to boot this images in thin clients you have to configure your &lt;b&gt;DHCP server&lt;/b&gt; and &lt;b&gt;pxelinux.cfg default&lt;/b&gt; file.</property>
+In order to boot this images in thin clients you have to configure your &lt;b&gt;DHCP server&lt;/b&gt; file.</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">True</property>
-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
-		      <property name="wrap">True</property>
+		      <property name="justify">GTK_JUSTIFY_CENTER</property>
+		      <property name="wrap">False</property>
 		      <property name="selectable">False</property>
 		      <property name="xalign">0.5</property>
 		      <property name="yalign">0.5</property>
 		      <property name="xpad">0</property>
-		      <property name="ypad">70</property>
+		      <property name="ypad">0</property>
 		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 		      <property name="width_chars">-1</property>
 		      <property name="single_line_mode">False</property>
@@ -4379,8 +4350,8 @@ In order to boot this images in thin clients you have to configure your &lt;b&gt
 		    </widget>
 		    <packing>
 		      <property name="padding">0</property>
-		      <property name="expand">False</property>
-		      <property name="fill">True</property>
+		      <property name="expand">True</property>
+		      <property name="fill">False</property>
 		    </packing>
 		  </child>
 

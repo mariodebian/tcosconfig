@@ -260,6 +260,8 @@ class TcosGui:
         destfile= abspath + ".orig"
         print_debug("TcosGui::backupconfig() orig file %s" %(abspath) )
         print_debug("TcosGui::backupconfig() dest file %s" %(destfile) )
+        if shared.debug:
+            os.system("diff -ur %s %s" %(abspath, destfile) )
         try:
             if method == "backup":
                 print_debug("TcosGui::backupconfig() Making backup...")

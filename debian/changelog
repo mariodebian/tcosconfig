@@ -1,3 +1,16 @@
+tcosconfig (0.1.0) unstable; urgency=low
+
+  * ConfigReader.py:
+    - Fix save varname detection
+  * TcosGui.py:
+    - Add diff command in debug mode
+  * tcosconfig.glade:
+    - Fix some box sizes
+  * po/*:
+    - Update translations
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 20 Jun 2007 15:17:22 +0200
+
 tcosconfig (0.0.15.2) unstable; urgency=low
 
   * ConfigReader.py:

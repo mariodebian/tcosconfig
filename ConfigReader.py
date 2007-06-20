@@ -179,10 +179,10 @@ class ConfigReader:
             self.newdata=[]
             print_debug ( "ConfigReader::changevalue() reset self.newdata" )
             for line in self.data:
-                if line.find(varname) == 0:
-                    #print_debug ( "########################################################" )
-                    #print_debug ( "ConfigReader::changevalue() %s=\"%s\"" %(varname, newvalue) )
-                    #print_debug ( "########################################################" )
+                if line.find(varname+"=") == 0:
+                    print_debug ( "########################################################" )
+                    print_debug ( "ConfigReader::changevalue() %s=\"%s\"" %(varname, newvalue) )
+                    print_debug ( "########################################################" )
                     self.newdata.append(varname + "=" + newvalue + '\n')
                 else:
                     self.newdata.append(line)

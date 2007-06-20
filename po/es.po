@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-01 23:33+0200\n"
-"PO-Revision-Date: 2007-06-01 23:36+0200\n"
+"POT-Creation-Date: 2007-06-19 21:26+0200\n"
+"PO-Revision-Date: 2007-06-19 21:29+0200\n"
 "Last-Translator:  <mariodebian@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);"
 
-#: TcosGui.py:167
+#: TcosGui.py:182
 msgid "Backup configuration settings."
 msgstr "Haciendo copia de los ajustes de configuración."
 
-#: TcosGui.py:173
+#: TcosGui.py:188
 msgid "Overwriting it with your own settings."
 msgstr "Sobreescribiéndola con tus ajustes."
 
-#: TcosGui.py:183
+#: TcosGui.py:198
 msgid ""
 "Something wrong ocurred while parsing command line options for gentcos.\n"
 "\n"
@@ -36,7 +36,7 @@ msgstr ""
 "de comandos de gentcos.\n"
 "¿Ha seleccionado método de arranque?"
 
-#: TcosGui.py:190
+#: TcosGui.py:205
 #, python-format
 msgid ""
 "EXEC: %s\n"
@@ -45,15 +45,15 @@ msgstr ""
 "Ejecutar: %s\n"
 "\n"
 
-#: TcosGui.py:203
+#: TcosGui.py:218
 msgid "Restore configuration settings."
 msgstr "Configuración restaurada."
 
-#: TcosGui.py:237
+#: TcosGui.py:252
 msgid "Complete"
 msgstr "Completado"
 
-#: TcosGui.py:284
+#: TcosGui.py:301
 #, python-format
 msgid ""
 "Configuration saved succesfully.\n"
@@ -500,41 +500,39 @@ msgstr ""
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
 msgstr "<span size=\"x-large\"><b>Método de aranque</b></span>"
 
-#: tcosconfig.glade:3622
+#: tcosconfig.glade:3650
+msgid "<span size=\"x-large\"><b>Images sufix</b></span>"
+msgstr "<span size=\"x-large\"><b>Sufijo de imágenes</b></span>"
+
+#: tcosconfig.glade:3678
+msgid "<b>Select boot method from list</b>"
+msgstr "<b>Seleccionar método de arranque de la lista</b>"
+
+#: tcosconfig.glade:3775
 msgid ""
 "<span size=\"xx-large\">\n"
 "Thin clients can boot with many methods:\n"
 "</span>\n"
 "<span size=\"large\"> \n"
-"» PXE, some special network cards, \n"
-"   boot from his own ROM\n"
-"» Etherboot, some network cards, \n"
-"   can be booted from a floppy drive\n"
-"» All of network cards unsupported \n"
-"   can be booted with cdrom image.\n"
+"» PXE, some special network cards, boot from his own ROM\n"
+"» Etherboot, some network cards, can be booted from a floppy drive\n"
+"   (latest version of Etherboot can simulate PXE network support)\n"
+"» All of network cards unsupported can be booted with cdrom image\n"
+"   or hard disk.\n"
 "</span>"
 msgstr ""
 "<span size=\"xx-large\">\n"
 "Los clientes ligeros puede arrancar por varios métodos:\n"
 "</span>\n"
 "<span size=\"large\"> \n"
-"» PXE, algunas tarjetas de red especiales\n"
-"   arrancan desde su propia ROM\n"
-"» Etherboot, algunas tarjetas de red\n"
-"   pueden arrancar desde un disquete universal\n"
-"» Todas las tarjetas de red no soportadas\n"
-"   pueden ser arrancadas desde una imagen de cdrom\n"
+"» PXE, algunas tarjetas de red especiales arrancan desde su propia ROM\n"
+"» Etherboot, algunas tarjetas de red pueden arrancar desde un disquete universal\n"
+"   (la última versión del disquete universal emula soporte PXE)\n"
+"» Todas las tarjetas de red no soportadas pueden ser arrancadas desde una\n "
+"   imagen de cdrom o disco duro\n"
 "</span>"
 
-#: tcosconfig.glade:3716
-msgid "<span size=\"x-large\"><b>Images sufix</b></span>"
-msgstr "<span size=\"x-large\"><b>Sufijo de imágenes</b></span>"
-
-#: tcosconfig.glade:3744
-msgid "Select boot method from list"
-msgstr "Seleccionar método de arranque de la lista"
-
-#: tcosconfig.glade:3800
+#: tcosconfig.glade:3812
 msgid ""
 "Sufix is a string to be added to images filenames:\n"
 "Examples:\n"
@@ -548,7 +546,7 @@ msgstr ""
 "sufijo:                        <b>-pc3</b>\n"
 "archivos:        initramfs<b>-pc3</b> linux<b>-pc3</b>.nbi"
 
-#: tcosconfig.glade:3915
+#: tcosconfig.glade:3886
 msgid ""
 "<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -561,35 +559,35 @@ msgstr ""
 "\"><b>2. Hacer imagen</b></span> » <span size=\"x-large\">3. Terminar</span> "
 "</span>"
 
-#: tcosconfig.glade:3953
+#: tcosconfig.glade:3924
 msgid "<span size=\"xx-large\">Building init images</span>"
 msgstr "<span size=\"xx-large\">Creando imágenes de arranque</span>"
 
-#: tcosconfig.glade:3991
+#: tcosconfig.glade:3962
 msgid "Press <b>Start</b> to begin image generation."
 msgstr "Pulsa <b>Comenzar</b> para generar la imagen."
 
-#: tcosconfig.glade:4048
+#: tcosconfig.glade:4019
 msgid "Press here to start generation process"
 msgstr "Pulsar aquí para empezar el proceso de generación"
 
-#: tcosconfig.glade:4091
+#: tcosconfig.glade:4062
 msgid "Start"
 msgstr "Comenzar"
 
-#: tcosconfig.glade:4197
+#: tcosconfig.glade:4168
 msgid "View Process"
 msgstr "Ver proceso"
 
-#: tcosconfig.glade:4237
+#: tcosconfig.glade:4208
 msgid "Generation progress"
 msgstr "Proceso de generación"
 
-#: tcosconfig.glade:4264
+#: tcosconfig.glade:4235
 msgid "3"
 msgstr "3"
 
-#: tcosconfig.glade:4293
+#: tcosconfig.glade:4264
 msgid ""
 "<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -602,23 +600,24 @@ msgstr ""
 "b></span> » <span size=\"x-large\" foreground=\"black\"><b>3. Terminar</b></"
 "span> </span>"
 
-#: tcosconfig.glade:4331
+#: tcosconfig.glade:4302
 msgid "<span size=\"xx-large\">Congratulations!</span>"
 msgstr "<span size=\"xx-large\">¡Enhorabuena!</span>"
 
-#: tcosconfig.glade:4363
+#: tcosconfig.glade:4334
 msgid ""
-"The generation has been successfully completed.\n"
+"<span size=\"xx-large\">The generation has been successfully completed.</"
+"span>\n"
 "\n"
 "In order to boot this images in thin clients you have to configure your "
-"<b>DHCP server</b> and <b>pxelinux.cfg default</b> file."
+"<b>DHCP server</b> file."
 msgstr ""
-"El proceso de generación se ha completado correctamente\n"
+"<span size=\"xx-large\">El proceso de generación se ha completado correctamente</span>\n"
 "\n"
 "Para arrancar estas imágenes en los clientes ligeros, tiene que configurar "
-"el <b>servidor DHCP</b> y el fichero de <b>configuración de pxelinux.cfg</b>."
+"el <b>servidor DHCP</b>."
 
-#: tcosconfig.glade:4390
+#: tcosconfig.glade:4361
 msgid ""
 "Press <b>Finish and Save</b> button to save this build settings or "
 "<b>Cancel</b> to quit."
@@ -626,105 +625,105 @@ msgstr ""
 "Pulsar el botón <b>Finalizar y guardar</b> para guardar estos ajustes o "
 "pulse <b>Cancelar</b> para salir."
 
-#: tcosconfig.glade:4428
+#: tcosconfig.glade:4399
 msgid "Ready"
 msgstr "Preparado"
 
-#: tcosconfig.glade:4614
+#: tcosconfig.glade:4585
 msgid "Finish and save"
 msgstr "Terminar y guardar"
 
-#: tcosconfig.glade:4669
+#: tcosconfig.glade:4640
 msgid "License GNU/GPL"
 msgstr "Licencia GNU/GPL"
 
-#: tcosconfig.glade:4670
+#: tcosconfig.glade:4641
 msgid "TCOS Network image generator"
 msgstr "Generador de imágenes de red TcosConfig"
 
-#: tcosconfig.glade:4674
+#: tcosconfig.glade:4645
 msgid "TcosConfig web site"
 msgstr "Página web TcosConfig"
 
-#: tcosconfig.glade:4677
+#: tcosconfig.glade:4648
 msgid "translator-credits"
 msgstr ""
 "Mario Izquierdo (mariodebian)\n"
 "<mariodebian@gmail.com>"
 
-#: shared.py:75
+#: shared.py:76
 msgid "Remote XDMCP"
 msgstr "XMDCP Remoto"
 
-#: shared.py:76
+#: shared.py:77
 msgid "Local X"
 msgstr "X local"
 
-#: shared.py:77
+#: shared.py:78
 msgid "SSH -X"
 msgstr "X por SSH"
 
-#: shared.py:78
+#: shared.py:79
 msgid "rDesktop"
 msgstr "rDesktop"
 
-#: shared.py:79 shared.py:92 shared.py:99
+#: shared.py:80 shared.py:93 shared.py:100
 msgid "Disable"
 msgstr "Desactivar"
 
-#: shared.py:83
+#: shared.py:84
 msgid "English - gb"
 msgstr "Inglés - gb"
 
-#: shared.py:84
+#: shared.py:85
 msgid "Spanish - es"
 msgstr "Español - es"
 
-#: shared.py:85
+#: shared.py:86
 msgid "French - fr"
 msgstr "Francés - fr"
 
-#: shared.py:86
+#: shared.py:87
 msgid "German - de"
 msgstr "Alemán - de"
 
-#: shared.py:93
+#: shared.py:94
 msgid "Links2 browser"
 msgstr "Navegador links2"
 
-#: shared.py:94
+#: shared.py:95
 msgid "Dillo browser"
 msgstr "Navegador dillo"
 
-#: shared.py:100
+#: shared.py:101
 msgid "LTSP filesystem"
 msgstr "Sistema LTSP"
 
-#: shared.py:101
+#: shared.py:102
 msgid "SSH filesystem"
 msgstr "Sistema SSHFS"
 
-#: shared.py:106
+#: shared.py:107
 msgid "Eherboot floppy"
 msgstr "Disquete Etherboot"
 
-#: shared.py:107
+#: shared.py:108
 msgid "PXE booting"
 msgstr "Arranque PXE"
 
-#: shared.py:108
+#: shared.py:109
 msgid "CDROM booting"
 msgstr "Arranque por CDROM"
 
-#: shared.py:109
+#: shared.py:110
 msgid "NFS booting (mem < 38)"
 msgstr "Arranque NFS (memoria < 38)"
 
-#: shared.py:114
+#: shared.py:115
 msgid "None"
 msgstr "Ninguno"
 
-#: shared.py:115
+#: shared.py:116
 msgid "Use NFS server"
 msgstr "Usar servidor NFS"
 
