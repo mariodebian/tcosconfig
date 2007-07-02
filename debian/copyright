@@ -7,6 +7,22 @@ It was created by Mario Izquierdo (mariodebian)
 
 License:
 
+  * tcosconfig.glade: based on guadalinex installer (ubiquity) GPL glade file:
+     Ubiquity was formerly known as "Espresso", and originally as "Ubuntu
+     Express", which is written and maintained by Javier Carranza
+     <javier.carranza@interactors.coop> and Juanje Ojeda Croissier
+     <juanje@interactors.coop>.
+
+    The original Guadalinex source can be found at:
+	http://ws314.juntadeandalucia.es/guadalinex2005/live_installer/
+
+    and Ubiquity is developed at:
+	http://people.ubuntu.com/~cjwatson/bzr/ubiquity/ubuntu/
+
+    Copyright (C) 2005  Javier Carranza
+    Copyright (C) 2005, 2006  Canonical Ltd.
+
+  * Rest of files:
    This package is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; version 2 dated June, 1991.

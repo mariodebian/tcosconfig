@@ -2,7 +2,7 @@
 
 #
 #   FIX-GLADE.sh
-#   this is a script that path glade image path to absolute pahs
+#   this is a script that patch glade image path to absolute paths
 #
 #
 

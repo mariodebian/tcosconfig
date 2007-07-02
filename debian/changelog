@@ -1,3 +1,9 @@
+tcosconfig (0.1.1) unstable; urgency=low
+
+  * Remove some not copyright files and put more info in debian/copyright
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 02 Jul 2007 15:18:52 +0200
+
 tcosconfig (0.1.0) unstable; urgency=low
 
   * ConfigReader.py:

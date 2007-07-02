@@ -7,14 +7,14 @@ Standards-Version: 3.7.2
 XS-Python-Version: >= 2.4
 
 Package: tcosconfig
-Architecture: any
-Depends:  gksu | kdesu, python-gtk2, python-glade2, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
+Architecture: all
+Depends:  gksu | kdebase-bin, python-gtk2, python-glade2, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
 XB-Python-Version: ${python:Versions}
 Description: Small python GUI to configure and create TCOS boot images.
  TCOS, thin Client Operating System is a method to create small embedded os
  based on debian/ubuntu with normal debian kernel's.
  .
- tcosconfig is a small pygtk configure and create tool.
+ tcosconfig is the frontend of gentcos netboot image generator.
  .
   Homepage: http://www.tcosproject.org
 

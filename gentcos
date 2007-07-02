@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# shell script that simulate gentcos process
+
 echo "THIS gentcos script is for testing TcosConfig !!!!"
 #echo "Creating initramfs with 2.6.16-1-486 kernel"
 #echo "INITRAMFS => BOOT=tcos"
