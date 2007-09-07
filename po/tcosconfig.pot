@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-19 21:26+0200\n"
+"POT-Creation-Date: 2007-09-07 11:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,37 +16,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TcosGui.py:182
+#: TcosGui.py:181
 msgid "Backup configuration settings."
 msgstr ""
 
-#: TcosGui.py:188
+#: TcosGui.py:187
 msgid "Overwriting it with your own settings."
 msgstr ""
 
-#: TcosGui.py:198
+#: TcosGui.py:197
 msgid ""
 "Something wrong ocurred while parsing command line options for gentcos.\n"
 "\n"
 "Select boot method??"
 msgstr ""
 
-#: TcosGui.py:205
+#: TcosGui.py:204
 #, python-format
 msgid ""
 "EXEC: %s\n"
 "\n"
 msgstr ""
 
-#: TcosGui.py:218
+#: TcosGui.py:217
 msgid "Restore configuration settings."
 msgstr ""
 
-#: TcosGui.py:252
+#: TcosGui.py:251
 msgid "Complete"
 msgstr ""
 
-#: TcosGui.py:301
+#: TcosGui.py:300
 #, python-format
 msgid ""
 "Configuration saved succesfully.\n"
@@ -561,86 +561,86 @@ msgstr ""
 msgid "TCOS Network image generator"
 msgstr ""
 
-#: tcosconfig.glade:4645
+#: tcosconfig.glade:4643
 msgid "TcosConfig web site"
 msgstr ""
 
-#: tcosconfig.glade:4648
+#: tcosconfig.glade:4646
 msgid "translator-credits"
 msgstr ""
 
-#: shared.py:76
+#: shared.py:75
 msgid "Remote XDMCP"
 msgstr ""
 
-#: shared.py:77
+#: shared.py:76
 msgid "Local X"
 msgstr ""
 
-#: shared.py:78
+#: shared.py:77
 msgid "SSH -X"
 msgstr ""
 
-#: shared.py:79
+#: shared.py:78
 msgid "rDesktop"
 msgstr ""
 
-#: shared.py:80 shared.py:93 shared.py:100
+#: shared.py:79 shared.py:92 shared.py:99
 msgid "Disable"
 msgstr ""
 
-#: shared.py:84
+#: shared.py:83
 msgid "English - gb"
 msgstr ""
 
-#: shared.py:85
+#: shared.py:84
 msgid "Spanish - es"
 msgstr ""
 
-#: shared.py:86
+#: shared.py:85
 msgid "French - fr"
 msgstr ""
 
-#: shared.py:87
+#: shared.py:86
 msgid "German - de"
 msgstr ""
 
-#: shared.py:94
+#: shared.py:93
 msgid "Links2 browser"
 msgstr ""
 
-#: shared.py:95
+#: shared.py:94
 msgid "Dillo browser"
 msgstr ""
 
-#: shared.py:101
+#: shared.py:100
 msgid "LTSP filesystem"
 msgstr ""
 
-#: shared.py:102
+#: shared.py:101
 msgid "SSH filesystem"
 msgstr ""
 
-#: shared.py:107
+#: shared.py:106
 msgid "Eherboot floppy"
 msgstr ""
 
-#: shared.py:108
+#: shared.py:107
 msgid "PXE booting"
 msgstr ""
 
-#: shared.py:109
+#: shared.py:108
 msgid "CDROM booting"
 msgstr ""
 
-#: shared.py:110
+#: shared.py:109
 msgid "NFS booting (mem < 38)"
 msgstr ""
 
-#: shared.py:115
+#: shared.py:114
 msgid "None"
 msgstr ""
 
-#: shared.py:116
+#: shared.py:115
 msgid "Use NFS server"
 msgstr ""

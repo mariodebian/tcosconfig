@@ -8,24 +8,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-19 21:26+0200\n"
+"POT-Creation-Date: 2007-09-07 11:53+0200\n"
 "PO-Revision-Date: 2007-06-19 21:29+0200\n"
 "Last-Translator:  <mariodebian@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: TcosGui.py:182
+#: TcosGui.py:181
 msgid "Backup configuration settings."
 msgstr "Haciendo copia de los ajustes de configuración."
 
-#: TcosGui.py:188
+#: TcosGui.py:187
 msgid "Overwriting it with your own settings."
 msgstr "Sobreescribiéndola con tus ajustes."
 
-#: TcosGui.py:198
+#: TcosGui.py:197
 msgid ""
 "Something wrong ocurred while parsing command line options for gentcos.\n"
 "\n"
@@ -36,7 +36,7 @@ msgstr ""
 "de comandos de gentcos.\n"
 "¿Ha seleccionado método de arranque?"
 
-#: TcosGui.py:205
+#: TcosGui.py:204
 #, python-format
 msgid ""
 "EXEC: %s\n"
@@ -45,15 +45,15 @@ msgstr ""
 "Ejecutar: %s\n"
 "\n"
 
-#: TcosGui.py:218
+#: TcosGui.py:217
 msgid "Restore configuration settings."
 msgstr "Configuración restaurada."
 
-#: TcosGui.py:252
+#: TcosGui.py:251
 msgid "Complete"
 msgstr "Completado"
 
-#: TcosGui.py:301
+#: TcosGui.py:300
 #, python-format
 msgid ""
 "Configuration saved succesfully.\n"
@@ -526,10 +526,11 @@ msgstr ""
 "</span>\n"
 "<span size=\"large\"> \n"
 "» PXE, algunas tarjetas de red especiales arrancan desde su propia ROM\n"
-"» Etherboot, algunas tarjetas de red pueden arrancar desde un disquete universal\n"
+"» Etherboot, algunas tarjetas de red pueden arrancar desde un disquete "
+"universal\n"
 "   (la última versión del disquete universal emula soporte PXE)\n"
-"» Todas las tarjetas de red no soportadas pueden ser arrancadas desde una\n "
-"   imagen de cdrom o disco duro\n"
+"» Todas las tarjetas de red no soportadas pueden ser arrancadas desde una\n"
+"    imagen de cdrom o disco duro\n"
 "</span>"
 
 #: tcosconfig.glade:3812
@@ -612,10 +613,11 @@ msgid ""
 "In order to boot this images in thin clients you have to configure your "
 "<b>DHCP server</b> file."
 msgstr ""
-"<span size=\"xx-large\">El proceso de generación se ha completado correctamente</span>\n"
+"<span size=\"xx-large\">El proceso de generación se ha completado "
+"correctamente</span>\n"
 "\n"
-"Para arrancar estas imágenes en los clientes ligeros, tiene que configurar "
-"el <b>servidor DHCP</b>."
+"Para arrancar estas imágenes en los clientes ligeros tiene que configurar el "
+"<b>servidor DHCP</b>."
 
 #: tcosconfig.glade:4361
 msgid ""
@@ -641,89 +643,89 @@ msgstr "Licencia GNU/GPL"
 msgid "TCOS Network image generator"
 msgstr "Generador de imágenes de red TcosConfig"
 
-#: tcosconfig.glade:4645
+#: tcosconfig.glade:4643
 msgid "TcosConfig web site"
 msgstr "Página web TcosConfig"
 
-#: tcosconfig.glade:4648
+#: tcosconfig.glade:4646
 msgid "translator-credits"
 msgstr ""
 "Mario Izquierdo (mariodebian)\n"
 "<mariodebian@gmail.com>"
 
-#: shared.py:76
+#: shared.py:75
 msgid "Remote XDMCP"
 msgstr "XMDCP Remoto"
 
-#: shared.py:77
+#: shared.py:76
 msgid "Local X"
 msgstr "X local"
 
-#: shared.py:78
+#: shared.py:77
 msgid "SSH -X"
 msgstr "X por SSH"
 
-#: shared.py:79
+#: shared.py:78
 msgid "rDesktop"
 msgstr "rDesktop"
 
-#: shared.py:80 shared.py:93 shared.py:100
+#: shared.py:79 shared.py:92 shared.py:99
 msgid "Disable"
 msgstr "Desactivar"
 
-#: shared.py:84
+#: shared.py:83
 msgid "English - gb"
 msgstr "Inglés - gb"
 
-#: shared.py:85
+#: shared.py:84
 msgid "Spanish - es"
 msgstr "Español - es"
 
-#: shared.py:86
+#: shared.py:85
 msgid "French - fr"
 msgstr "Francés - fr"
 
-#: shared.py:87
+#: shared.py:86
 msgid "German - de"
 msgstr "Alemán - de"
 
-#: shared.py:94
+#: shared.py:93
 msgid "Links2 browser"
 msgstr "Navegador links2"
 
-#: shared.py:95
+#: shared.py:94
 msgid "Dillo browser"
 msgstr "Navegador dillo"
 
-#: shared.py:101
+#: shared.py:100
 msgid "LTSP filesystem"
 msgstr "Sistema LTSP"
 
-#: shared.py:102
+#: shared.py:101
 msgid "SSH filesystem"
 msgstr "Sistema SSHFS"
 
-#: shared.py:107
+#: shared.py:106
 msgid "Eherboot floppy"
 msgstr "Disquete Etherboot"
 
-#: shared.py:108
+#: shared.py:107
 msgid "PXE booting"
 msgstr "Arranque PXE"
 
-#: shared.py:109
+#: shared.py:108
 msgid "CDROM booting"
 msgstr "Arranque por CDROM"
 
-#: shared.py:110
+#: shared.py:109
 msgid "NFS booting (mem < 38)"
 msgstr "Arranque NFS (memoria < 38)"
 
-#: shared.py:115
+#: shared.py:114
 msgid "None"
 msgstr "Ninguno"
 
-#: shared.py:116
+#: shared.py:115
 msgid "Use NFS server"
 msgstr "Usar servidor NFS"
 

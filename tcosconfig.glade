@@ -4639,8 +4639,6 @@ In order to boot this images in thin clients you have to configure your &lt;b&gt
   <property name="name">TcosConfig</property>
   <property name="copyright" translatable="yes">License GNU/GPL</property>
   <property name="comments" translatable="yes">TCOS Network image generator</property>
-  <property name="license">GNU/GPL</property>
-  <property name="wrap_license">False</property>
   <property name="website">http://www.tcosproject.org</property>
   <property name="website_label" translatable="yes">TcosConfig web site</property>
   <property name="authors">Mario Izquierdo (mariodebian)

@@ -1,3 +1,13 @@
+tcosconfig (0.1.2) unstable; urgency=low
+
+  * *.py:
+    - Remove wrong copyright line, thanks to Quiron.
+  * tcosconfig.glade:
+    - Remove License button
+  * Update spanish translation
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 07 Sep 2007 11:55:03 +0200
+
 tcosconfig (0.1.1) unstable; urgency=low
 
   * Remove some not copyright files and put more info in debian/copyright
