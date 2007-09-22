@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _ARGS=$@
-_PYTHON=/usr/bin/python2.4
+_PYTHON=/usr/bin/python
 _CMD="${_PYTHON} /usr/share/tcosconfig/tcosconfig.py ${_ARGS}"
 _DESKTOP=/usr/share/applications/tcosconfig.desktop
 
