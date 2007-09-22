@@ -103,7 +103,7 @@ class ConfigReader:
         # in kernel < 2.6.12, this require a lot of work in gentcos and init scripts
         
         #print_debug ("ConfigReader::getkernels() read all vmlinuz in /boot/")
-        for _file in os.listdir('/boot'):
+        for _file in os.listdir(shared.chroot + '/boot'):
             # FIXME, in vmlinuz valid names are vmlinuz-X.X.X-extra or vmlinuz-X.X.X_extra
             # if need more string separators add into pattern=re.compile ('[-_]')
             # http://libertonia.escomposlinux.org/story/2006/1/5/223624/2276
@@ -124,7 +124,7 @@ class ConfigReader:
 
     def getusplash(self):
         self.usplash_themes=[]
-        for _file in os.listdir("/usr/lib/usplash/"):
+        for _file in os.listdir(shared.chroot + "/usr/lib/usplash/"):
             if _file.find("usplash-artwork.so") == -1:
                 print_debug( "ConfigReader::getusplash() VALID usplash %s" %(_file) )
                 self.usplash_themes.append( [_file, _file.split(".so")[0]] )

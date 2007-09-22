@@ -61,6 +61,8 @@ textdomain( PACKAGE )
 
 # gentcos command (if svn exec in ./ path else use /usr/sbin/)
 gentcos="bash gentcos"
+chroot="/"
+updatetcosimages=False
 
 # Default tcos suffix
 tcos_suffix=""

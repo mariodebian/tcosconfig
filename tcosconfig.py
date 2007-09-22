@@ -40,6 +40,8 @@ def print_debug(txt):
 import sys
 import getopt
 
+from DetectArch import DetectArch
+fakearch=None
 
 
 def usage():
@@ -50,7 +52,7 @@ def usage():
 
     
 try:
-    opts, args = getopt.getopt(sys.argv[1:], ":hd", ["help", "debug"])
+    opts, args = getopt.getopt(sys.argv[1:], ":hd", ["help", "debug", "fakearch="])
 except getopt.error, msg:
     print msg
     print "for command line options use tcosconfig --help"
@@ -65,6 +67,18 @@ for o, a in opts:
     if o in ("-h", "--help"):
         usage()
         sys.exit()
+    if o == "--fakearch":
+        fakearch=a
+
+
+arch=DetectArch()
+serverarch=arch.get(fakearch)
+
+if serverarch != "i386":
+    if arch.buildChroot():
+        if not shared.updatetcosimages:
+            sys.exit(0)
+
 
 
     

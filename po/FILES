@@ -3,3 +3,7 @@ ConfigReader.py
 TcosGui.py
 tcosconfig.glade
 shared.py
+TcosChrootBuilder.py
+tcos-chrootbuilder.glade
+DetectArch.py
+VirtualTerminal.py

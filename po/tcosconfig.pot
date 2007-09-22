@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-07 11:53+0200\n"
+"POT-Creation-Date: 2007-09-22 16:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -569,78 +569,148 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
-#: shared.py:75
+#: shared.py:77
 msgid "Remote XDMCP"
 msgstr ""
 
-#: shared.py:76
+#: shared.py:78
 msgid "Local X"
 msgstr ""
 
-#: shared.py:77
+#: shared.py:79
 msgid "SSH -X"
 msgstr ""
 
-#: shared.py:78
+#: shared.py:80
 msgid "rDesktop"
 msgstr ""
 
-#: shared.py:79 shared.py:92 shared.py:99
+#: shared.py:81 shared.py:94 shared.py:101
 msgid "Disable"
 msgstr ""
 
-#: shared.py:83
+#: shared.py:85
 msgid "English - gb"
 msgstr ""
 
-#: shared.py:84
+#: shared.py:86
 msgid "Spanish - es"
 msgstr ""
 
-#: shared.py:85
+#: shared.py:87
 msgid "French - fr"
 msgstr ""
 
-#: shared.py:86
+#: shared.py:88
 msgid "German - de"
 msgstr ""
 
-#: shared.py:93
+#: shared.py:95
 msgid "Links2 browser"
 msgstr ""
 
-#: shared.py:94
+#: shared.py:96
 msgid "Dillo browser"
 msgstr ""
 
-#: shared.py:100
+#: shared.py:102
 msgid "LTSP filesystem"
 msgstr ""
 
-#: shared.py:101
+#: shared.py:103
 msgid "SSH filesystem"
 msgstr ""
 
-#: shared.py:106
+#: shared.py:108
 msgid "Eherboot floppy"
 msgstr ""
 
-#: shared.py:107
+#: shared.py:109
 msgid "PXE booting"
 msgstr ""
 
-#: shared.py:108
+#: shared.py:110
 msgid "CDROM booting"
 msgstr ""
 
-#: shared.py:109
+#: shared.py:111
 msgid "NFS booting (mem < 38)"
 msgstr ""
 
-#: shared.py:114
+#: shared.py:116
 msgid "None"
 msgstr ""
 
-#: shared.py:115
+#: shared.py:117
 msgid "Use NFS server"
+msgstr ""
+
+#: TcosChrootBuilder.py:229
+msgid "Done"
+msgstr ""
+
+#: TcosChrootBuilder.py:231 DetectArch.py:58
+msgid "TcosConfig, invalid architecture"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:34
+msgid "<span size=\"xx-large\">Chroot Builder</span>"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:119
+msgid "Select distro version"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:165
+msgid "Select architecture"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:193
+msgid "Kernel version"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:221
+msgid ""
+"i386\n"
+"amd64\n"
+"ppc"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:262
+msgid "Mirror"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:317
+msgid "Chroot options"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:398
+msgid "Exit"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:476
+msgid "Build TCOS images"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:554
+msgid "Update chroot"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:632
+msgid "Build chroot"
+msgstr ""
+
+#: DetectArch.py:52
+#, python-format
+msgid ""
+"Detected non i386 architecture.\n"
+"\n"
+"\n"
+"Usually thin clients are i386 machines (Pentium II/II/IV\n"
+"or AMD K6/K7), you are running %(arch)s architecture.\n"
+"\n"
+"\n"
+"Do you want to build a 32bit chroot and generate 32bit TCOS images?\n"
+"\n"
+"If select \"No\" wizard will construct %(arch)s images."
 msgstr ""

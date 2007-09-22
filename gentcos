@@ -13,7 +13,7 @@ echo "THIS gentcos script is for testing TcosConfig !!!!"
 #echo "Package Dropbear ssh get 2184 Kb." && sleep 1
 #echo "USING Xorg 7.0 dirs"
 #echo "WARNING /etc/X11/xserver/ isn't a dir" && sleep 1
-#echo "Package Xorg get 13492 Kb." && sleep 1
+echo "Package Xorg get 13492 Kb." && sleep 1
 #echo "Package iTALC get 2312 Kb." && sleep 1
 
 # for testing save config
@@ -24,7 +24,7 @@ echo TCOS_XORG_XKB=$TCOS_XORG_XKB
 
 #echo "Package Alsa and Esound get 1368 Kb." && sleep 1
 #echo "Package Discover get 2452 Kb." && sleep 1
-#echo "Creating squashfs of /usr" && sleep 1
+echo "Creating squashfs of /usr" && sleep 1
 #echo "Moving usr.squashfs to /tftpboot/tcos" && sleep 1
 #echo "Moving initramfs to /tftpboot/tcos/initramfs" && sleep 1
 sleep 2

@@ -57,7 +57,7 @@ class TcosGui:
         #print_debug ("init gui class")
 
         # delete tcos.conf.orig file if exits
-        abspath = os.path.abspath(self.tcos_config_file)
+        abspath = os.path.abspath(shared.chroot + self.tcos_config_file)
         destfile= abspath + ".orig"
 
         try:
@@ -359,7 +359,9 @@ class TcosGui:
             cmdline+=" -size"
 
         print_debug ("getcmdline() cmdline=%s" %(cmdline) )
-
+        if shared.updatetcosimages:
+            # return cmdline into ""
+            return "--gentcos=\"%s\"" %(cmdline)
         return cmdline
 
 
