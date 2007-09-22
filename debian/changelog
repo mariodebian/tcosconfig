@@ -1,4 +1,4 @@
-tcosconfig (0.2.0.1) unstable; urgency=low
+tcosconfig (0.2.1) unstable; urgency=low
 
   * Multi Architecture Release.
   * Add DetectArch, VirtualTerminal and ChrootTcosBuilder classes.
