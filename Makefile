@@ -46,8 +46,8 @@ install:
 
 	# Installing tcosconfig in  $(DESTDIR)
 	install -m 644 $(project).glade $(DESTDIR)/usr/share/$(project)
-	install -m 644 pixmaps/tcos-icon.png $(DESTDIR)/usr/share/$(project)/images/
-	install -m 644 pixmaps/tcos-banner.png $(DESTDIR)/usr/share/$(project)/images/
+	install -m 644 images/tcos-icon.png $(DESTDIR)/usr/share/$(project)/images/
+	install -m 644 images/tcos-banner.png $(DESTDIR)/usr/share/$(project)/images/
 	install -m 644 images/tcos_config.png $(DESTDIR)/usr/share/$(project)/images/
 	install -m 644 tcosconfig.desktop $(DESTDIR)/usr/share/applications/
 
@@ -106,6 +106,7 @@ patch_dapper: patch_version
 	sed -i '/^Build/s/5.0.37.2/5.0.7ubuntu13/g' debian/control
 	sed -i '/python-support/s/0.3/0.1.1ubuntu1/g' debian/control
 	sed -i '/dh_pysupport/s/dh_pysupport/dh_python/g' debian/rules
+	sed -i '/PYTHON/s/python/python2.4/g' tcosconfig.sh
 
 
 patch_edgy: patch_version

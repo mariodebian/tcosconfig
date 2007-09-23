@@ -7,6 +7,24 @@ echo "THIS gentcos script is for testing TcosConfig !!!!"
 #echo "INITRAMFS => BOOT=tcos"
 #echo "Package LTSPFS get 1224 Kb." && sleep 1
 #echo "Package Autofs mounter get 180 Kb." && sleep 1
+
+
+for opt in $@ ; do
+   case ${opt} in
+     -extramodules=*)
+      TCOS_EXTRA_MODULES="${TCOS_EXTRA_MODULES},"${opt#-extramodules=}
+      ;;
+   esac
+done
+
+if [ "$TCOS_EXTRA_MODULES" != "" ]; then
+  TCOS_EXTRA_MODULES=$(echo ${TCOS_EXTRA_MODULES} | sed s/","/" "/g)
+  for module in ${TCOS_EXTRA_MODULES}; do
+      echo "   TCOS_EXTRA_MODULES: adding ${module}"
+  done
+fi
+
+
 #echo "Package Init binaries get 4 Kb." && sleep 1
 #echo "Copying public ssh keys" && sleep 1
 #echo "Copying /home/mario/.ssh/id_rsa.pub...." && sleep 1
