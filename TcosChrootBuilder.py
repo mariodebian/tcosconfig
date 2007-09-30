@@ -23,6 +23,8 @@
 ###########################################################################
 
 import os
+import pygtk
+pygtk.require('2.0')
 import gtk
 import gtk.glade
 import time
@@ -37,7 +39,7 @@ LOCALE_DIR=""
 
 def print_debug(txt):
     if shared.debug:
-        print ( "TcosChrootBUilder::%s " %(txt) )
+        print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
 "debian":["unstable", "testing", "stable", "etch", "lenny"]  ,

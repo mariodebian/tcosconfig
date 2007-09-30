@@ -23,6 +23,9 @@
 ###########################################################################
 
 import os
+import sys
+import pygtk
+pygtk.require('2.0')
 import gtk
 from gettext import gettext as _
 import shared
@@ -74,4 +77,4 @@ If select "No" wizard will construct %(arch)s images.""") %{"arch":self.arch, "a
 
 if __name__ == "__main__":
     app=DetectArch()
-    print app.get()
+    print app.get(sys.argv[1])

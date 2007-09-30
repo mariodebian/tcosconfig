@@ -1,3 +1,11 @@
+tcosconfig (0.2.3) unstable; urgency=low
+
+  * DetectArch.py, TcosChrootBuilder.py:
+    - Import pygtk before gtk (errors in gtk < 2.10)
+  * Add python-vte depends
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 30 Sep 2007 11:47:25 +0200
+
 tcosconfig (0.2.2) unstable; urgency=low
 
   * Make dapper use python2.4
