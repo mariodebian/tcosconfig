@@ -1,3 +1,12 @@
+tcosconfig (0.2.4) unstable; urgency=low
+
+  * Add TCOS_MAX_MEM spinButton
+  * Add Delete chroot Button
+  * Disable input text when chroot is done
+  * Update translations
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 06 Oct 2007 22:53:04 +0200
+
 tcosconfig (0.2.3) unstable; urgency=low
 
   * DetectArch.py, TcosChrootBuilder.py:

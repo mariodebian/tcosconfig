@@ -100,6 +100,9 @@ patch_version:
 	sed -i 's/__VERSION__/$(VERSION)/g' tcosconfig.py
 	sed -i 's/__VERSION__/$(VERSION)/g' TcosGui.py
 	sed -i 's/__VERSION__/$(VERSION)/g' ConfigReader.py
+	sed -i 's/__VERSION__/$(VERSION)/g' DetectArch.py
+	sed -i 's/__VERSION__/$(VERSION)/g' TcosChrootBuilder.py
+	sed -i 's/__VERSION__/$(VERSION)/g' VirtualTerminal.py
 
 patch_dapper: patch_version
 	# PATCHING TcosConfig in Ubuntu DAPPER

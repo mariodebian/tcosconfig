@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-09-22 16:25+0200\n"
-"PO-Revision-Date: 2007-09-22 16:26+0200\n"
+"POT-Creation-Date: 2007-10-06 21:04+0200\n"
+"PO-Revision-Date: 2007-10-06 21:05+0200\n"
 "Last-Translator:  <mariodebian@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "0"
 msgstr "0"
 
-#: tcosconfig.glade:153 tcosconfig.glade:2830 tcosconfig.glade:3535
+#: tcosconfig.glade:153 tcosconfig.glade:2918 tcosconfig.glade:3676
 msgid ""
 "<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" "
@@ -179,7 +179,7 @@ msgstr "Mínima RAM para arrancar con NFS"
 #: tcosconfig.glade:724
 msgid ""
 "min RAM (in Mb) to\n"
-"boot ussing NFS"
+"boot using NFS"
 msgstr ""
 "min RAM (en Mb) para\n"
 "arrancar usando NFS"
@@ -200,71 +200,79 @@ msgstr "Tema Usplash"
 msgid "Select theme file"
 msgstr "Seleccionar archivo de tema"
 
-#: tcosconfig.glade:934
+#: tcosconfig.glade:932
+msgid "Limit memory (in %)"
+msgstr "Límite de memoria (en %)"
+
+#: tcosconfig.glade:985
+msgid "Set to 0 to disable limits"
+msgstr "Ajustar a 0 para desactivar límites"
+
+#: tcosconfig.glade:1022
 msgid "<b>Debug settings</b>"
 msgstr "<b>Configuración de depuración</b>"
 
-#: tcosconfig.glade:982
+#: tcosconfig.glade:1070
 msgid "enable inetd"
 msgstr "activar inetd"
 
-#: tcosconfig.glade:1003
+#: tcosconfig.glade:1091
 msgid "Run SSH server in terminal"
 msgstr "Ejecutar servidor SSH en el terminal"
 
-#: tcosconfig.glade:1032
+#: tcosconfig.glade:1120
 msgid "ssh enable"
 msgstr "activar ssh"
 
-#: tcosconfig.glade:1053
+#: tcosconfig.glade:1141
 msgid "Support for discover"
 msgstr "Soporte para discover"
 
-#: tcosconfig.glade:1082
+#: tcosconfig.glade:1170
 msgid "enable discover hardware autodetect"
 msgstr "activar reconocimiento de hardware Discover"
 
-#: tcosconfig.glade:1103
+#: tcosconfig.glade:1191
 msgid "USB devices support"
 msgstr "Soporte para dispositivos USB"
 
-#: tcosconfig.glade:1132
+#: tcosconfig.glade:1220
 msgid "enable USB devices"
 msgstr "activar dispositivos USB"
 
-#: tcosconfig.glade:1154
+#: tcosconfig.glade:1242
 msgid "Inetd support"
 msgstr "Soporte inetd"
 
-#: tcosconfig.glade:1182
+#: tcosconfig.glade:1270
 msgid "Include Tcos Installer"
 msgstr "Incluir instalador Tcos"
 
-#: tcosconfig.glade:1211
+#: tcosconfig.glade:1299
 msgid "include tcosinstaller and tools"
 msgstr "incluir tcosinstaller y utilidades"
 
-#: tcosconfig.glade:1232
+#: tcosconfig.glade:1320
 msgid "Include debootstrap"
 msgstr "Incluir deboostrap"
 
-#: tcosconfig.glade:1261
+#: tcosconfig.glade:1349
 msgid "install debian or ubuntu from network"
 msgstr "instalar debian o ubuntu por red"
 
-#: tcosconfig.glade:1282
+#: tcosconfig.glade:1370
 msgid "Number of tty shells"
 msgstr "Número de consolas tty"
 
-#: tcosconfig.glade:1335
+#: tcosconfig.glade:1423
 msgid "between 1 to 6"
 msgstr "entre 1 y 6"
 
-#: tcosconfig.glade:1370
+#: tcosconfig.glade:1458
 msgid "Protect first console (tty1)"
 msgstr "Proteger primera consola (tty1)"
 
-#: tcosconfig.glade:1399
+#: tcosconfig.glade:1487
 msgid ""
 "ask for user and password in tty1, \n"
 "others always ask for password"
@@ -272,27 +280,27 @@ msgstr ""
 "preguntar usuario y contraseña en tty1,\n"
 "en el resto se pregunta siempre"
 
-#: tcosconfig.glade:1423
+#: tcosconfig.glade:1511
 msgid "<b>Services, daemons settings</b>"
 msgstr "<b>Configuración de servicios y demonios</b>"
 
-#: tcosconfig.glade:1471
+#: tcosconfig.glade:1559
 msgid "enable Xorg"
 msgstr "activar Xorg"
 
-#: tcosconfig.glade:1492
+#: tcosconfig.glade:1580
 msgid "Xorg all drivers"
 msgstr "Todos los drivers de Xorg"
 
-#: tcosconfig.glade:1521
+#: tcosconfig.glade:1609
 msgid "include all Xorg avalaible drivers"
 msgstr "Incluir drivers de Xorg disponibles"
 
-#: tcosconfig.glade:1542
+#: tcosconfig.glade:1630
 msgid "Xorg OpenGL support"
 msgstr "Soporte OpenGL de Xorg"
 
-#: tcosconfig.glade:1571
+#: tcosconfig.glade:1659
 msgid ""
 "include OpenGL libs\n"
 "(perhaps need tcos-opengl-libs package)"
@@ -300,91 +308,91 @@ msgstr ""
 "incluir las librerías OpenGL\n"
 "(puede necesitar el paquete tcos-opengl-libs)"
 
-#: tcosconfig.glade:1594
+#: tcosconfig.glade:1682
 msgid "Xorg support"
 msgstr "Soporte Xorg"
 
-#: tcosconfig.glade:1622
+#: tcosconfig.glade:1710
 msgid "Xorg keyboard map"
 msgstr "Mapa de teclado de Xorg"
 
-#: tcosconfig.glade:1670
+#: tcosconfig.glade:1758
 msgid "Select keyboard map"
 msgstr "Seleccionar mapa de teclado"
 
-#: tcosconfig.glade:1707
+#: tcosconfig.glade:1795
 msgid "<b>Xorg options</b>"
 msgstr "<b>Opciones de Xorg</b>"
 
-#: tcosconfig.glade:1755
+#: tcosconfig.glade:1843
 msgid "enable sound (alsa files)"
 msgstr "activar sonido (archivos de alsa)"
 
-#: tcosconfig.glade:1776
+#: tcosconfig.glade:1864
 msgid "PulseAudio sound server"
 msgstr "Servidor de sonido PulseAudio"
 
-#: tcosconfig.glade:1805
+#: tcosconfig.glade:1893
 msgid "if checked use PulseAudio, if not use ESound"
 msgstr "activado se usa PulseAudio, sino se usa ESound"
 
-#: tcosconfig.glade:1827
+#: tcosconfig.glade:1915
 msgid "Sound support"
 msgstr "Soporte de sonido"
 
-#: tcosconfig.glade:1855
+#: tcosconfig.glade:1943
 msgid "ISA sound cards support"
 msgstr "Soporte para tarjetas de sonido ISA"
 
-#: tcosconfig.glade:1884
+#: tcosconfig.glade:1972
 msgid "include isa sound card modules"
 msgstr "incluir módulos de tarjetas de sonido isa"
 
-#: tcosconfig.glade:1905
+#: tcosconfig.glade:1993
 msgid "PulseAudio resample method"
 msgstr "Métedo de resampleado de PulseAudio "
 
-#: tcosconfig.glade:1959
+#: tcosconfig.glade:2047
 msgid "default \"src-sinc-fastest\""
 msgstr "por defecto \"src-sinc-fastest\""
 
-#: tcosconfig.glade:2032
+#: tcosconfig.glade:2120
 msgid "Master and PCM volume"
 msgstr "Volumen del Master y PCM"
 
-#: tcosconfig.glade:2062
+#: tcosconfig.glade:2150
 msgid "<b>Sound options</b>"
 msgstr "<b>Opciones de sonido</b>"
 
-#: tcosconfig.glade:2110
+#: tcosconfig.glade:2198
 msgid "enable ivs/ica daemon on thin client"
 msgstr "activar demonio ivs/ica en el cliente ligero"
 
-#: tcosconfig.glade:2131
+#: tcosconfig.glade:2219
 msgid "X11VNC support"
 msgstr "Soporte X11VNC"
 
-#: tcosconfig.glade:2160
+#: tcosconfig.glade:2248
 msgid "enable x11vnc server"
 msgstr "activar servidor x11vnc"
 
-#: tcosconfig.glade:2181
+#: tcosconfig.glade:2269
 msgid "FreeNX support"
 msgstr "Soporte FreeNX"
 
-#: tcosconfig.glade:2210
+#: tcosconfig.glade:2298
 msgid "enable freenx"
 msgstr "activar freenx"
 
-#: tcosconfig.glade:2232
+#: tcosconfig.glade:2320
 msgid "iTALC MasterEye Support"
 msgstr "Soporte para iTALC MasterEye"
 
-#: tcosconfig.glade:2260
+#: tcosconfig.glade:2348
 msgid "rDesktop default server"
 msgstr "Servidor por defecto rDesktop"
 
-#: tcosconfig.glade:2314
+#: tcosconfig.glade:2402
 msgid ""
 "IP address or hostname\n"
 "of Windows Terminal Server"
@@ -392,31 +400,31 @@ msgstr ""
 "Dirección IP o nombre de equipo\n"
 "del servidor de terminales Windows"
 
-#: tcosconfig.glade:2352
+#: tcosconfig.glade:2440
 msgid "<b>Remote desktop support</b>"
 msgstr "<b>Soporte de acceso remoto</b>"
 
-#: tcosconfig.glade:2501
+#: tcosconfig.glade:2589
 msgid "enable wireless support (bins)"
 msgstr "activar soporte inalámbrico (binarios)"
 
-#: tcosconfig.glade:2523
+#: tcosconfig.glade:2611
 msgid "Wireless support"
 msgstr "Soporte Inalámbrico"
 
-#: tcosconfig.glade:2551
+#: tcosconfig.glade:2639
 msgid "Wireless encription"
 msgstr "Cifrado inalámbrico"
 
-#: tcosconfig.glade:2605
+#: tcosconfig.glade:2693
 msgid "empty, WEP, WPA"
 msgstr "vacío, WEP, WPA"
 
-#: tcosconfig.glade:2640
+#: tcosconfig.glade:2728
 msgid "Wireless modules"
 msgstr "Módulos inalámbricos"
 
-#: tcosconfig.glade:2694
+#: tcosconfig.glade:2782
 msgid ""
 "examples: \n"
 " * ipw2200,\n"
@@ -428,19 +436,19 @@ msgstr ""
 " * madwifi, \n"
 " * ndiswrapper"
 
-#: tcosconfig.glade:2734
+#: tcosconfig.glade:2822
 msgid "<b>Wireless settings</b>"
 msgstr "<b>Configuración de red inalámbrica</b>"
 
-#: tcosconfig.glade:2801
+#: tcosconfig.glade:2889
 msgid "1"
 msgstr "1"
 
-#: tcosconfig.glade:2855
+#: tcosconfig.glade:2943
 msgid "<span size=\"xx-large\"><b>Advanced Settings</b></span>"
 msgstr "<span size=\"xx-large\"><b>Configuración avanzada</b></span>"
 
-#: tcosconfig.glade:2901
+#: tcosconfig.glade:2989
 msgid ""
 "Default build\n"
 "kernel version"
@@ -448,7 +456,7 @@ msgstr ""
 "Versión del kernel\n"
 "por defecto"
 
-#: tcosconfig.glade:2930
+#: tcosconfig.glade:3018
 msgid ""
 "Default command\n"
 "line append \n"
@@ -458,11 +466,11 @@ msgstr ""
 "arranque\n"
 "(imagenes NBI)"
 
-#: tcosconfig.glade:2960
+#: tcosconfig.glade:3048
 msgid "Type of Xorg session"
 msgstr "Tipo de sesión de Xorg"
 
-#: tcosconfig.glade:2988
+#: tcosconfig.glade:3076
 msgid ""
 "Enable local \n"
 "web browser"
@@ -470,13 +478,13 @@ msgstr ""
 "Activar navegador\n"
 "web local"
 
-#: tcosconfig.glade:3075
+#: tcosconfig.glade:3163
 msgid "Select kernel version"
 msgstr ""
 "Seleccionar versión\n"
 "del kernel"
 
-#: tcosconfig.glade:3271
+#: tcosconfig.glade:3359
 msgid ""
 "Remote filesystem\n"
 "method"
@@ -484,11 +492,11 @@ msgstr ""
 "Método de sistema\n"
 "de archivos remoto"
 
-#: tcosconfig.glade:3369
+#: tcosconfig.glade:3457 tcosconfig.glade:3609
 msgid "Modify this cmdline append to yours needs"
 msgstr "Cambiar estas opciones de arranque por las que necesite"
 
-#: tcosconfig.glade:3394
+#: tcosconfig.glade:3482
 msgid ""
 "Use NFS\n"
 "(for lowmem)"
@@ -496,19 +504,27 @@ msgstr ""
 "Usar NFS\n"
 "(menos memoria)"
 
-#: tcosconfig.glade:3560 tcosconfig.glade:3594
+#: tcosconfig.glade:3579
+msgid ""
+"Extra kernel modules\n"
+"(coma separated)"
+msgstr ""
+"Módulos extra del kernel\n"
+"(separados por comas)"
+
+#: tcosconfig.glade:3701 tcosconfig.glade:3735
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
 msgstr "<span size=\"x-large\"><b>Método de aranque</b></span>"
 
-#: tcosconfig.glade:3650
+#: tcosconfig.glade:3791
 msgid "<span size=\"x-large\"><b>Images sufix</b></span>"
 msgstr "<span size=\"x-large\"><b>Sufijo de imágenes</b></span>"
 
-#: tcosconfig.glade:3678
+#: tcosconfig.glade:3819
 msgid "<b>Select boot method from list</b>"
 msgstr "<b>Seleccionar método de arranque de la lista</b>"
 
-#: tcosconfig.glade:3775
+#: tcosconfig.glade:3916
 msgid ""
 "<span size=\"xx-large\">\n"
 "Thin clients can boot with many methods:\n"
@@ -533,7 +549,7 @@ msgstr ""
 "    imagen de cdrom o disco duro\n"
 "</span>"
 
-#: tcosconfig.glade:3812
+#: tcosconfig.glade:3953
 msgid ""
 "Sufix is a string to be added to images filenames:\n"
 "Examples:\n"
@@ -547,7 +563,7 @@ msgstr ""
 "sufijo:                        <b>-pc3</b>\n"
 "archivos:        initramfs<b>-pc3</b> linux<b>-pc3</b>.nbi"
 
-#: tcosconfig.glade:3886
+#: tcosconfig.glade:4027
 msgid ""
 "<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -560,35 +576,35 @@ msgstr ""
 "\"><b>2. Hacer imagen</b></span> » <span size=\"x-large\">3. Terminar</span> "
 "</span>"
 
-#: tcosconfig.glade:3924
+#: tcosconfig.glade:4065
 msgid "<span size=\"xx-large\">Building init images</span>"
 msgstr "<span size=\"xx-large\">Creando imágenes de arranque</span>"
 
-#: tcosconfig.glade:3962
+#: tcosconfig.glade:4103
 msgid "Press <b>Start</b> to begin image generation."
 msgstr "Pulsa <b>Comenzar</b> para generar la imagen."
 
-#: tcosconfig.glade:4019
+#: tcosconfig.glade:4160
 msgid "Press here to start generation process"
 msgstr "Pulsar aquí para empezar el proceso de generación"
 
-#: tcosconfig.glade:4062
+#: tcosconfig.glade:4203
 msgid "Start"
 msgstr "Comenzar"
 
-#: tcosconfig.glade:4168
+#: tcosconfig.glade:4309
 msgid "View Process"
 msgstr "Ver proceso"
 
-#: tcosconfig.glade:4208
+#: tcosconfig.glade:4349
 msgid "Generation progress"
 msgstr "Proceso de generación"
 
-#: tcosconfig.glade:4235
+#: tcosconfig.glade:4376
 msgid "3"
 msgstr "3"
 
-#: tcosconfig.glade:4264
+#: tcosconfig.glade:4405
 msgid ""
 "<span size=\"xx-large\" foreground=\"white\" background=\"#96aeea\" >  <span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -601,11 +617,11 @@ msgstr ""
 "b></span> » <span size=\"x-large\" foreground=\"black\"><b>3. Terminar</b></"
 "span> </span>"
 
-#: tcosconfig.glade:4302
+#: tcosconfig.glade:4443
 msgid "<span size=\"xx-large\">Congratulations!</span>"
 msgstr "<span size=\"xx-large\">¡Enhorabuena!</span>"
 
-#: tcosconfig.glade:4334
+#: tcosconfig.glade:4475
 msgid ""
 "<span size=\"xx-large\">The generation has been successfully completed.</"
 "span>\n"
@@ -619,7 +635,7 @@ msgstr ""
 "Para arrancar estas imágenes en los clientes ligeros tiene que configurar el "
 "<b>servidor DHCP</b>."
 
-#: tcosconfig.glade:4361
+#: tcosconfig.glade:4502
 msgid ""
 "Press <b>Finish and Save</b> button to save this build settings or "
 "<b>Cancel</b> to quit."
@@ -627,27 +643,27 @@ msgstr ""
 "Pulsar el botón <b>Finalizar y guardar</b> para guardar estos ajustes o "
 "pulse <b>Cancelar</b> para salir."
 
-#: tcosconfig.glade:4399
+#: tcosconfig.glade:4540
 msgid "Ready"
 msgstr "Preparado"
 
-#: tcosconfig.glade:4585
+#: tcosconfig.glade:4726
 msgid "Finish and save"
 msgstr "Terminar y guardar"
 
-#: tcosconfig.glade:4640
+#: tcosconfig.glade:4782
 msgid "License GNU/GPL"
 msgstr "Licencia GNU/GPL"
 
-#: tcosconfig.glade:4641
+#: tcosconfig.glade:4783
 msgid "TCOS Network image generator"
 msgstr "Generador de imágenes de red TcosConfig"
 
-#: tcosconfig.glade:4643
+#: tcosconfig.glade:4786
 msgid "TcosConfig web site"
 msgstr "Página web TcosConfig"
 
-#: tcosconfig.glade:4646
+#: tcosconfig.glade:4789
 msgid "translator-credits"
 msgstr ""
 "Mario Izquierdo (mariodebian)\n"
@@ -729,11 +745,15 @@ msgstr "Ninguno"
 msgid "Use NFS server"
 msgstr "Usar servidor NFS"
 
-#: TcosChrootBuilder.py:229
+#: TcosChrootBuilder.py:187
+msgid "Do you want to delete entire chroot environment?"
+msgstr "¿Está seguro que quiere borrar todo el entorno chroot?"
+
+#: TcosChrootBuilder.py:258
 msgid "Done"
 msgstr "Hecho"
 
-#: TcosChrootBuilder.py:231 DetectArch.py:58
+#: TcosChrootBuilder.py:260 DetectArch.py:64
 msgid "TcosConfig, invalid architecture"
 msgstr "TcosConfig, arquitectura inválida"
 
@@ -759,6 +779,9 @@ msgid ""
 "amd64\n"
 "ppc"
 msgstr ""
+"i386\n"
+"amd64\n"
+"ppc"
 
 #: tcos-chrootbuilder.glade:262
 msgid "Mirror"
@@ -781,10 +804,14 @@ msgid "Update chroot"
 msgstr "Actualizar chroot"
 
 #: tcos-chrootbuilder.glade:632
+msgid "Delete chroot"
+msgstr "Borrar chroot"
+
+#: tcos-chrootbuilder.glade:710
 msgid "Build chroot"
 msgstr "Construir chroot"
 
-#: DetectArch.py:52
+#: DetectArch.py:58
 #, python-format
 msgid ""
 "Detected non i386 architecture.\n"

@@ -493,6 +493,9 @@ class TcosGui:
         
         elif wtype == "GtkSpinButton" and widget.name != "TCOS_VOLUME":
             value=str( int( widget.get_value() ) )
+        
+        elif wtype == "GtkSpinButton" and widget.name != "TCOS_MAX_MEM":
+            value=str( int( widget.get_value() ) )
 
 
         else:
@@ -620,6 +623,9 @@ class TcosGui:
                     widget.set_value( float(value) )
             
             elif wtype == gtk.SpinButton and widget.name != "TCOS_VOLUME":
+                widget.set_value( int(value) )
+            
+            elif wtype == gtk.SpinButton and widget.name != "TCOS_MAX_MEM":
                 widget.set_value( int(value) )
 
 

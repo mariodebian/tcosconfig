@@ -42,7 +42,7 @@ def print_debug(txt):
         print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
-"debian":["unstable", "testing", "stable", "etch", "lenny"]  ,
+"debian":["sid", "lenny", "etch"]  ,
 "ubuntu":["dapper", "edgy", "feisty", "gutsy"]
 }
 
@@ -75,12 +75,14 @@ class TcosChroot:
         
         # buttons
         self.button_chroot = self.ui.get_widget("button_chroot")
+        self.button_delete = self.ui.get_widget("button_delete")
         self.button_update = self.ui.get_widget("button_update")
         self.button_buildtcos = self.ui.get_widget("button_buildtcos")
         self.button_exit = self.ui.get_widget("button_exit")
         
         # connect events
         self.button_chroot.connect('clicked', self.buildChroot )
+        self.button_delete.connect('clicked', self.deleteChroot )
         self.button_update.connect('clicked', self.updateChroot )
         self.button_buildtcos.connect('clicked', self.buildTcos )
         self.button_exit.connect('clicked', self.quit )
@@ -176,6 +178,20 @@ class TcosChroot:
         print_debug ("buildChroot() cmd=%s" %cmd) 
         self.run_command(cmd)
 
+    def deleteChroot(self, *args):
+        d = gtk.MessageDialog(None,
+            gtk.DIALOG_MODAL |
+            gtk.DIALOG_DESTROY_WITH_PARENT,
+            gtk.MESSAGE_QUESTION,
+            gtk.BUTTONS_YES_NO,
+            _("Do you want to delete entire chroot environment?"))
+        if d.run() == gtk.RESPONSE_YES:
+            print_debug( "deleteChroot response=True" )
+            cmd="rm -rf '" + self.buildvars["TCOS_CHROOT"] + "'"
+            print_debug("deleteChroot() cmd=%s" %cmd)
+            os.system(cmd)
+        d.destroy()
+
     def updateChroot(self, *args):
         kversion=self.entry_kernel.get_text()
         mirror=self.entry_mirror.get_text()
@@ -184,6 +200,7 @@ class TcosChroot:
         cmd=BUILD_CHROOT_CMD + " --update --dir=%s" %(self.buildvars["TCOS_CHROOT"])
         print_debug ("updateChroot() cmd=%s" %cmd) 
         self.run_command(cmd)
+        self.enableButtons()
 
     def buildTcos(self, *args):
         kversion=self.entry_kernel.get_text()
@@ -203,6 +220,7 @@ class TcosChroot:
 
     def disableButtons(self):
         self.button_chroot.set_sensitive(False)
+        self.button_delete.set_sensitive(False)
         self.button_update.set_sensitive(False)
         self.button_buildtcos.set_sensitive(False)
         self.button_exit.set_sensitive(False)
@@ -210,8 +228,19 @@ class TcosChroot:
     def enableButtons(self):
         if not os.path.isdir(self.buildvars['TCOS_CHROOT']):
             self.button_chroot.set_sensitive(True)
+            self.button_delete.set_sensitive(False)
+            self.combo_distro.set_sensitive(True)
+            self.combo_arch.set_sensitive(True)
+            self.entry_kernel.set_sensitive(True)
+            self.entry_mirror.set_sensitive(True)
         else:
             self.button_chroot.set_sensitive(False)
+            self.button_delete.set_sensitive(True)
+            self.combo_distro.set_sensitive(False)
+            self.combo_arch.set_sensitive(False)
+            self.entry_kernel.set_sensitive(False)
+            self.entry_mirror.set_sensitive(False)
+            
         if not os.path.isdir(self.buildvars['TCOS_CHROOT'] + "/boot/"):
             self.button_update.set_sensitive(False)
             self.button_buildtcos.set_sensitive(False)
