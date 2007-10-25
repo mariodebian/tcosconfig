@@ -1,3 +1,9 @@
+tcosconfig (0.2.5) unstable; urgency=low
+
+  * Add dpkg-dev to depends (needed to get Debian architecture)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 25 Oct 2007 13:55:32 +0200
+
 tcosconfig (0.2.4) unstable; urgency=low
 
   * Add TCOS_MAX_MEM spinButton

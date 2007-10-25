@@ -10,7 +10,7 @@ XS-Vcs-Svn: https://forja.rediris.es/svn/cls-tcos/trunk/tcosconfig
 
 Package: tcosconfig
 Architecture: all
-Depends:  initramfs-tools-tcos (>= 0.84.2), gksu | kdebase-bin, 
+Depends:  initramfs-tools-tcos (>= 0.84.2), gksu | kdebase-bin, dpkg-dev, 
           python-gtk2, python-glade2, python-vte, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
 XB-Python-Version: ${python:Versions}
 Description: Small python GUI to configure and create TCOS boot images.
