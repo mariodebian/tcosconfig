@@ -191,6 +191,7 @@ class TcosChroot:
             print_debug("deleteChroot() cmd=%s" %cmd)
             os.system(cmd)
         d.destroy()
+        self.enableButtons()
 
     def updateChroot(self, *args):
         kversion=self.entry_kernel.get_text()
