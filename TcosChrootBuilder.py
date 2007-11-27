@@ -190,6 +190,9 @@ class TcosChroot:
             cmd="rm -rf '" + self.buildvars["TCOS_CHROOT"] + "'"
             print_debug("deleteChroot() cmd=%s" %cmd)
             os.system(cmd)
+            cmd="rm -rf '" + self.buildvars["TFTP_DIR"] + "/vmlinuz-" + self.buildvars["TCOS_KERNEL"] + "' '" + self.buildvars["TFTP_DIR"] + "/initramfs-" + self.buildvars["TCOS_KERNEL"] + "' '" + self.buildvars["TFTP_DIR"] + "/usr-" + self.buildvars["TCOS_KERNEL"] + ".squashfs' '" + self.buildvars["TFTP_DIR"] + "/linux-" + self.buildvars["TCOS_KERNEL"] + ".nbi'"
+            print_debug("deleteChroot() cmd=%s" %cmd)
+            os.system(cmd)
         d.destroy()
         self.enableButtons()
 

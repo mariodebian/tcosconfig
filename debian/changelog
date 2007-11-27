@@ -1,3 +1,10 @@
+tcosconfig (0.2.7) unstable; urgency=low
+
+  * TcosChrootBuilder.py:
+     - Old links causes problems with normal tcosconfig build after chroot creation
+
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Tue, 27 Nov 2007 15:13:33 +0100
+
 tcosconfig (0.2.6) unstable; urgency=low
 
   * TcosChrootBuilder.py:
