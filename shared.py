@@ -82,6 +82,7 @@ TCOS_XORG_TYPE_VALUES=[
 ]
 
 TCOS_XORG_XKB_VALUES=[ 
+['us', _("English - us") ] ,
 ['gb', _("English - gb") ] , 
 ['es', _("Spanish - es") ], 
 ['fr', _("French - fr") ] , 

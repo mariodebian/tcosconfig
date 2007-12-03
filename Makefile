@@ -17,7 +17,7 @@ gedit:
 
 clean:
 	rm -f *~ *.pyc *.orig *.bak *-stamp
-	rm -rf po/es
+	rm -rf po/es pixmaps/
 	dh_clean
 
 pot:
