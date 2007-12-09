@@ -182,7 +182,10 @@ class ConfigReader:
                     print_debug ( "########################################################" )
                     print_debug ( "ConfigReader::changevalue() %s=\"%s\"" %(varname, newvalue) )
                     print_debug ( "########################################################" )
-                    self.newdata.append(varname + "=" + newvalue + '\n')
+                    if varname == "TCOS_APPEND":
+                        self.newdata.append(varname + "=\"" + newvalue + '\"\n')
+                    else:
+                        self.newdata.append(varname + "=" + newvalue + '\n')
                 else:
                     self.newdata.append(line)
             # save data to file

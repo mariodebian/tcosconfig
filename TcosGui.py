@@ -351,7 +351,7 @@ class TcosGui:
         # get TCOS_APPEND
         if self.TCOS_APPEND.get_text() != "" and self.TCOS_APPEND.get_text() != None and is_append_in_list:
             value=self.TCOS_APPEND.get_text()
-            value=self.cleanvar(value)
+            value=self.cleanvar(value, spaces=False)
             cmdline+=" -extra-append=\""+ value + "\""
 
         # get TCOS_DEBUG
@@ -460,9 +460,10 @@ class TcosGui:
             print_debug ( "TcosGui::search_selected_index() unable to read %s_VALUES[%d][0], using first column \"%s\"" %(varname, index, value) )
         return value
 
-    def cleanvar(self, value):
+    def cleanvar(self, value, spaces=True):
         # delete ;|&>< of value
-        value=value.replace(' ','_') #replace spaces with _
+        if spaces:
+            value=value.replace(' ','_') #replace spaces with _
         value=value.replace(';','_') #replace ; with _
         value=value.replace('&','_') #replace & with _
         value=value.replace('>','_') #replace > with _
