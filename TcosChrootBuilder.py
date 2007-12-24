@@ -43,7 +43,18 @@ def print_debug(txt):
 
 DISTRO_VERSIONS={
 "debian":["sid", "lenny", "etch"]  ,
-"ubuntu":["dapper", "edgy", "feisty", "gutsy"]
+"ubuntu":["dapper", "edgy", "feisty", "gutsy", "hardy"]
+}
+
+KERNEL_VERSIONS={
+"etch":"2.6.18-5-486"  ,
+"lenny":"2.6.22-3-486"  ,
+"sid":"2.6.23-1-486"  ,
+"dapper":"2.6.15-29-386"  ,
+"edgy":"2.6.17-12-generic"  ,
+"feisty":"2.6.20-16-generic"  ,
+"gutsy":"2.6.22-14-generic"  ,
+"hardy":"2.6.24-2-generic"
 }
 
 DISTRO_MIRRORS={
@@ -92,7 +103,8 @@ class TcosChroot:
         self.combo_arch = self.ui.get_widget("combo_arch")
         self.entry_kernel = self.ui.get_widget("entry_kernel")
         self.entry_mirror = self.ui.get_widget("entry_mirror")
-        
+        self.combo_distro.connect('changed', self.on_distro_combo_change)
+
         self.loadData()
         self.enableButtons()
         
@@ -131,10 +143,15 @@ class TcosChroot:
         self.entry_kernel.set_text(self.buildvars["TCOS_KERNEL"])
         self.entry_mirror.set_text(DISTRO_MIRRORS[self.buildvars["DISTRIBUTION"]] )
         
-        
-        
-        
-        
+    def on_distro_combo_change(self, widget):
+        distro=self.read_select_value(self.combo_distro, "distro")
+        if self.buildvars["TCOS_DISTRO"] == distro:
+            self.entry_kernel.set_text(self.buildvars["TCOS_KERNEL"])
+            print_debug ( "on_distro_combo_change() select default kernel %s" %(self.buildvars["TCOS_KERNEL"]) ) 
+        else:
+            self.entry_kernel.set_text(KERNEL_VERSIONS[distro])
+            print_debug ( "on_distro_combo_change() select kernel %s" %(KERNEL_VERSIONS[distro]) ) 
+
     def populate_select(self, widget, values, set_text_column=True):
         valuelist = gtk.ListStore(str)
         for value in values:
