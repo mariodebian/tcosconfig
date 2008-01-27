@@ -2,14 +2,14 @@
 # Traducciones al español para el paquete tcosconfig.
 # Copyright (C) 2006 ORGANIZATION
 # <mariodebian@gmail.com>, 2006.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-03 17:20+0100\n"
-"PO-Revision-Date: 2007-12-03 17:20+0100\n"
+"POT-Creation-Date: 2008-01-27 20:00+0100\n"
+"PO-Revision-Date: 2008-01-27 20:01+0100\n"
 "Last-Translator:  <mariodebian@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -695,77 +695,73 @@ msgstr "X por SSH"
 msgid "rDesktop"
 msgstr "rDesktop"
 
-#: shared.py:81 shared.py:94 shared.py:101
+#: shared.py:81 shared.py:95 shared.py:102
 msgid "Disable"
 msgstr "Desactivar"
 
 #: shared.py:85
+msgid "English - us"
+msgstr "Inglés - us"
+
+#: shared.py:86
 msgid "English - gb"
 msgstr "Inglés - gb"
 
-#: shared.py:86
+#: shared.py:87
 msgid "Spanish - es"
 msgstr "Español - es"
 
-#: shared.py:87
+#: shared.py:88
 msgid "French - fr"
 msgstr "Francés - fr"
 
-#: shared.py:88
+#: shared.py:89
 msgid "German - de"
 msgstr "Alemán - de"
 
-#: shared.py:95
+#: shared.py:96
 msgid "Links2 browser"
 msgstr "Navegador links2"
 
-#: shared.py:96
+#: shared.py:97
 msgid "Dillo browser"
 msgstr "Navegador dillo"
 
-#: shared.py:102
+#: shared.py:103
 msgid "LTSP filesystem"
 msgstr "Sistema LTSP"
 
-#: shared.py:103
+#: shared.py:104
 msgid "SSH filesystem"
 msgstr "Sistema SSHFS"
 
-#: shared.py:108
+#: shared.py:109
 msgid "Eherboot floppy"
 msgstr "Disquete Etherboot"
 
-#: shared.py:109
+#: shared.py:110
 msgid "PXE booting"
 msgstr "Arranque PXE"
 
-#: shared.py:110
+#: shared.py:111
 msgid "CDROM booting"
 msgstr "Arranque por CDROM"
 
-#: shared.py:111
+#: shared.py:112
 msgid "NFS booting (mem < 38)"
 msgstr "Arranque NFS (memoria < 38)"
 
-#: shared.py:116
+#: shared.py:117
 msgid "None"
 msgstr "Ninguno"
 
-#: shared.py:117
+#: shared.py:118
 msgid "Use NFS server"
 msgstr "Usar servidor NFS"
 
-#: TcosChrootBuilder.py:187
+#: TcosChrootBuilder.py:278
 msgid "Do you want to delete entire chroot environment?"
 msgstr "¿Está seguro que quiere borrar todo el entorno chroot?"
-
-#: TcosChrootBuilder.py:264
-msgid "Done"
-msgstr "Hecho"
-
-#: TcosChrootBuilder.py:266 DetectArch.py:64
-msgid "TcosConfig, invalid architecture"
-msgstr "TcosConfig, arquitectura inválida"
 
 #: tcos-chrootbuilder.glade:34
 msgid "<span size=\"xx-large\">Chroot Builder</span>"
@@ -794,30 +790,42 @@ msgstr ""
 "ppc"
 
 #: tcos-chrootbuilder.glade:262
-msgid "Mirror"
-msgstr "Servidor espejo"
+msgid "Main mirror"
+msgstr "Servidor espejo principal"
 
-#: tcos-chrootbuilder.glade:317
+#: tcos-chrootbuilder.glade:311
+msgid "Select distribution"
+msgstr "Selecionar distribución"
+
+#: tcos-chrootbuilder.glade:358
+msgid "Security mirror"
+msgstr "Servidor espejo de seguridad"
+
+#: tcos-chrootbuilder.glade:407
+msgid "TCOS mirror"
+msgstr "Repositorio TCOS"
+
+#: tcos-chrootbuilder.glade:462
 msgid "Chroot options"
 msgstr "Opciones del chroot"
 
-#: tcos-chrootbuilder.glade:398
+#: tcos-chrootbuilder.glade:543
 msgid "Exit"
 msgstr "Salir"
 
-#: tcos-chrootbuilder.glade:476
+#: tcos-chrootbuilder.glade:621
 msgid "Build TCOS images"
 msgstr "Construir TCOS"
 
-#: tcos-chrootbuilder.glade:554
+#: tcos-chrootbuilder.glade:699
 msgid "Update chroot"
 msgstr "Actualizar chroot"
 
-#: tcos-chrootbuilder.glade:632
+#: tcos-chrootbuilder.glade:777
 msgid "Delete chroot"
 msgstr "Borrar chroot"
 
-#: tcos-chrootbuilder.glade:710
+#: tcos-chrootbuilder.glade:855
 msgid "Build chroot"
 msgstr "Construir chroot"
 
@@ -845,6 +853,13 @@ msgstr ""
 "¿Desea construir una jaula 32 bits y generar las imagenes TCOS de 32bit?\n"
 "\n"
 "Si selecciona «No», el asistente construirá imágenes para %(arch)s."
+
+#: DetectArch.py:64
+msgid "TcosConfig, invalid architecture"
+msgstr "TcosConfig, arquitectura inválida"
+
+#~ msgid "Done"
+#~ msgstr "Hecho"
 
 #~ msgid ""
 #~ "Root password\n"

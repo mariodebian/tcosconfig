@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-12-03 17:20+0100\n"
+"POT-Creation-Date: 2008-01-27 20:00+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -608,76 +608,72 @@ msgstr ""
 msgid "rDesktop"
 msgstr ""
 
-#: shared.py:81 shared.py:94 shared.py:101
+#: shared.py:81 shared.py:95 shared.py:102
 msgid "Disable"
 msgstr ""
 
 #: shared.py:85
-msgid "English - gb"
+msgid "English - us"
 msgstr ""
 
 #: shared.py:86
-msgid "Spanish - es"
+msgid "English - gb"
 msgstr ""
 
 #: shared.py:87
-msgid "French - fr"
+msgid "Spanish - es"
 msgstr ""
 
 #: shared.py:88
+msgid "French - fr"
+msgstr ""
+
+#: shared.py:89
 msgid "German - de"
 msgstr ""
 
-#: shared.py:95
+#: shared.py:96
 msgid "Links2 browser"
 msgstr ""
 
-#: shared.py:96
+#: shared.py:97
 msgid "Dillo browser"
 msgstr ""
 
-#: shared.py:102
+#: shared.py:103
 msgid "LTSP filesystem"
 msgstr ""
 
-#: shared.py:103
+#: shared.py:104
 msgid "SSH filesystem"
 msgstr ""
 
-#: shared.py:108
+#: shared.py:109
 msgid "Eherboot floppy"
 msgstr ""
 
-#: shared.py:109
+#: shared.py:110
 msgid "PXE booting"
 msgstr ""
 
-#: shared.py:110
+#: shared.py:111
 msgid "CDROM booting"
 msgstr ""
 
-#: shared.py:111
+#: shared.py:112
 msgid "NFS booting (mem < 38)"
 msgstr ""
 
-#: shared.py:116
+#: shared.py:117
 msgid "None"
 msgstr ""
 
-#: shared.py:117
+#: shared.py:118
 msgid "Use NFS server"
 msgstr ""
 
-#: TcosChrootBuilder.py:187
+#: TcosChrootBuilder.py:278
 msgid "Do you want to delete entire chroot environment?"
-msgstr ""
-
-#: TcosChrootBuilder.py:264
-msgid "Done"
-msgstr ""
-
-#: TcosChrootBuilder.py:266 DetectArch.py:64
-msgid "TcosConfig, invalid architecture"
 msgstr ""
 
 #: tcos-chrootbuilder.glade:34
@@ -704,30 +700,42 @@ msgid ""
 msgstr ""
 
 #: tcos-chrootbuilder.glade:262
-msgid "Mirror"
+msgid "Main mirror"
 msgstr ""
 
-#: tcos-chrootbuilder.glade:317
+#: tcos-chrootbuilder.glade:311
+msgid "Select distribution"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:358
+msgid "Security mirror"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:407
+msgid "TCOS mirror"
+msgstr ""
+
+#: tcos-chrootbuilder.glade:462
 msgid "Chroot options"
 msgstr ""
 
-#: tcos-chrootbuilder.glade:398
+#: tcos-chrootbuilder.glade:543
 msgid "Exit"
 msgstr ""
 
-#: tcos-chrootbuilder.glade:476
+#: tcos-chrootbuilder.glade:621
 msgid "Build TCOS images"
 msgstr ""
 
-#: tcos-chrootbuilder.glade:554
+#: tcos-chrootbuilder.glade:699
 msgid "Update chroot"
 msgstr ""
 
-#: tcos-chrootbuilder.glade:632
+#: tcos-chrootbuilder.glade:777
 msgid "Delete chroot"
 msgstr ""
 
-#: tcos-chrootbuilder.glade:710
+#: tcos-chrootbuilder.glade:855
 msgid "Build chroot"
 msgstr ""
 
@@ -744,4 +752,8 @@ msgid ""
 "Do you want to build a 32bit chroot and generate 32bit TCOS images?\n"
 "\n"
 "If select \"No\" wizard will construct %(arch)s images."
+msgstr ""
+
+#: DetectArch.py:64
+msgid "TcosConfig, invalid architecture"
 msgstr ""

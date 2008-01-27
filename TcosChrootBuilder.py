@@ -42,25 +42,38 @@ def print_debug(txt):
         print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
-"debian":["sid", "lenny", "etch"]  ,
+"debian":["unstable", "testing", "etch"]  ,
 "ubuntu":["dapper", "edgy", "feisty", "gutsy", "hardy"]
 }
 
+
+
 KERNEL_VERSIONS={
 "etch":"2.6.18-5-486"  ,
-"lenny":"2.6.22-3-486"  ,
-"sid":"2.6.23-1-486"  ,
+"testing":"2.6.22-3-486"  ,
+"unstable":"2.6.23-1-486"  ,
 "dapper":"2.6.15-29-386"  ,
 "edgy":"2.6.17-12-generic"  ,
 "feisty":"2.6.20-16-generic"  ,
 "gutsy":"2.6.22-14-generic"  ,
-"hardy":"2.6.24-2-generic"
+"hardy":"2.6.24-5-generic"
+}
+
+DISTRO_ALIAS={
+"testing":"lenny"
 }
 
 DISTRO_MIRRORS={
 "debian":"http://ftp.debian.org/debian"  ,
 "ubuntu":"http://archive.ubuntu.com/ubuntu"
 }
+
+DISTRO_SEC_MIRRORS={
+"debian":"http://security.debian.org/"  ,
+"ubuntu":"http://security.ubuntu.com/ubuntu"
+}
+
+TCOS_MIRROR="http://www.tcosproject.org"
 
 BUILD_CHROOT_CMD="/usr/sbin/tcos-buildchroot"
 #BUILD_CHROOT_CMD="./gentcos"
@@ -98,6 +111,11 @@ class TcosChroot:
         self.button_buildtcos.connect('clicked', self.buildTcos )
         self.button_exit.connect('clicked', self.quit )
         
+        # expander
+        self.chroot_options = self.ui.get_widget("chroot_options")
+        self.chroot_options.set_expanded(False)
+        
+        
         # widgets
         self.combo_distro = self.ui.get_widget("combo_distro")
         self.combo_arch = self.ui.get_widget("combo_arch")
@@ -105,12 +123,55 @@ class TcosChroot:
         self.entry_mirror = self.ui.get_widget("entry_mirror")
         self.combo_distro.connect('changed', self.on_distro_combo_change)
 
+        # new widgets to support forcedistro
+        self.combo_distribution = self.ui.get_widget("combo_distribution")
+        self.combo_distribution.connect('changed', self.on_distribution_combo_change)
+        
+        # extra mirrors
+        self.entry_securitymirror = self.ui.get_widget("entry_securitymirror")
+        self.entry_tcosmirror = self.ui.get_widget("entry_tcosmirror")
+        
         self.loadData()
+        
+        self.entry_tcosmirror.set_text(TCOS_MIRROR)
+        self.set_active_in_select(self.combo_distribution, self.buildvars["DISTRIBUTION"] )
+        self.set_active_in_select(self.combo_arch, "i386")
+        
+        if os.path.isfile( os.path.join(self.buildvars["TCOS_CHROOT"], "tcos-buildchroot.conf") ):
+            data=[]
+            f=open(os.path.join(self.buildvars["TCOS_CHROOT"], "tcos-buildchroot.conf"),'r')
+            tmp=f.readlines()
+            f.close()
+            for cline in tmp:
+                line=cline.replace('\n','')
+                if line.startswith("DISTRIBUTION="):
+                    self.buildvars["DISTRIBUTION"]=line.split('=')[1]
+                if line.startswith("MIRROR="):
+                    self.entry_mirror.set_text(line.split('=')[1])
+                if line.startswith("MIRROR2="):
+                    self.entry_securitymirror.set_text(line.split('=')[1])
+                if line.startswith("TCOS_MIRROR="):
+                    self.entry_tcosmirror.set_text(line.split('=')[1])
+                if line.startswith("DISTRIBUTION="):
+                    self.set_active_in_select(self.combo_distribution, line.split('=')[1] )
+                if line.startswith("TCOS_DISTRO="):
+                    distro=self.read_select_value(self.combo_distribution, "distribution")
+                    self.populate_select(self.combo_distro, DISTRO_VERSIONS[distro], set_text_column=False)
+                    for i in range(len(DISTRO_VERSIONS[distro])):
+                        version=line.split('=')[1]
+                        for alias in DISTRO_ALIAS:
+                            if DISTRO_ALIAS[alias] == line.split('=')[1]:
+                                version=alias
+                        if DISTRO_VERSIONS[distro][i] == version:
+                            self.set_active_in_select(self.combo_distro, DISTRO_VERSIONS[distro][i] )
+        
         self.enableButtons()
         
         self.term=VirtualTerminal()
         self.scrolledwindow.add_with_viewport(self.term)
         self.term.show()
+        
+        
                 
 
     def getFile(self, fname):
@@ -135,13 +196,6 @@ class TcosChroot:
         for line in tcos_data:
             self.buildvars[line.split("=")[0]]=line.split("=")[1].replace('"','')
         
-        #print self.buildvars
-        
-        self.populate_select(self.combo_distro, DISTRO_VERSIONS[self.buildvars["DISTRIBUTION"]], set_text_column=False )
-        self.set_active_in_select(self.combo_distro, self.buildvars["TCOS_DISTRO"] )
-        self.set_active_in_select(self.combo_arch, "i386")
-        self.entry_kernel.set_text(self.buildvars["TCOS_KERNEL"])
-        self.entry_mirror.set_text(DISTRO_MIRRORS[self.buildvars["DISTRIBUTION"]] )
         
     def on_distro_combo_change(self, widget):
         distro=self.read_select_value(self.combo_distro, "distro")
@@ -151,6 +205,15 @@ class TcosChroot:
         else:
             self.entry_kernel.set_text(KERNEL_VERSIONS[distro])
             print_debug ( "on_distro_combo_change() select kernel %s" %(KERNEL_VERSIONS[distro]) ) 
+
+
+    def on_distribution_combo_change(self, widget):
+        distribution=self.read_select_value(self.combo_distribution, "distribution")
+        print_debug ( "on_distribution_combo_change() select distro %s" %(DISTRO_VERSIONS[distribution][-1]) ) 
+        self.populate_select(self.combo_distro, DISTRO_VERSIONS[distribution], set_text_column=False)
+        self.set_active_in_select(self.combo_distro, DISTRO_VERSIONS[distribution][0] )
+        self.entry_mirror.set_text(DISTRO_MIRRORS[distribution])
+        self.entry_securitymirror.set_text(DISTRO_SEC_MIRRORS[distribution])
 
     def populate_select(self, widget, values, set_text_column=True):
         valuelist = gtk.ListStore(str)
@@ -187,11 +250,22 @@ class TcosChroot:
         return value
 
     def buildChroot(self, *args):
+        self.chroot_options.set_expanded(False)
         kversion=self.entry_kernel.get_text()
         mirror=self.entry_mirror.get_text()
+        securitymirror=self.entry_securitymirror.get_text()
+        if securitymirror != "":
+            securitymirror_txt="--securitymirror=%s"%securitymirror
+        else:
+            securitymirror_txt=""
+        tcosmirror=self.entry_tcosmirror.get_text()
+        distribution=self.read_select_value(self.combo_distribution, "distribution")
         arch=self.read_select_value(self.combo_arch, "arch")
         version=self.read_select_value(self.combo_distro, "distro")
-        cmd=BUILD_CHROOT_CMD + " --create --arch=%s --version=%s --mirror=%s --kversion=%s --dir=%s" %(arch, version, mirror, kversion, self.buildvars["TCOS_CHROOT"])
+        if DISTRO_ALIAS.has_key(version):
+            version=DISTRO_ALIAS[version]
+        cmd=BUILD_CHROOT_CMD + " --create --forcedistro=%s --arch=%s --version=%s --mirror=%s %s --tcosmirror=%s --kversion=%s --dir=%s" \
+                                        %(distribution, arch, version, mirror, securitymirror_txt, tcosmirror, kversion, self.buildvars["TCOS_CHROOT"])
         print_debug ("buildChroot() cmd=%s" %cmd) 
         self.run_command(cmd)
 
@@ -214,6 +288,7 @@ class TcosChroot:
         self.enableButtons()
 
     def updateChroot(self, *args):
+        self.chroot_options.set_expanded(False)
         kversion=self.entry_kernel.get_text()
         mirror=self.entry_mirror.get_text()
         arch=self.read_select_value(self.combo_arch, "arch")
@@ -224,13 +299,11 @@ class TcosChroot:
         self.enableButtons()
 
     def buildTcos(self, *args):
+        self.chroot_options.set_expanded(False)
         kversion=self.entry_kernel.get_text()
         mirror=self.entry_mirror.get_text()
         arch=self.read_select_value(self.combo_arch, "arch")
         version=self.read_select_value(self.combo_distro, "distro")
-        #cmd=BUILD_CHROOT_CMD + " --update-images --dir=%s" %(self.buildvars["TCOS_CHROOT"])
-        #print_debug ("buildTcos() cmd=%s" %cmd)
-        #self.run_command(cmd) 
         shared.updatetcosimages=True
         shared.chroot=self.buildvars['TCOS_CHROOT']
         shared.tcos_config_file=shared.chroot + "/etc/tcos/tcos.conf"
@@ -250,17 +323,25 @@ class TcosChroot:
         if not os.path.isdir(self.buildvars['TCOS_CHROOT']):
             self.button_chroot.set_sensitive(True)
             self.button_delete.set_sensitive(False)
+            self.combo_distribution.set_sensitive(True)
             self.combo_distro.set_sensitive(True)
             self.combo_arch.set_sensitive(True)
             self.entry_kernel.set_sensitive(True)
             self.entry_mirror.set_sensitive(True)
+            self.entry_securitymirror.set_sensitive(True)
+            self.entry_tcosmirror.set_sensitive(True)
+            self.chroot_options.set_expanded(True)
         else:
             self.button_chroot.set_sensitive(False)
             self.button_delete.set_sensitive(True)
             self.combo_distro.set_sensitive(False)
+            self.combo_distribution.set_sensitive(False)
             self.combo_arch.set_sensitive(False)
             self.entry_kernel.set_sensitive(False)
             self.entry_mirror.set_sensitive(False)
+            self.entry_securitymirror.set_sensitive(False)
+            self.entry_tcosmirror.set_sensitive(False)
+            self.chroot_options.set_expanded(False)
             
         if not os.path.isdir(self.buildvars['TCOS_CHROOT'] + "/boot/"):
             self.button_update.set_sensitive(False)
@@ -278,6 +359,7 @@ class TcosChroot:
         while 1:
             if not self.term.thread_running:
                 break
+        """
         message=_("Done")
         dialog = gtk.MessageDialog(parent=None, flags=0, type=gtk.MESSAGE_INFO, buttons=gtk.BUTTONS_OK, message_format=message)
         dialog.set_title( _("TcosConfig, invalid architecture") )
@@ -285,6 +367,7 @@ class TcosChroot:
         dialog.show_all()
         responce = dialog.run()
         dialog.destroy()
+        """
         self.enableButtons()
         return
  
