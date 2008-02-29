@@ -2782,7 +2782,7 @@ of Windows Terminal Server</property>
 				      <property name="label" translatable="yes">examples: 
  * ipw2200
  * madwifi
-</property>
+ * rt61pci,rt73usb</property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2817,7 +2817,7 @@ of Windows Terminal Server</property>
 			      <child>
 				<widget class="GtkLabel" id="label249">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">WEP key (if using WEP)</property>
+				  <property name="label" translatable="yes">WEP / WPA key</property>
 				  <property name="use_underline">False</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -2849,7 +2849,7 @@ of Windows Terminal Server</property>
 				  <property name="spacing">0</property>
 
 				  <child>
-				    <widget class="GtkEntry" id="TCOS_WEP">
+				    <widget class="GtkEntry" id="TCOS_WIRELESS_KEY">
 				      <property name="width_request">160</property>
 				      <property name="visible">True</property>
 				      <property name="can_focus">True</property>

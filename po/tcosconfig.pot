@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-27 20:00+0100\n"
+"POT-Creation-Date: 2008-02-29 22:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -397,10 +397,11 @@ msgid ""
 "examples: \n"
 " * ipw2200\n"
 " * madwifi\n"
+" * rt61pci,rt73usb"
 msgstr ""
 
 #: tcosconfig.glade:2820
-msgid "WEP key (if using WEP)"
+msgid "WEP / WPA key"
 msgstr ""
 
 #: tcosconfig.glade:2874
