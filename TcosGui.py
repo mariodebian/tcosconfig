@@ -34,14 +34,16 @@ pygtk.require('2.0')
 import gtk.glade
 import time
 from gettext import gettext as _
+from gettext import locale
 
-
+#gtk.threads_init()
+gtk.gdk.threads_init()
 
 
 def print_debug(txt):
     global debug
     if shared.debug:
-        print ( "DEBUG %s " %(txt) )
+        print ( "%s::%s " %(__name__, txt) )
 
     
 
@@ -50,22 +52,22 @@ def print_debug(txt):
 class TcosGui:
     def __init__(self):
         import shared
-
+        self.isfinished=False
         # load some classes
         self.tcos_config_file = shared.tcos_config_file
         self.config=ConfigReader()
-        #print_debug ("init gui class")
+        
 
         # delete tcos.conf.orig file if exits
-        abspath = os.path.abspath(shared.chroot + self.tcos_config_file)
-        destfile= abspath + ".orig"
+        #abspath = os.path.abspath(shared.chroot + self.tcos_config_file)
+        #destfile= abspath + ".orig"
 
-        try:
-            os.remove(destfile)
-            print_debug ("TcosGui::__init__ deleting old tcos.conf.orig")
-        except:
-            print_debug("TcosGui::__init__ old tcos.conf.orig not found")
-            pass
+        #try:
+        #    os.remove(destfile)
+        #    print_debug ("TcosGui::__init__ deleting old tcos.conf.orig")
+        #except:
+        #    print_debug("TcosGui::__init__ old tcos.conf.orig not found")
+        #    pass
 
         self.step=0
 
@@ -73,12 +75,20 @@ class TcosGui:
         gtk.glade.bindtextdomain(shared.PACKAGE, shared.LOCALE_DIR)
         gtk.glade.textdomain(shared.PACKAGE)
 
+        self.languages=[locale.getdefaultlocale()[0]]
+        if self.languages[0] and "_" in self.languages[0]:
+            self.languages.append( self.languages[0].split('_')[0] )
+            self.languages.append( self.languages[0].split('_')[1] )
+        print_debug ( "__init__ languages=%s" %self.languages)
+
         # Widgets
         self.ui = gtk.glade.XML(shared.GLADE_DIR + 'tcosconfig.glade')
 
         # load all widgets
         for widget in self.ui.get_widget_prefix(""):
             setattr(self, widget.get_name(), widget)
+
+        self.steps.set_show_tabs(False)
 
         self.aboutdialog = self.ui.get_widget("aboutdialog")
         self.aboutdialog.connect("response", self.on_aboutdialog_response)
@@ -100,6 +110,8 @@ class TcosGui:
         self.aboutbutton.connect('clicked', self.on_aboutbutton_click )
         self.startbutton.connect('clicked', self.on_startbutton_click )
 
+
+        self.TCOS_TEMPLATE.connect('changed', self.on_template_change)
 
         """
         http://www.pygtk.org/pygtk2tutorial-es/sec-ExpanderWidget.html
@@ -150,12 +162,11 @@ class TcosGui:
     def on_donebutton_click(self, widget):
         #print_debug ("Done clicked")
         # 1 is for show popup
-        self.saveconfig(1)
+        self.saveconfig(True)
         self.exitapp(widget)
         return
 
     def on_aboutbutton_click(self, widget):
-        #FIXME make an about window
         print_debug ("TcosGui::on_aboutbutton_click() About clicked")
         self.aboutdialog.show()
         return
@@ -178,16 +189,16 @@ class TcosGui:
         self.startbutton.set_sensitive(False)
 
         # read conf
-        self.writeintoprogresstxt( _("Backup configuration settings.") )
+        #self.writeintoprogresstxt( _("Backup configuration settings.") )
         #backup config file
-        self.backupconfig("backup")
-        self.updateprogressbar(0.1)
+        #self.backupconfig("backup")
+        #self.updateprogressbar(0.1)
         #time.sleep(0.3)
 
         self.writeintoprogresstxt( _("Overwriting it with your own settings.") )
         #FIXME save config without popup
-        self.saveconfig(0)
-        self.updateprogressbar(0.2)
+        self.saveconfig(False)
+        self.updateprogressbar(0.05)
         #time.sleep(0.3)
 
         # generate cmdline for gentcos
@@ -201,58 +212,63 @@ class TcosGui:
             return
 
         cmdline=shared.gentcos + cmdline
-        self.writeintoprogresstxt( _("EXEC: %s\n\n") %(cmdline))
+        self.writeintoprogresstxt( _("EXEC: %s") %(cmdline))
 
-        # critical process
-        gtk.gdk.threads_enter()
-        self.read_exec( cmdline )
-        gtk.gdk.threads_leave()
+        # start generate in a thread
+        th=Thread(target=self.generateimages, args=(cmdline,) )
+        th.start()
+        
 
+    def enablebuttons(self):
         # when done, activate nextbutton
         self.nextbutton.set_sensitive(True)
 
-
         # IMPORTANT restore backup
-        self.backupconfig("restore")
-        self.writeintoprogresstxt( _("Restore configuration settings.") )
+        #self.backupconfig("restore")
+        #self.writeintoprogresstxt( _("Restore configuration settings.") )
         self.startbutton.set_sensitive(True)
 
-
-    def read_exec(self, cmd):
-        # thread function
-        # Creating and starting the thread
-        #print "DEBUG: creating thread with \"%s\"" %(cmd)
-        ob=thread_controller( cmd, self )
-        finish=True
-        counter=0.2
-        while finish:
-            while gtk.events_pending():
-                gtk.main_iteration(False)
-            if ob.isfinish():
-                finish=False
-                self.updateprogressbar(1)
-                return
-            else:
-                try:
-                    ob.run()
-                except:
-                    print_debug ( "TcosGui::read_exec() Exception found" )
-            self.updateprogressbar(counter)
-            counter=counter+0.03
+    
+    def generateimages(self, cmdline):
+        self.isfinished=False
+        p = Popen(cmdline, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        print_debug ("generateimages() exec: %s"%cmdline)
+        stdout=p.stdout
+        counter=0.1
+        step=0.03
+        while not self.isfinished:
             time.sleep(0.1)
+            line=stdout.readline().replace('\n','')
+            if len(line) > 0:
+                counter=counter+step
+                
+            if p.poll() != None:
+                self.isfinished=True
+            
+            gtk.gdk.threads_enter()
+            self.updateprogressbar(counter)
+            self.writeintoprogresstxt( line )
+            gtk.gdk.threads_leave()
+        
+        gtk.gdk.threads_enter()
+        self.enablebuttons()
+        self.updateprogressbar(1)
+        gtk.gdk.threads_leave()
 
-
+    
     def updateprogressbar(self, num):
         #print ("DEBUG: update progressbar to %f" %(num))
         if num > 1:
             num = 0.99
         self.gentcosprogressbar.set_fraction( num )
+        self.gentcosprogressbar.set_text( _("Working... (%d %%)") %int(num*100) )
         if num==1:
             self.gentcosprogressbar.set_text( _("Complete") )
         return
 
 
     def backupconfig(self, method):
+        return
         # method is backup or restore
         origfile=self.tcos_config_file
         abspath = os.path.abspath(origfile)
@@ -283,17 +299,21 @@ class TcosGui:
         print_debug ("TcosGui::saveconfig() Saving config")
         self.changedvalues=[]
         changedvaluestxt=""
-        for exp in self.config.vars:
-            try:
-                widget=eval("self."+exp)
-                #print_debug ( "TcosGui::saveconfig() widget %s found" %(exp) )
-            except:
-                print_debug ( "TcosGui::saveconfig() widget %s ___NOT___ found" %(exp) )
+        for exp in self.config.confdata:
+            if not hasattr(self, exp):
+                #print_debug ( "TcosGui::saveconfig() widget %s ___NOT___ found" %(exp) )
                 continue
+            widget=getattr(self, exp)
+            
             varname = self.getvalueof_andsave(widget, exp)
+            #print_debug ("saveconfig() exp=%s varname=%s"%(exp, varname))
             if varname != None:
                 self.changedvalues.append ( varname )
-
+                
+        print_debug("saveconfig() changedvalues=%s"%self.changedvalues)
+        if len(self.changedvalues) > 0:
+            self.config.savedata(self.changedvalues)
+            
         if len(self.changedvalues) > 0 and popup:
             for txt in self.changedvalues:
                 changedvaluestxt+='\n' + txt
@@ -306,6 +326,7 @@ class TcosGui:
         wtype=widget_type[ len(widget_type)-1 ]
         value=str( self.config.getvalue(varname) )
         guivalue=str( self.readguiconf(widget, varname, wtype) )
+        #print_debug("getvalueof_andsave() varname=%s, oldvalue=%s guivalue=%s wtype=%s ##################" %(varname, value, guivalue, wtype) )
         # changevalue if is distinct
         if value != guivalue:
             print_debug ("TcosGui::getvalueof() CHANGED widget=%s type=%s value=%s guiconf=%s" %(varname, wtype, value, guivalue))
@@ -320,7 +341,6 @@ class TcosGui:
         # TCOS_KERNEL -vmlinuz
         # TCOS_METHOD -tftp -nbi -cdrom -nfs
         # TCOS_SUFFIX -suffix=foo
-        # TCOS_APPEND -extra-append="foo"
         # TCOS_DEBUG -size (show ramdisk and usr.squashfs sizes)
         cmdline=""
         methodindex=self.read_select(self.TCOS_METHOD, "TCOS_METHOD")
@@ -336,12 +356,6 @@ class TcosGui:
         print_debug("TcosGui::getcmdline() selected TCOS_KERNEL index(%d) = %s" %(kernelindex, kerneltext) )
         if kernelindex != "" and kernelindex != None and kerneltext != self.config.getvalue("TCOS_KERNEL"):
             cmdline+=" -vmlinuz=\""+ kerneltext + "\""
-
-        # get TCOS_SUFFIX
-        if self.TCOS_SUFFIX.get_text() != "" and self.TCOS_SUFFIX.get_text() != None:
-            value=self.TCOS_SUFFIX.get_text()
-            value=self.cleanvar(value)
-            cmdline+=" -suffix=\""+ value + "\""
 
         is_append_in_list=False
         for item in self.changedvalues:
@@ -375,23 +389,24 @@ class TcosGui:
             nothing
         """
         #print_debug ( "TcosGui::populate_select() populating \"%s\"" %(varname) )
-        try:
-            eval("shared."+varname+"_VALUES")
-        except:
-            print_debug ( "TcosGui::populate_select() WARNING: %s not have %s_VALUES, exit function..." %(varname, varname) )
+        if not hasattr(shared, varname+"_VALUES"):
+            #print_debug ( "TcosGui::populate_select() WARNING: %s not have %s_VALUES" %(varname, varname) )
             return
+        values=getattr(shared, varname+"_VALUES")
         
-        if len(eval("shared."+varname+"_VALUES")) < 1:
+        
+        if len(values) < 1:
             print_debug ( "TcosGui::populate_select() WARNING %s_VALUES is empty" %(varname) )
         else:
             itemlist = gtk.ListStore(str, str)
             #print eval("shared."+varname+"_VALUES")
-            for item in eval("shared."+varname+"_VALUES"):
-                print_debug ("TcosGui::populate_select() %s item[0]=\"%s\" item[1]=%s" %(varname, item[0], item[1]) )
+            for item in values:
+                #print_debug ("TcosGui::populate_select() %s item[0]=\"%s\" item[1]=%s" %(varname, item[0], item[1]) )
                 # populate select
                 itemlist.append ( [item[0], item[1]] )
             widget.set_model(itemlist)
-            widget.set_text_column(1)
+            if widget.get_text_column() != 1:
+                widget.set_text_column(1)
             itemlist=None
             return
 
@@ -405,19 +420,18 @@ class TcosGui:
         returns:
             nothing
         """
-        print_debug ( "TcosGui::set_active_select() %s selected=\"%s\"" %(varname, value) )
         # search index of selected value
-        try:
-            values=eval("shared."+varname+"_VALUES")
-        except:
-            print_debug ( "TcosGui::set_active_select() WARNING: %s not have %s_VALUES" %(varname, varname) )
+        if not hasattr(shared, varname+"_VALUES"):
+            #print_debug ( "TcosGui::set_active_select() WARNING: %s not have %s_VALUES" %(varname, varname) )
             return
+        values=getattr(shared, varname+"_VALUES")
+        
         if len(values) < 1:
             print_debug ( "TcosGui::set_active_select() WARNING %s_VALUES is empty" %(varname) )
         else:
             for i in range(len( values ) ):
                 if values[i][0] == value:
-                    print_debug ( "TcosGui::set_active_selected() index=%d SELECTED=%s" %( i, values[i][0] ) )
+                    #print_debug ( "TcosGui::set_active_selected() index=%d SELECTED=%s" %( i, values[i][0] ) )
                     widget.set_active(i)
                     return
                     
@@ -431,7 +445,7 @@ class TcosGui:
         return:
             index of selected value or -1 if nothing selected
         """
-        print_debug ( "TcosGui::read_select() reading \"%s\"" %(varname) )
+        #print_debug ( "TcosGui::read_select() reading \"%s\"" %(varname) )
         selected=-1
         try:
             selected=widget.get_active()
@@ -451,14 +465,15 @@ class TcosGui:
             txt value or "" if not found
         """
         value=""
-        try:
-            value=eval("shared.%s_VALUES[%d][0]" %(varname, index) )
-            print_debug ( "TcosGui::search_selected_index() shared.%s_VALUES[%d]=%s" %(varname, index, value) )
-        except:
-            model=widget.get_model()
-            value=model[index][0]
-            print_debug ( "TcosGui::search_selected_index() unable to read %s_VALUES[%d][0], using first column \"%s\"" %(varname, index, value) )
-        return value
+        if hasattr(shared, varname + "_VALUES"):
+            return getattr(shared, varname + "_VALUES")[index][0]
+        
+        model=widget.get_model()
+        if varname == "TCOS_TEMPLATE":
+            return model[index][1]
+        else:
+            return model[index][0]
+        
 
     def cleanvar(self, value, spaces=True):
         # delete ;|&>< of value
@@ -476,7 +491,7 @@ class TcosGui:
         if wtype == "GtkComboBoxEntry":
             index=self.read_select(widget, varname)
             value=self.search_selected_index(widget, varname, index)
-            print_debug ( "TcosGui::readguiconf() Read ComboBox %s index=%d value=%s" %(varname, index, value) )
+            #print_debug ( "TcosGui::readguiconf() Read ComboBox %s index=%d value=%s" %(varname, index, value) )
             
         elif wtype == "GtkEntry":
             value=widget.get_text()
@@ -516,14 +531,20 @@ class TcosGui:
 
 
     def changestep(self, newstep):
+        #print_debug("changestep() newstep=%s"%newstep)
         self.step=self.step + newstep
         if self.step <= 0:
             self.backbutton.hide()
             self.step = 0
         elif self.step == 1:
+            print_debug("changestep() ****** STEP 1 ****")
             self.backbutton.show()
+            if newstep == 1:
+                self.config.loadbase()
+                self.config.loadtemplates()
+                self.populatetemplates()
             # load TCOS var settings from file and populate Gtk Entries
-            self.loadsettings()
+            #self.loadsettings()
 
         #elif self.step == 2:
         #    self.loadsettings()
@@ -532,15 +553,14 @@ class TcosGui:
         #elif self.step == 3:
         #    self.loadsettings()
 
-        elif self.step == 4:
-            self.loadsettings()
+        elif self.step == 6:
             self.nextbutton.show()
             self.donebutton.hide()
 
-        elif self.step >= 5 : # step 5
+        elif self.step >= 7 : # step 5
             self.donebutton.show()
             self.nextbutton.hide()
-            self.step = 5
+            self.step = 7
         # move step
         if newstep == 1: # click next
             self.steps.next_page()
@@ -548,38 +568,68 @@ class TcosGui:
             self.steps.prev_page()
         return
 
-    def loadsettings(self):
-        # load defaults
-        if self.settings_loaded:
-            print_debug ( "TcosGui::loadsettings() Settings already loaded" )
-            return
+    def on_template_change(self, widget):
+        model=widget.get_model()
+        value=model[widget.get_active()][1]
+        if value:
+            print_debug("****** ON_TEMPLATE_CHANGE() ***** value=%s"%value)
+            self.config.reloadtemplate(value)
+            self.loadsettings()
 
-        # set default vars not in tcos.conf file
+    def getTranslatedDescription(self, tpl):
+        for lang in self.languages:
+            if self.config.templates[tpl].has_key('TEMPLATE_DESCRIPTION_' +  lang):
+                return self.config.templates[tpl]['TEMPLATE_DESCRIPTION_' + lang]
+        
+        if self.config.templates[tpl].has_key('TEMPLATE_DESCRIPTION'):
+            return self.config.templates[tpl]['TEMPLATE_DESCRIPTION']
+        
+        return _("No template description avalaible")
+
+    def populatetemplates(self):
+        default_template=self.config.getvalue('TCOS_TEMPLATE')
+        # populate template list
+        templatelist = gtk.ListStore(str,str)
+        templatelist.append( [ "base.conf : " + _("don't use any template") , "base.conf"] )
+        i=0
+        for tpl in self.config.templates:
+            text="%s : %s" %(tpl, self.getTranslatedDescription(tpl))
+            if tpl == default_template:
+                default_template=i
+            templatelist.append([text,tpl])
+            i+=1
+        self.TCOS_TEMPLATE.set_model(templatelist)
+        if self.TCOS_TEMPLATE.get_text_column() != 0:
+            self.TCOS_TEMPLATE.set_text_column(0)
+        self.TCOS_TEMPLATE.set_active(i)
+        
+    def loadsettings(self):
         # set default PXE build
         self.populate_select(self.TCOS_METHOD, "TCOS_METHOD")
         self.TCOS_METHOD.set_active(1)
 
         # set default suffix to shared vars
-        import shared
-        self.TCOS_SUFFIX.set_text(shared.tcos_suffix)
+        #import shared
+        #self.TCOS_SUFFIX.set_text(shared.tcos_suffix)
 
         # populate kernel list
         kernellist = gtk.ListStore(str)
         for kernel in self.config.kernels:
             kernellist.append([kernel.split()[0]])
         self.TCOS_KERNEL.set_model(kernellist)
-        self.TCOS_KERNEL.set_text_column(0)
+        if self.TCOS_KERNEL.get_text_column() != 0:
+            self.TCOS_KERNEL.set_text_column(0)
         #set default tcos.conf kernel
         model=self.TCOS_KERNEL.get_model()
         for i in range(len(model)):
             if model[i][0] == self.config.getvalue("TCOS_KERNEL"):
-                print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
+                #print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
                 self.TCOS_KERNEL.set_active( i )
 
         # read all tcos.conf and guiconf vars and populate
-        for exp in self.config.vars:
+        for exp in self.config.confdata:
             #print_debug ( "TcosGui::loadsettings() searching for %s" %(exp) )
-            value=self.config.getvalue(exp)
+            value=self.config.confdata[exp]
             value=value.replace('"', '')
             if value == "":
                 # empty=False, used to checkbox
@@ -589,7 +639,8 @@ class TcosGui:
             try:
                 widget=eval("self."+exp)
             except:
-                print_debug ( "TcosGui::loadsettings() widget %s not found" %(exp) )
+                # FIXME uncomment this
+                #print_debug ( "TcosGui::loadsettings() widget %s not found" %(exp) )
                 continue
 
             # type of widget
@@ -628,15 +679,11 @@ class TcosGui:
             
             elif wtype == gtk.SpinButton and widget.name != "TCOS_MAX_MEM":
                 widget.set_value( int(value) )
-
-
-
+            
             else:
                 print_debug( "TcosGui::loadsettings() __ERROR__ unknow %s type %s" %(exp, wtype ) )
 
-            # put settings_loaded true to not overwrite personalized settings
-            self.settings_loaded=True
-
+            
     # some dialog messages
     def error_msg(self,txt):
         d = gtk.MessageDialog(None,
@@ -660,46 +707,12 @@ class TcosGui:
 
     def exitapp(self, widget):
         print_debug ( "TcosGui::exitapp() Exiting" )
+        self.isfinished=True
         gtk.main_quit()
         return
 
     def run (self):
         gtk.main()
-
-
-class thread_controller(Thread):
-    # based on obex_controler
-    # http://www.student.lu.se/~cif04usv/wiki/btrcv.html
-    def __init__(self, cmd, gui):
-        self.gui=gui
-        self.finished=False
-        Thread.__init__(self)
-        self.p = Popen(cmd, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT)
-        self.stdout = self.p.stdout
-        #print_debug ( "ThreadController::__init__() Started %s with pid %d" % (cmd, self.p.pid ) )
-
-    def isfinish(self):
-        return self.finished
-
-    def run(self):
-        while True:
-            #print "THREAD: Sleeping..."
-            time.sleep(0.2)
-            line = self.stdout.readline()
-            line = line.replace('\n', '')
-            # chek if terminated
-            if self.p.poll() != None:
-                self.finished=True
-
-            if line.find("DONE") > 0:
-                print_debug ( "ThreadController::run() DONE found" )
-            #print("THREAD: read \" %s \" " % (line) )
-
-            while gtk.events_pending():
-                gtk.main_iteration(False)
-
-            self.gui.writeintoprogresstxt( line )
-            return line
 
 
 

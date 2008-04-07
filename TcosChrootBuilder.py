@@ -49,14 +49,14 @@ DISTRO_VERSIONS={
 
 
 KERNEL_VERSIONS={
-"etch":"2.6.18-5-486"  ,
-"testing":"2.6.22-3-486"  ,
+"etch":"2.6.18-6-486"  ,
+"testing":"2.6.24-1-486"  ,
 "unstable":"2.6.23-1-486"  ,
 "dapper":"2.6.15-29-386"  ,
 "edgy":"2.6.17-12-generic"  ,
 "feisty":"2.6.20-16-generic"  ,
 "gutsy":"2.6.22-14-generic"  ,
-"hardy":"2.6.24-5-generic"
+"hardy":"2.6.24-15-generic"
 }
 
 DISTRO_ALIAS={

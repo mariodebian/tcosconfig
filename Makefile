@@ -16,7 +16,7 @@ gedit:
 	gedit-cvs tcosconfig.py Tcos*py ConfigReader.py >/dev/null 2>&1 &
 
 clean:
-	rm -f *~ *.pyc *.orig *.bak *-stamp
+	rm -f *~ *.pyc *.orig *.bak *-stamp *glade.backup
 	rm -rf po/es pixmaps/
 	dh_clean
 
@@ -34,7 +34,7 @@ es.po:
 es.gmo:
 	if [ -f po/es-new.po ]; then  mv po/es-new.po po/es.po ; fi
 	mkdir -p po/es/LC_MESSAGES/
-	msgfmt -o po/es/LC_MESSAGES/$(project).mo po/es.po
+	msgfmt --verbose -o po/es/LC_MESSAGES/$(project).mo po/es.po
 
 
 install:

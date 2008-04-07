@@ -41,18 +41,31 @@ debug=False
 
 # default TCOS config file (default in this path, if installed use global)
 tcos_config_file="./tcos.conf"
+templates_dir="/usr/share/initramfs-tools-tcos/templates/"
 
+"""
 # if exec from svn or sources dir
 if os.path.isfile('./tcosconfig.py'):
     LOCALE_DIR = "./po/"
     GLADE_DIR = "./"
     tcos_config_file="./tcos.conf"
     print "TcosConfig not installed, exec in SVN place"
+    gentcos="bash gentcos"
 else:
     tcos_config_file="/etc/tcos/tcos.conf"
     GLADE_DIR = "/usr/share/tcosconfig/"
     LOCALE_DIR = "/usr/share/locale"
+    gentcos="/usr/sbin/gentcos"
+"""
+# FIXME delete this line and uncomment ^
+tcos_config_file="/etc/tcos/tcos.conf"
+tcos_config_base=templates_dir + "/base.conf"
+GLADE_DIR = "./"
+LOCALE_DIR = "./po/"
+gentcos="bash gentcos"
+#######################################
 
+tcosconfig_template="/etc/tcos/templates/tcosconfig.conf"
 
 # gettext support
 setlocale( LC_ALL )
@@ -60,7 +73,7 @@ bindtextdomain( PACKAGE, LOCALE_DIR )
 textdomain( PACKAGE )
 
 # gentcos command (if svn exec in ./ path else use /usr/sbin/)
-gentcos="bash gentcos"
+
 chroot="/"
 updatetcosimages=False
 

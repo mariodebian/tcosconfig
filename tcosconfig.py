@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.4
+#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 ##########################################################################
 # tcos_config writen by MarioDebian <mariodebian@gmail.com>
