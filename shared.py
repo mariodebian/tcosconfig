@@ -62,7 +62,7 @@ tcos_config_file="/etc/tcos/tcos.conf"
 tcos_config_base=templates_dir + "/base.conf"
 GLADE_DIR = "./"
 LOCALE_DIR = "./po/"
-gentcos="bash gentcos"
+gentcos="/usr/sbin/gentcos"
 #######################################
 
 tcosconfig_template="/etc/tcos/templates/tcosconfig.conf"
