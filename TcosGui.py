@@ -125,7 +125,10 @@ class TcosGui:
                          self.expander_sound,
                          self.expander_remote,
                          self.expander_auth, 
-                         self.expander_bootmenu]
+                         self.expander_bootmenu,
+                         #self.expander_kernel, # expand by default kernel
+                         self.expander_thinclients, 
+                         self.expander_other ]
         # connect signal expanded and call on_expander_click to close others
         for exp in self.expanders:
             exp.connect('notify::expanded', self.on_expander_click)
@@ -147,9 +150,9 @@ class TcosGui:
     def on_disable_usplash_change(self, widget):
         print_debug("on_disable_usplash_change() value=%s"%widget.get_active())
         if widget.get_active():
-            self.TCOS_USPLASH.set_sensitive(True)
-        else:
             self.TCOS_USPLASH.set_sensitive(False)
+        else:
+            self.TCOS_USPLASH.set_sensitive(True)
 
     def on_tcos_menu_mode_change(self, widget):
         if not widget.get_active():

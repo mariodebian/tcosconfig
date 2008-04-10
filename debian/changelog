@@ -12,8 +12,10 @@ tcosconfig (0.3~rc1) unstable; urgency=low
     - Add setup_chroot function to copy config files from / to chroot
   * shared.py TcosGui.py tcosconig.glade
     - Add new GUI configurations (TCOS_BOOT_MENU, auth expander, etc...)
+  * Add more expanders (kernel, thinclients, other)
+  * Update translations
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 09:41:43 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 13:06:47 +0200
 
 tcosconfig (0.2.12) unstable; urgency=low
 
