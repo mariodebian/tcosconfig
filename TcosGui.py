@@ -82,6 +82,7 @@ class TcosGui:
         print_debug ( "__init__ languages=%s" %self.languages)
 
         # Widgets
+        print_debug ("loading %s"%(shared.GLADE_DIR + 'tcosconfig.glade'))
         self.ui = gtk.glade.XML(shared.GLADE_DIR + 'tcosconfig.glade')
 
         # load all widgets
@@ -122,7 +123,9 @@ class TcosGui:
                          self.expander_wifi,
                          self.expander_xorg, 
                          self.expander_sound,
-                         self.expander_remote]
+                         self.expander_remote,
+                         self.expander_auth, 
+                         self.expander_bootmenu]
         # connect signal expanded and call on_expander_click to close others
         for exp in self.expanders:
             exp.connect('notify::expanded', self.on_expander_click)
@@ -133,6 +136,26 @@ class TcosGui:
             expander.set_expanded(False)
             
         self.settings_loaded=False
+        
+        for radio in ["TCOS_MENU_MODE", "TCOS_MENU_MODE_SIMPLE", "TCOS_MENU_MODE_GRAPHIC"]:
+            widget=getattr(self, radio)
+            widget.connect('toggled', self.on_tcos_menu_mode_change)
+        self.menu_type=""
+        
+        self.TCOS_DISABLE_USPLASH.connect('toggled', self.on_disable_usplash_change)
+
+    def on_disable_usplash_change(self, widget):
+        print_debug("on_disable_usplash_change() value=%s"%widget.get_active())
+        if widget.get_active():
+            self.TCOS_USPLASH.set_sensitive(True)
+        else:
+            self.TCOS_USPLASH.set_sensitive(False)
+
+    def on_tcos_menu_mode_change(self, widget):
+        if not widget.get_active():
+            return
+        self.menu_type=widget.name.replace('TCOS_MENU_MODE','').replace('_','')
+        print_debug("on_tcos_menu_mode_change type=%s" %self.menu_type)
 
     def on_expander_click(self, expander, params):
         """
@@ -636,11 +659,10 @@ class TcosGui:
                 value = False
 
             # widget exits??
-            try:
-                widget=eval("self."+exp)
-            except:
-                # FIXME uncomment this
-                #print_debug ( "TcosGui::loadsettings() widget %s not found" %(exp) )
+            if hasattr(self, exp):
+                widget=getattr(self, exp)
+            else:
+                print_debug("loadsettings() widget %s don't exists"%exp)
                 continue
 
             # type of widget

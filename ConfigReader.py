@@ -26,6 +26,7 @@ import os
 import shared
 from gettext import gettext as _
 import time
+import shutil
 
 def print_debug(txt):
     if shared.debug:
@@ -44,12 +45,6 @@ class ConfigReader:
         self.olddata={}
         self.base_template=None
         self.force_settings={}
-        """
-        #old vars
-        self.conf=[]
-        self.vars=[]
-        self.data=""
-        """
         
         # new vars
         self.confdata={}
@@ -206,7 +201,30 @@ class ConfigReader:
         
             
         f.close()
+        os.chmod(shared.tcosconfig_template, 600)
         print_debug("file %s saved" %(shared.tcosconfig_template))
+        self.setup_chroot()
+
+
+    def create_tree(self, fname):
+        dirs=fname.split('/')[0:-1]
+        fullpath="/"
+        for d in dirs:
+            fullpath+="/" + d
+            if not os.path.isdir(fullpath):
+                print_debug("create_tree() mkdir %s"%fullpath)
+                os.mkdir(fullpath)
+        
+
+    def setup_chroot(self):
+        if shared.chroot != "/":
+            chroot_template=shared.chroot + shared.tcosconfig_template
+            print_debug ("setup_chroot() copying %s => %s"%(shared.tcosconfig_template, chroot_template))
+            self.create_tree(chroot_template)
+            shutil.copy(shared.tcosconfig_template, chroot_template )
+            os.chmod(chroot_template, 600)
+        else:
+            print_debug("setup_chroot() no chroot defined '%s'"%shared.chroot)
 
     """
     def open_file(self, filename):

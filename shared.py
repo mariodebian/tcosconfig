@@ -131,3 +131,9 @@ TCOS_USENFS_VALUES=[
 ['nfs', _("Use NFS server") ]
 ]
 
+TCOS_MENUS_TYPES=[
+# text # TCOS_NETBOOT_MENU # TCOS_NETBOOT_MENU_VESA
+["",            "",                 ""],
+["SIMPLE",      "1",                ""],
+["GRAPHIC",     "1",                "1"],
+]

@@ -8,8 +8,12 @@ tcosconfig (0.3~rc1) unstable; urgency=low
   * Fix GUI freeze when exec gentcos
   * ConfigReader.py
     - Add old config before new in tcosconfig.conf save
+  * ConfigReader.py:
+    - Add setup_chroot function to copy config files from / to chroot
+  * shared.py TcosGui.py tcosconig.glade
+    - Add new GUI configurations (TCOS_BOOT_MENU, auth expander, etc...)
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 08 Apr 2008 11:24:50 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 09:41:43 +0200
 
 tcosconfig (0.2.12) unstable; urgency=low
 
