@@ -126,7 +126,7 @@ class TcosGui:
                          self.expander_remote,
                          self.expander_auth, 
                          self.expander_bootmenu,
-                         #self.expander_kernel, # expand by default kernel
+                         self.expander_kernel, # expand by default kernel
                          self.expander_thinclients, 
                          self.expander_other ]
         # connect signal expanded and call on_expander_click to close others
@@ -146,6 +146,35 @@ class TcosGui:
         self.menu_type=""
         
         self.TCOS_DISABLE_USPLASH.connect('toggled', self.on_disable_usplash_change)
+        
+        # events for linked widgets
+        for widget in shared.linked_widgets:
+            if not hasattr(self, widget): continue
+            w=getattr(self, widget)
+            data=shared.linked_widgets[widget]
+            w.connect(data[0], self.on_linked_widgets, data)
+
+    def on_linked_widgets(self, widget, data):
+        active=widget.get_active()
+        if active:
+            other=data[1]
+        else:
+            other=data[2]
+        if len(other) < 1:
+            #print_debug("on_linked_widgets() nothing to do")
+            return
+        for w in other:
+            if hasattr(self, w):
+                enabled=getattr(self, w).get_active()
+                if other[w] != None:
+                    getattr(self, w).set_active(other[w])
+                    getattr(self, w).set_sensitive(other[w])
+                    #print dir(getattr(self, w))
+                    getattr(self, w).set_tooltip_markup( _("Need to enable <b>%s</b> before") %(widget.name) )
+                else:
+                    getattr(self, w).set_sensitive(True)
+                    getattr(self, w).set_tooltip_text( "" )
+                #print_debug("on_linked_widgets() widget=%s enabled=%s new=%s"%(w, enabled, other[w]) )
 
     def on_disable_usplash_change(self, widget):
         print_debug("on_disable_usplash_change() value=%s"%widget.get_active())
@@ -157,8 +186,13 @@ class TcosGui:
     def on_tcos_menu_mode_change(self, widget):
         if not widget.get_active():
             return
-        self.menu_type=widget.name.replace('TCOS_MENU_MODE','').replace('_','')
-        print_debug("on_tcos_menu_mode_change type=%s" %self.menu_type)
+        menu_type=widget.name.replace('TCOS_MENU_MODE','').replace('_','')
+        print_debug("on_tcos_menu_mode_change type=%s" %menu_type)
+        for item in shared.TCOS_MENUS_TYPES:
+            if item[0] == menu_type:
+                self.config.changevalue("TCOS_NETBOOT_MENU", item[1])
+                self.config.changevalue("TCOS_NETBOOT_MENU_VESA", item[2])
+                self.TCOS_NETBOOT_HIDE_INSTALL.set_sensitive(item[3])
 
     def on_expander_click(self, expander, params):
         """
@@ -213,6 +247,9 @@ class TcosGui:
         # disable nextbutton
         self.nextbutton.set_sensitive(False)
         self.startbutton.set_sensitive(False)
+        self.backbutton.set_sensitive(False)
+        self.cancelbutton.set_sensitive(False)
+
 
         # read conf
         #self.writeintoprogresstxt( _("Backup configuration settings.") )
@@ -248,6 +285,8 @@ class TcosGui:
     def enablebuttons(self):
         # when done, activate nextbutton
         self.nextbutton.set_sensitive(True)
+        self.backbutton.set_sensitive(True)
+        self.cancelbutton.set_sensitive(True)
 
         # IMPORTANT restore backup
         #self.backupconfig("restore")
@@ -261,7 +300,7 @@ class TcosGui:
         print_debug ("generateimages() exec: %s"%cmdline)
         stdout=p.stdout
         counter=0.1
-        step=0.03
+        step=0.02
         while not self.isfinished:
             time.sleep(0.1)
             line=stdout.readline().replace('\n','')
@@ -322,12 +361,14 @@ class TcosGui:
 
     def saveconfig(self, popup):
         # popup boolean (show or not) info msg about vars
-        print_debug ("TcosGui::saveconfig() Saving config")
+        print_debug ("saveconfig() Saving config")
         self.changedvalues=[]
         changedvaluestxt=""
         for exp in self.config.confdata:
             if not hasattr(self, exp):
-                #print_debug ( "TcosGui::saveconfig() widget %s ___NOT___ found" %(exp) )
+                if exp in ["TCOS_NETBOOT_MENU", "TCOS_NETBOOT_MENU_VESA"]:
+                    self.changedvalues.append ( exp )
+                #print_debug ( "saveconfig() widget %s ___NOT___ found" %(exp) )
                 continue
             widget=getattr(self, exp)
             
@@ -355,7 +396,7 @@ class TcosGui:
         #print_debug("getvalueof_andsave() varname=%s, oldvalue=%s guivalue=%s wtype=%s ##################" %(varname, value, guivalue, wtype) )
         # changevalue if is distinct
         if value != guivalue:
-            print_debug ("TcosGui::getvalueof() CHANGED widget=%s type=%s value=%s guiconf=%s" %(varname, wtype, value, guivalue))
+            print_debug ("getvalueof() CHANGED widget=%s type=%s value=%s guiconf=%s" %(varname, wtype, value, guivalue))
             self.config.changevalue(varname, str(guivalue) )
             return( str( varname) )
 
@@ -601,6 +642,7 @@ class TcosGui:
             print_debug("****** ON_TEMPLATE_CHANGE() ***** value=%s"%value)
             self.config.reloadtemplate(value)
             self.loadsettings()
+            self.config.changevalue("TCOS_TEMPLATE", value)
 
     def getTranslatedDescription(self, tpl):
         for lang in self.languages:
@@ -614,6 +656,7 @@ class TcosGui:
 
     def populatetemplates(self):
         default_template=self.config.getvalue('TCOS_TEMPLATE')
+        print_debug("populatetemplates() default=%s"%default_template)
         # populate template list
         templatelist = gtk.ListStore(str,str)
         templatelist.append( [ "base.conf : " + _("don't use any template") , "base.conf"] )
@@ -622,21 +665,43 @@ class TcosGui:
             text="%s : %s" %(tpl, self.getTranslatedDescription(tpl))
             if tpl == default_template:
                 default_template=i
+                print_debug("populatetemplates() default_template tpl=%s i=%s"%(tpl, i))
             templatelist.append([text,tpl])
             i+=1
         self.TCOS_TEMPLATE.set_model(templatelist)
         if self.TCOS_TEMPLATE.get_text_column() != 0:
             self.TCOS_TEMPLATE.set_text_column(0)
-        self.TCOS_TEMPLATE.set_active(i)
+        self.TCOS_TEMPLATE.set_active(default_template+1) # set i+1 because base.conf is 0
         
     def loadsettings(self):
         # set default PXE build
         self.populate_select(self.TCOS_METHOD, "TCOS_METHOD")
         self.TCOS_METHOD.set_active(1)
 
-        # set default suffix to shared vars
-        #import shared
-        #self.TCOS_SUFFIX.set_text(shared.tcos_suffix)
+        # configure boot menu
+        #("TCOS_NETBOOT_MENU", item[1])
+        #("TCOS_NETBOOT_MENU_VESA", item[2])
+        menu_configured=False
+        for item in shared.TCOS_MENUS_TYPES:
+            if self.config.getvalue('TCOS_NETBOOT_MENU') == item[1] and self.config.getvalue('TCOS_NETBOOT_MENU_VESA') == item[2]:
+                # set menu type to item[0]
+                if item[0] == '':
+                    widget=self.TCOS_MENU_MODE
+                else:
+                    widget=getattr(self, 'TCOS_MENU_MODE' + '_' + item[0])
+                print_debug("loadsettings() TCOS_MENU_MODE=%s"%widget.name)
+                widget.set_active(True)
+                print_debug("loadsettings() NETBOOT_HIDE_INSTALL = %s"%item[3])
+                menu_configured=True
+        if not menu_configured:
+            self.TCOS_NETBOOT_HIDE_INSTALL.set_sensitive(False)
+
+        # overwrite method (tcos.conf.nfs use it)
+        if self.config.getvalue('TCOS_METHOD') != '':
+            model=self.TCOS_METHOD.get_model()
+            for i in range(len(model)):
+                if model[i][0] == self.config.getvalue('TCOS_METHOD'):
+                    self.TCOS_METHOD.set_active(i)
 
         # populate kernel list
         kernellist = gtk.ListStore(str)
@@ -665,7 +730,8 @@ class TcosGui:
             if hasattr(self, exp):
                 widget=getattr(self, exp)
             else:
-                print_debug("loadsettings() widget %s don't exists"%exp)
+                if not exp in self.config.ignored_widgets:
+                    print_debug("loadsettings() widget %s don't exists"%exp)
                 continue
 
             # type of widget

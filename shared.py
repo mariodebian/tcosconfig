@@ -132,8 +132,45 @@ TCOS_USENFS_VALUES=[
 ]
 
 TCOS_MENUS_TYPES=[
-# text # TCOS_NETBOOT_MENU # TCOS_NETBOOT_MENU_VESA
-["",            "",                 ""],
-["SIMPLE",      "1",                ""],
-["GRAPHIC",     "1",                "1"],
+# text # TCOS_NETBOOT_MENU # TCOS_NETBOOT_MENU_VESA # TCOS_NETBOOT_HIDE_INSTALL
+["",            "",                 "", False],
+["SIMPLE",      "1",                "", True],
+["GRAPHIC",     "1",                "1", True],
 ]
+
+ignored_widgets=[
+'TCOS_NETBOOT_MENU', 
+'TCOS_NETBOOT_MENU_VESA',
+'TEMPLATE_DESCRIPTION',
+'TCOS_BASED_TEMPLATE',
+'TEMPLATE_DESCRIPTION_ES',
+'TCOS_FORCE_NFS_BUILD']
+
+
+# widgetname:   [ event   , enable           , disable]
+
+linked_widgets={
+'TCOS_X11VNC':['toggled', {'TCOS_XORG':1}, {} ],
+'TCOS_FREENX':['toggled', {'TCOS_XORG':1}, {} ],
+'TCOS_RDESKTOP':['toggled', {'TCOS_XORG':1}, {} ],
+'TCOS_ITALC':['toggled', {'TCOS_XORG':1}, {} ],
+# disable some checkboxes when disabling xorg
+'TCOS_XORG':['toggled',  {'TCOS_X11VNC':None, 
+                         'TCOS_FREENX':None,
+                         'TCOS_RDESKTOP':None,
+                         'TCOS_ITALC':None,
+                         'TCOS_XORG_ALLDRIVERS':None,
+                         'TCOS_XORG_OPENGL':None
+                         },                {'TCOS_X11VNC':0, 
+                                             'TCOS_FREENX':0,
+                                             'TCOS_RDESKTOP':0,
+                                             'TCOS_ITALC':0,
+                                             'TCOS_XORG_ALLDRIVERS':0,
+                                             'TCOS_XORG_OPENGL':0}
+             ],
+'TCOS_SOUND':['toggled', {'TCOS_SOUND_ISA':None, 'TCOS_PULSEAUDIO':None},
+                                {'TCOS_SOUND_ISA':0,'TCOS_PULSEAUDIO':0}
+             ],
+}
+
+

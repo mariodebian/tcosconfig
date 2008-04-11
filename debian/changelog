@@ -14,8 +14,12 @@ tcosconfig (0.3~rc1) unstable; urgency=low
     - Add new GUI configurations (TCOS_BOOT_MENU, auth expander, etc...)
   * Add more expanders (kernel, thinclients, other)
   * Update translations
+  * ConfigReader.py:
+    - Fix tcosconfig.conf BASED_TEMPLATE
+  * TcosGui.py shared.py:
+    - Add linked_widgets (enable/disable others by widget value)
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 10 Apr 2008 13:06:47 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 12 Apr 2008 00:15:45 +0200
 
 tcosconfig (0.2.12) unstable; urgency=low
 
