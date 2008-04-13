@@ -18,8 +18,10 @@ tcosconfig (0.3~rc1) unstable; urgency=low
     - Fix tcosconfig.conf BASED_TEMPLATE
   * TcosGui.py shared.py:
     - Add linked_widgets (enable/disable others by widget value)
+  * TcosChrootBuilder.py
+    - Update Debian unstable and Ubuntu hardy kernels
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 12 Apr 2008 00:15:45 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 13 Apr 2008 11:40:52 +0200
 
 tcosconfig (0.2.12) unstable; urgency=low
 
