@@ -90,12 +90,16 @@ class TcosGui:
             setattr(self, widget.get_name(), widget)
 
         self.steps.set_show_tabs(False)
+        
+        self.tcosconfig.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
+        
 
         self.aboutdialog = self.ui.get_widget("aboutdialog")
         self.aboutdialog.connect("response", self.on_aboutdialog_response)
         self.aboutdialog.connect("close", self.on_aboutdialog_close)
         self.aboutdialog.connect("delete_event", self.on_aboutdialog_close)
         self.aboutdialog.set_version(shared.VERSION)
+        self.aboutdialog.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
 
         # set initial bottom status
         self.backbutton.hide()
@@ -165,15 +169,16 @@ class TcosGui:
             return
         for w in other:
             if hasattr(self, w):
-                enabled=getattr(self, w).get_active()
+                wid=getattr(self, w)
+                enabled=wid.get_active()
                 if other[w] != None:
-                    getattr(self, w).set_active(other[w])
-                    getattr(self, w).set_sensitive(other[w])
+                    wid.set_active(other[w])
+                    wid.set_sensitive(other[w])
                     #print dir(getattr(self, w))
-                    getattr(self, w).set_tooltip_markup( _("Need to enable <b>%s</b> before") %(widget.name) )
+                    wid.set_tooltip_markup( _("Need to enable <b>%s</b> before") %(widget.name) )
                 else:
-                    getattr(self, w).set_sensitive(True)
-                    getattr(self, w).set_tooltip_text( "" )
+                    wid.set_sensitive(True)
+                    wid.set_tooltip_text( "" )
                 #print_debug("on_linked_widgets() widget=%s enabled=%s new=%s"%(w, enabled, other[w]) )
 
     def on_disable_usplash_change(self, widget):
