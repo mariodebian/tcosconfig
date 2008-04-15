@@ -1,3 +1,9 @@
+tcosconfig (0.3~rc2) unstable; urgency=low
+
+  * New release uploaded to experimental
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 15 Apr 2008 11:15:56 +0200
+
 tcosconfig (0.3~rc1) unstable; urgency=low
 
   * NOT RELEASE
