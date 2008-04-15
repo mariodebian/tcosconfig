@@ -189,11 +189,13 @@ class TcosGui:
             self.TCOS_USPLASH.set_sensitive(True)
 
     def on_tcos_menu_mode_change(self, widget):
+        #print_debug("on_tcos_menu_mode_change() widget=%s active=%s"%(widget.name, widget.get_active()))
         if not widget.get_active():
             return
         menu_type=widget.name.replace('TCOS_MENU_MODE','').replace('_','')
-        print_debug("on_tcos_menu_mode_change type=%s" %menu_type)
+        print_debug("on_tcos_menu_mode_change() widget=%s type=%s" %(widget.name,menu_type))
         for item in shared.TCOS_MENUS_TYPES:
+            #print_debug("on_tcos_menu_mode_change() item[0]=%s menu_type=%s"%(item[0], menu_type))
             if item[0] == menu_type:
                 self.config.changevalue("TCOS_NETBOOT_MENU", item[1])
                 self.config.changevalue("TCOS_NETBOOT_MENU_VESA", item[2])
@@ -661,6 +663,8 @@ class TcosGui:
 
     def populatetemplates(self):
         default_template=self.config.getvalue('TCOS_TEMPLATE')
+        if os.path.exists(shared.tcosconfig_template):
+            default_template=os.path.basename(shared.tcosconfig_template)
         print_debug("populatetemplates() default=%s"%default_template)
         # populate template list
         templatelist = gtk.ListStore(str,str)
