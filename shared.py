@@ -95,6 +95,24 @@ TCOS_XORG_XKB_VALUES=[
 ['de', _("German - de") ]
 ]
 
+TCOS_XORG_VIDEO_DRIVER_VALUES=[ 
+['vesa', _("VESA") ] ,
+['auto', _("Automatic detect") ] ,
+]
+
+TCOS_XORG_VIDEO_RES_VALUES=[
+["640x480", "640x480"],
+["800x600", "800x600"],
+["1024x768", "1024x768"],# <= default
+["1280x768", "1280x768"],
+["1280x800", "1280x800"],
+["1280x960", "1280x960"],
+["1280x1024", "1280x1024"],
+["1400x1050", "1400x1050"],
+["1600x1024", "1600x1024"],
+["1600x1200", "1600x1200"],
+["1680x1050", "1680x1050"],
+]
 
 
 TCOS_WEB_BROWSER_VALUES=[
