@@ -49,12 +49,15 @@ class ConfigReader:
         
         # new vars
         self.confdata={}
+        self.oldconfdata={}
         self.getkernels()
         self.getusplash()
         
         self.open_file(self.filename)
         self.menus={}
         
+        self.oldconfdata=self.readtemplate(shared.tcosconfig_template, include_all=True)
+        print_debug("oldconfdata=%s"%self.oldconfdata)
         
 
     def loadbase(self):
@@ -62,15 +65,24 @@ class ConfigReader:
         self.add("base.conf")
         #print_debug ("%s"%self.confdata)
 
-    def readtemplate(self, tpl):
+    def readtemplate(self, tpl, include_all=False):
         if os.path.basename(tpl) == os.path.basename(shared.tcosconfig_template):
             tpl=shared.tcosconfig_template
-        values={}
+        if include_all:
+            values=[]
+        else:
+            values={}
+        if not os.path.exists(tpl):
+            print_debug("readtemplate() template % not found, returning empty dictionary"%tpl)
+            return {}
         f=open(tpl, 'r')
         data=f.readlines()
         f.close()
         for line in data:
             sline=line.strip()
+            if include_all:
+                values.append(sline)
+                continue
             if sline == "": continue
             if sline.startswith('#'): continue
             if "=" in sline:
@@ -254,145 +266,17 @@ class ConfigReader:
         else:
             print_debug("setup_chroot() no chroot defined '%s'"%shared.chroot)
 
-    """
-    def open_file(self, filename):
-        
-        print_debug("open_file() reading data from \"%s\"..." %(filename) )
-        try:
-            fd=file(filename, 'r')
-            print_debug("open_file() filename %s opened "%filename)
-            self.data=fd.readlines()
-            fd.close()
-            for line in self.data:
-                if line != '\n':
-                    line=line.replace('\n', '')
-                    self.conf.append(line)
-        except:
-            print ( "Unable to read %s file" %(filename) )
-            import sys
-            sys.exit(1)
-        
 
-    
-    def run(self):
-        print_debug("run()")
-        self.reset()
-        self.getvars()
-        self.getkernels()
-        self.getusplash()
-
-    def reset(self):
-        print_debug("reset() reset data...")
-        # reset memory data
-        self.data=""
-        #self.newdata=None
-        #self.newdata=[]
-        #print_debug("reset() reset self.newdata...")
-
-        self.conf=None
-        self.conf=[]
-        print_debug("reset() reset self.conf...")
-
-        self.vars=None
-        self.vars=[]
-        print_debug("reset() reset self.vars...")
-
-        
-        if os.path.exists(self.base):
-            self.open_file(self.base)
-    
-    def save_file(self):
-        print_debug ( "save_file() Saving data into %s" %(self.filename) )
-        fd=file(self.filename, 'w')
-        for line in self.newdata:
-            fd.write(line)
-        fd.close
-        #self.reset()
-        #self.getvars()
-        return
-
-    def getvars(self):
-        #print len(self.conf)
-        number=0
-        for i in range( len(self.conf) ):
-            if self.conf[i].find("#") != 0:
-                #print_debug ( "getvars() self.conf=" + self.conf[i] )
-                (var,value)=self.conf[i].split("=", 1)
-                self.vars.append(var)
-                number=number+1
-        print_debug("getvars() number of vars %d" %(number) )
-        return
-    
-    
-    def getindex(self,varname):
-        #print len(self.conf)
-        #if varname == None:
-        #    return -1
-        #print_debug ( "getindex() varname %s" %(varname) )
-        for i in range( len(self.conf) ):
-            if self.conf[i].find(varname + "=") == 0:
-                return i
-        return -1
-
-    
-
-    
-    def getvalue(self, varname):
-        index=self.getindex(varname)
-        #print_debug ("getvalue() %s" %(varname))
-        if index == -1:
-            print_debug ( "getvalue() %s var NOT FOUND" %(varname) )
+    def revert(self):
+        if self.oldconfdata == self.readtemplate(shared.tcosconfig_template, include_all=True):
+            print_debug("revert() no changes, doing nothing")
             return
-        else:
-            (var,value) = self.conf[index].split("=", 1)
-            #print_debug ("getvalue var=%s value=%s" %(var,value))
-            return value.replace('"', '')
-    
+        if len (self.oldconfdata) > 1:
+            f=open(shared.tcosconfig_template, 'w')
+            for line in self.oldconfdata:
+                f.write(line + '\n')
+            f.close()
 
-    def getdescription(self, varname):
-        # not used....
-        index=self.getindex(varname)
-        if index == -1:
-            print_debug ( "getdescription() %s var NOT FOUND" %(varname) )
-            return ""
-        else:
-            description = self.conf[index -1 ]
-            # delete "# "
-            return description.replace("# ", "")
-    
-    def changevalue(self,varname, newvalue):
-        print_debug ( "changevalue() varname \"%s\" newvalue \"%s\"" %(varname, newvalue) )
-        if varname == None:
-            return
-        index=self.getindex(varname)
-        if index == -1:
-            print_debug ( "changevalue() %s NOT FOUND" %(varname) )
-            return
-        else:
-            # need to clean newdata list to generate again
-            # bug duplicate vars in tcos.conf resolved
-            self.newdata=None
-            self.newdata=[]
-            print_debug ( "changevalue() reset self.newdata" )
-            for line in self.data:
-                if line.find(varname+"=") == 0:
-                    print_debug ( "########################################################" )
-                    print_debug ( "changevalue() %s=\"%s\"" %(varname, newvalue) )
-                    print_debug ( "########################################################" )
-                    if varname == "TCOS_APPEND":
-                        self.newdata.append(varname + "=\"" + newvalue + '\"\n')
-                    else:
-                        self.newdata.append(varname + "=" + newvalue + '\n')
-                else:
-                    self.newdata.append(line)
-            # save data to file
-            self.save_file()
-            # reset all loaded data
-            self.reset()
-            # re read vars
-            self.getvars()
-            return
-    """
 
 if __name__ == '__main__':
     shared.debug=True

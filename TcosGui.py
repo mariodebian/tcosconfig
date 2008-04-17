@@ -107,7 +107,7 @@ class TcosGui:
         self.donebutton.hide()
 
         # add signals
-        self.tcosconfig.connect('destroy', self.exitapp )
+        self.tcosconfig.connect('destroy', self.on_cancelbutton_click )
         self.nextbutton.connect('clicked', self.on_nextbutton_click )
         self.backbutton.connect('clicked', self.on_backbutton_click )
         self.cancelbutton.connect('clicked', self.on_cancelbutton_click )
@@ -224,12 +224,13 @@ class TcosGui:
     def on_cancelbutton_click(self, widget):
         #print_debug ("Cancel clicked")
         self.exitapp(widget)
+        self.config.revert()
         return
 
     def on_donebutton_click(self, widget):
         #print_debug ("Done clicked")
         # 1 is for show popup
-        self.saveconfig(True)
+        #self.saveconfig(True)
         self.exitapp(widget)
         return
 

@@ -3,8 +3,9 @@ tcosconfig (0.3~rc4) unstable; urgency=low
   * Add TCOS_XORG_VIDEO_DRIVER and TCOS_XORG_VIDEO_RES to Xorg expander
   * Add some default settings in shared.py
   * Update translations
+  * Revert changes in cancel and don't do nothing in finish button
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 17 Apr 2008 00:16:36 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 18 Apr 2008 00:21:11 +0200
 
 tcosconfig (0.3~rc3) unstable; urgency=low
 
