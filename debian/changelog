@@ -4,8 +4,10 @@ tcosconfig (0.3~rc4) unstable; urgency=low
   * Add some default settings in shared.py
   * Update translations
   * Revert changes in cancel and don't do nothing in finish button
+  * Fail if no running as root
+  * Update translations
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 18 Apr 2008 00:21:11 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 18 Apr 2008 15:59:50 +0200
 
 tcosconfig (0.3~rc3) unstable; urgency=low
 

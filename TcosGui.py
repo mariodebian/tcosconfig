@@ -36,6 +36,9 @@ import time
 from gettext import gettext as _
 from gettext import locale
 
+import pwd
+import sys
+
 #gtk.threads_init()
 gtk.gdk.threads_init()
 
@@ -55,20 +58,13 @@ class TcosGui:
         self.isfinished=False
         # load some classes
         self.tcos_config_file = shared.tcos_config_file
+
+        if pwd.getpwuid(os.getuid())[0] != "root":
+            self.error_msg( _("Error, you must run this app as root user") )
+            sys.exit(1)
+
         self.config=ConfigReader()
         
-
-        # delete tcos.conf.orig file if exits
-        #abspath = os.path.abspath(shared.chroot + self.tcos_config_file)
-        #destfile= abspath + ".orig"
-
-        #try:
-        #    os.remove(destfile)
-        #    print_debug ("TcosGui::__init__ deleting old tcos.conf.orig")
-        #except:
-        #    print_debug("TcosGui::__init__ old tcos.conf.orig not found")
-        #    pass
-
         self.step=0
 
         # glade locale init
@@ -92,7 +88,6 @@ class TcosGui:
         self.steps.set_show_tabs(False)
         
         self.tcosconfig.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
-        
 
         self.aboutdialog = self.ui.get_widget("aboutdialog")
         self.aboutdialog.connect("response", self.on_aboutdialog_response)
