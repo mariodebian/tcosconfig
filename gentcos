@@ -3,51 +3,25 @@
 # shell script that simulate gentcos process
 
 echo "THIS gentcos script is for testing TcosConfig !!!!"
-#echo "Creating initramfs with 2.6.16-1-486 kernel"
-#echo "INITRAMFS => BOOT=tcos"
-#echo "Package LTSPFS get 1224 Kb." && sleep 1
-#echo "Package Autofs mounter get 180 Kb." && sleep 1
 
+echo
+echo
 
-for opt in $@ ; do
-   case ${opt} in
-     -extramodules=*)
-      TCOS_EXTRA_MODULES="${TCOS_EXTRA_MODULES},"${opt#-extramodules=}
-      ;;
-   esac
+get_line() {
+head -$1 /etc/tcos/templates/tcosconfig.conf | tail -1
+}
+
+NUM=$(cat /etc/tcos/templates/tcosconfig.conf| wc -l)
+
+echo "-------------------------------------------------------"
+for i in $(seq $NUM ); do
+  echo $(get_line $i)
 done
-
-if [ "$TCOS_EXTRA_MODULES" != "" ]; then
-  TCOS_EXTRA_MODULES=$(echo ${TCOS_EXTRA_MODULES} | sed s/","/" "/g)
-  for module in ${TCOS_EXTRA_MODULES}; do
-      echo "   TCOS_EXTRA_MODULES: adding ${module}"
-  done
-fi
+echo "-------------------------------------------------------"
 
 
-#echo "Package Init binaries get 4 Kb." && sleep 1
-#echo "Copying public ssh keys" && sleep 1
-#echo "Copying /home/mario/.ssh/id_rsa.pub...." && sleep 1
-#echo "Package Dropbear ssh get 2184 Kb." && sleep 1
-#echo "USING Xorg 7.0 dirs"
-#echo "WARNING /etc/X11/xserver/ isn't a dir" && sleep 1
-echo "Package Xorg get 13492 Kb." && sleep 1
-#echo "Package iTALC get 2312 Kb." && sleep 1
-
-# for testing save config
-#set -x
-. ./tcos.conf
-#set +x
-echo TCOS_XORG_XKB=$TCOS_XORG_XKB
-
-#echo "Package Alsa and Esound get 1368 Kb." && sleep 1
-#echo "Package Discover get 2452 Kb." && sleep 1
-echo "Creating squashfs of /usr" && sleep 1
-#echo "Moving usr.squashfs to /tftpboot/tcos" && sleep 1
-#echo "Moving initramfs to /tftpboot/tcos/initramfs" && sleep 1
-sleep 2
-echo ""
 sleep 1
-echo "DONE"
+
+echo "done"
 
 exit 0

@@ -56,6 +56,7 @@ class TcosGui:
     def __init__(self):
         import shared
         self.isfinished=False
+        self.changedvalues=[]
         # load some classes
         self.tcos_config_file = shared.tcos_config_file
 
@@ -195,6 +196,7 @@ class TcosGui:
                 self.config.changevalue("TCOS_NETBOOT_MENU", item[1])
                 self.config.changevalue("TCOS_NETBOOT_MENU_VESA", item[2])
                 self.TCOS_NETBOOT_HIDE_INSTALL.set_sensitive(item[3])
+                self.TCOS_NETBOOT_HIDE_LOCAL.set_sensitive(item[4])
 
     def on_expander_click(self, expander, params):
         """
@@ -246,6 +248,8 @@ class TcosGui:
             dialog.emit_stop_by_name('response')
 
     def on_startbutton_click(self, widget):
+        textbuffer = self.processtxt.get_buffer()
+        textbuffer.set_text('')
         #print_debug("Start clicked")
         # disable nextbutton
         self.nextbutton.set_sensitive(False)
@@ -307,6 +311,7 @@ class TcosGui:
         while not self.isfinished:
             time.sleep(0.1)
             line=stdout.readline().replace('\n','')
+            print_debug("generateimages() %s"%line)
             if len(line) > 0:
                 counter=counter+step
                 
@@ -365,8 +370,20 @@ class TcosGui:
     def saveconfig(self, popup):
         # popup boolean (show or not) info msg about vars
         print_debug ("saveconfig() Saving config")
-        self.changedvalues=[]
-        changedvaluestxt=""
+        
+        changedvaluestxt=''
+        active_menu=''
+        # get value of TCOS_NETBOOT_MENU
+        for w in ['TCOS_MENU_MODE', 'TCOS_MENU_MODE_SIMPLE', 'TCOS_MENU_MODE_GRAPHIC']:
+            if getattr(self, w).get_active():
+                active_menu=w.replace('TCOS_MENU_MODE', '').replace('_','')
+        
+        for menu in shared.TCOS_MENUS_TYPES:
+            if active_menu == menu[0]:
+                print_debug("saveconfig() menu=%s self.config.menus=%s" %(menu, self.config.menus) )
+                
+        print_debug("saveconfig() ACTIVE MENU =%s"%active_menu)
+        
         for exp in self.config.confdata:
             if not hasattr(self, exp):
                 if exp in ["TCOS_NETBOOT_MENU", "TCOS_NETBOOT_MENU_VESA"]:
@@ -639,6 +656,7 @@ class TcosGui:
         return
 
     def on_template_change(self, widget):
+        self.changedvalues=[]
         model=widget.get_model()
         value=model[widget.get_active()][1]
         if value:
@@ -686,20 +704,24 @@ class TcosGui:
         # configure boot menu
         #("TCOS_NETBOOT_MENU", item[1])
         #("TCOS_NETBOOT_MENU_VESA", item[2])
-        menu_configured=False
+        default_menu=False
         for item in shared.TCOS_MENUS_TYPES:
             if self.config.getvalue('TCOS_NETBOOT_MENU') == item[1] and self.config.getvalue('TCOS_NETBOOT_MENU_VESA') == item[2]:
                 # set menu type to item[0]
                 if item[0] == '':
                     widget=self.TCOS_MENU_MODE
+                    default_menu=True
                 else:
                     widget=getattr(self, 'TCOS_MENU_MODE' + '_' + item[0])
                 print_debug("loadsettings() TCOS_MENU_MODE=%s"%widget.name)
                 widget.set_active(True)
                 print_debug("loadsettings() NETBOOT_HIDE_INSTALL = %s"%item[3])
-                menu_configured=True
-        if not menu_configured:
+                
+        if default_menu:
+            print_debug("loadsettings() default menu disable hide_install and hide_local")
             self.TCOS_NETBOOT_HIDE_INSTALL.set_sensitive(False)
+            self.TCOS_NETBOOT_HIDE_LOCAL.set_sensitive(False)
+        
 
         # overwrite method (tcos.conf.nfs use it)
         if self.config.getvalue('TCOS_METHOD') != '':

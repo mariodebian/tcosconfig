@@ -52,6 +52,7 @@ if os.path.isfile('./tcosconfig.py'):
     LOCALE_DIR = "./po/"
     GLADE_DIR = "./"
     print "TcosConfig not installed, exec in SVN place"
+    #gentcos="sudo bash gentcos"
 else:
     GLADE_DIR = "/usr/share/tcosconfig/"
     LOCALE_DIR = "/usr/share/locale"
@@ -143,10 +144,10 @@ TCOS_USENFS_VALUES=[
 ]
 
 TCOS_MENUS_TYPES=[
-# text # TCOS_NETBOOT_MENU # TCOS_NETBOOT_MENU_VESA # TCOS_NETBOOT_HIDE_INSTALL
-["",            "",                 "", False],
-["SIMPLE",      "1",                "", True],
-["GRAPHIC",     "1",                "1", True],
+# text # TCOS_NETBOOT_MENU # TCOS_NETBOOT_MENU_VESA # TCOS_NETBOOT_HIDE_INSTALL TCOS_NETBOOT_HIDE_LOCAL
+["",            "",                 "", False, False],
+["SIMPLE",      "1",                "", True, True],
+["GRAPHIC",     "1",                "1", True, True],
 ]
 
 ignored_widgets=[

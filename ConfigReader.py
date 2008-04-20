@@ -73,7 +73,7 @@ class ConfigReader:
         else:
             values={}
         if not os.path.exists(tpl):
-            print_debug("readtemplate() template % not found, returning empty dictionary"%tpl)
+            print_debug("readtemplate() template %s not found, returning empty dictionary"%tpl)
             return {}
         f=open(tpl, 'r')
         data=f.readlines()
@@ -193,10 +193,12 @@ class ConfigReader:
         if varname == 'TCOS_TEMPLATE':
             print_debug("changevalue() TCOS_TEMPLATE=%s"%newvalue)
             self.base_template=newvalue
+            return
             
         if varname in ['TCOS_NETBOOT_MENU','TCOS_NETBOOT_MENU_VESA']:
             print_debug("changevalue() menus varname=%s value='%s'"%(varname,newvalue))
             self.menus[varname]=newvalue
+            return
             
         self.confdata[varname]=newvalue
 
@@ -237,7 +239,15 @@ class ConfigReader:
             if key == "TCOS_TEMPLATE":
                 print_debug("savedata() TCOS_TEMPLATE=%s"%self.confdata[key])
                 continue
+            if key in ['TCOS_NETBOOT_MENU','TCOS_NETBOOT_MENU_VESA']:
+                if len(self.menus) <1:
+                    print_debug("saveconfig() no writing menus because self.menus is empty %s"%self.menus)
+                    continue
+                else:
+                    f.write( "%s=%s\n" %(key, self.menus[key] )  )
+                    continue
             f.write( "%s=%s\n" %(key, self.confdata[key] )  )
+            print_debug("savedata() %s=%s " %(key, self.confdata[key] ) )
         
         f.write("\n#end of template\n")
         f.close()
@@ -272,6 +282,7 @@ class ConfigReader:
             print_debug("revert() no changes, doing nothing")
             return
         if len (self.oldconfdata) > 1:
+            print_debug("revert() reverting changes...")
             f=open(shared.tcosconfig_template, 'w')
             for line in self.oldconfdata:
                 f.write(line + '\n')

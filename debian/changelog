@@ -6,8 +6,13 @@ tcosconfig (0.3~rc4) unstable; urgency=low
   * Revert changes in cancel and don't do nothing in finish button
   * Fail if no running as root
   * Update translations
+  * Add TCOS_NETBOOT_HIDE_LOCAL to boot menu options
+  * shared.py TcosGui.py ConfigReader.py
+    - Fix changedvars creation (only do in loadsettings)
+    - Fix netboot menu vars save
+  * Update translations
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 18 Apr 2008 15:59:50 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 16:31:41 +0200
 
 tcosconfig (0.3~rc3) unstable; urgency=low
 
