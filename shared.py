@@ -172,13 +172,20 @@ linked_widgets={
                          'TCOS_RDESKTOP':None,
                          'TCOS_ITALC':None,
                          'TCOS_XORG_ALLDRIVERS':None,
-                         'TCOS_XORG_OPENGL':None
+                         'TCOS_XORG_OPENGL':None,
+                         'TCOS_XORG_DRI':None,
+                         'TCOS_XORG_DRI_RADEON':None
                          },                {'TCOS_X11VNC':0, 
                                              'TCOS_FREENX':0,
                                              'TCOS_RDESKTOP':0,
                                              'TCOS_ITALC':0,
                                              'TCOS_XORG_ALLDRIVERS':0,
-                                             'TCOS_XORG_OPENGL':0}
+                                             'TCOS_XORG_OPENGL':0,
+                                             'TCOS_XORG_DRI':0,
+                                             'TCOS_XORG_DRI_RADEON':0}
+             ],
+'TCOS_XORG_DRI':['toggled', {'TCOS_XORG_DRI_RADEON':None},
+                                {'TCOS_XORG_DRI_RADEON':0}
              ],
 'TCOS_SOUND':['toggled', {'TCOS_SOUND_ISA':None, 'TCOS_PULSEAUDIO':None},
                                 {'TCOS_SOUND_ISA':0,'TCOS_PULSEAUDIO':0}
