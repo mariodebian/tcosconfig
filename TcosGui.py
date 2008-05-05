@@ -145,6 +145,7 @@ class TcosGui:
             widget.connect('toggled', self.on_tcos_menu_mode_change)
         self.menu_type=""
         
+        self.TCOS_XORG_DRI.connect('toggled', self.on_disable_dri_change)
         self.TCOS_DISABLE_USPLASH.connect('toggled', self.on_disable_usplash_change)
         
         # events for linked widgets
@@ -183,6 +184,13 @@ class TcosGui:
             self.TCOS_USPLASH.set_sensitive(False)
         else:
             self.TCOS_USPLASH.set_sensitive(True)
+            
+    def on_disable_dri_change(self, widget):
+        print_debug("on_disable_dri_change() value=%s"%widget.get_active())
+        if widget.get_active():
+            self.TCOS_XORG_DRI_RADEON.set_sensitive(True)
+        else:
+            self.TCOS_XORG_DRI_RADEON.set_sensitive(False)
 
     def on_tcos_menu_mode_change(self, widget):
         #print_debug("on_tcos_menu_mode_change() widget=%s active=%s"%(widget.name, widget.get_active()))

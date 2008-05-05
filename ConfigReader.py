@@ -26,7 +26,7 @@ import os
 import shared
 from gettext import gettext as _
 import time
-import shutil
+import shutil,grp,pwd
 
 def print_debug(txt):
     if shared.debug:
@@ -251,7 +251,16 @@ class ConfigReader:
         
         f.write("\n#end of template\n")
         f.close()
-        os.chmod(shared.tcosconfig_template, 600)
+        gidtcos=-1
+        for group in grp.getgrall():
+            if group[0] == "tcos":
+                gidtcos=group[2]
+
+        if gidtcos != -1:
+            os.chmod(shared.tcosconfig_template, 640)
+        else:
+            os.chmod(shared.tcosconfig_template, 600)
+        os.chown(shared.tcosconfig_template, -1, gidtcos)
         print_debug("file %s saved" %(shared.tcosconfig_template))
         self.setup_chroot()
 

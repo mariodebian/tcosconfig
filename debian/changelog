@@ -1,5 +1,6 @@
 tcosconfig (0.3~rc4) unstable; urgency=low
 
+  [ Mario Izquierdo (mariodebian) ]
   * Add TCOS_XORG_VIDEO_DRIVER and TCOS_XORG_VIDEO_RES to Xorg expander
   * Add some default settings in shared.py
   * Update translations
@@ -12,7 +13,13 @@ tcosconfig (0.3~rc4) unstable; urgency=low
     - Fix netboot menu vars save
   * Update translations
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 20 Apr 2008 16:31:41 +0200
+  [ Ignacio Vidal ]
+  * ConfigReader.py
+    - Add support in case group tcos exist
+  * TcosGui.py tcosconfig.glade
+    - Add TCOS_XORG_DRI, TCOS_XORG_DRI_RADEON and TCOS_XORG_DRIVER_OPENCHROME
+
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Mon, 05 May 2008 15:27:34 +0200
 
 tcosconfig (0.3~rc3) unstable; urgency=low
 
