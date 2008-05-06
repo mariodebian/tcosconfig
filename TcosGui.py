@@ -145,7 +145,7 @@ class TcosGui:
             widget.connect('toggled', self.on_tcos_menu_mode_change)
         self.menu_type=""
         
-        self.TCOS_XORG_DRI.connect('toggled', self.on_disable_dri_change)
+        #self.TCOS_XORG_DRI.connect('toggled', self.on_disable_dri_change)
         self.TCOS_DISABLE_USPLASH.connect('toggled', self.on_disable_usplash_change)
         
         # events for linked widgets
