@@ -257,10 +257,10 @@ class ConfigReader:
                 gidtcos=group[2]
 
         if gidtcos != -1:
-            os.chmod(shared.tcosconfig_template, 640)
+            os.chmod(shared.tcosconfig_template, 0640)
+            os.chown(shared.tcosconfig_template, 0, gidtcos)
         else:
-            os.chmod(shared.tcosconfig_template, 600)
-        os.chown(shared.tcosconfig_template, -1, gidtcos)
+            os.chmod(shared.tcosconfig_template, 0600)
         print_debug("file %s saved" %(shared.tcosconfig_template))
         self.setup_chroot()
 
@@ -281,7 +281,7 @@ class ConfigReader:
             print_debug ("setup_chroot() copying %s => %s"%(shared.tcosconfig_template, chroot_template))
             self.create_tree(chroot_template)
             shutil.copy(shared.tcosconfig_template, chroot_template )
-            os.chmod(chroot_template, 600)
+            os.chmod(chroot_template, 0600)
         else:
             print_debug("setup_chroot() no chroot defined '%s'"%shared.chroot)
 
