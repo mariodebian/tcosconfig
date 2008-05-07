@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-06 16:51+0200\n"
+"POT-Creation-Date: 2008-05-07 22:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,32 +29,40 @@ msgstr ""
 msgid "Need to enable <b>%s</b> before"
 msgstr ""
 
-#: TcosGui.py:276
+#: TcosGui.py:262
+msgid ""
+"You leave blank root password for thin clients in:\n"
+"    - Advanced settings -> Users and passwords                            \n"
+"\n"
+"The password will be established to: \"root\""
+msgstr ""
+
+#: TcosGui.py:279
 msgid "Overwriting it with your own settings."
 msgstr ""
 
-#: TcosGui.py:286
+#: TcosGui.py:289
 msgid ""
 "Something wrong ocurred while parsing command line options for gentcos.\n"
 "\n"
 "Select boot method??"
 msgstr ""
 
-#: TcosGui.py:293
+#: TcosGui.py:296
 #, python-format
 msgid "EXEC: %s"
 msgstr ""
 
-#: TcosGui.py:345
+#: TcosGui.py:348
 #, python-format
 msgid "Working... (%d %%)"
 msgstr ""
 
-#: TcosGui.py:347
+#: TcosGui.py:350
 msgid "Complete"
 msgstr ""
 
-#: TcosGui.py:415
+#: TcosGui.py:418
 #, python-format
 msgid ""
 "Configuration saved succesfully.\n"
@@ -62,11 +70,11 @@ msgid ""
 " %s"
 msgstr ""
 
-#: TcosGui.py:684
+#: TcosGui.py:687
 msgid "No template description avalaible"
 msgstr ""
 
-#: TcosGui.py:693
+#: TcosGui.py:696
 msgid "don't use any template"
 msgstr ""
 

@@ -258,6 +258,9 @@ class TcosGui:
     def on_startbutton_click(self, widget):
         textbuffer = self.processtxt.get_buffer()
         textbuffer.set_text('')
+        if self.TCOS_ROOT_PASSWD.get_text() == "":
+            self.info_msg(_("You leave blank root password for thin clients in:\n    - Advanced settings -> Users and passwords\
+                            \n\nThe password will be established to: \"root\""))
         #print_debug("Start clicked")
         # disable nextbutton
         self.nextbutton.set_sensitive(False)
