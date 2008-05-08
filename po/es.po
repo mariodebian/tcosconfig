@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-07 22:11+0200\n"
-"PO-Revision-Date: 2008-05-07 22:13+0200\n"
+"POT-Creation-Date: 2008-05-08 09:46+0200\n"
+"PO-Revision-Date: 2008-05-08 09:50+0200\n"
 "Last-Translator:  <mariodebian@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr ""
 "y generará imágenes arrancables para redes de clientes ligeros."
 
 #: tcosconfig.glade:154 tcosconfig.glade:344 tcosconfig.glade:2182
-#: tcosconfig.glade:4129 tcosconfig.glade:5231
+#: tcosconfig.glade:4129 tcosconfig.glade:5278
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" "
@@ -707,58 +707,60 @@ msgid "<b>Other settings</b>"
 msgstr "<b>Otras configuraciones</b>"
 
 #: tcosconfig.glade:4923
-msgid "Openchrome VIA driver"
-msgstr "Openchrome VIA driver"
-
-#: tcosconfig.glade:4951
 msgid "EPATEC eTC2300"
 msgstr "EPATEC eTC2300"
 
-#: tcosconfig.glade:4980
+#: tcosconfig.glade:4952
 msgid "enable eTC2300 hacks"
 msgstr "activar trucos eTC2300"
 
-#: tcosconfig.glade:5002
-msgid ""
-"enable Openchrome VIA chipset support : \n"
-"* Thin clients example:\n"
-"    -  Epatec eTC2500 \n"
-"    -  Epatec eTC3800\n"
-"    -  HP t5530"
-msgstr ""
-"activar soporte Openchrome VIA chipset \n"
-"* Clientes ligeros (ejemplo):\n"
-"    -  Epatec eTC2500 \n"
-"    -  Epatec eTC3800 \n"
-"    -  HP t5530"
-
-#: tcosconfig.glade:5027
+#: tcosconfig.glade:4973
 msgid "Intel Dot Station (Paquito)"
 msgstr "Intel dot station (Paquito)"
 
-#: tcosconfig.glade:5056
+#: tcosconfig.glade:5002
 msgid "enable dot station hacks"
 msgstr "activar trucos para dot station"
 
-#: tcosconfig.glade:5079
+#: tcosconfig.glade:5023
+msgid "Openchrome VIA driver"
+msgstr "Openchrome VIA driver"
+
+#: tcosconfig.glade:5052
+msgid ""
+"enable Xorg Openchrome VIA video support\n"
+"Thin clients: Epatec 3800 & 2500, HP t5530... etc"
+msgstr ""
+"activar soporte Xorg video Openchrome VIA\n"
+"Clientes ligeros: Epatec 3800 & 2500, HP t5530... etc"
+
+#: tcosconfig.glade:5074
+msgid "EPATEC eTC3800 & eTC2500"
+msgstr "EPATEC eTC3800 & eTC2500"
+
+#: tcosconfig.glade:5103
+msgid "enable eTC generic hacks (chipset VIA)"
+msgstr "activar trucos genericos para eTC"
+
+#: tcosconfig.glade:5126
 msgid "<b>Some thin clients hacks</b>"
 msgstr "<b>Algunos trucos para clientes ligeros</b>"
 
-#: tcosconfig.glade:5118
+#: tcosconfig.glade:5165
 msgid "Modify this cmdline append to yours needs"
 msgstr "Cambiar estas opciones de arranque por las que necesite"
 
-#: tcosconfig.glade:5142
+#: tcosconfig.glade:5189
 msgid "Select kernel version"
 msgstr ""
 "Seleccionar versión\n"
 "del kernel"
 
-#: tcosconfig.glade:5256 tcosconfig.glade:5319
+#: tcosconfig.glade:5303 tcosconfig.glade:5366
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
 msgstr "<span size=\"x-large\"><b>Método de aranque</b></span>"
 
-#: tcosconfig.glade:5281
+#: tcosconfig.glade:5328
 msgid ""
 "<span size=\"large\">Thin clients can boot with many methods:</span>\n"
 "\n"
@@ -778,7 +780,7 @@ msgstr ""
 "» Todas las tarjetas de red no soportadas pueden ser arrancadas desde una "
 "imagen de cdrom o disco duro\n"
 
-#: tcosconfig.glade:5425
+#: tcosconfig.glade:5472
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -791,31 +793,31 @@ msgstr ""
 "\"><b>2. Hacer imagen</b></span> » <span size=\"x-large\">3. Terminar</"
 "span></span>"
 
-#: tcosconfig.glade:5463
+#: tcosconfig.glade:5510
 msgid "<span size=\"x-large\">Building init images</span>"
 msgstr "<span size=\"x-large\">Creando imágenes de arranque</span>"
 
-#: tcosconfig.glade:5501
+#: tcosconfig.glade:5548
 msgid "Press <b>Start</b> to begin image generation."
 msgstr "Pulsa <b>Comenzar</b> para generar la imagen."
 
-#: tcosconfig.glade:5558
+#: tcosconfig.glade:5605
 msgid "Press here to start generation process"
 msgstr "Pulsar aquí para empezar el proceso de generación"
 
-#: tcosconfig.glade:5601
+#: tcosconfig.glade:5648
 msgid "Start"
 msgstr "Comenzar"
 
-#: tcosconfig.glade:5707
+#: tcosconfig.glade:5754
 msgid "View Process"
 msgstr "Ver proceso"
 
-#: tcosconfig.glade:5747
+#: tcosconfig.glade:5794
 msgid "Working..."
 msgstr "Trabajando..."
 
-#: tcosconfig.glade:5803
+#: tcosconfig.glade:5850
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -828,11 +830,11 @@ msgstr ""
 "b></span> » <span size=\"x-large\" foreground=\"black\"><b>3. Terminar</b></"
 "span></span>"
 
-#: tcosconfig.glade:5841
+#: tcosconfig.glade:5888
 msgid "<span size=\"xx-large\">Congratulations!</span>"
 msgstr "<span size=\"xx-large\">¡Enhorabuena!</span>"
 
-#: tcosconfig.glade:5873
+#: tcosconfig.glade:5920
 msgid ""
 "<span size=\"xx-large\">The generation has been successfully completed.</"
 "span>\n"
@@ -846,7 +848,7 @@ msgstr ""
 "Para arrancar estas imágenes en los clientes ligeros tiene que configurar el "
 "<b>servidor DHCP</b>."
 
-#: tcosconfig.glade:5900
+#: tcosconfig.glade:5947
 msgid ""
 "Press <b>Finish and Save</b> button to save this build settings or "
 "<b>Cancel</b> to quit."
@@ -854,23 +856,23 @@ msgstr ""
 "Pulsar el botón <b>Finalizar y guardar</b> para guardar estos ajustes o "
 "pulse <b>Cancelar</b> para salir."
 
-#: tcosconfig.glade:6123
+#: tcosconfig.glade:6170
 msgid "Finish and save"
 msgstr "Terminar y guardar"
 
-#: tcosconfig.glade:6179
+#: tcosconfig.glade:6226
 msgid "License GNU/GPL"
 msgstr "Licencia GNU/GPL"
 
-#: tcosconfig.glade:6180
+#: tcosconfig.glade:6227
 msgid "TCOS Network image generator"
 msgstr "Generador de imágenes de red TcosConfig"
 
-#: tcosconfig.glade:6183
+#: tcosconfig.glade:6230
 msgid "TcosConfig web site"
 msgstr "Página web TcosConfig"
 
-#: tcosconfig.glade:6186
+#: tcosconfig.glade:6233
 msgid "translator-credits"
 msgstr ""
 "Mario Izquierdo (mariodebian)\n"
@@ -1066,9 +1068,6 @@ msgstr ""
 #: DetectArch.py:64
 msgid "TcosConfig, invalid architecture"
 msgstr "TcosConfig, arquitectura inválida"
-
-#~ msgid "EPATEC eTC3800"
-#~ msgstr "EPATEC eTC3800"
 
 #~ msgid "enable eTC3800 hacks"
 #~ msgstr "activar trucos eTC3800"
