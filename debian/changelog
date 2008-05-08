@@ -16,11 +16,12 @@ tcosconfig (0.3~rc4) unstable; urgency=low
   [ Ignacio Vidal ]
   * ConfigReader.py
     - Add support in case group tcos exist
-  * TcosGui.py tcosconfig.glade
+  * TcosGui.py tcosconfig.glade shared.py
     - Add TCOS_XORG_DRI, TCOS_XORG_DRI_RADEON and TCOS_XORG_DRIVER_OPENCHROME
     - In case blank password, that is set to root, send a message to know
+    - Force use custom tcos template by default 
 
- -- Ignacio Vidal <vidal_joshur@gva.es>  Wed, 07 May 2008 21:44:17 +0200
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Thu, 08 May 2008 12:28:20 +0200
 
 tcosconfig (0.3~rc3) unstable; urgency=low
 

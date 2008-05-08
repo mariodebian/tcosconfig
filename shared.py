@@ -57,8 +57,8 @@ else:
     GLADE_DIR = "/usr/share/tcosconfig/"
     LOCALE_DIR = "/usr/share/locale"
     
-
-
+# force a default tcos template, example /usr/share/initramfs-tools-tcos/templates/tcos.conf.custom
+tcos_force_base_template=""
 
 # gettext support
 setlocale( LC_ALL )

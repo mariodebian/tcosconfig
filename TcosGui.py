@@ -690,6 +690,8 @@ class TcosGui:
         default_template=self.config.getvalue('TCOS_TEMPLATE')
         if os.path.exists(shared.tcosconfig_template):
             default_template=os.path.basename(shared.tcosconfig_template)
+        elif os.path.exists(shared.tcos_force_base_template):
+            default_template=os.path.basename(shared.tcos_force_base_template)
         print_debug("populatetemplates() default=%s"%default_template)
         # populate template list
         templatelist = gtk.ListStore(str,str)
