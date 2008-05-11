@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-08 12:27+0200\n"
+"POT-Creation-Date: 2008-05-11 11:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgid ""
 msgstr ""
 
 #: tcosconfig.glade:154 tcosconfig.glade:344 tcosconfig.glade:2182
-#: tcosconfig.glade:4129 tcosconfig.glade:5278
+#: tcosconfig.glade:4179 tcosconfig.glade:5328
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" "
@@ -471,235 +471,243 @@ msgstr ""
 msgid "enable TcosMonitor"
 msgstr ""
 
-#: tcosconfig.glade:3268
+#: tcosconfig.glade:3266
+msgid "SSL encryption in XMLRPC"
+msgstr ""
+
+#: tcosconfig.glade:3295
+msgid "enable SSL encryption (need stunnel4)"
+msgstr ""
+
+#: tcosconfig.glade:3318
 msgid "<b>Services, daemons settings</b>"
 msgstr ""
 
-#: tcosconfig.glade:3363
+#: tcosconfig.glade:3413
 msgid "(leave empty by default)"
 msgstr ""
 
-#: tcosconfig.glade:3424
+#: tcosconfig.glade:3474
 msgid "user to be admin of thin clients"
 msgstr ""
 
-#: tcosconfig.glade:3459
+#: tcosconfig.glade:3509
 msgid "Server IP address"
 msgstr ""
 
-#: tcosconfig.glade:3487
+#: tcosconfig.glade:3537
 msgid "Server admin username"
 msgstr ""
 
-#: tcosconfig.glade:3515
+#: tcosconfig.glade:3565
 msgid "Terminal password"
 msgstr ""
 
-#: tcosconfig.glade:3569
+#: tcosconfig.glade:3619
 msgid "root's terminal password (if empty this is root)"
 msgstr ""
 
-#: tcosconfig.glade:3604
+#: tcosconfig.glade:3654
 msgid "Protect first console (tty1)"
 msgstr ""
 
-#: tcosconfig.glade:3633
+#: tcosconfig.glade:3683
 msgid ""
 "ask for user and password in tty1, \n"
 "others always ask for password"
 msgstr ""
 
-#: tcosconfig.glade:3655
+#: tcosconfig.glade:3705
 msgid "Number of tty shells"
 msgstr ""
 
-#: tcosconfig.glade:3708
+#: tcosconfig.glade:3758
 msgid "between 1 to 6"
 msgstr ""
 
-#: tcosconfig.glade:3745
+#: tcosconfig.glade:3795
 msgid "<b>Users and passwords (auth)</b>"
 msgstr ""
 
-#: tcosconfig.glade:3813
+#: tcosconfig.glade:3863
 msgid "Menu type"
 msgstr ""
 
-#: tcosconfig.glade:3841
+#: tcosconfig.glade:3891
 msgid "Usplash and theme"
 msgstr ""
 
-#: tcosconfig.glade:3876
+#: tcosconfig.glade:3926
 msgid "disable usplash"
 msgstr ""
 
-#: tcosconfig.glade:3925
+#: tcosconfig.glade:3975
 msgid "No menu, only splash (default)"
 msgstr ""
 
-#: tcosconfig.glade:3944
+#: tcosconfig.glade:3994
 msgid "Simple text mode"
 msgstr ""
 
-#: tcosconfig.glade:3964
+#: tcosconfig.glade:4014
 msgid "Graphic menu mode (need BIOS vesa support)"
 msgstr ""
 
-#: tcosconfig.glade:3984
+#: tcosconfig.glade:4034
 msgid "Hide menu install options"
 msgstr ""
 
-#: tcosconfig.glade:4003
+#: tcosconfig.glade:4053
 msgid "Hide local boot from hdd"
 msgstr ""
 
-#: tcosconfig.glade:4033
+#: tcosconfig.glade:4083
 msgid "<b>Boot menu and usplash</b>"
 msgstr ""
 
-#: tcosconfig.glade:4154
+#: tcosconfig.glade:4204
 msgid "<span size=\"xx-large\"><b>Advanced Settings</b></span>"
 msgstr ""
 
-#: tcosconfig.glade:4199
+#: tcosconfig.glade:4249
 msgid ""
 "Default command\n"
 "line append \n"
 "(for NBI images)"
 msgstr ""
 
-#: tcosconfig.glade:4268
+#: tcosconfig.glade:4318
 msgid "Show needed modules"
 msgstr ""
 
-#: tcosconfig.glade:4297
+#: tcosconfig.glade:4347
 msgid "show not found modules (stop at boot)"
 msgstr ""
 
-#: tcosconfig.glade:4318
+#: tcosconfig.glade:4368
 msgid "Include all modules"
 msgstr ""
 
-#: tcosconfig.glade:4347
+#: tcosconfig.glade:4397
 msgid "include all modules (don't use by default)"
 msgstr ""
 
-#: tcosconfig.glade:4368
+#: tcosconfig.glade:4418
 msgid ""
 "Extra kernel modules\n"
 "(coma separated)"
 msgstr ""
 
-#: tcosconfig.glade:4397
+#: tcosconfig.glade:4447
 msgid "USB devices support"
 msgstr ""
 
-#: tcosconfig.glade:4426
+#: tcosconfig.glade:4476
 msgid "enable USB devices"
 msgstr ""
 
-#: tcosconfig.glade:4447
+#: tcosconfig.glade:4497
 msgid "IDE PATA SATA disk support"
 msgstr ""
 
-#: tcosconfig.glade:4476
+#: tcosconfig.glade:4526
 msgid "disable IDE PATA devices"
 msgstr ""
 
-#: tcosconfig.glade:4497
+#: tcosconfig.glade:4547
 msgid "USB support"
 msgstr ""
 
-#: tcosconfig.glade:4526
+#: tcosconfig.glade:4576
 msgid "disable USB devices support"
 msgstr ""
 
-#: tcosconfig.glade:4548
+#: tcosconfig.glade:4598
 msgid ""
 "Add extra modules here (coma separated)\n"
 "Example:\n"
 "intel-agp,nv,joydev,pcspkr"
 msgstr ""
 
-#: tcosconfig.glade:4575
+#: tcosconfig.glade:4625
 msgid "<b>Kernel options</b>"
 msgstr ""
 
-#: tcosconfig.glade:4653
+#: tcosconfig.glade:4703
 msgid "Enable local web browser"
 msgstr ""
 
-#: tcosconfig.glade:4698
+#: tcosconfig.glade:4748
 msgid "Use NFS (for lowmem)"
 msgstr ""
 
-#: tcosconfig.glade:4743
+#: tcosconfig.glade:4793
 msgid "Include AUTOFS"
 msgstr ""
 
-#: tcosconfig.glade:4772
+#: tcosconfig.glade:4822
 msgid "enable AUTOFS support"
 msgstr ""
 
-#: tcosconfig.glade:4793
+#: tcosconfig.glade:4843
 msgid "Cache packages"
 msgstr ""
 
-#: tcosconfig.glade:4845
+#: tcosconfig.glade:4895
 msgid "<b>Other settings</b>"
 msgstr ""
 
-#: tcosconfig.glade:4923
+#: tcosconfig.glade:4973
 msgid "EPATEC eTC2300"
 msgstr ""
 
-#: tcosconfig.glade:4952
+#: tcosconfig.glade:5002
 msgid "enable eTC2300 hacks"
 msgstr ""
 
-#: tcosconfig.glade:4973
+#: tcosconfig.glade:5023
 msgid "Intel Dot Station (Paquito)"
 msgstr ""
 
-#: tcosconfig.glade:5002
+#: tcosconfig.glade:5052
 msgid "enable dot station hacks"
 msgstr ""
 
-#: tcosconfig.glade:5023
+#: tcosconfig.glade:5073
 msgid "Openchrome VIA driver"
 msgstr ""
 
-#: tcosconfig.glade:5052
+#: tcosconfig.glade:5102
 msgid ""
 "enable Xorg Openchrome VIA video support\n"
 "Thin clients: Epatec 3800 & 2500, HP t5530... etc"
 msgstr ""
 
-#: tcosconfig.glade:5074
+#: tcosconfig.glade:5124
 msgid "EPATEC eTC3800 & eTC2500"
 msgstr ""
 
-#: tcosconfig.glade:5103
+#: tcosconfig.glade:5153
 msgid "enable eTC generic hacks (chipset VIA)"
 msgstr ""
 
-#: tcosconfig.glade:5126
+#: tcosconfig.glade:5176
 msgid "<b>Some thin clients hacks</b>"
 msgstr ""
 
-#: tcosconfig.glade:5165
+#: tcosconfig.glade:5215
 msgid "Modify this cmdline append to yours needs"
 msgstr ""
 
-#: tcosconfig.glade:5189
+#: tcosconfig.glade:5239
 msgid "Select kernel version"
 msgstr ""
 
-#: tcosconfig.glade:5303 tcosconfig.glade:5366
+#: tcosconfig.glade:5353 tcosconfig.glade:5416
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
 msgstr ""
 
-#: tcosconfig.glade:5328
+#: tcosconfig.glade:5378
 msgid ""
 "<span size=\"large\">Thin clients can boot with many methods:</span>\n"
 "\n"
@@ -710,7 +718,7 @@ msgid ""
 "disk.\n"
 msgstr ""
 
-#: tcosconfig.glade:5472
+#: tcosconfig.glade:5522
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -718,31 +726,31 @@ msgid ""
 "image</b></span> » <span size=\"x-large\">3. Finish!</span></span>"
 msgstr ""
 
-#: tcosconfig.glade:5510
+#: tcosconfig.glade:5560
 msgid "<span size=\"x-large\">Building init images</span>"
 msgstr ""
 
-#: tcosconfig.glade:5548
+#: tcosconfig.glade:5598
 msgid "Press <b>Start</b> to begin image generation."
 msgstr ""
 
-#: tcosconfig.glade:5605
+#: tcosconfig.glade:5655
 msgid "Press here to start generation process"
 msgstr ""
 
-#: tcosconfig.glade:5648
+#: tcosconfig.glade:5698
 msgid "Start"
 msgstr ""
 
-#: tcosconfig.glade:5754
+#: tcosconfig.glade:5804
 msgid "View Process"
 msgstr ""
 
-#: tcosconfig.glade:5794
+#: tcosconfig.glade:5844
 msgid "Working..."
 msgstr ""
 
-#: tcosconfig.glade:5850
+#: tcosconfig.glade:5900
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -750,11 +758,11 @@ msgid ""
 "<span size=\"x-large\" foreground=\"black\"><b>3. Finish!</b></span></span>"
 msgstr ""
 
-#: tcosconfig.glade:5888
+#: tcosconfig.glade:5938
 msgid "<span size=\"xx-large\">Congratulations!</span>"
 msgstr ""
 
-#: tcosconfig.glade:5920
+#: tcosconfig.glade:5970
 msgid ""
 "<span size=\"xx-large\">The generation has been successfully completed.</"
 "span>\n"
@@ -763,29 +771,29 @@ msgid ""
 "<b>DHCP server</b> file."
 msgstr ""
 
-#: tcosconfig.glade:5947
+#: tcosconfig.glade:5997
 msgid ""
 "Press <b>Finish and Save</b> button to save this build settings or "
 "<b>Cancel</b> to quit."
 msgstr ""
 
-#: tcosconfig.glade:6170
+#: tcosconfig.glade:6220
 msgid "Finish and save"
 msgstr ""
 
-#: tcosconfig.glade:6226
+#: tcosconfig.glade:6276
 msgid "License GNU/GPL"
 msgstr ""
 
-#: tcosconfig.glade:6227
+#: tcosconfig.glade:6277
 msgid "TCOS Network image generator"
 msgstr ""
 
-#: tcosconfig.glade:6230
+#: tcosconfig.glade:6280
 msgid "TcosConfig web site"
 msgstr ""
 
-#: tcosconfig.glade:6233
+#: tcosconfig.glade:6283
 msgid "translator-credits"
 msgstr ""
 
