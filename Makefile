@@ -1,4 +1,4 @@
-all: fix-glade es.gmo
+all: fix-glade
 
 include common.mk
 
@@ -17,24 +17,20 @@ gedit:
 
 clean:
 	rm -f *~ *.pyc *.orig *.bak *-stamp *glade.backup
-	rm -rf po/es pixmaps/
+	rm -rf pixmaps/
+	cd po && make clean
 	dh_clean
 
 pot:
-	xgettext -o po/tcosconfig.pot --files-from=po/FILES
+	cd po && make pot
 
 es.po:
-	rm -f po/$(project).glade.pot
-	msginit --input po/$(project).pot -o po/es-new.po
-	msgmerge -o po/es-new.po po/es.po po/$(project).pot
-	##################################################
-	#           translate po/es-new.po               #
-	##################################################
+	############################################################
+	#   OBSOLETE Makefile target => cd po and make into it     #
+	############################################################
+	@exit 1
 
-es.gmo:
-	if [ -f po/es-new.po ]; then  mv po/es-new.po po/es.po ; fi
-	mkdir -p po/es/LC_MESSAGES/
-	msgfmt --verbose -o po/es/LC_MESSAGES/$(project).mo po/es.po
+es.gmo: es.po
 
 
 install:
@@ -65,7 +61,7 @@ install:
 	install -m 755 tcosconfig.sh $(DESTDIR)/usr/bin/tcosconfig
 
 	# locales
-	install -m 644 po/es/LC_MESSAGES/$(project).mo $(DESTDIR)/usr/share/locale/es/LC_MESSAGES/$(project).mo
+	cd po && make install DESTDIR=$(DESTDIR)
 
 uninstall:
 	#  Deleting tcos_config directories

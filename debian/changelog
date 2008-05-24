@@ -1,3 +1,11 @@
+tcosconfig (0.3~rc6) unstable; urgency=low
+
+  * Change translation model (obtained from private/tcosmonitor)
+  * Add translation pt_BR:
+    (thanks Maria del Mar Alejo Campos (mymalejo) and Luis Méndez Alejo (gnumax))
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 24 May 2008 19:39:13 +0200
+
 tcosconfig (0.3~rc5) unstable; urgency=low
 
   * Add TCOS_ENABLE_SSL checkbox and update translations
