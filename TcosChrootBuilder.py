@@ -51,7 +51,7 @@ DISTRO_VERSIONS={
 KERNEL_VERSIONS={
 "etch":"2.6.18-6-486"  ,
 "testing":"2.6.24-1-486"  ,
-"unstable":"2.6.24-1-486"  ,
+"unstable":"2.6.25-2-486"  ,
 "dapper":"2.6.15-29-386"  ,
 "edgy":"2.6.17-12-generic"  ,
 "feisty":"2.6.20-16-generic"  ,
