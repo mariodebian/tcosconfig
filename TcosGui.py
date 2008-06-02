@@ -258,7 +258,7 @@ class TcosGui:
     def on_startbutton_click(self, widget):
         textbuffer = self.processtxt.get_buffer()
         textbuffer.set_text('')
-        if self.TCOS_ROOT_PASSWD.get_text() == "":
+        if self.TCOS_ROOT_PASSWD.get_text() == "" and self.config.use_secrets == False:
             self.info_msg(_("You leave blank root password for thin clients in:\n    - Advanced settings -> Users and passwords\
                             \n\nThe password will be established to: \"root\""))
         #print_debug("Start clicked")
@@ -813,7 +813,23 @@ class TcosGui:
             
             else:
                 print_debug( "TcosGui::loadsettings() __ERROR__ unknow %s type %s" %(exp, wtype ) )
-
+        
+        if os.path.isfile(shared.config_file_secrets) and self.config.use_secrets == False:
+            try:
+                fd=file(shared.config_file_secrets, 'r')
+            except:
+                return
+            data=fd.readline()
+            fd.close()
+            if data != "\n":
+                (var1,var2)=data.replace("\n", "").split(":")
+                self.config.vars_secrets.append([var1,var2])
+                self.config.use_secrets=True
+                self.TCOS_ADMIN_USER.set_text("")
+                self.TCOS_ROOT_PASSWD.set_text("")
+                self.TCOS_ADMIN_USER.set_sensitive(False)
+                self.TCOS_ROOT_PASSWD.set_sensitive(False)
+                
             
     # some dialog messages
     def error_msg(self,txt):

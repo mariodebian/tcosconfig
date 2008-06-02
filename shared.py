@@ -44,6 +44,7 @@ tcos_config_file="./tcos.conf"
 templates_dir="/usr/share/initramfs-tools-tcos/templates/"
 tcos_config_base=templates_dir + "/base.conf"
 tcosconfig_template="/etc/tcos/templates/tcosconfig.conf"
+config_file_secrets=('/etc/tcos/secrets/tcosmonitor-secret')
 tcos_config_file="/etc/tcos/tcos.conf"
 gentcos="/usr/sbin/gentcos"
 

@@ -1,3 +1,10 @@
+tcosconfig (0.3~rc7) unstable; urgency=low
+
+  * ConfigReader.py shared.py TcosGui.py
+    - Allow from generic /etc/tcos/secrets/tcosmonitor-secrets user and passwd
+
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Mon, 02 Jun 2008 15:10:13 +0200
+
 tcosconfig (0.3~rc6) unstable; urgency=low
 
   * Change translation model (obtained from private/tcosmonitor)

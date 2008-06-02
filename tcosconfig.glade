@@ -2752,7 +2752,7 @@ boot using NFS</property>
 			<widget class="GtkExpander" id="expander_services">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
-			  <property name="expanded">True</property>
+			  <property name="expanded">False</property>
 			  <property name="spacing">0</property>
 
 			  <child>
@@ -5150,7 +5150,7 @@ Thin clients: Epatec 3800 &amp; 2500, HP t5530... etc</property>
 				    <widget class="GtkCheckButton" id="TCOS_ETC_GENERIC">
 				      <property name="visible">True</property>
 				      <property name="can_focus">True</property>
-				      <property name="label" translatable="yes">enable eTC generic hacks (chipset VIA)</property>
+				      <property name="label" translatable="yes">enable generic VIA modules</property>
 				      <property name="use_underline">True</property>
 				      <property name="relief">GTK_RELIEF_NORMAL</property>
 				      <property name="focus_on_click">True</property>

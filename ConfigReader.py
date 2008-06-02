@@ -46,6 +46,8 @@ class ConfigReader:
         self.base_template=None
         self.force_settings={}
         self.ignored_widgets=shared.ignored_widgets
+        self.use_secrets=False
+        self.vars_secrets=[]
         
         # new vars
         self.confdata={}
@@ -249,6 +251,9 @@ class ConfigReader:
             f.write( "%s=%s\n" %(key, self.confdata[key] )  )
             print_debug("savedata() %s=%s " %(key, self.confdata[key] ) )
         
+        if self.use_secrets:
+            f.write( "TCOS_ADMIN_USER=%s\n" %(self.vars_secrets[0][0])  )
+            f.write( "TCOS_ROOT_PASSWD=%s\n" %(self.vars_secrets[0][1])  )
         f.write("\n#end of template\n")
         f.close()
         gidtcos=-1
