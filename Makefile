@@ -117,7 +117,16 @@ patch_feisty: patch_version
 patch_gutsy: patch_version
 	# nothing to patch
 
+patch_hardy: patch_version
+	# nothing to patch
+
+patch_max: patch_version
+	# nothing to patch
+
 patch_etch: patch_version
+	# nothing to patch
+
+patch_testing: patch_version
 	# nothing to patch
 
 patch_unstable: patch_version
