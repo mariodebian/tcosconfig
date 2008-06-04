@@ -814,7 +814,7 @@ class TcosGui:
             else:
                 print_debug( "TcosGui::loadsettings() __ERROR__ unknow %s type %s" %(exp, wtype ) )
         
-        if os.path.isfile(shared.config_file_secrets) and self.config.use_secrets == False:
+        if os.path.isfile(shared.config_file_secrets):
             try:
                 fd=file(shared.config_file_secrets, 'r')
             except:
