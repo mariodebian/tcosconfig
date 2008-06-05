@@ -822,8 +822,6 @@ class TcosGui:
             data=fd.readline()
             fd.close()
             if data != "\n":
-                (var1,var2)=data.replace("\n", "").split(":")
-                self.config.vars_secrets.append([var1,var2])
                 self.config.use_secrets=True
                 self.TCOS_ADMIN_USER.set_text("")
                 self.TCOS_ROOT_PASSWD.set_text("")

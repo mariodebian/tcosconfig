@@ -2,8 +2,10 @@ tcosconfig (0.3~rc8) unstable; urgency=low
 
   * TcosGui.py
     - Fix typo
+  * ConfigReader.py shared.py TcosGui.py
+    - Revert some changes
 
- -- Ignacio Vidal <vidal_joshur@gva.es>  Wed, 04 Jun 2008 15:13:51 +0200
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Thu, 05 Jun 2008 17:02:53 +0200
 
 tcosconfig (0.3~rc7) unstable; urgency=low
 
