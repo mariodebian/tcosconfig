@@ -28,11 +28,15 @@ pygtk.require('2.0')
 import gtk
 import gtk.glade
 import time
-from subprocess import Popen, PIPE
+#from subprocess import Popen, PIPE
 from gettext import gettext as _
 
-from VirtualTerminal import VirtualTerminal 
+#from VirtualTerminal import VirtualTerminal 
 import shared
+
+from subprocess import Popen, PIPE, STDOUT
+from threading import Thread
+gtk.gdk.threads_init()
 
 PACKAGE="tcosconfig"
 LOCALE_DIR=""
@@ -96,6 +100,8 @@ class TcosChroot:
         
         self.window = self.ui.get_widget("window")
         self.window.connect("destroy", self.quit )
+        
+        self.window.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
         
         # buttons
         self.button_chroot = self.ui.get_widget("button_chroot")
@@ -167,9 +173,10 @@ class TcosChroot:
         
         self.enableButtons()
         
-        self.term=VirtualTerminal()
-        self.scrolledwindow.add_with_viewport(self.term)
-        self.term.show()
+        #self.term=VirtualTerminal()
+        #self.scrolledwindow.add_with_viewport(self.term)
+        #self.term.show()
+        self.output = self.ui.get_widget("output")
         
         
                 
@@ -296,7 +303,7 @@ class TcosChroot:
         cmd=BUILD_CHROOT_CMD + " --update --dir=%s" %(self.buildvars["TCOS_CHROOT"])
         print_debug ("updateChroot() cmd=%s" %cmd) 
         self.run_command(cmd)
-        self.enableButtons()
+        #self.enableButtons()
 
     def buildTcos(self, *args):
         self.chroot_options.set_expanded(False)
@@ -353,24 +360,66 @@ class TcosChroot:
 
     def run_command(self, cmd):
         self.disableButtons()
+        self.output.set_sensitive(False)
+        #self.enableButtons()
+        #self.term.fork_command()
+        #self.term.run_command(cmd)
+        #while 1:
+        #    if not self.term.thread_running:
+        #        break
+        th=Thread(target=self.generateimages, args=(cmd,) )
+        th.start()
         
-        self.term.fork_command()
-        self.term.run_command(cmd)
-        while 1:
-            if not self.term.thread_running:
-                break
-        """
-        message=_("Done")
-        dialog = gtk.MessageDialog(parent=None, flags=0, type=gtk.MESSAGE_INFO, buttons=gtk.BUTTONS_OK, message_format=message)
-        dialog.set_title( _("TcosConfig, invalid architecture") )
-        dialog.set_icon ( gtk.gdk.pixbuf_new_from_file(shared.GLADE_DIR + "images/tcos-icon.png") )
-        dialog.show_all()
-        responce = dialog.run()
-        dialog.destroy()
-        """
-        self.enableButtons()
         return
- 
+
+    def generateimages(self, cmdline):
+        self.isfinished=False
+        p = Popen(cmdline, shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        print_debug ("generateimages() exec: %s"%cmdline)
+        stdout=p.stdout
+        counter=0.1
+        step=0.02
+        while not self.isfinished:
+            #time.sleep(0.1)
+            line=stdout.readline().replace('\n','')
+            print_debug("generateimages() %s"%line)
+            
+            #if len(line) > 0:
+            #    counter=counter+step
+                
+            if p.poll() != None:
+                self.isfinished=True
+            
+            if line.startswith('bash: no job') or line.startswith('root@'):
+                continue
+            gtk.gdk.threads_enter()
+            #self.updateprogressbar(counter)
+            self.writeoutputtxt( line )
+            gtk.gdk.threads_leave()
+        
+        gtk.gdk.threads_enter()
+        self.enableButtons()
+        self.output.set_sensitive(True)
+        gtk.gdk.threads_leave()
+
+    def writeoutputtxt(self, txt):
+        buffer = self.output.get_buffer()
+        iter = buffer.get_end_iter()
+        mark = buffer.get_insert()
+        txt=str(txt)
+        if len(txt) > 80:
+            #print_debug("writeoutputtxt() range(len(txt)/80)=%s"%range(len(txt)/70))
+            for i in range((len(txt)/80)+1):
+                j=i*80
+                #print_debug("writeoutputtxt() [%s:%s]" %(j, j+80))
+                buffer.insert(iter, '\n' + txt[j:j+80])
+        else:
+            buffer.insert(iter, '\n' + txt)
+        # scroll window
+        self.output.scroll_to_mark(mark, 0.2)
+        self.output.scroll_to_iter(buffer.get_end_iter(),0.05, True, 0.0, 1.0)
+        return
+
     def run(self):
         gtk.main()
         

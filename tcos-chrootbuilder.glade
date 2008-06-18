@@ -4,7 +4,7 @@
 <glade-interface>
 
 <widget class="GtkWindow" id="window">
-  <property name="width_request">700</property>
+  <property name="width_request">750</property>
   <property name="height_request">550</property>
   <property name="visible">True</property>
   <property name="title">TcosConfig</property>
@@ -58,13 +58,29 @@
 	  <property name="height_request">250</property>
 	  <property name="visible">True</property>
 	  <property name="can_focus">True</property>
-	  <property name="hscrollbar_policy">GTK_POLICY_NEVER</property>
+	  <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
 	  <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
 	  <property name="shadow_type">GTK_SHADOW_IN</property>
 	  <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
 
 	  <child>
-	    <placeholder/>
+	    <widget class="GtkTextView" id="output">
+	      <property name="visible">True</property>
+	      <property name="can_focus">True</property>
+	      <property name="editable">False</property>
+	      <property name="overwrite">False</property>
+	      <property name="accepts_tab">True</property>
+	      <property name="justification">GTK_JUSTIFY_LEFT</property>
+	      <property name="wrap_mode">GTK_WRAP_NONE</property>
+	      <property name="cursor_visible">False</property>
+	      <property name="pixels_above_lines">0</property>
+	      <property name="pixels_below_lines">0</property>
+	      <property name="pixels_inside_wrap">10</property>
+	      <property name="left_margin">7</property>
+	      <property name="right_margin">7</property>
+	      <property name="indent">0</property>
+	      <property name="text" translatable="yes"></property>
+	    </widget>
 	  </child>
 	</widget>
 	<packing>
@@ -87,7 +103,7 @@
 	    <widget class="GtkExpander" id="chroot_options">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
-	      <property name="expanded">True</property>
+	      <property name="expanded">False</property>
 	      <property name="spacing">0</property>
 
 	      <child>
@@ -490,7 +506,8 @@ ubuntu</property>
 
 	  <child>
 	    <widget class="GtkHBox" id="hbox1">
-	      <property name="height_request">35</property>
+	      <property name="border_width">4</property>
+	      <property name="height_request">40</property>
 	      <property name="visible">True</property>
 	      <property name="homogeneous">False</property>
 	      <property name="spacing">0</property>

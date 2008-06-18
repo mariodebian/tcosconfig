@@ -1,3 +1,9 @@
+tcosconfig (0.3~rc9) unstable; urgency=low
+
+  * Remove Virtualterminal and vte dependencies, use a textview
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 18 Jun 2008 18:14:12 +0200
+
 tcosconfig (0.3~rc8) unstable; urgency=low
 
   * TcosGui.py

@@ -55,7 +55,7 @@ install:
 
 	install -m 644 TcosChrootBuilder.py $(DESTDIR)/usr/share/$(project)/
 	install -m 644 DetectArch.py $(DESTDIR)/usr/share/$(project)/
-	install -m 644 VirtualTerminal.py $(DESTDIR)/usr/share/$(project)/
+#	install -m 644 VirtualTerminal.py $(DESTDIR)/usr/share/$(project)/
 	install -m 644 tcos-chrootbuilder.glade $(DESTDIR)/usr/share/$(project)/
 
 	install -m 755 tcosconfig.sh $(DESTDIR)/usr/bin/tcosconfig
