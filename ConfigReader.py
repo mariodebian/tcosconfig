@@ -27,6 +27,7 @@ import shared
 from gettext import gettext as _
 import time
 import shutil,grp,pwd
+import glob
 
 def print_debug(txt):
     if shared.debug:
@@ -141,32 +142,35 @@ class ConfigReader:
             import sys
             sys.exit(1)
 
-
-    
     def getkernels(self):
         # valid kernel >= 2.6.12
         # perpahps we can try to build initrd image instead of initramfs
         # in kernel < 2.6.12, this require a lot of work in gentcos and init scripts
-        
-        #print_debug ("getkernels() read all vmlinuz in /boot/")
-        for _file in os.listdir(shared.chroot + '/boot'):
-            # FIXME, in vmlinuz valid names are vmlinuz-X.X.X-extra or vmlinuz-X.X.X_extra
-            # if need more string separators add into pattern=re.compile ('[-_]')
-            # http://libertonia.escomposlinux.org/story/2006/1/5/223624/2276
-            if _file.find('vmlinuz') == 0 :
-                kernel=_file.replace('vmlinuz-','')
-                # split only 3 times
+        for _file in glob.glob(shared.chroot + '/boot/vmlinuz*'):
+            try:
+                os.stat(_file)
+            except:
+                print_debug("getkernels() link %s broken" %_file)
+                continue
+            kernel=os.path.basename(_file).replace('vmlinuz-','')
+            print_debug("getkernels() found %s"%kernel)
+            # split only 3 times
+            try:
                 (kmay, kmed, kmin) = kernel.split('.',2)
-                import re
-                pattern = re.compile ('[-_.+]')
-                (kmin, kextra) = pattern.split(kmin,1)
-                # need kernel >= 2.6.12
-                if int(kmay)==2 and int(kmed)==6 and int(kmin)>=12:
-                    #print_debug( "getkernels() VALID kernel %s" %(kernel) )
-                    self.kernels.append(kernel)
-                else:
-                    print_debug( "getkernels() INVALID OLD kernel %s" %(kernel) )
+            except Exception, err:
+                print_debug("getkernels() exception spliting kernel '%s' version, %s"%(kernel,err))
+                continue
+            import re
+            pattern = re.compile ('[-_.+]')
+            (kmin, kextra) = pattern.split(kmin,1)
+            # need kernel >= 2.6.12
+            if int(kmay)==2 and int(kmed)==6 and int(kmin)>=12:
+                #print_debug( "getkernels() VALID kernel %s" %(kernel) )
+                self.kernels.append(kernel)
+            else:
+                print_debug( "getkernels() INVALID OLD kernel %s" %(kernel) )
         return
+
 
     def getusplash(self):
         self.usplash_themes=[]

@@ -1,3 +1,10 @@
+tcosconfig (0.3~rc10) unstable; urgency=low
+
+  * ConfigReader.py:
+    - rewrite getkernels function
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 26 Jun 2008 11:19:27 +0200
+
 tcosconfig (0.3~rc9) unstable; urgency=low
 
   * Remove Virtualterminal and vte dependencies, use a textview
