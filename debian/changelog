@@ -1,3 +1,9 @@
+tcosconfig (0.3~rc13) unstable; urgency=low
+
+  * Update pt_BR translation, thanks to: Aécio dos Santos Pires <aecio at comunicacaodigital.org>"
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 16 Jul 2008 20:35:30 +0200
+
 tcosconfig (0.3~rc12) unstable; urgency=low
 
   * Update pt_BR translation, thanks to: Aécio dos Santos Pires <aecio at comunicacaodigital.org>"
