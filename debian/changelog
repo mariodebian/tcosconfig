@@ -1,3 +1,10 @@
+tcosconfig (0.3.2) unstable; urgency=low
+
+  * debian/*
+    - Fix typo
+
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Tue, 22 Jul 2008 13:51:29 +0200
+
 tcosconfig (0.3.1) unstable; urgency=low
 
   * New release 0.3.1

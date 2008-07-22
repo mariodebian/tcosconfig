@@ -13,9 +13,9 @@ Architecture: all
 Depends:  initramfs-tools-tcos (>= 0.84.2), gksu | kdebase-bin, dpkg-dev, 
           python-gtk2, python-glade2, python-vte, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
 XB-Python-Version: ${python:Versions}
-Description: Small python GUI to configure and create TCOS boot images.
+Description: Small Python GUI to configure and create TCOS boot images.
  TCOS, thin Client Operating System is a method to create small embedded os
- based on debian/ubuntu with normal debian kernel's.
+ based on Debian/Ubuntu with normal Debian kernel's.
  .
  tcosconfig is the frontend of gentcos/tcos-buildchroot image generator.
  .
