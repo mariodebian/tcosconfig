@@ -2,8 +2,10 @@ tcosconfig (0.3.3) unstable; urgency=low
 
   * TcosGui.py:
     - set_name() on aboutdialog
+  * TcosChrootBuilder.py Makefile
+    - Add Ubuntu intrepid to chroot builder and patch Makefile
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 05 Sep 2008 11:18:00 +0200
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 05 Sep 2008 15:12:57 +0200
 
 tcosconfig (0.3.2) unstable; urgency=low
 
