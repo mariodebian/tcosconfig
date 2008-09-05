@@ -95,6 +95,7 @@ class TcosGui:
         self.aboutdialog.connect("close", self.on_aboutdialog_close)
         self.aboutdialog.connect("delete_event", self.on_aboutdialog_close)
         self.aboutdialog.set_version(shared.VERSION)
+        self.aboutdialog.set_name('TcosConfig')
         self.aboutdialog.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
 
         # set initial bottom status
