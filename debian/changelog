@@ -1,3 +1,9 @@
+tcosconfig (0.3.4) unstable; urgency=low
+
+  * Fix translation 
+
+ -- Ignacio Vidal <vidal_joshur@gva.es>  Wed, 17 Sep 2008 10:56:15 +0200
+
 tcosconfig (0.3.3) unstable; urgency=low
 
   * TcosGui.py:
