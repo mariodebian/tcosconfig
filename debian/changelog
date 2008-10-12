@@ -1,3 +1,11 @@
+tcosconfig (0.3.5) unstable; urgency=low
+
+  * TcosGui.py
+    - Fix warning in old GTK versions
+      (check for set_tooltip_markup set_tooltip_text before use them)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 12 Oct 2008 23:31:34 +0200
+
 tcosconfig (0.3.4) unstable; urgency=low
 
   * Fix translation 

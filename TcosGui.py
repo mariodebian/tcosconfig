@@ -173,10 +173,12 @@ class TcosGui:
                     wid.set_active(other[w])
                     wid.set_sensitive(other[w])
                     #print dir(getattr(self, w))
-                    wid.set_tooltip_markup( _("Need to enable <b>%s</b> before") %(widget.name) )
+                    if hasattr(wid, set_tooltip_markup):
+                        wid.set_tooltip_markup( _("Need to enable <b>%s</b> before") %(widget.name) )
                 else:
                     wid.set_sensitive(True)
-                    wid.set_tooltip_text( "" )
+                    if hasattr(wid, set_tooltip_text):
+                        wid.set_tooltip_text( "" )
                 #print_debug("on_linked_widgets() widget=%s enabled=%s new=%s"%(w, enabled, other[w]) )
 
     def on_disable_usplash_change(self, widget):
