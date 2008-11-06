@@ -1,0 +1,800 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tcosconfig 0.0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-17 10:34+0200\n"
+"PO-Revision-Date: 2008-11-06 12:30+0100\n"
+"Last-Translator: manu berro <manu.berrocal@absolacom.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "(default <b>pc105</b>)"
+msgstr "(défaut <b>pc105</b>)"
+
+msgid "(leave empty by default)"
+msgstr "(laisser vide pour la valeur par défaut)"
+
+msgid "<b>Boot menu and usplash</b>"
+msgstr "<b>Menu de démarrage et usplash</b>"
+
+msgid "<b>Debug settings</b>"
+msgstr "<b>Configuration de déboggage</b>"
+
+msgid "<b>Kernel options</b>"
+msgstr "<b>Options du noyau</b>"
+
+msgid "<b>Other settings</b>"
+msgstr "<b>Autres réglages</b>"
+
+msgid "<b>Remote desktop support</b>"
+msgstr "<b>Support d'accès distant</b>"
+
+msgid "<b>Services, daemons settings</b>"
+msgstr "<b>Configuration des services et démons</b>"
+
+msgid "<b>Some thin clients hacks</b>"
+msgstr "<b>Réglages particuliers des clients légers</b>"
+
+msgid "<b>Sound options</b>"
+msgstr "<b>Options audio</b>"
+
+msgid "<b>Users and passwords (auth)</b>"
+msgstr "<b>Utilisateurs et mots de passe (autentification)</b>"
+
+msgid "<b>Wireless settings</b>"
+msgstr "<b>Réglages WiFi</b>"
+
+msgid "<b>Xorg options</b>"
+msgstr "<b>Options de Xorg</b>"
+
+msgid ""
+"<span size=\"large\">Thin clients can boot with many methods:</span>\n"
+"\n"
+"» PXE, some special network cards, boot from his own ROM\n"
+"» Etherboot, some network cards, can be booted from a floppy drive\n"
+"   (latest version of Etherboot can simulate PXE network support)\n"
+"» All of network cards unsupported can be booted with cdrom image or hard disk.\n"
+msgstr ""
+"<span size=\"large\">Les clients légers peuvent démarrer de plusieurs manières:</span>\n"
+" \n"
+"» PXE, cartaines cartes réseau spéciales peuvent démarrer depuis leur propre ROM\n"
+"» Etherboot, certaines cartes réseau peuvent démarrer depuis une disquette\n"
+"   (la dernière version d'Etherboot peut simuler un support PXE)\n"
+"» Toutes les cartes réseau non supportées peuvent démarrer avec une image de CDrom ou de disque dur.\n"
+
+msgid "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. Config</b></span> » <span size=\"x-large\" foreground=\"black\"><b>2. Make image</b></span> » <span size=\"x-large\">3. Finish!</span></span>"
+msgstr "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" ><b>0. Bienvenue</b></span> » <span size=\"x-large\" ><b>1. Configurer</b></span> » <span size=\"x-large\" foreground=\"black\"><b>2. Créer l'image</b></span> » <span size=\"x-large\">3. Terminé!</span></span>"
+
+msgid "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. Config</b></span> » <span size=\"x-large\"><b>2. Make image</b></span> » <span size=\"x-large\" foreground=\"black\"><b>3. Finish!</b></span></span>"
+msgstr "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" ><b>0. Bienvenue</b></span> » <span size=\"x-large\" ><b>1. Configurer</b></span> » <span size=\"x-large\"><b>2. Créer l'image imagen</b></span> » <span size=\"x-large\" foreground=\"black\"><b>3. Terminé!</b></span></span>"
+
+msgid "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" foreground=\"black\"><b>1. Config</b></span> » <span size=\"x-large\">2. Make image</span> » <span size=\"x-large\">3. Finish!</span></span>"
+msgstr "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" ><b>0. Bienvenue</b></span> » <span size=\"x-large\" foreground=\"black\"><b>1. Configurer</b></span> » <span size=\"x-large\">2. Créer l'image</span> » <span size=\"x-large\">3. Terminé!</span></span>"
+
+msgid "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" foreground=\"black\" ><b>0. Welcome</b></span> » <span size=\"x-large\">1. Config</span> » <span size=\"x-large\">2. Make image</span> » <span size=\"x-large\">3. Finish!</span></span>"
+msgstr "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span size=\"x-large\" foreground=\"black\" ><b>0. Bienvenue</b></span> » <span size=\"x-large\">1. Configurer</span> » <span size=\"x-large\">2. Créer l'image</span> » <span size=\"x-large\">3. Terminé!</span></span>"
+
+msgid "<span size=\"x-large\"><b>Boot method</b></span>"
+msgstr "<span size=\"x-large\"><b>Mode de démarrage</b></span>"
+
+msgid "<span size=\"x-large\">Building init images</span>"
+msgstr "<span size=\"x-large\">Création de l'image de démarrage</span>"
+
+msgid "<span size=\"xx-large\"><b>Advanced Settings</b></span>"
+msgstr "<span size=\"xx-large\"><b>Configuration avancée</b></span>"
+
+msgid "<span size=\"xx-large\"><b>Advanced settings</b></span>"
+msgstr "<span size=\"xx-large\"><b>Configuration avancée</b></span>"
+
+msgid "<span size=\"xx-large\"><b>Basic Settings</b></span>"
+msgstr "<span size=\"xx-large\"><b>Configuration de base</b></span>"
+
+msgid "<span size=\"xx-large\"><b>TCOS Templates</b></span>"
+msgstr "<span size=\"x-large\"><b>Modèles TCOS</b></span>"
+
+msgid ""
+"<span size=\"xx-large\"><b>Welcome to TCOS Config assistant</b></span>\n"
+"\n"
+"This assistant will prepare some config setting to \n"
+"generate bootable images to thin client networks."
+msgstr ""
+"<span size=\"xx-large\"><b>Bienvenue dans l'assitant de configuration de TCOS</b></span>\n"
+"\n"
+"Cet assistant prépare quelques réglages de configuration\n"
+"et génère des images bootables pour les réseaux de clients légers."
+
+msgid "<span size=\"xx-large\">Chroot Builder</span>"
+msgstr "<span size=\"xx-large\">Constructeur du chroot</span>"
+
+msgid "<span size=\"xx-large\">Congratulations!</span>"
+msgstr "<span size=\"xx-large\">Félicitations!</span>"
+
+msgid ""
+"<span size=\"xx-large\">The generation has been successfully completed.</span>\n"
+"\n"
+"In order to boot this images in thin clients you have to configure your <b>DHCP server</b> file."
+msgstr ""
+"<span size=\"xx-large\">Le processus de génération s'est terminé correctement</span>\n"
+"\n"
+"Pour démarrer ces images sur les clients légers, vous devez configurer le <b>serveur DHCP</b>."
+
+msgid ""
+"Add extra modules here (coma separated)\n"
+"Example:\n"
+"intel-agp,nv,joydev,pcspkr"
+msgstr ""
+"Ajouter des modules complémentaires ici (séparés par des virgules)\n"
+"Exemple:\n"
+"intel-agp,nv,joydev,pcspkr"
+
+msgid "Automatic detect"
+msgstr "Détection automatique"
+
+msgid "Build TCOS images"
+msgstr "Contruire les images TCOS"
+
+msgid "Build chroot"
+msgstr "Construire  le chroot"
+
+msgid "CDROM booting"
+msgstr "Démarrage par CDrom"
+
+msgid "Cache packages"
+msgstr "Mettre les paquets en cache"
+
+msgid "Chroot options"
+msgstr "Options du chroot"
+
+msgid "Complete"
+msgstr "Terminé"
+
+msgid ""
+"Configuration saved succesfully.\n"
+"Changed values are:\n"
+" %s"
+msgstr ""
+"Configuration correctement enregistrée.\n"
+"Les valeurs changées sont:\n"
+"%s"
+
+msgid "Debug building of images"
+msgstr "Débogguer la construction des images"
+
+msgid "Debug tools"
+msgstr "Outils de débogguage"
+
+msgid ""
+"Default command\n"
+"line append \n"
+"(for NBI images)"
+msgstr ""
+"Paramètres de\n"
+"démarrage\n"
+"(images NBI)"
+
+msgid "Default resolution"
+msgstr "Résolution par défaut"
+
+msgid "Default video driver"
+msgstr "Driver vidéo par défaut"
+
+msgid "Delete chroot"
+msgstr "Supprimer le chroot"
+
+msgid ""
+"Detected non i386 architecture.\n"
+"\n"
+"\n"
+"Usually thin clients are i386 machines (Pentium II/II/IV\n"
+"or AMD K6/K7), you are running %(arch)s architecture.\n"
+"\n"
+"\n"
+"Do you want to build a 32bit chroot and generate 32bit TCOS images?\n"
+"\n"
+"If select \"No\" wizard will construct %(arch)s images."
+msgstr ""
+"Une architecture non i386 a été détectée.\n"
+"\n"
+"\n"
+"Normallement, les clients légers sont équipés en i386\n"
+"(Pentium II/III/IV o AMD K6/K7), ce système exécute l'architecture %(arch)s.\n"
+"\n"
+"Voulez vous contruire un chroot 32 bits et générer les images TCOS en 32 bits ?\n"
+"\n"
+"Si vous sélectionnez «Non», l'assistant contruira des images pour %(arch)s."
+
+msgid "Dillo browser"
+msgstr "Navigateur dillo"
+
+msgid "Disable"
+msgstr "Desactiver"
+
+msgid "Disable ACPI and RAID"
+msgstr "Désactiver ACPI et RAID"
+
+msgid "Disable Squashfs support"
+msgstr "Désactiver le support de squashfs"
+
+msgid "Do you want to delete entire chroot environment?"
+msgstr "Êtes vous sûr de vouloir supprimer le chroot entier ?"
+
+msgid "EPATEC eTC2300"
+msgstr "EPATEC eTC2300"
+
+msgid "EPATEC eTC3800 & eTC2500"
+msgstr "EPATEC eTC3800 & eTC2500"
+
+msgid "EXEC: %s"
+msgstr "Exécuter: %s"
+
+msgid "Eherboot floppy"
+msgstr "Disquette Etherboot"
+
+msgid "Enable local web browser"
+msgstr "Navigateur web local"
+
+msgid "English - gb"
+msgstr "Anglais - gb"
+
+msgid "English - us"
+msgstr "Anglais - us"
+
+msgid "Error, you must run this app as root user"
+msgstr "Erreur, vous devez exécuter cette application en tant qu'utilisateur root."
+
+msgid "Exit"
+msgstr "Sortir"
+
+msgid ""
+"External squashfs\n"
+"(download with tftp)"
+msgstr ""
+"squashfs externe\n"
+"(télécharger avec tftp)"
+
+msgid ""
+"Extra kernel modules\n"
+"(coma separated)"
+msgstr ""
+"Modules complémentaires du noyau\n"
+"(séparés par des virgules)"
+
+msgid "Finish and save"
+msgstr "Terminer et enregistrer"
+
+msgid "FreeNX"
+msgstr "FreeNX"
+
+msgid "FreeNX support"
+msgstr "Support FreeNX"
+
+msgid "French - fr"
+msgstr "Français - fr"
+
+msgid "German - de"
+msgstr "Allemand - de"
+
+msgid "Graphic menu mode (need BIOS vesa support)"
+msgstr "Menu graphique (nécessite que le BIOS supporte le mode VESA)"
+
+msgid "Hide local boot from hdd"
+msgstr "Cacher le démarrage local depuis le disque dur"
+
+msgid "Hide menu install options"
+msgstr "Cacher l'option d'installation du menu"
+
+msgid "IDE PATA SATA disk support"
+msgstr "Support IDE PATA SATA"
+
+msgid ""
+"IP address or hostname\n"
+"of Windows Terminal Server"
+msgstr ""
+"Adresse IP ou nom d'hôte\n"
+"du serveur de terminaux Windows"
+
+msgid "ISA sound cards support"
+msgstr "Support des cartes son ISA"
+
+msgid "Include ACPI daemon"
+msgstr "Inclure le démon ACPI"
+
+msgid "Include AUTOFS"
+msgstr "Inclure AUTOFS"
+
+msgid "Include Tcos Installer"
+msgstr "Inclure l'installateur Tcos"
+
+msgid "Include all modules"
+msgstr "inclure tous les modules"
+
+msgid "Include debootstrap"
+msgstr "Inclure deboostrap"
+
+msgid "Inetd support"
+msgstr "Support inetd"
+
+msgid "Intel Dot Station (Paquito)"
+msgstr "Intel dot station (Paquito)"
+
+msgid "Kernel version"
+msgstr "Version du noyau"
+
+msgid "LTSP filesystem"
+msgstr "Système de fichiers LTSP"
+
+msgid "License GNU/GPL"
+msgstr "Licence GNU/GPL"
+
+msgid "Limit memory (in %)"
+msgstr "Limite de mémoire (en %)"
+
+msgid "Links2 browser"
+msgstr "Navigateur links2"
+
+msgid "Local X"
+msgstr "X local"
+
+msgid "Main mirror"
+msgstr "Serveur miroir principal"
+
+msgid "Master and PCM volume"
+msgstr "Volume du Master et PCM"
+
+msgid "Menu type"
+msgstr "Type de menu"
+
+msgid "Min RAM to use NFS boot"
+msgstr "RAM minimum pour démarrer avec NFS"
+
+msgid "Modify this cmdline append to yours needs"
+msgstr "Changer cette ligne de commande par celle que vous désirez"
+
+msgid "NFS booting (mem < 38)"
+msgstr "Démarrage NFS (mémoire < 38)"
+
+msgid "Need to enable <b>%s</b> before"
+msgstr "Il est nécessaire d'activer <b>%s</b> au préalable"
+
+msgid "No menu, only splash (default)"
+msgstr "Pas de menu, splash seul (par défaut)"
+
+msgid "No template description avalaible"
+msgstr "Pas de description disponible pour ce modèle"
+
+msgid "None"
+msgstr "Aucun"
+
+msgid "Number of tty shells"
+msgstr "Nombre de consoles tty"
+
+msgid "Openchrome VIA driver"
+msgstr "Openchrome VIA driver"
+
+msgid "Overwriting it with your own settings."
+msgstr "Écraser par vos réglages."
+
+msgid "PXE booting"
+msgstr "Démarrage PXE"
+
+msgid "Press <b>Finish and Save</b> button to save this build settings or <b>Cancel</b> to quit."
+msgstr ""
+"Cliquez sur le bouton <b>Terminer et enregistrer</b> pour enregistrer ces réglages \n"
+"ou cliquez sur le bouton <b>Annuler</b> pour sortir."
+
+msgid "Press <b>Start</b> to begin image generation."
+msgstr "Cliquez sur <b>Démarrer</b> pour générer l'image."
+
+msgid "Press here to start generation process"
+msgstr "Cliquez ici pour commencer le processus de génération"
+
+msgid "Printer support"
+msgstr "Support des imprimantes"
+
+msgid "Protect first console (tty1)"
+msgstr "Protéger la première console (tty1)"
+
+msgid "PulseAudio resample method"
+msgstr "Méthode de resample de PulseAudio "
+
+msgid "PulseAudio sound server"
+msgstr "Serveur de sons PulseAudio"
+
+msgid "Remote XDMCP"
+msgstr "XMDCP distant"
+
+msgid "Remote filesystem method"
+msgstr "Système de fichiers distant"
+
+msgid "Run SSH server in terminal"
+msgstr "Exécuter le serveur SSH dans un terminal"
+
+msgid "SSH -X"
+msgstr "X par SSH"
+
+msgid "SSH filesystem"
+msgstr "Système de fichiers SSHFS"
+
+msgid "SSL encryption in XMLRPC"
+msgstr "Chiffrage SSL de XMLRPC"
+
+msgid "Security mirror"
+msgstr "Serveur miroir de sécurité"
+
+msgid "Select architecture"
+msgstr "Sélectionnez l'architecture"
+
+msgid "Select distribution"
+msgstr "Sélectionnez la distribution"
+
+msgid "Select distro version"
+msgstr "Sélectionner la version de distribution"
+
+msgid "Select kernel version"
+msgstr ""
+"Sélectionnez la version\n"
+"du noyau"
+
+msgid "Select template"
+msgstr "Sélectionnez le modèle"
+
+msgid "Server IP address"
+msgstr "Adresse IP du serveur (autodétectée)"
+
+msgid "Server admin username"
+msgstr "Utilisateur administrateur du serveur"
+
+msgid "Set to 0 to disable limits"
+msgstr "Sélectionner 0 pour désactiver les limitations"
+
+msgid "Show needed modules"
+msgstr "Montrer les modules requis"
+
+msgid "Simple text mode"
+msgstr "Menu texte simple"
+
+msgid ""
+"Something wrong ocurred while parsing command line options for gentcos.\n"
+"\n"
+"Select boot method??"
+msgstr ""
+"Une erreur est survenue à la lecture des valeurs du fichier de configuration pour générer les arguments de la ligne\n"
+"de commandes de gentcos.\n"
+"Avez vous sélectionné un mode de démarrage?"
+
+msgid "Sound support"
+msgstr "Support du son"
+
+msgid "Spanish - es"
+msgstr "Espagnol - es"
+
+msgid "Start"
+msgstr "Démarrer"
+
+msgid "Support for discover"
+msgstr "Soporte para discover"
+
+msgid "TCOS Network image generator"
+msgstr "Générateur d'images de réseau TcosConfig"
+
+msgid "TCOS mirror"
+msgstr "Miroir TCOS"
+
+msgid "Tcos Config"
+msgstr "Configurateur TCOS"
+
+msgid ""
+"TcosConfig provides some configuration templates to build images quickly.\n"
+"\n"
+"If your thin clients are very old machines, use low resource template (without sound, devices, and monitor and basic graphics)\n"
+"\n"
+"If you want sound, devices, TcosMonitor select complete template."
+msgstr ""
+"TcosConfig dispose de quelques modèles de configuration pour créer plus rapidement des images de démarrage.\n"
+"\n"
+"Si vos clients légers sont assez vieux et ont peu de potentiel, utilisez le modèle \"low\" (sans son, périphériques et avec un affichage basique)\n"
+"\n"
+"Si vous désirez le son et TcosMonitor, sélectionnez le modèle complet."
+
+msgid "TcosConfig web site"
+msgstr "Page web TcosConfig"
+
+msgid "TcosConfig, invalid architecture"
+msgstr "TcosConfig, architecture invalide"
+
+msgid "TcosMonitor support"
+msgstr "Support TcosMonitor"
+
+msgid "Template generated by tcosconfig"
+msgstr "Modèle généré par tcosconfig"
+
+msgid "Terminal password"
+msgstr "Mot de passe du terminal"
+
+msgid "Type of Xorg session"
+msgstr "Type de session Xorg"
+
+msgid "USB devices support"
+msgstr "Support des périphériques USB"
+
+msgid "USB support"
+msgstr "Support USB"
+
+msgid "Update chroot"
+msgstr "Actualiser le chroot"
+
+msgid "Use NFS (for lowmem)"
+msgstr "Utiliser NFS (moins d'utilisation mamoire)"
+
+msgid "Use NFS server"
+msgstr "Utiliser un serveur NFS"
+
+msgid "Usplash and theme"
+msgstr "Usplash et thème"
+
+msgid "VESA"
+msgstr "VESA"
+
+msgid "View Process"
+msgstr "Voir le processus"
+
+msgid "WEP / WPA key"
+msgstr "WEP / WPA key"
+
+msgid ""
+"WEP key in iwconfig format\n"
+"(see man iwconfig)"
+msgstr ""
+"Clef WEP en formt iwconfig\n"
+"(voir man iwconfig)"
+
+msgid "Wake on LAN"
+msgstr "Démarrage par réseau (WoL)"
+
+msgid "Wireless encription"
+msgstr "Chiffrement WiFi"
+
+msgid "Wireless modules"
+msgstr "Modules WiFi"
+
+msgid "Wireless support"
+msgstr "Support WiFi"
+
+msgid "Working..."
+msgstr "En cours..."
+
+msgid "Working... (%d %%)"
+msgstr "En cours... (%d %%)"
+
+msgid "X11VNC support"
+msgstr "Support X11VNC"
+
+msgid "Xorg DRI radeon support"
+msgstr "Support Xorg DRI radeon"
+
+msgid "Xorg Direct Rendering (DRI)"
+msgstr "Xorg Direct Rendering (DRI)"
+
+msgid "Xorg OpenGL support"
+msgstr "Support OpenGL de Xorg"
+
+msgid "Xorg all drivers"
+msgstr "Tous les drivers de Xorg"
+
+msgid "Xorg keyboard map"
+msgstr "Mappage clavier de Xorg"
+
+msgid "Xorg keyboard model"
+msgstr "Modèle de clavier de Xorg"
+
+msgid "Xorg support"
+msgstr "Support Xorg"
+
+msgid ""
+"You leave blank root password for thin clients in:\n"
+"    - Advanced settings -> Users and passwords                            \n"
+"\n"
+"The password will be established to: \"root\""
+msgstr ""
+"Vous avez laissé vide le mot de passe root, pour les clients légers dans:\n"
+"    - Configuration avancée -> Utilisateurs et mot de passe\n"
+"\n"
+"Le mot de passe qui sera appliqué est: \"root\""
+
+msgid ""
+"ask for user and password in tty1, \n"
+"others always ask for password"
+msgstr ""
+"demander l'identifiant et le mot de passe sur  tty1,\n"
+"sera demandé systèmatiquement sur les autres."
+
+msgid "between 1 to 6"
+msgstr "entre 1 y 6"
+
+msgid "debug enable (recomended enable)"
+msgstr "débogguage activé (recommandé)"
+
+msgid "default \"src-sinc-fastest\""
+msgstr "par défaut \"src-sinc-fastest\""
+
+msgid "delete all acpi and raid modules and bins"
+msgstr "effacer tous les modules et binaires ACPI et RAID"
+
+msgid "disable IDE PATA devices"
+msgstr "désactiver le suppoort IDE PATA"
+
+msgid "disable USB devices support"
+msgstr "désactiver le support USB"
+
+msgid "disable usplash"
+msgstr "désactiver usplash"
+
+msgid "don't use any template"
+msgstr "Ne pas utiliser de modèles"
+
+msgid "empty, WEP, WPA"
+msgstr "vide, WEP, WPA"
+
+msgid "enable ACPID"
+msgstr "activer ACPID"
+
+msgid "enable AUTOFS support"
+msgstr "activer le support AUTOFS"
+
+msgid "enable DRI extra support for Ati radeon"
+msgstr "activer le suppot extra pour DRI Ati radeon"
+
+msgid "enable DRI support (image size +20MB)"
+msgstr "activer le support DRI (taille image +20MB)"
+
+msgid "enable SSL encryption (need stunnel4)"
+msgstr "activer le chiffrage SSL (nécessite stunnel4)"
+
+msgid "enable TcosMonitor"
+msgstr "activer TcosMonitor"
+
+msgid "enable USB devices"
+msgstr "activer les dispositifs USB"
+
+msgid "enable WAKEONLAN support"
+msgstr "activer le support WAKEONLAN"
+
+msgid "enable Xorg"
+msgstr "activer Xorg"
+
+msgid ""
+"enable Xorg Openchrome VIA video support\n"
+"Thin clients: Epatec 3800 & 2500, HP t5530... etc"
+msgstr ""
+"activer le support vidéo Xorg Openchrome VIA\n"
+"Clients légers: Epatec 3800 & 2500, HP t5530... etc"
+
+msgid "enable discover hardware autodetect"
+msgstr "activer l'autodétection de matériel"
+
+msgid "enable dot station hacks"
+msgstr "activer les hacks pour dot station"
+
+msgid "enable eTC2300 hacks"
+msgstr "activer les hacks pour eTC2300"
+
+msgid "enable freenx"
+msgstr "activer freenx"
+
+msgid "enable generic VIA modules"
+msgstr "activer les modules génériques VIA"
+
+msgid "enable inetd"
+msgstr "activer inetd"
+
+msgid "enable ivs/ica daemon on thin client"
+msgstr "activer le démon ivs/ica sur le client léger"
+
+msgid "enable printer (JetDirect)"
+msgstr "activer les imprimantes (JetDirect)"
+
+msgid "enable rdesktop"
+msgstr "activer rdesktop"
+
+msgid "enable sound (alsa files)"
+msgstr "activer le son (fichiers alsa)"
+
+msgid "enable wireless support (bins)"
+msgstr "activer le support WiFi (binaires)"
+
+msgid "enable x11vnc server"
+msgstr "activer le serveur x11vnc"
+
+msgid ""
+"examples: \n"
+" * ipw2200\n"
+" * madwifi\n"
+" * rt61pci,rt73usb"
+msgstr ""
+"exemples:\n"
+" * ipw2200\n"
+" * madwifi \n"
+" * rt61pci,rt73usb"
+
+msgid "external squashfs (default checked)"
+msgstr "squashfs externe  (activé par défaut)"
+
+msgid ""
+"i386\n"
+"amd64\n"
+"ppc"
+msgstr ""
+"i386\n"
+"amd64\n"
+"ppc"
+
+msgid "iTALC MasterEye Support"
+msgstr "Support pour iTALC MasterEye"
+
+msgid "if checked use PulseAudio, if not use ESound"
+msgstr "activé utilise PulseAudio, sinon utilise ESound"
+
+msgid ""
+"include OpenGL libs\n"
+"(perhaps need tcos-opengl-libs package)"
+msgstr ""
+"inclure les librairies OpenGL\n"
+"(peut nécessiter le paquet tcos-opengl-libs)"
+
+msgid "include all Xorg avalaible drivers"
+msgstr "Inclure tous les drivers de Xorg disponibles"
+
+msgid "include all modules (don't use by default)"
+msgstr "inclure tous les modules (ne pas utiliser pa défaut)"
+
+msgid "include debug tools"
+msgstr "Inclure les houtils de débogguage"
+
+msgid "include isa sound card modules"
+msgstr "inclure les modules de cartes son ISA"
+
+msgid "include tcosinstaller and tools"
+msgstr "inclure tcosinstaller et utilitaires"
+
+msgid "install debian or ubuntu from network"
+msgstr "installer debian ou ubuntu par le réseau"
+
+msgid ""
+"min RAM (in Mb) to\n"
+"boot using NFS"
+msgstr ""
+"min RAM (en Mb) pour\n"
+"démarrer en utilisant NFS"
+
+msgid "rDesktop"
+msgstr "rDesktop"
+
+msgid "rDesktop default server"
+msgstr "Serveur par défaut rDesktop"
+
+msgid "rDesktop support"
+msgstr "Support rDesktop"
+
+msgid "root's terminal password (if empty this is root)"
+msgstr "mot de passe de root en terminal (vide: root)"
+
+msgid "show not found modules (stop at boot)"
+msgstr "indiquer le modules non trouvés (s'arrête au démarrage)"
+
+msgid "squashfs disabled (default unchecked)"
+msgstr "squashfs désactivé (désactivé par défaut)"
+
+msgid "ssh enable"
+msgstr "activer ssh"
+
+msgid "translator-credits"
+msgstr ""
+"Manuel BERROCAL\n"
+"<manu.berrocal@absolacom.com>"
+
+msgid "user to be admin of thin clients"
+msgstr "Utilisateur administrateur des clients légers"
+
