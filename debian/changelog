@@ -1,3 +1,9 @@
+tcosconfig (0.3.7.1) unstable; urgency=low
+
+  * Update pt_BR translation
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 16 Jan 2009 14:05:08 +0100
+
 tcosconfig (0.3.7) unstable; urgency=low
 
   * Add French translation (thanks to Manu Berro <mberrocal>)
