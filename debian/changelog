@@ -1,3 +1,9 @@
+tcosconfig (0.3.7.2) unstable; urgency=low
+
+  * Update Vcs- debian/control headers to new GIT repos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 02 Feb 2009 01:26:52 +0100
+
 tcosconfig (0.3.7.1) unstable; urgency=low
 
   * Update pt_BR translation
