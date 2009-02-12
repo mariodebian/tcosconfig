@@ -756,7 +756,11 @@ class TcosGui:
         #set default tcos.conf kernel
         model=self.TCOS_KERNEL.get_model()
         for i in range(len(model)):
-            if model[i][0] == self.config.getvalue("TCOS_KERNEL"):
+            if self.config.getvalue("TCOS_KERNEL_FIXED") != "":
+                if model[i][0] == self.config.getvalue("TCOS_KERNEL_FIXED"):
+                    #print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
+                    self.TCOS_KERNEL.set_active( i )
+            elif model[i][0] == self.config.getvalue("TCOS_KERNEL"):
                 #print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
                 self.TCOS_KERNEL.set_active( i )
 

@@ -1,4 +1,4 @@
-LANGUAGES=es pt_BR ca@valencia fr gl
+LANGUAGES=es pt_BR ca@valencia fr gl qcv
 
 all: gmo
 
