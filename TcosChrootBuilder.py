@@ -46,16 +46,16 @@ def print_debug(txt):
         print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
-"debian":["unstable", "testing", "etch"]  ,
+"debian":["unstable", "testing", "lenny"]  ,
 "ubuntu":["dapper", "edgy", "feisty", "gutsy", "hardy", "intrepid"]
 }
 
 
 
 KERNEL_VERSIONS={
-"etch":"2.6.18-6-486"  ,
-"testing":"2.6.24-1-486"  ,
-"unstable":"2.6.25-2-486"  ,
+"lenny":"2.6.26-1-486"  ,
+"testing":"2.6.26-1-486"  ,
+"unstable":"2.6.26-1-486"  ,
 "dapper":"2.6.15-29-386"  ,
 "edgy":"2.6.17-12-generic"  ,
 "feisty":"2.6.20-16-generic"  ,
@@ -65,7 +65,7 @@ KERNEL_VERSIONS={
 }
 
 DISTRO_ALIAS={
-"testing":"lenny"
+"testing":"squeeze"
 }
 
 DISTRO_MIRRORS={

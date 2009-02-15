@@ -1,8 +1,9 @@
-tcosconfig (0.3.8.1) unstable; urgency=low
+tcosconfig (0.3.8) unstable; urgency=low
 
   * Merge Ignacio Vidal changes into his branch
+  * Disable etch and enable Debian lenny, update kernels
 
- -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 10 Feb 2009 16:02:23 +0100
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 15 Feb 2009 19:20:31 +0100
 
 tcosconfig (0.3.7.2) unstable; urgency=low
 

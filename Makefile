@@ -129,6 +129,9 @@ patch_max: patch_version
 patch_etch: patch_version
 	# nothing to patch
 
+patch_lenny: patch_version
+	# nothing to patch
+
 patch_testing: patch_version
 	# nothing to patch
 
