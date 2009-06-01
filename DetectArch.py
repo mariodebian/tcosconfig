@@ -29,6 +29,7 @@ pygtk.require('2.0')
 import gtk
 from gettext import gettext as _
 import shared
+from subprocess import Popen, PIPE, STDOUT
 
 class DetectArch:
     def __init__(self):
@@ -40,11 +41,18 @@ class DetectArch:
         if fakearch:
             self.arch=fakearch
             return fakearch
-        stdin, stdout, stderr = os.popen3("dpkg-architecture")
-        for line in stdout:
+        p = Popen("dpkg-architecture", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        stdout=p.stdout
+        isfinished=False
+        while not isfinished:
+            line=stdout.readline().strip()
+            if p.poll() != None:
+                isfinished=True
+
             if line.find("DEB_BUILD_ARCH=") == 0:
                 self.arch=line.split('=')[1].replace('\n','')
                 return self.arch
+
 
     def buildChroot(self):
         f=open("/etc/tcos/tcos.conf", 'r')

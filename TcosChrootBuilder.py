@@ -47,7 +47,7 @@ def print_debug(txt):
 
 DISTRO_VERSIONS={
 "debian":["unstable", "testing", "lenny"]  ,
-"ubuntu":["dapper", "edgy", "feisty", "gutsy", "hardy", "intrepid"]
+"ubuntu":["dapper", "edgy", "feisty", "gutsy", "hardy", "intrepid", "jaunty"]
 }
 
 
@@ -61,7 +61,8 @@ KERNEL_VERSIONS={
 "feisty":"2.6.20-16-generic"  ,
 "gutsy":"2.6.22-14-generic"  ,
 "hardy":"2.6.24-16-generic" ,
-"intrepid":"2.6.27-2-generic"
+"intrepid":"2.6.27-2-generic",
+"jaunty":"2.6.28-11-generic",
 }
 
 DISTRO_ALIAS={

@@ -1,3 +1,11 @@
+tcosconfig (0.3.9) unstable; urgency=low
+
+  * DetectArch.py:
+    - Use subprocess module
+  * Add jaunty target in ChrootBuilder
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 01 Jun 2009 12:37:25 +0200
+
 tcosconfig (0.3.8) unstable; urgency=low
 
   * Merge Ignacio Vidal changes into his branch

@@ -123,6 +123,9 @@ patch_hardy: patch_version
 patch_intrepid: patch_version
 	# nothing to patch
 
+patch_jaunty: patch_version
+	# nothing to patch
+
 patch_max: patch_version
 	# nothing to patch
 
