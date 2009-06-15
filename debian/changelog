@@ -1,3 +1,10 @@
+tcosconfig (0.3.10) unstable; urgency=low
+
+  * Set page size 0 to disable this warning: 
+    - 'GtkWarning: GtkSpinButton: setting an adjustment with non-zero page size is deprecated'
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 11 Jun 2009 20:34:22 +0200
+
 tcosconfig (0.3.9) unstable; urgency=low
 
   * DetectArch.py:
