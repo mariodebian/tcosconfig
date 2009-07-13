@@ -10,7 +10,7 @@ Vcs-Browser: http://tcosproject.org/cgit/cgit.cgi/tcosconfig.git/
 
 Package: tcosconfig
 Architecture: all
-Depends:  initramfs-tools-tcos (>= 0.84.2), gksu | kdebase-bin, dpkg-dev, 
+Depends:  initramfs-tools-tcos (>= 0.89.37), gksu | kdebase-bin, dpkg-dev, 
           python-gtk2, python-glade2, python-vte, ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
 XB-Python-Version: ${python:Versions}
 Description: Small Python GUI to configure and create TCOS boot images

@@ -53,16 +53,16 @@ DISTRO_VERSIONS={
 
 
 KERNEL_VERSIONS={
-"lenny":"2.6.26-1-486"  ,
-"testing":"2.6.26-1-486"  ,
-"unstable":"2.6.26-1-486"  ,
-"dapper":"2.6.15-29-386"  ,
-"edgy":"2.6.17-12-generic"  ,
-"feisty":"2.6.20-16-generic"  ,
-"gutsy":"2.6.22-14-generic"  ,
-"hardy":"2.6.24-16-generic" ,
-"intrepid":"2.6.27-2-generic",
-"jaunty":"2.6.28-11-generic",
+"lenny":"2.6.26-2-486"  ,
+"testing":"2.6.29-2-486"  ,
+"unstable":"2.6.30-1-486"  ,
+#"dapper":"2.6.15-29-386"  ,
+#"edgy":"2.6.17-12-generic"  ,
+#"feisty":"2.6.20-16-generic"  ,
+#"gutsy":"2.6.22-14-generic"  ,
+"hardy":"2.6.24-24-generic" ,
+"intrepid":"2.6.27-14-generic",
+"jaunty":"2.6.28-13-generic",
 }
 
 DISTRO_ALIAS={

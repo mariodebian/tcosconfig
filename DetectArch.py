@@ -41,6 +41,9 @@ class DetectArch:
         if fakearch:
             self.arch=fakearch
             return fakearch
+        """
+        Can use "file /bin/mount | grep -c ELF 32-bit" to avoid dpkg-dev Depends...
+        """
         p = Popen("dpkg-architecture", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
         stdout=p.stdout
         isfinished=False
