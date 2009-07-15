@@ -756,12 +756,14 @@ class TcosGui:
         #set default tcos.conf kernel
         model=self.TCOS_KERNEL.get_model()
         for i in range(len(model)):
+            print_debug ("TcosGui::loadsettings() TCOS_KERNEL model[i][0] is '%s' default '%s' KERNEL_FIXED is '%s'" 
+                          %(model[i][0], self.config.getvalue("TCOS_KERNEL"), self.config.getvalue("TCOS_KERNEL_FIXED")) )
             if self.config.getvalue("TCOS_KERNEL_FIXED") != "":
                 if model[i][0] == self.config.getvalue("TCOS_KERNEL_FIXED"):
-                    #print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
+                    print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
                     self.TCOS_KERNEL.set_active( i )
             elif model[i][0] == self.config.getvalue("TCOS_KERNEL"):
-                #print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
+                print_debug ("TcosGui::loadsettings() TCOS_KERNEL default is %s, index %d" %( model[i][0] , i ) )
                 self.TCOS_KERNEL.set_active( i )
 
         # read all tcos.conf and guiconf vars and populate

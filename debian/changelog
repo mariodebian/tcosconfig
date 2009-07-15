@@ -1,3 +1,10 @@
+tcosconfig (0.3.12) unstable; urgency=low
+
+  * Fix git commit 225332345f3acec3fb0704da37a58bbe883b602d 2009-02-12
+    - ConfigReader::get_config should return '' instead of None if var no exists.
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 15 Jul 2009 14:04:50 +0200
+
 tcosconfig (0.3.11) unstable; urgency=low
 
   * Add TCOS_XORG_DRI_* widgets

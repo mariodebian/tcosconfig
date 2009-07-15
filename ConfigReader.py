@@ -186,7 +186,7 @@ class ConfigReader:
         if self.confdata.has_key(varname):
             return self.confdata[varname]
         print_debug("get_value() no varname found %s"%varname)
-        return
+        return ''
 
     def getvars(self):
         print_debug("FIXME OBSOLETE")
