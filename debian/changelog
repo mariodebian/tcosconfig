@@ -1,3 +1,9 @@
+tcosconfig (0.3.12+1) unstable; urgency=low
+
+  * Update pt_BR translation (thanks Aecio)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 16 Jul 2009 21:50:12 +0200
+
 tcosconfig (0.3.12) unstable; urgency=low
 
   * Fix git commit 225332345f3acec3fb0704da37a58bbe883b602d 2009-02-12
