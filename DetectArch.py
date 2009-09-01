@@ -41,10 +41,8 @@ class DetectArch:
         if fakearch:
             self.arch=fakearch
             return fakearch
-        """
-        Can use "file /bin/mount | grep -c ELF 32-bit" to avoid dpkg-dev Depends...
-        """
-        p = Popen("dpkg-architecture", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        
+        p = Popen("file /bin/mount", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
         stdout=p.stdout
         isfinished=False
         while not isfinished:
@@ -52,9 +50,13 @@ class DetectArch:
             if p.poll() != None:
                 isfinished=True
 
-            if line.find("DEB_BUILD_ARCH=") == 0:
-                self.arch=line.split('=')[1].replace('\n','')
-                return self.arch
+            if "ELF 32-bit LSB executable, Intel 80386" in line:
+                self.arch="i386"
+            elif "ELF 64-bit LSB executable, x86-64" in line:
+                self.arch="amd64"
+            else:
+                self.arch="unknow"
+        return self.arch
 
 
     def buildChroot(self):
@@ -88,4 +90,7 @@ If select "No" wizard will construct %(arch)s images.""") %{"arch":self.arch, "a
 
 if __name__ == "__main__":
     app=DetectArch()
-    print app.get(sys.argv[1])
+    if len(sys.argv) > 1:
+        print app.get(sys.argv[1])
+    else:
+        print app.get()

@@ -14,10 +14,7 @@ _file=tcosconfig.glade
 # all images separated by spaces
 _images="tcos_config.png tcos-banner.png"
 
-echo
-echo "fix-glade.sh"
-echo 
-echo "patching ${_file}..."
+echo " * patching ${_file}..."
 
 
 make_backup() {
@@ -30,9 +27,9 @@ restore_backup() {
 
 check_glade() {
  if [ $(cat ${_file}| wc -l) -gt 1 ]; then
-   echo "glade seems ok"
+   echo " * glade ($_file) seems ok"
  else
-   echo "${_file} is empty restoring !!!"
+   echo " * ${_file} is empty restoring !!!"
    restore_backup
    exit 1
  fi
@@ -56,9 +53,9 @@ get_path() {
 
 for _image in $_images; do
  if [ "$(get_path "${_image}")" = "${abs_path}${_image}" ]; then
-   echo "${_file} already patched ${_image}"
+   echo " * ${_file} already patched ${_image}"
  else
- echo "${_file} need patch"
+ echo " * ${_file} need patch"
    make_backup
    patch_glade "{_image}"
    check_glade

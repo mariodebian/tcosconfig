@@ -1,72 +1,15 @@
 #!/usr/bin/make -f
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
-
-CFLAGS = -Wall -g
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
-
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-
-	touch configure-stamp
+DEB_PYTHON_SYSTEM=pysupport
+DEB_PYTHON_PRIVATE_MODULES_DIRS = /usr/share/tcosconfig
 
 
-build: build-stamp
-
-build-stamp: configure-stamp 
-	dh_testdir
-
-	$(MAKE)
-
-	touch build-stamp
-
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp configure-stamp
-
-	[ ! -f Makefile ] || $(MAKE) clean
-
-	dh_clean 
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k 
-	dh_installdirs
-
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/tcosconfig
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/python-distutils.mk
 
 
-# Build architecture-independent files here.
-binary-indep: build install
-# We have nothing to do by default.
+cleanbuilddir/tcosconfig::
+	$(MAKE) -C po clean
 
-# Build architecture-dependent files here.
-binary-arch: build install
-	dh_testdir
-	dh_testroot
-	dh_installchangelogs Changelog
-	dh_installdocs
-	dh_installexamples
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_pysupport
-	dh_installdeb
-	dh_shlibdeps
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
 
-binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install configure
+

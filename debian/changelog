@@ -1,3 +1,13 @@
+tcosconfig (0.3.13) unstable; urgency=low
+
+  * Bump Standard version to 3.8.0, debhelper to 7.0.0 and compat to 7
+  * Remove dpkg-dev dependency, use 'file /bin/mount' instead
+  * Switch debian/rules to CDBS
+  * Create setup.py to build and install this package
+  * Remove obsolete VirtualTerminal.py file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 01 Sep 2009 18:53:42 +0200
+
 tcosconfig (0.3.12+1) unstable; urgency=low
 
   * Update pt_BR translation (thanks Aecio)
