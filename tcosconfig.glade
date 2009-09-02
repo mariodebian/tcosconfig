@@ -2131,7 +2131,7 @@ of Windows Terminal Server</property>
 		      </child>
 
 		      <child>
-			<widget class="GtkExpander" id="expander1">
+			<widget class="GtkExpander" id="expander_dri">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="expanded">False</property>

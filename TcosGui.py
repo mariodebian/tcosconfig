@@ -123,6 +123,7 @@ class TcosGui:
                          self.expander_services,
                          self.expander_wifi,
                          self.expander_xorg, 
+                         self.expander_dri, 
                          self.expander_sound,
                          self.expander_remote,
                          self.expander_auth, 

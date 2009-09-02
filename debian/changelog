@@ -1,3 +1,14 @@
+tcosconfig (0.3.14) unstable; urgency=low
+
+  * Delete some old distros from TcosChrootBuilder.py
+  * Change desktop launcher to System->Admin
+  * tcosconfig.glade TcosGui.py
+    - Fix name to DRI expander
+  * Add experimental checkbox in Chroot Builder GUI.
+  * Update translation templates and Spanish translation
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Sep 2009 19:01:24 +0200
+
 tcosconfig (0.3.13) unstable; urgency=low
 
   * Bump Standard version to 3.8.0, debhelper to 7.0.0 and compat to 7

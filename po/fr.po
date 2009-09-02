@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-13 19:37+0200\n"
+"POT-Creation-Date: 2009-09-02 18:59+0200\n"
 "PO-Revision-Date: 2008-11-06 12:30+0100\n"
 "Last-Translator: manu berro <manu.berrocal@absolacom.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -19,7 +19,7 @@ msgstr "Modèle généré par tcosconfig"
 msgid "Do you want to delete entire chroot environment?"
 msgstr "Êtes vous sûr de vouloir supprimer le chroot entier ?"
 
-#: ../DetectArch.py:66
+#: ../DetectArch.py:71
 #, python-format
 msgid ""
 "Detected non i386 architecture.\n"
@@ -45,7 +45,7 @@ msgstr ""
 "\n"
 "Si vous sélectionnez «Non», l'assistant contruira des images pour %(arch)s."
 
-#: ../DetectArch.py:72
+#: ../DetectArch.py:77
 msgid "TcosConfig, invalid architecture"
 msgstr "TcosConfig, architecture invalide"
 
@@ -1012,12 +1012,12 @@ msgid "Error, you must run this app as root user"
 msgstr ""
 "Erreur, vous devez exécuter cette application en tant qu'utilisateur root."
 
-#: ../TcosGui.py:177
+#: ../TcosGui.py:178
 #, python-format
 msgid "Need to enable <b>%s</b> before"
 msgstr "Il est nécessaire d'activer <b>%s</b> au préalable"
 
-#: ../TcosGui.py:265
+#: ../TcosGui.py:266
 msgid ""
 "You leave blank root password for thin clients in:\n"
 "    - Advanced settings -> Users and passwords                            \n"
@@ -1029,11 +1029,11 @@ msgstr ""
 "\n"
 "Le mot de passe qui sera appliqué est: \"root\""
 
-#: ../TcosGui.py:282
+#: ../TcosGui.py:283
 msgid "Overwriting it with your own settings."
 msgstr "Écraser par vos réglages."
 
-#: ../TcosGui.py:292
+#: ../TcosGui.py:293
 msgid ""
 "Something wrong ocurred while parsing command line options for gentcos.\n"
 "\n"
@@ -1044,21 +1044,21 @@ msgstr ""
 "de commandes de gentcos.\n"
 "Avez vous sélectionné un mode de démarrage?"
 
-#: ../TcosGui.py:299
+#: ../TcosGui.py:300
 #, python-format
 msgid "EXEC: %s"
 msgstr "Exécuter: %s"
 
-#: ../TcosGui.py:351
+#: ../TcosGui.py:352
 #, python-format
 msgid "Working... (%d %%)"
 msgstr "En cours... (%d %%)"
 
-#: ../TcosGui.py:353
+#: ../TcosGui.py:354
 msgid "Complete"
 msgstr "Terminé"
 
-#: ../TcosGui.py:421
+#: ../TcosGui.py:422
 #, python-format
 msgid ""
 "Configuration saved succesfully.\n"
@@ -1069,11 +1069,11 @@ msgstr ""
 "Les valeurs changées sont:\n"
 "%s"
 
-#: ../TcosGui.py:690
+#: ../TcosGui.py:691
 msgid "No template description avalaible"
 msgstr "Pas de description disponible pour ce modèle"
 
-#: ../TcosGui.py:701
+#: ../TcosGui.py:702
 msgid "don't use any template"
 msgstr "Ne pas utiliser de modèles"
 
@@ -1119,27 +1119,36 @@ msgstr "Serveur miroir de sécurité"
 msgid "TCOS mirror"
 msgstr "Miroir TCOS"
 
-#: ../tcos-chrootbuilder.glade:478
+#: ../tcos-chrootbuilder.glade:473
+#, fuzzy
+msgid "enable"
+msgstr "activer ssh"
+
+#: ../tcos-chrootbuilder.glade:494
+msgid "Enable TCOS experimental branch"
+msgstr ""
+
+#: ../tcos-chrootbuilder.glade:528
 msgid "Chroot options"
 msgstr "Options du chroot"
 
-#: ../tcos-chrootbuilder.glade:560
+#: ../tcos-chrootbuilder.glade:610
 msgid "Exit"
 msgstr "Sortir"
 
-#: ../tcos-chrootbuilder.glade:638
+#: ../tcos-chrootbuilder.glade:688
 msgid "Build TCOS images"
 msgstr "Contruire les images TCOS"
 
-#: ../tcos-chrootbuilder.glade:716
+#: ../tcos-chrootbuilder.glade:766
 msgid "Update chroot"
 msgstr "Actualiser le chroot"
 
-#: ../tcos-chrootbuilder.glade:794
+#: ../tcos-chrootbuilder.glade:844
 msgid "Delete chroot"
 msgstr "Supprimer le chroot"
 
-#: ../tcos-chrootbuilder.glade:872
+#: ../tcos-chrootbuilder.glade:922
 msgid "Build chroot"
 msgstr "Construire  le chroot"
 

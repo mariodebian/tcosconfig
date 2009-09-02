@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: qcv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-13 19:37+0200\n"
+"POT-Creation-Date: 2009-09-02 18:59+0200\n"
 "PO-Revision-Date: 2008-07-01 14:44+0200\n"
 "Last-Translator: Pilar Embid Giner <embid_mar@gva.es>\n"
 "Language-Team: Valencian <lliurex@gva.es>\n"
@@ -26,7 +26,7 @@ msgstr "Plantilla generada per tcosconfig"
 msgid "Do you want to delete entire chroot environment?"
 msgstr "Voleu eliminar tot l'entorn chroot?"
 
-#: ../DetectArch.py:66
+#: ../DetectArch.py:71
 #, python-format
 msgid ""
 "Detected non i386 architecture.\n"
@@ -52,7 +52,7 @@ msgstr ""
 "\n"
 "Si seleccioneu \"No\", l'assistent construirà imatges per a %(arch)s."
 
-#: ../DetectArch.py:72
+#: ../DetectArch.py:77
 msgid "TcosConfig, invalid architecture"
 msgstr "TcosConfig, arquitectura inválida"
 
@@ -1018,12 +1018,12 @@ msgid "Error, you must run this app as root user"
 msgstr ""
 "S'ha produït un error, heu d'executar esta aplicació com a superusuari."
 
-#: ../TcosGui.py:177
+#: ../TcosGui.py:178
 #, python-format
 msgid "Need to enable <b>%s</b> before"
 msgstr "Cal activar <b>%s</b> primer"
 
-#: ../TcosGui.py:265
+#: ../TcosGui.py:266
 msgid ""
 "You leave blank root password for thin clients in:\n"
 "    - Advanced settings -> Users and passwords                            \n"
@@ -1036,11 +1036,11 @@ msgstr ""
 "\n"
 "La contrasenya s'establirà a: \"root\""
 
-#: ../TcosGui.py:282
+#: ../TcosGui.py:283
 msgid "Overwriting it with your own settings."
 msgstr "S'està sobreescrivinta amb els vostres paràmetres."
 
-#: ../TcosGui.py:292
+#: ../TcosGui.py:293
 msgid ""
 "Something wrong ocurred while parsing command line options for gentcos.\n"
 "\n"
@@ -1051,21 +1051,21 @@ msgstr ""
 "\n"
 "Heu seleccionat un mètode d'arrancada?"
 
-#: ../TcosGui.py:299
+#: ../TcosGui.py:300
 #, python-format
 msgid "EXEC: %s"
 msgstr "Executa: %s"
 
-#: ../TcosGui.py:351
+#: ../TcosGui.py:352
 #, python-format
 msgid "Working... (%d %%)"
 msgstr "Està treballant... (%d %%)"
 
-#: ../TcosGui.py:353
+#: ../TcosGui.py:354
 msgid "Complete"
 msgstr "Acabat"
 
-#: ../TcosGui.py:421
+#: ../TcosGui.py:422
 #, python-format
 msgid ""
 "Configuration saved succesfully.\n"
@@ -1076,11 +1076,11 @@ msgstr ""
 "Les variables canviades són:\n"
 "%s"
 
-#: ../TcosGui.py:690
+#: ../TcosGui.py:691
 msgid "No template description avalaible"
 msgstr "No hi ha descripció disponible per a la plantilla"
 
-#: ../TcosGui.py:701
+#: ../TcosGui.py:702
 msgid "don't use any template"
 msgstr "no utilitzes cap plantilla"
 
@@ -1126,27 +1126,36 @@ msgstr "Rèplica de seguretat"
 msgid "TCOS mirror"
 msgstr "Rèplica del TCOS"
 
-#: ../tcos-chrootbuilder.glade:478
+#: ../tcos-chrootbuilder.glade:473
+#, fuzzy
+msgid "enable"
+msgstr "activa l'ssh"
+
+#: ../tcos-chrootbuilder.glade:494
+msgid "Enable TCOS experimental branch"
+msgstr ""
+
+#: ../tcos-chrootbuilder.glade:528
 msgid "Chroot options"
 msgstr "Opcions del chroot"
 
-#: ../tcos-chrootbuilder.glade:560
+#: ../tcos-chrootbuilder.glade:610
 msgid "Exit"
 msgstr "Ix"
 
-#: ../tcos-chrootbuilder.glade:638
+#: ../tcos-chrootbuilder.glade:688
 msgid "Build TCOS images"
 msgstr "Construïx les imatges del TCOS"
 
-#: ../tcos-chrootbuilder.glade:716
+#: ../tcos-chrootbuilder.glade:766
 msgid "Update chroot"
 msgstr "Actualitza el chroot"
 
-#: ../tcos-chrootbuilder.glade:794
+#: ../tcos-chrootbuilder.glade:844
 msgid "Delete chroot"
 msgstr "Elimina el chroot"
 
-#: ../tcos-chrootbuilder.glade:872
+#: ../tcos-chrootbuilder.glade:922
 msgid "Build chroot"
 msgstr "Construïx el chroot"
 

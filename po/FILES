@@ -3,7 +3,6 @@
 ../DetectArch.py
 ../shared.py
 ../tcosconfig.glade
-../VirtualTerminal.py
 ../tcosconfig.py
 ../TcosGui.py
 ../tcos-chrootbuilder.glade

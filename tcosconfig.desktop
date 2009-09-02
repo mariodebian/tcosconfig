@@ -11,5 +11,5 @@ Exec=/usr/bin/tcosconfig $@
 Terminal=false
 Type=Application
 Icon=/usr/share/tcosconfig/images/tcos-icon.png
-Categories=GNOME;Application;System;Utility;
+Categories=GNOME;Settings;System;DesktopSettings;
 GenericName[es_ES]=TCOS-config

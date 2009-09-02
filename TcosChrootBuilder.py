@@ -47,7 +47,7 @@ def print_debug(txt):
 
 DISTRO_VERSIONS={
 "debian":["unstable", "testing", "lenny"]  ,
-"ubuntu":["dapper", "edgy", "feisty", "gutsy", "hardy", "intrepid", "jaunty"]
+"ubuntu":["hardy", "intrepid", "jaunty"]
 }
 
 
@@ -56,10 +56,6 @@ KERNEL_VERSIONS={
 "lenny":"2.6.26-2-486"  ,
 "testing":"2.6.29-2-486"  ,
 "unstable":"2.6.30-1-486"  ,
-#"dapper":"2.6.15-29-386"  ,
-#"edgy":"2.6.17-12-generic"  ,
-#"feisty":"2.6.20-16-generic"  ,
-#"gutsy":"2.6.22-14-generic"  ,
 "hardy":"2.6.24-24-generic" ,
 "intrepid":"2.6.27-14-generic",
 "jaunty":"2.6.28-13-generic",
@@ -138,12 +134,16 @@ class TcosChroot:
         # extra mirrors
         self.entry_securitymirror = self.ui.get_widget("entry_securitymirror")
         self.entry_tcosmirror = self.ui.get_widget("entry_tcosmirror")
+        self.ck_experimental = self.ui.get_widget("ck_experimental")
         
         self.loadData()
         
         self.entry_tcosmirror.set_text(TCOS_MIRROR)
         self.set_active_in_select(self.combo_distribution, self.buildvars["DISTRIBUTION"] )
         self.set_active_in_select(self.combo_arch, "i386")
+        
+        if self.buildvars.has_key("TCOS_EXPERIMENTAL") and self.buildvars["TCOS_EXPERIMENTAL"] != "":
+            self.ck_experimental.set_active(True)
         
         if os.path.isfile( os.path.join(self.buildvars["TCOS_CHROOT"], "tcos-buildchroot.conf") ):
             data=[]
@@ -268,13 +268,16 @@ class TcosChroot:
         else:
             securitymirror_txt=""
         tcosmirror=self.entry_tcosmirror.get_text()
+        tcos_experimental=""
+        if self.ck_experimental.get_active():
+            tcos_experimental=" --tcos-exp"
         distribution=self.read_select_value(self.combo_distribution, "distribution")
         arch=self.read_select_value(self.combo_arch, "arch")
         version=self.read_select_value(self.combo_distro, "distro")
         if DISTRO_ALIAS.has_key(version):
             version=DISTRO_ALIAS[version]
-        cmd=BUILD_CHROOT_CMD + " --create --forcedistro=%s --arch=%s --version=%s --mirror=%s %s --tcosmirror=%s --kversion=%s --dir=%s" \
-                                        %(distribution, arch, version, mirror, securitymirror_txt, tcosmirror, kversion, self.buildvars["TCOS_CHROOT"])
+        cmd=BUILD_CHROOT_CMD + " --create --forcedistro=%s --arch=%s --version=%s --mirror=%s %s --tcosmirror=%s --kversion=%s --dir=%s %s" \
+                                        %(distribution, arch, version, mirror, securitymirror_txt, tcosmirror, kversion, self.buildvars["TCOS_CHROOT"], tcos_experimental)
         print_debug ("buildChroot() cmd=%s" %cmd) 
         self.run_command(cmd)
 
