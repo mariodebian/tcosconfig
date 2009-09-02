@@ -1,3 +1,9 @@
+tcosconfig (0.3.14+1) UNRELEASED; urgency=low
+
+  * Remove obsolete patch targets
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 02 Sep 2009 20:36:47 +0200
+
 tcosconfig (0.3.14) unstable; urgency=low
 
   * Delete some old distros from TcosChrootBuilder.py

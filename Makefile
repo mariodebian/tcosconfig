@@ -91,54 +91,32 @@ tcos:
 
 
 patch_version:
-	# PATCHING VERSION
-	sed -i 's/__VERSION__/$(VERSION)/g' shared.py
-	sed -i 's/__VERSION__/$(VERSION)/g' tcosconfig.py
-	sed -i 's/__VERSION__/$(VERSION)/g' TcosGui.py
-	sed -i 's/__VERSION__/$(VERSION)/g' ConfigReader.py
-	sed -i 's/__VERSION__/$(VERSION)/g' DetectArch.py
-	sed -i 's/__VERSION__/$(VERSION)/g' TcosChrootBuilder.py
-	sed -i 's/__VERSION__/$(VERSION)/g' VirtualTerminal.py
-
-patch_dapper: patch_version
-	# PATCHING TcosConfig in Ubuntu DAPPER
-	sed -i '/^Build/s/5.0.37.2/5.0.7ubuntu13/g' debian/control
-	sed -i '/python-support/s/0.3/0.1.1ubuntu1/g' debian/control
-	sed -i '/dh_pysupport/s/dh_pysupport/dh_python/g' debian/rules
-	sed -i '/PYTHON/s/python/python2.4/g' tcosconfig.sh
+	# obsolete target patch_version
 
 
-patch_edgy: patch_version
+
+patch_hardy:
+	echo 6 > debian/compat
+	sed -i 's/7\.0\.0/6\.0\.0/g' debian/control
+	sed -i 's/3\.8\.0/3\.7\.2/g' debian/control
+
+patch_intrepid:
 	# nothing to patch
 
-patch_feisty: patch_version
+patch_jaunty:
 	# nothing to patch
 
-patch_gutsy: patch_version
+patch_max:
 	# nothing to patch
 
-patch_hardy: patch_version
+
+patch_lenny:
 	# nothing to patch
 
-patch_intrepid: patch_version
+patch_testing:
 	# nothing to patch
 
-patch_jaunty: patch_version
-	# nothing to patch
-
-patch_max: patch_version
-	# nothing to patch
-
-patch_etch: patch_version
-	# nothing to patch
-
-patch_lenny: patch_version
-	# nothing to patch
-
-patch_testing: patch_version
-	# nothing to patch
-
-patch_unstable: patch_version
+patch_unstable:
 	# nothing to patch
 
 
