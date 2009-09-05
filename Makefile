@@ -106,6 +106,9 @@ patch_intrepid:
 patch_jaunty:
 	# nothing to patch
 
+patch_karmic:
+	# nothing to patch
+
 patch_max:
 	# nothing to patch
 
