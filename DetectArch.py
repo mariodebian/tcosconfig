@@ -31,6 +31,11 @@ from gettext import gettext as _
 import shared
 from subprocess import Popen, PIPE, STDOUT
 
+def print_debug(txt):
+    if shared.debug:
+        print ( "DetectArch::%s " %(txt) )
+
+
 class DetectArch:
     def __init__(self):
         self.arch=None
@@ -45,17 +50,19 @@ class DetectArch:
         p = Popen("file /bin/mount", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
         stdout=p.stdout
         isfinished=False
+        self.arch="unknow"
         while not isfinished:
             line=stdout.readline().strip()
             if p.poll() != None:
                 isfinished=True
+            print_debug("get() line='%s'"%line)
 
-            if "ELF 32-bit LSB executable, Intel 80386" in line:
+            if "ELF 32-bit" in line:
                 self.arch="i386"
-            elif "ELF 64-bit LSB executable, x86-64" in line:
+            elif "ELF 64-bit" in line:
                 self.arch="amd64"
-            else:
-                self.arch="unknow"
+
+        print_debug("get() returning self.arch=%s"%self.arch)
         return self.arch
 
 
@@ -89,6 +96,7 @@ If select "No" wizard will construct %(arch)s images.""") %{"arch":self.arch, "a
         
 
 if __name__ == "__main__":
+    shared.debug=True
     app=DetectArch()
     if len(sys.argv) > 1:
         print app.get(sys.argv[1])

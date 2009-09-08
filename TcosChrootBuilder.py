@@ -63,7 +63,8 @@ KERNEL_VERSIONS={
 }
 
 DISTRO_ALIAS={
-"testing":"squeeze"
+"testing":"squeeze",
+"unstable":"sid",
 }
 
 DISTRO_MIRRORS={

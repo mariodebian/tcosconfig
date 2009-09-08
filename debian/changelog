@@ -1,3 +1,10 @@
+tcosconfig (0.3.16) unstable; urgency=low
+
+  * DetectArch.py:
+    - Fix unknow arch loop
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Tue, 08 Sep 2009 16:12:04 +0200
+
 tcosconfig (0.3.15) unstable; urgency=low
 
   * Remove obsolete patch targets
