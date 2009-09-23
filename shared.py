@@ -94,7 +94,8 @@ TCOS_XORG_XKB_VALUES=[
 ['gb', _("English - gb") ] , 
 ['es', _("Spanish - es") ], 
 ['fr', _("French - fr") ] , 
-['de', _("German - de") ]
+['de', _("German - de") ],
+['br', _("Brazilian Portuguese - br") ],
 ]
 
 TCOS_XORG_VIDEO_DRIVER_VALUES=[ 
