@@ -881,7 +881,7 @@ msgstr ""
 
 #: ../tcosconfig.glade:5724 ../tcosconfig.glade:5787
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
-msgstr "<span size=\"x-large\"><b>Método de aranque</b></span>"
+msgstr "<span size=\"x-large\"><b>Método de arranque</b></span>"
 
 #: ../tcosconfig.glade:5749
 msgid ""
