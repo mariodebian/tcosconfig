@@ -1,3 +1,10 @@
+tcosconfig (0.3.18) unstable; urgency=low
+
+  * Fix typo in Spanish translation
+  * Update kernel versions and add Ubuntu Lucid
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 22 Nov 2009 17:29:10 +0100
+
 tcosconfig (0.3.17) unstable; urgency=low
 
   * Add NTFS-3G checkbox
