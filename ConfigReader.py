@@ -26,7 +26,8 @@ import os
 import shared
 from gettext import gettext as _
 import time
-import shutil,grp,pwd
+import shutil
+import grp
 import glob
 
 def print_debug(txt):

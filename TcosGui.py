@@ -22,16 +22,18 @@
 # 02111-1307, USA.
 ###########################################################################
 
-from ConfigReader import *
+from ConfigReader import ConfigReader
 import shared
 
 from subprocess import Popen, PIPE, STDOUT
 from threading import Thread
-import os, shutil
+import os
+import shutil
 #import sys, re
 import pygtk
 pygtk.require('2.0')
-import gtk.glade
+import gtk
+#import gtk.glade
 import time
 from gettext import gettext as _
 from gettext import locale
@@ -46,11 +48,7 @@ gtk.gdk.threads_init()
 def print_debug(txt):
     global debug
     if shared.debug:
-        print ( "%s::%s " %(__name__, txt) )
-
-    
-
-
+        print( "%s::%s " %(__name__, txt) )
 
 class TcosGui:
     def __init__(self):
@@ -68,10 +66,6 @@ class TcosGui:
         
         self.step=0
 
-        # glade locale init
-        gtk.glade.bindtextdomain(shared.PACKAGE, shared.LOCALE_DIR)
-        gtk.glade.textdomain(shared.PACKAGE)
-
         self.languages=[locale.getdefaultlocale()[0]]
         if self.languages[0] and "_" in self.languages[0]:
             self.languages.append( self.languages[0].split('_')[0] )
@@ -79,24 +73,34 @@ class TcosGui:
         print_debug ( "__init__ languages=%s" %self.languages)
 
         # Widgets
-        print_debug ("loading %s"%(shared.GLADE_DIR + 'tcosconfig.glade'))
-        self.ui = gtk.glade.XML(shared.GLADE_DIR + 'tcosconfig.glade')
+        self.ui = gtk.Builder()
+        self.ui.set_translation_domain(shared.PACKAGE)
+        print_debug("Loading ui file...")
+        self.ui.add_from_file(shared.GLADE_DIR + 'tcosconfig.ui')
+        
+        #print_debug ("loading %s"%(shared.GLADE_DIR + 'tcosconfig.glade'))
+        #self.ui = gtk.glade.XML(shared.GLADE_DIR + 'tcosconfig.glade')
 
         # load all widgets
-        for widget in self.ui.get_widget_prefix(""):
-            setattr(self, widget.get_name(), widget)
+        for widget in self.ui.get_objects():
+            if hasattr(widget, 'get_name'):
+                setattr(self, widget.get_name(), widget)
 
         self.steps.set_show_tabs(False)
         
-        self.tcosconfig.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
+        self.tcosconfig.set_icon_from_file(shared.GLADE_DIR +'/../images/tcos-icon.png')
 
-        self.aboutdialog = self.ui.get_widget("aboutdialog")
+        self.aboutui=gtk.Builder()
+        self.aboutui.set_translation_domain(shared.PACKAGE)
+        self.aboutui.add_from_file(shared.GLADE_DIR + 'tcosconfig-aboutdialog.ui')
+        
+        self.aboutdialog = self.aboutui.get_object("aboutdialog")
         self.aboutdialog.connect("response", self.on_aboutdialog_response)
         self.aboutdialog.connect("close", self.on_aboutdialog_close)
         self.aboutdialog.connect("delete_event", self.on_aboutdialog_close)
         self.aboutdialog.set_version(shared.VERSION)
         self.aboutdialog.set_name('TcosConfig')
-        self.aboutdialog.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
+        self.aboutdialog.set_icon_from_file(shared.GLADE_DIR +'/../images/tcos-icon.png')
 
         # set initial bottom status
         self.backbutton.hide()
@@ -614,6 +618,8 @@ class TcosGui:
         
         elif wtype == "GtkSpinButton" and widget.name != "TCOS_MAX_MEM":
             value=str( int( widget.get_value() ) )
+        elif wtype == "GtkSpinButton" and widget.name != "TCOS_COMPCACHE_PERCENT":
+            value=str( int( widget.get_value() ) )
 
 
         else:
@@ -819,6 +825,8 @@ class TcosGui:
                 widget.set_value( int(value) )
             
             elif wtype == gtk.SpinButton and widget.name != "TCOS_MAX_MEM":
+                widget.set_value( int(value) )
+            elif wtype == gtk.SpinButton and widget.name != "TCOS_COMPCACHE_PERCENT":
                 widget.set_value( int(value) )
             
             else:

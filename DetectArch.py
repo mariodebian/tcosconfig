@@ -22,7 +22,7 @@
 # 02111-1307, USA.
 ###########################################################################
 
-import os
+
 import sys
 import pygtk
 pygtk.require('2.0')
@@ -82,7 +82,7 @@ Do you want to build a 32bit chroot and generate 32bit TCOS images?\n
 If select "No" wizard will construct %(arch)s images.""") %{"arch":self.arch, "arch":self.arch} 
         dialog = gtk.MessageDialog(parent=None, flags=0, type=gtk.MESSAGE_WARNING, buttons=gtk.BUTTONS_YES_NO, message_format=message)
         dialog.set_title( _("TcosConfig, invalid architecture") )
-        dialog.set_icon ( gtk.gdk.pixbuf_new_from_file(shared.GLADE_DIR + "images/tcos-icon.png") )
+        dialog.set_icon ( gtk.gdk.pixbuf_new_from_file(shared.GLADE_DIR + "../images/tcos-icon.png") )
         dialog.show_all()
         responce = dialog.run()
         dialog.destroy()

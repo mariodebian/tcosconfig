@@ -51,11 +51,11 @@ gentcos="/usr/sbin/gentcos"
 # if exec from svn or sources dir
 if os.path.isfile('./tcosconfig.py'):
     LOCALE_DIR = "./po/"
-    GLADE_DIR = "./"
+    GLADE_DIR = "./ui/"
     print "TcosConfig not installed, exec in SVN place"
     #gentcos="sudo bash gentcos"
 else:
-    GLADE_DIR = "/usr/share/tcosconfig/"
+    GLADE_DIR = "/usr/share/tcosconfig/ui/"
     LOCALE_DIR = "/usr/share/locale"
     
 # force a default tcos template, example /usr/share/initramfs-tools-tcos/templates/tcos.conf.custom

@@ -91,4 +91,4 @@ gui = TcosGui()
 # Run app
 gui.run()
 
-    
+

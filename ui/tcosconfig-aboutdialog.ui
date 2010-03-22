@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 2.12 -->
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkAboutDialog" id="aboutdialog">
+    <property name="border_width">5</property>
+    <property name="type_hint">normal</property>
+    <property name="copyright" translatable="yes">License GNU/GPL</property>
+    <property name="comments" translatable="yes">TCOS Network image generator</property>
+    <property name="website">http://www.tcosproject.org</property>
+    <property name="website_label" translatable="yes">TcosConfig web site</property>
+    <property name="authors">Mario Izquierdo (mariodebian)
+&lt;mariodebian@gmail.com&gt;</property>
+    <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
+    <property name="logo">/usr/share/tcosconfig/images/tcos_config.png</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox1">
+        <property name="orientation">vertical</property>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area1"/>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

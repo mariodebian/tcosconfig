@@ -26,8 +26,6 @@ import os
 import pygtk
 pygtk.require('2.0')
 import gtk
-import gtk.glade
-import time
 #from subprocess import Popen, PIPE
 from gettext import gettext as _
 
@@ -54,13 +52,13 @@ DISTRO_VERSIONS={
 
 KERNEL_VERSIONS={
 "lenny":"2.6.26-2-486"  ,
-"testing":"2.6.30-2-486"  ,
-"unstable":"2.6.31-1-486"  ,
+"testing":"2.6.32-3-486"  ,
+"unstable":"2.6.32-3-486"  ,
 "hardy":"2.6.24-25-generic" ,
-"intrepid":"2.6.27-15-generic",
-"jaunty":"2.6.28-16-generic",
-"karmic":"2.6.31-14-generic",
-"lucid":"2.6.32-4-generic",
+"intrepid":"2.6.27-17-generic",
+"jaunty":"2.6.28-18-generic",
+"karmic":"2.6.31-15-generic",
+"lucid":"2.6.32-16-generic",
 }
 
 DISTRO_ALIAS={
@@ -88,28 +86,26 @@ class TcosChroot:
     def __init__(self):
         
         self.buildvars={}
-        
-        
-        # glade locale init
-        gtk.glade.bindtextdomain(shared.PACKAGE, shared.LOCALE_DIR)
-        gtk.glade.textdomain(shared.PACKAGE)
 
         # Widgets
-        self.ui = gtk.glade.XML(shared.GLADE_DIR + '/tcos-chrootbuilder.glade')
+        self.ui = gtk.Builder()
+        self.ui.set_translation_domain(shared.PACKAGE)
+        print_debug("Loading ui file...")
+        self.ui.add_from_file(shared.GLADE_DIR + 'tcos-chrootbuilder.ui')
         
-        self.scrolledwindow = self.ui.get_widget("scrolledwindow")
+        self.scrolledwindow = self.ui.get_object("scrolledwindow")
         
-        self.window = self.ui.get_widget("window")
+        self.window = self.ui.get_object("window")
         self.window.connect("destroy", self.quit )
         
-        self.window.set_icon_from_file(shared.GLADE_DIR +'/images/tcos-icon.png')
+        self.window.set_icon_from_file(shared.GLADE_DIR +'/../images/tcos-icon.png')
         
         # buttons
-        self.button_chroot = self.ui.get_widget("button_chroot")
-        self.button_delete = self.ui.get_widget("button_delete")
-        self.button_update = self.ui.get_widget("button_update")
-        self.button_buildtcos = self.ui.get_widget("button_buildtcos")
-        self.button_exit = self.ui.get_widget("button_exit")
+        self.button_chroot = self.ui.get_object("button_chroot")
+        self.button_delete = self.ui.get_object("button_delete")
+        self.button_update = self.ui.get_object("button_update")
+        self.button_buildtcos = self.ui.get_object("button_buildtcos")
+        self.button_exit = self.ui.get_object("button_exit")
         
         # connect events
         self.button_chroot.connect('clicked', self.buildChroot )
@@ -119,25 +115,28 @@ class TcosChroot:
         self.button_exit.connect('clicked', self.quit )
         
         # expander
-        self.chroot_options = self.ui.get_widget("chroot_options")
+        self.chroot_options = self.ui.get_object("chroot_options")
         self.chroot_options.set_expanded(False)
         
         
         # widgets
-        self.combo_distro = self.ui.get_widget("combo_distro")
-        self.combo_arch = self.ui.get_widget("combo_arch")
-        self.entry_kernel = self.ui.get_widget("entry_kernel")
-        self.entry_mirror = self.ui.get_widget("entry_mirror")
+        self.combo_distro = self.ui.get_object("combo_distro")
+        self.combo_arch = self.ui.get_object("combo_arch")
+        self.entry_kernel = self.ui.get_object("entry_kernel")
+        self.entry_mirror = self.ui.get_object("entry_mirror")
         self.combo_distro.connect('changed', self.on_distro_combo_change)
 
         # new widgets to support forcedistro
-        self.combo_distribution = self.ui.get_widget("combo_distribution")
+        self.combo_distribution = self.ui.get_object("combo_distribution")
         self.combo_distribution.connect('changed', self.on_distribution_combo_change)
         
+        self.populate_select(self.combo_distribution, DISTRO_VERSIONS.keys())
+        self.populate_select(self.combo_arch, ['i386','amd64', 'ppc'])
+        
         # extra mirrors
-        self.entry_securitymirror = self.ui.get_widget("entry_securitymirror")
-        self.entry_tcosmirror = self.ui.get_widget("entry_tcosmirror")
-        self.ck_experimental = self.ui.get_widget("ck_experimental")
+        self.entry_securitymirror = self.ui.get_object("entry_securitymirror")
+        self.entry_tcosmirror = self.ui.get_object("entry_tcosmirror")
+        self.ck_experimental = self.ui.get_object("ck_experimental")
         
         self.loadData()
         
@@ -181,7 +180,7 @@ class TcosChroot:
         #self.term=VirtualTerminal()
         #self.scrolledwindow.add_with_viewport(self.term)
         #self.term.show()
-        self.output = self.ui.get_widget("output")
+        self.output = self.ui.get_object("output")
         
         
                 
@@ -229,14 +228,17 @@ class TcosChroot:
 
     def populate_select(self, widget, values, set_text_column=True):
         valuelist = gtk.ListStore(str)
+        print "%s => %s"%(widget.name, values)
         for value in values:
             print_debug ( "populate_select() appending %s" %([value.split('_')[0]]) ) 
             valuelist.append( [value.split('_')[0]] )
         widget.set_model(valuelist)
-        if set_text_column:
+        if widget.get_text_column() != 0:
             widget.set_text_column(0)
+        #if set_text_column:
+        #    widget.set_text_column(0)
         model=widget.get_model()
-        return        
+        return
 
     def set_active_in_select(self, widget, default):
         model=widget.get_model()
