@@ -1,3 +1,11 @@
+tcosconfig (0.3.19) unstable; urgency=low
+
+  * add TCOS_COMPOSITE
+  * Update gtk.glade to gtk.Builder
+  * Update translations
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 22 Mar 2010 11:51:43 +0100
+
 tcosconfig (0.3.18) unstable; urgency=low
 
   * Fix typo in Spanish translation
