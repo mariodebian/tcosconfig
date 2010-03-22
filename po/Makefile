@@ -14,7 +14,13 @@ clean:
 files:
 	find ../ -name "*.py" -o -name "*.glade" > FILES
 pot:
-	xgettext  -o tcosconfig.pot --files-from=FILES
+#	xgettext  -o tcosconfig.pot --files-from=FILES
+	find ../ -name "*.ui" > FILES.ui.txt
+	find ../ -name "*.py" > FILES.py.txt
+	xgettext -o tcosconfig.py.pot --files-from=FILES.py.txt --language=Python
+	xgettext -o tcosconfig.ui.pot --files-from=FILES.ui.txt --language=Glade
+	msgcat -o tcosconfig.pot tcosconfig.py.pot tcosconfig.ui.pot
+	rm -f tcosconfig.py.pot tcosconfig.ui.pot FILES.ui.txt FILES.py.txt
 
 po:
 	@for lang in $(LANGUAGES); do \
