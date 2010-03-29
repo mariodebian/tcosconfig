@@ -78,9 +78,6 @@ class TcosGui:
         print_debug("Loading ui file...")
         self.ui.add_from_file(shared.GLADE_DIR + 'tcosconfig.ui')
         
-        #print_debug ("loading %s"%(shared.GLADE_DIR + 'tcosconfig.glade'))
-        #self.ui = gtk.glade.XML(shared.GLADE_DIR + 'tcosconfig.glade')
-
         # load all widgets
         for widget in self.ui.get_objects():
             if hasattr(widget, 'get_name'):
@@ -88,7 +85,7 @@ class TcosGui:
 
         self.steps.set_show_tabs(False)
         
-        self.tcosconfig.set_icon_from_file(shared.GLADE_DIR +'/../images/tcos-icon.png')
+        self.tcosconfig.set_icon_from_file(shared.IMG_DIR +'tcos-icon.png')
 
         self.aboutui=gtk.Builder()
         self.aboutui.set_translation_domain(shared.PACKAGE)
@@ -100,7 +97,7 @@ class TcosGui:
         self.aboutdialog.connect("delete_event", self.on_aboutdialog_close)
         self.aboutdialog.set_version(shared.VERSION)
         self.aboutdialog.set_name('TcosConfig')
-        self.aboutdialog.set_icon_from_file(shared.GLADE_DIR +'/../images/tcos-icon.png')
+        self.aboutdialog.set_icon_from_file(shared.IMG_DIR +'tcos-icon.png')
 
         # set initial bottom status
         self.backbutton.hide()

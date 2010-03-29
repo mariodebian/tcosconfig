@@ -29,6 +29,7 @@ from gettext import gettext as _
 from gettext import bindtextdomain, textdomain
 from locale import setlocale, LC_ALL
 
+
 # program name to use in gettext .mo
 PACKAGE = "tcosconfig"
 VERSION = "__VERSION__"
@@ -52,10 +53,12 @@ gentcos="/usr/sbin/gentcos"
 if os.path.isfile('./tcosconfig.py'):
     LOCALE_DIR = "./po/"
     GLADE_DIR = "./ui/"
+    IMG_DIR = "./images/"
     print "TcosConfig not installed, exec in SVN place"
     #gentcos="sudo bash gentcos"
 else:
     GLADE_DIR = "/usr/share/tcosconfig/ui/"
+    IMG_DIR = "/usr/share/tcosconfig/images/"
     LOCALE_DIR = "/usr/share/locale"
     
 # force a default tcos template, example /usr/share/initramfs-tools-tcos/templates/tcos.conf.custom
@@ -65,6 +68,17 @@ tcos_force_base_template=""
 setlocale( LC_ALL )
 bindtextdomain( PACKAGE, LOCALE_DIR )
 textdomain( PACKAGE )
+
+#import locale
+#import gettext
+#locale.setlocale(locale.LC_ALL, '')
+#locale.bindtextdomain(PACKAGE, LOCALE_DIR)
+#gettext.bindtextdomain(PACKAGE, LOCALE_DIR)
+#gettext.textdomain( PACKAGE )
+#lang = gettext.translation(PACKAGE, LOCALE_DIR)
+#_ = lang.gettext
+#gettext.install(PACKAGE, LOCALE_DIR)
+
 
 # gentcos command (if svn exec in ./ path else use /usr/sbin/)
 

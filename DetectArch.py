@@ -55,6 +55,8 @@ class DetectArch:
             line=stdout.readline().strip()
             if p.poll() != None:
                 isfinished=True
+            if line == '':
+                continue
             print_debug("get() line='%s'"%line)
 
             if "ELF 32-bit" in line:
@@ -82,7 +84,7 @@ Do you want to build a 32bit chroot and generate 32bit TCOS images?\n
 If select "No" wizard will construct %(arch)s images.""") %{"arch":self.arch, "arch":self.arch} 
         dialog = gtk.MessageDialog(parent=None, flags=0, type=gtk.MESSAGE_WARNING, buttons=gtk.BUTTONS_YES_NO, message_format=message)
         dialog.set_title( _("TcosConfig, invalid architecture") )
-        dialog.set_icon ( gtk.gdk.pixbuf_new_from_file(shared.GLADE_DIR + "../images/tcos-icon.png") )
+        dialog.set_icon ( gtk.gdk.pixbuf_new_from_file(shared.IMG_DIR + "tcos-icon.png") )
         dialog.show_all()
         responce = dialog.run()
         dialog.destroy()

@@ -98,7 +98,7 @@ class TcosChroot:
         self.window = self.ui.get_object("window")
         self.window.connect("destroy", self.quit )
         
-        self.window.set_icon_from_file(shared.GLADE_DIR +'/../images/tcos-icon.png')
+        self.window.set_icon_from_file(shared.IMG_DIR +'tcos-icon.png')
         
         # buttons
         self.button_chroot = self.ui.get_object("button_chroot")
