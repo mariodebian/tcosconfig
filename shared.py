@@ -48,6 +48,8 @@ tcosconfig_template="/etc/tcos/templates/tcosconfig.conf"
 config_file_secrets=('/etc/tcos/secrets/tcosmonitor-secret')
 tcos_config_file="/etc/tcos/tcos.conf"
 gentcos="/usr/sbin/gentcos"
+# FOR TESTING
+#gentcos="bash ./gentcos"
 
 # if exec from svn or sources dir
 if os.path.isfile('./tcosconfig.py'):
@@ -165,6 +167,10 @@ TCOS_MENUS_TYPES=[
 ["",            "",                 "", False, False],
 ["SIMPLE",      "1",                "", True, True],
 ["GRAPHIC",     "1",                "1", True, True],
+]
+
+TCOS_USPLASH_VALUES=[ 
+['', "" ]
 ]
 
 ignored_widgets=[

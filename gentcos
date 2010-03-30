@@ -20,8 +20,10 @@ done
 echo "-------------------------------------------------------"
 
 
-sleep 1
+sleep 2
 
+echo "finishing..."
+sleep 1
 echo "done"
 
 exit 0

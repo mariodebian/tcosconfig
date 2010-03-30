@@ -175,6 +175,8 @@ class ConfigReader:
 
     def getusplash(self):
         self.usplash_themes=[]
+        if not os.path.isdir('/usr/lib/usplash'):
+            return
         for _file in os.listdir(shared.chroot + "/usr/lib/usplash/"):
             if _file.find("usplash-artwork.so") == -1 and _file.endswith(".so"):
                 #print_debug( "getusplash() VALID usplash %s" %(_file) )

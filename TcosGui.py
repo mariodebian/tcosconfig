@@ -83,6 +83,17 @@ class TcosGui:
             if hasattr(widget, 'get_name'):
                 setattr(self, widget.get_name(), widget)
 
+        # thanks to Nacho for this piece of code
+        for widget in self.ui.get_objects():
+            try:
+                if issubclass(type(widget), gtk.Buildable):
+                    name = gtk.Buildable.get_name(widget)
+                    setattr(self, name, widget)
+                    #print_debug("widget_name %s" %name)
+            except AttributeError, err:
+                print "Exception get_objects() err=%s"%err
+
+
         self.steps.set_show_tabs(False)
         
         self.tcosconfig.set_icon_from_file(shared.IMG_DIR +'tcos-icon.png')
@@ -148,8 +159,13 @@ class TcosGui:
             widget.connect('toggled', self.on_tcos_menu_mode_change)
         self.menu_type=""
         
+        if len(shared.TCOS_USPLASH_VALUES) == 1 and shared.TCOS_USPLASH_VALUES[0][0]=="":
+            self.TCOS_DISABLE_USPLASH.set_active(True)
+            self.TCOS_USPLASH.set_sensitive(False)
+            self.TCOS_DISABLE_USPLASH.set_sensitive(False)
         #self.TCOS_XORG_DRI.connect('toggled', self.on_disable_dri_change)
         self.TCOS_DISABLE_USPLASH.connect('toggled', self.on_disable_usplash_change)
+        
         
         # events for linked widgets
         for widget in shared.linked_widgets:
@@ -176,7 +192,7 @@ class TcosGui:
                     wid.set_sensitive(other[w])
                     #print dir(getattr(self, w))
                     if hasattr(wid, "set_tooltip_markup"):
-                        wid.set_tooltip_markup( _("Need to enable <b>%s</b> before") %(widget.name) )
+                        wid.set_tooltip_markup( _("Need to enable <b>%s</b> before") %(gtk.Buildable.get_name(widget)) )
                 else:
                     wid.set_sensitive(True)
                     if hasattr(wid, "set_tooltip_text"):
@@ -201,8 +217,8 @@ class TcosGui:
         #print_debug("on_tcos_menu_mode_change() widget=%s active=%s"%(widget.name, widget.get_active()))
         if not widget.get_active():
             return
-        menu_type=widget.name.replace('TCOS_MENU_MODE','').replace('_','')
-        print_debug("on_tcos_menu_mode_change() widget=%s type=%s" %(widget.name,menu_type))
+        menu_type=gtk.Buildable.get_name(widget).replace('TCOS_MENU_MODE','').replace('_','')
+        print_debug("on_tcos_menu_mode_change() widget=%s type=%s" %(gtk.Buildable.get_name(widget),menu_type))
         for item in shared.TCOS_MENUS_TYPES:
             #print_debug("on_tcos_menu_mode_change() item[0]=%s menu_type=%s"%(item[0], menu_type))
             if item[0] == menu_type:
@@ -567,6 +583,7 @@ class TcosGui:
         returns:
             txt value or "" if not found
         """
+        print_debug("search_selected_index widget=%s varname=%s index=%s"%(widget,varname, index))
         value=""
         if hasattr(shared, varname + "_VALUES"):
             return getattr(shared, varname + "_VALUES")[index][0]
@@ -605,17 +622,17 @@ class TcosGui:
             else:
                 value=""
 
-        elif wtype == "GtkSpinButton" and widget.name == "TCOS_VOLUME":
+        elif wtype == "GtkSpinButton" and gtk.Buildable.get_name(widget) == "TCOS_VOLUME":
             # add % to TCOS_VOLUME
             value=str( int( widget.get_value() ) )
             value=value+"%"
         
-        elif wtype == "GtkSpinButton" and widget.name != "TCOS_VOLUME":
+        elif wtype == "GtkSpinButton" and gtk.Buildable.get_name(widget) != "TCOS_VOLUME":
             value=str( int( widget.get_value() ) )
         
-        elif wtype == "GtkSpinButton" and widget.name != "TCOS_MAX_MEM":
+        elif wtype == "GtkSpinButton" and gtk.Buildable.get_name(widget) != "TCOS_MAX_MEM":
             value=str( int( widget.get_value() ) )
-        elif wtype == "GtkSpinButton" and widget.name != "TCOS_COMPCACHE_PERCENT":
+        elif wtype == "GtkSpinButton" and gtk.Buildable.get_name(widget) != "TCOS_COMPCACHE_PERCENT":
             value=str( int( widget.get_value() ) )
 
 
@@ -733,7 +750,7 @@ class TcosGui:
                     default_menu=True
                 else:
                     widget=getattr(self, 'TCOS_MENU_MODE' + '_' + item[0])
-                print_debug("loadsettings() TCOS_MENU_MODE=%s"%widget.name)
+                print_debug("loadsettings() TCOS_MENU_MODE=%s"%gtk.Buildable.get_name(widget))
                 widget.set_active(True)
                 print_debug("loadsettings() NETBOOT_HIDE_INSTALL = %s"%item[3])
                 
@@ -806,7 +823,7 @@ class TcosGui:
                 else:
                     widget.set_active(0)
 
-            elif wtype == gtk.SpinButton and widget.name == "TCOS_VOLUME":
+            elif wtype == gtk.SpinButton and gtk.Buildable.get_name(widget) == "TCOS_VOLUME":
                 # change %
                 if value.find("%") > 0:
                     # give % value
@@ -818,12 +835,14 @@ class TcosGui:
                     value=float(value)*100/31
                     widget.set_value( float(value) )
             
-            elif wtype == gtk.SpinButton and widget.name != "TCOS_VOLUME":
+            elif wtype == gtk.SpinButton and gtk.Buildable.get_name(widget) != "TCOS_VOLUME":
+                print widget
+                print gtk.Buildable.get_name(widget)
                 widget.set_value( int(value) )
             
-            elif wtype == gtk.SpinButton and widget.name != "TCOS_MAX_MEM":
+            elif wtype == gtk.SpinButton and gtk.Buildable.get_name(widget) != "TCOS_MAX_MEM":
                 widget.set_value( int(value) )
-            elif wtype == gtk.SpinButton and widget.name != "TCOS_COMPCACHE_PERCENT":
+            elif wtype == gtk.SpinButton and gtk.Buildable.get_name(widget) != "TCOS_COMPCACHE_PERCENT":
                 widget.set_value( int(value) )
             
             else:
