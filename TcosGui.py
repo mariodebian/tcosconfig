@@ -836,8 +836,8 @@ class TcosGui:
                     widget.set_value( float(value) )
             
             elif wtype == gtk.SpinButton and gtk.Buildable.get_name(widget) != "TCOS_VOLUME":
-                print widget
-                print gtk.Buildable.get_name(widget)
+                #print widget
+                #print gtk.Buildable.get_name(widget)
                 widget.set_value( int(value) )
             
             elif wtype == gtk.SpinButton and gtk.Buildable.get_name(widget) != "TCOS_MAX_MEM":
