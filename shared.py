@@ -117,6 +117,7 @@ TCOS_XORG_XKB_VALUES=[
 TCOS_XORG_VIDEO_DRIVER_VALUES=[ 
 ['vesa', _("VESA") ] ,
 ['auto', _("Automatic detect") ] ,
+['fullauto', _("Full Automatic detect") ] ,
 ]
 
 TCOS_XORG_VIDEO_RES_VALUES=[
@@ -170,6 +171,10 @@ TCOS_MENUS_TYPES=[
 ]
 
 TCOS_USPLASH_VALUES=[ 
+['', "" ]
+]
+
+TCOS_PLYMOUTH_VALUES=[ 
 ['', "" ]
 ]
 
