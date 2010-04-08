@@ -2,31 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.12 -->
   <!-- interface-naming-policy toplevel-contextual -->
-  <object class="GtkAdjustment" id="adjustment1">
-    <property name="value">80</property>
-    <property name="upper">100</property>
-    <property name="step_increment">5</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="adjustment2">
-    <property name="upper">100</property>
-    <property name="step_increment">5</property>
-    <property name="page_increment">10</property>
-  </object>
-  <object class="GtkAdjustment" id="adjustment3">
-    <property name="value">1</property>
-    <property name="lower">1</property>
-    <property name="upper">6</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">1</property>
-  </object>
-  <object class="GtkAdjustment" id="compcache_adj">
-    <property name="value">20</property>
-    <property name="lower">0</property>
-    <property name="upper">100</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
   <object class="GtkWindow" id="tcosconfig">
     <property name="width_request">770</property>
     <property name="height_request">550</property>
@@ -799,7 +774,6 @@ If you want sound, devices, TcosMonitor select complete template.</property>
                                       <object class="GtkSpinButton" id="TCOS_VOLUME">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
-                                        <property name="adjustment">adjustment1</property>
                                         <property name="climb_rate">1</property>
                                       </object>
                                       <packing>
@@ -1317,7 +1291,7 @@ of Windows Terminal Server</property>
                             <child>
                               <object class="GtkTable" id="table34">
                                 <property name="visible">True</property>
-                                <property name="n_rows">6</property>
+                                <property name="n_rows">7</property>
                                 <property name="n_columns">2</property>
                                 <property name="row_spacing">2</property>
                                 <child>
@@ -1504,6 +1478,38 @@ of Windows Terminal Server</property>
                                     <property name="right_attach">2</property>
                                     <property name="top_attach">5</property>
                                     <property name="bottom_attach">6</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label1">
+                                    <property name="visible">True</property>
+                                    <property name="xalign">0</property>
+                                    <property name="xpad">5</property>
+                                    <property name="label" translatable="yes">Matrox DRI</property>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="TCOS_XORG_DRI_MATROX">
+                                    <property name="label" translatable="yes">enable DRI for Matrox (+2 MB)</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="receives_default">False</property>
+                                    <property name="use_underline">True</property>
+                                    <property name="draw_indicator">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">6</property>
+                                    <property name="bottom_attach">7</property>
                                     <property name="x_options">GTK_FILL</property>
                                     <property name="y_options"></property>
                                   </packing>
@@ -1736,7 +1742,6 @@ boot using NFS</property>
                                       <object class="GtkSpinButton" id="TCOS_MAX_MEM">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
-                                        <property name="adjustment">adjustment2</property>
                                         <property name="climb_rate">1</property>
                                       </object>
                                       <packing>
@@ -2286,7 +2291,7 @@ boot using NFS</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="label1">
+                                  <object class="GtkLabel" id="label2">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
                                     <property name="xpad">5</property>
@@ -2323,7 +2328,6 @@ boot using NFS</property>
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="invisible_char">&#x2022;</property>
-                                        <property name="adjustment">compcache_adj</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -2331,7 +2335,7 @@ boot using NFS</property>
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkLabel" id="label2">
+                                      <object class="GtkLabel" id="label3">
                                         <property name="visible">True</property>
                                         <property name="xpad">10</property>
                                         <property name="label" translatable="yes">Default 20%</property>
@@ -2353,7 +2357,7 @@ boot using NFS</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="label3">
+                                  <object class="GtkLabel" id="label4">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
                                     <property name="xpad">5</property>
@@ -2600,7 +2604,6 @@ others always ask for password</property>
                                       <object class="GtkSpinButton" id="TCOS_TTY">
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
-                                        <property name="adjustment">adjustment3</property>
                                         <property name="climb_rate">1</property>
                                       </object>
                                       <packing>
@@ -2665,7 +2668,7 @@ others always ask for password</property>
                             <child>
                               <object class="GtkTable" id="table30">
                                 <property name="visible">True</property>
-                                <property name="n_rows">2</property>
+                                <property name="n_rows">3</property>
                                 <property name="n_columns">2</property>
                                 <property name="column_spacing">20</property>
                                 <property name="row_spacing">2</property>
@@ -2682,7 +2685,7 @@ others always ask for password</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="label326">
+                                  <object class="GtkLabel" id="label_usplash">
                                     <property name="visible">True</property>
                                     <property name="xalign">0</property>
                                     <property name="xpad">5</property>
@@ -2696,12 +2699,12 @@ others always ask for password</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkHBox" id="hbox50">
+                                  <object class="GtkHBox" id="hbox_usplash">
                                     <property name="visible">True</property>
                                     <property name="spacing">15</property>
                                     <child>
                                       <object class="GtkCheckButton" id="TCOS_DISABLE_USPLASH">
-                                        <property name="label" translatable="yes">disable usplash</property>
+                                        <property name="label" translatable="yes">disable Usplash</property>
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
@@ -2735,8 +2738,8 @@ others always ask for password</property>
                                 </child>
                                 <child>
                                   <object class="GtkVBox" id="vbox12">
-                                    <property name="visible">True</property>
                                     <property name="orientation">vertical</property>
+                                    <property name="visible">True</property>
                                     <child>
                                       <object class="GtkRadioButton" id="TCOS_MENU_MODE">
                                         <property name="label" translatable="yes">No menu, only splash (default)</property>
@@ -2822,12 +2825,64 @@ others always ask for password</property>
                                     <property name="y_options">GTK_SHRINK | GTK_FILL</property>
                                   </packing>
                                 </child>
+                                <child>
+                                  <object class="GtkHBox" id="hbox_plymouth">
+                                    <property name="visible">True</property>
+                                    <property name="spacing">15</property>
+                                    <child>
+                                      <object class="GtkCheckButton" id="TCOS_DISABLE_PLYMOUTH">
+                                        <property name="label" translatable="yes">disable Plymouth</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">False</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="draw_indicator">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkComboBoxEntry" id="TCOS_PLYMOUTH">
+                                        <property name="visible">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="right_attach">2</property>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options">GTK_FILL</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel" id="label_plymouth">
+                                    <property name="visible">True</property>
+                                    <property name="xalign">0</property>
+                                    <property name="xpad">5</property>
+                                    <property name="label" translatable="yes">Plymouth and theme</property>
+                                  </object>
+                                  <packing>
+                                    <property name="top_attach">2</property>
+                                    <property name="bottom_attach">3</property>
+                                    <property name="x_options">GTK_FILL</property>
+                                    <property name="y_options"></property>
+                                  </packing>
+                                </child>
                               </object>
                             </child>
                             <child type="label">
                               <object class="GtkLabel" id="label399">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">&lt;b&gt;Boot menu and usplash&lt;/b&gt;</property>
+                                <property name="label" translatable="yes">&lt;b&gt;Boot menu and splash&lt;/b&gt;</property>
                                 <property name="use_markup">True</property>
                               </object>
                             </child>
@@ -2874,8 +2929,8 @@ others always ask for password</property>
             </child>
             <child>
               <object class="GtkVBox" id="step-2">
-                <property name="visible">True</property>
                 <property name="orientation">vertical</property>
+                <property name="visible">True</property>
                 <child>
                   <object class="GtkLabel" id="label119">
                     <property name="visible">True</property>
@@ -3560,8 +3615,8 @@ Thin clients: Epatec 3800 &amp; 2500, HP t5530... etc</property>
             </child>
             <child>
               <object class="GtkVBox" id="step-3">
-                <property name="visible">True</property>
                 <property name="orientation">vertical</property>
+                <property name="visible">True</property>
                 <child>
                   <object class="GtkLabel" id="label70">
                     <property name="visible">True</property>
@@ -3677,8 +3732,8 @@ Thin clients: Epatec 3800 &amp; 2500, HP t5530... etc</property>
             </child>
             <child>
               <object class="GtkVBox" id="step-4">
-                <property name="visible">True</property>
                 <property name="orientation">vertical</property>
+                <property name="visible">True</property>
                 <child>
                   <object class="GtkLabel" id="label68">
                     <property name="visible">True</property>
