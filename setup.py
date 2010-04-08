@@ -22,7 +22,6 @@ def get_debian_version():
 
 class build_locales(build):
     def run(self):
-        #os.system("sh fix-glade.sh")
         os.system("cd po && make")
         build.run(self)
 
@@ -68,8 +67,6 @@ def get_py_files():
 # images (menus and buttons)
 data_files.append(('share/tcosconfig/images', get_files("images") ))
 
-# Glade files
-#data_files.append(('share/tcosconfig', ['tcosconfig.glade', 'tcos-chrootbuilder.glade'] ))
 data_files.append(('share/tcosconfig/ui', get_files('ui') ))
 
 # Desktop files
