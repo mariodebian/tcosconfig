@@ -2,37 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 2.12 -->
   <!-- interface-naming-policy toplevel-contextual -->
-  <object class="GtkListStore" id="model1">
-    <columns>
-      <!-- column-name gchararray -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0" translatable="yes">i386</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">amd64</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">ppc</col>
-      </row>
-    </data>
-  </object>
-  <object class="GtkListStore" id="model2">
-    <columns>
-      <!-- column-name gchararray -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">debian</col>
-      </row>
-      <row>
-        <col id="0">ubuntu</col>
-      </row>
-    </data>
-  </object>
   <object class="GtkWindow" id="window">
     <property name="width_request">750</property>
     <property name="height_request">550</property>
@@ -158,13 +127,6 @@
                             <child>
                               <object class="GtkComboBoxEntry" id="combo_arch">
                                 <property name="visible">True</property>
-                                <property name="model">model1</property>
-                                <child>
-                                  <object class="GtkCellRendererText" id="renderer1"/>
-                                  <attributes>
-                                    <attribute name="text">0</attribute>
-                                  </attributes>
-                                </child>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -228,13 +190,6 @@
                             <child>
                               <object class="GtkComboBoxEntry" id="combo_distribution">
                                 <property name="visible">True</property>
-                                <property name="model">model2</property>
-                                <child>
-                                  <object class="GtkCellRendererText" id="renderer2"/>
-                                  <attributes>
-                                    <attribute name="text">0</attribute>
-                                  </attributes>
-                                </child>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
