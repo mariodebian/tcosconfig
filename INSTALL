@@ -2,7 +2,7 @@ REQUIREMENTS:
  You need python (2.4 or greater) and next libs:
 
  * pygtk (>= 2.0 version)
- * python gtk.glade
+ * python gtk2
  * python gettext
  * python locale
 
