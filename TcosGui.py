@@ -33,7 +33,6 @@ import shutil
 import pygtk
 pygtk.require('2.0')
 import gtk
-#import gtk.glade
 import time
 from gettext import gettext as _
 from gettext import locale
@@ -73,6 +72,7 @@ class TcosGui:
         print_debug ( "__init__ languages=%s" %self.languages)
 
         # Widgets
+        print_debug ("loading %s"%(shared.GLADE_DIR + 'tcosconfig.ui'))
         self.ui = gtk.Builder()
         self.ui.set_translation_domain(shared.PACKAGE)
         print_debug("Loading ui file...")
@@ -83,7 +83,6 @@ class TcosGui:
             if hasattr(widget, 'get_name'):
                 setattr(self, widget.get_name(), widget)
 
-        # thanks to Nacho for this piece of code
         for widget in self.ui.get_objects():
             try:
                 if issubclass(type(widget), gtk.Buildable):
@@ -159,14 +158,21 @@ class TcosGui:
             widget.connect('toggled', self.on_tcos_menu_mode_change)
         self.menu_type=""
         
+        if len(shared.TCOS_PLYMOUTH_VALUES) == 1 and shared.TCOS_PLYMOUTH_VALUES[0][0]=="":
+            self.TCOS_DISABLE_PLYMOUTH.set_active(True)
+            self.TCOS_PLYMOUTH.set_sensitive(False)
+            self.TCOS_DISABLE_PLYMOUTH.set_sensitive(False)
+            self.hbox_plymouth.hide()
         if len(shared.TCOS_USPLASH_VALUES) == 1 and shared.TCOS_USPLASH_VALUES[0][0]=="":
             self.TCOS_DISABLE_USPLASH.set_active(True)
             self.TCOS_USPLASH.set_sensitive(False)
             self.TCOS_DISABLE_USPLASH.set_sensitive(False)
+            self.hbox_usplash.hide()
         #self.TCOS_XORG_DRI.connect('toggled', self.on_disable_dri_change)
         self.TCOS_DISABLE_USPLASH.connect('toggled', self.on_disable_usplash_change)
-        
-        
+        self.TCOS_DISABLE_PLYMOUTH.connect('toggled', self.on_disable_plymouth_change)
+
+
         # events for linked widgets
         for widget in shared.linked_widgets:
             if not hasattr(self, widget): continue
@@ -198,7 +204,14 @@ class TcosGui:
                     if hasattr(wid, "set_tooltip_text"):
                         wid.set_tooltip_text( "" )
                 #print_debug("on_linked_widgets() widget=%s enabled=%s new=%s"%(w, enabled, other[w]) )
-
+                
+    def on_disable_plymouth_change(self, widget):
+        print_debug("on_disable_plymouth_change() value=%s"%widget.get_active())
+        if widget.get_active():
+            self.TCOS_PLYMOUTH.set_sensitive(False)
+        else:
+            self.TCOS_PLYMOUTH.set_sensitive(True)
+            
     def on_disable_usplash_change(self, widget):
         print_debug("on_disable_usplash_change() value=%s"%widget.get_active())
         if widget.get_active():
