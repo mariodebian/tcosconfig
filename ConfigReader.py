@@ -29,6 +29,7 @@ import time
 import shutil
 import grp
 import glob
+from subprocess import Popen, PIPE, STDOUT
 
 def print_debug(txt):
     if shared.debug:
@@ -55,7 +56,7 @@ class ConfigReader:
         self.confdata={}
         self.oldconfdata={}
         self.getkernels()
-        self.getusplash()
+        self.getsplash()
         
         self.open_file(self.filename)
         self.menus={}
@@ -172,18 +173,48 @@ class ConfigReader:
                 print_debug( "getkernels() INVALID OLD kernel %s" %(kernel) )
         return
 
+    def getsplash(self):
+        #Now work with plymouth
+        
+        if os.path.isdir('/lib/plymouth/themes'):
+            self.getplymouth()
+        elif os.path.isdir('/usr/lib/usplash'):
+            self.getusplash()
+        else:
+            return
+            
+    def getplymouth(self):
+        self.plymouth_themes=[]
+        
+        plymouth_dir="/lib/plymouth/themes/"
+        for _dir in os.listdir(shared.chroot + plymouth_dir):
+            if os.path.isdir(os.path.join(plymouth_dir, _dir)) and not _dir == "details":
+                print( "getplymouth() VALID theme %s" %(_dir) )
+                self.plymouth_themes.append( [_dir, _dir] )
+        
+        # No more plymouth-set-default-theme??
+        #p = Popen("plymouth-set-default-theme --list", shell=True, bufsize=0, stdout=PIPE, stderr=STDOUT, close_fds=True)
+        #stdout=p.stdout
+        #isfinished=False
+        #self.theme="unknow"
+        #while not isfinished:
+        #    self.theme=stdout.readline().strip()
+        #    if p.poll() != None:
+        #        isfinished=True
+        #    print_debug("get() theme='%s'"%self.theme)
+        #    self.plymouth_themes.append( [self.theme, self.theme] )
+      
+        shared.TCOS_PLYMOUTH_VALUES = self.plymouth_themes
 
     def getusplash(self):
         self.usplash_themes=[]
-        if not os.path.isdir('/usr/lib/usplash'):
-            return
+        
         for _file in os.listdir(shared.chroot + "/usr/lib/usplash/"):
             if _file.find("usplash-artwork.so") == -1 and _file.endswith(".so"):
                 #print_debug( "getusplash() VALID usplash %s" %(_file) )
                 self.usplash_themes.append( [_file, _file.split(".so")[0]] )
-                
+      
         shared.TCOS_USPLASH_VALUES = self.usplash_themes
-
 
     def getvalue(self, varname):
         if self.confdata.has_key(varname):
