@@ -1,3 +1,28 @@
+tcosconfig (0.3.21) unstable; urgency=low
+
+  [ Mario Izquierdo (mariodebian) ]
+  * TcosGui.py: disable printing if no debug
+
+  [ Ignacio Vidal ]
+  * INSTALL: change gtk.glade with gtk2
+  * tcos.conf: Add PLYMOUTH vars
+  * shared.py: Add PLYMOUTH and new Xorg detection fullauto
+  * ConfigReader.py: Search plymouth or usplash themes NOT COMPLETE
+  * Makefile: clean, remove install target and patch_*
+  * ui/tcos-chrootbuilder.ui: remove model adjustments
+  * ui/tcosconfig.ui: Remove adjustments and add TCOS_XORG_DRI_MATROX
+    and PLYMOUTH hbox
+  * setup.py: clean old code
+  * TcosChrootBuilder.py: update Lucid kernel
+  * TcosGui.py: add PLYMOUTH stuff
+
+  [ Mario Izquierdo (mariodebian) ]
+  * Update translations template and spanish
+  * ui/tcosconfig.ui: Add adjustments for all GtkSpinButtons
+  * Release 0.3.21
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sat, 17 Apr 2010 16:03:20 +0200
+
 tcosconfig (0.3.20) unstable; urgency=low
 
   * Add IMG_DIR to images path
