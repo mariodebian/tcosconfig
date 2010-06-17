@@ -52,13 +52,13 @@ DISTRO_VERSIONS={
 
 KERNEL_VERSIONS={
 "lenny":"2.6.26-2-486"  ,
-"testing":"2.6.32-3-486"  ,
-"unstable":"2.6.32-3-486"  ,
-"hardy":"2.6.24-25-generic" ,
+"testing":"2.6.32-5-486"  ,
+"unstable":"2.6.32-5-486"  ,
+"hardy":"2.6.24-28-generic" ,
 "intrepid":"2.6.27-17-generic",
-"jaunty":"2.6.28-18-generic",
-"karmic":"2.6.31-15-generic",
-"lucid":"2.6.32-19-generic",
+"jaunty":"2.6.28-19-generic",
+"karmic":"2.6.31-22-generic",
+"lucid":"2.6.32-22-generic",
 }
 
 DISTRO_ALIAS={
