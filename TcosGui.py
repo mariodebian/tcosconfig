@@ -598,6 +598,9 @@ class TcosGui:
         """
         print_debug("search_selected_index widget=%s varname=%s index=%s"%(widget,varname, index))
         value=""
+        # if index is < 0 return empty string (PLYMOUTH_DISABLE)
+        if index < 0:
+            return ''
         if hasattr(shared, varname + "_VALUES"):
             return getattr(shared, varname + "_VALUES")[index][0]
         
