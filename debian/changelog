@@ -1,3 +1,10 @@
+tcosconfig (0.3.22) unstable; urgency=low
+
+  * TcosGui.py: fix crash if index is < 0
+  * TcosChrootBuilder.py: update kernels
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 17 Jun 2010 22:46:59 +0200
+
 tcosconfig (0.3.21) unstable; urgency=low
 
   [ Mario Izquierdo (mariodebian) ]
