@@ -118,6 +118,7 @@ TCOS_XORG_VIDEO_DRIVER_VALUES=[
 ['vesa', _("VESA") ] ,
 ['auto', _("Automatic detect") ] ,
 ['fullauto', _("Full Automatic detect") ] ,
+['xorgauto', _("Native Xorg autodetection") ] ,
 ]
 
 TCOS_XORG_VIDEO_RES_VALUES=[
