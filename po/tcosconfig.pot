@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-08 15:53+0200\n"
+"POT-Creation-Date: 2010-07-06 15:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,7 +64,7 @@ msgstr ""
 msgid "FreeNX"
 msgstr ""
 
-#: ../shared.py:105 ../shared.py:140 ../shared.py:147
+#: ../shared.py:105 ../shared.py:141 ../shared.py:148
 msgid "Disable"
 msgstr ""
 
@@ -103,43 +104,47 @@ msgstr ""
 msgid "Full Automatic detect"
 msgstr ""
 
-#: ../shared.py:141
-msgid "Links2 browser"
+#: ../shared.py:121
+msgid "Native Xorg autodetection"
 msgstr ""
 
 #: ../shared.py:142
+msgid "Links2 browser"
+msgstr ""
+
+#: ../shared.py:143
 msgid "Dillo browser"
 msgstr ""
 
-#: ../shared.py:148
+#: ../shared.py:149
 msgid "LTSP filesystem"
 msgstr ""
 
-#: ../shared.py:149
+#: ../shared.py:150
 msgid "SSH filesystem"
 msgstr ""
 
-#: ../shared.py:154
+#: ../shared.py:155
 msgid "Eherboot floppy"
 msgstr ""
 
-#: ../shared.py:155
+#: ../shared.py:156
 msgid "PXE booting"
 msgstr ""
 
-#: ../shared.py:156
+#: ../shared.py:157
 msgid "CDROM booting"
 msgstr ""
 
-#: ../shared.py:157
+#: ../shared.py:158
 msgid "NFS booting (mem < 38)"
 msgstr ""
 
-#: ../shared.py:162
+#: ../shared.py:163
 msgid "None"
 msgstr ""
 
-#: ../shared.py:163
+#: ../shared.py:164
 msgid "Use NFS server"
 msgstr ""
 
@@ -193,11 +198,11 @@ msgid ""
 " %s"
 msgstr ""
 
-#: ../TcosGui.py:724
+#: ../TcosGui.py:727
 msgid "No template description avalaible"
 msgstr ""
 
-#: ../TcosGui.py:735
+#: ../TcosGui.py:738
 msgid "don't use any template"
 msgstr ""
 
@@ -277,6 +282,7 @@ msgstr ""
 msgid "TcosConfig web site"
 msgstr ""
 
+#. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../ui/tcosconfig-aboutdialog.ui:14
 msgid "translator-credits"
 msgstr ""
@@ -301,8 +307,8 @@ msgid ""
 "generate bootable images to thin client networks."
 msgstr ""
 
-#: ../ui/tcosconfig.ui:87 ../ui/tcosconfig.ui:205 ../ui/tcosconfig.ui:1576
-#: ../ui/tcosconfig.ui:2937 ../ui/tcosconfig.ui:3623
+#: ../ui/tcosconfig.ui:87 ../ui/tcosconfig.ui:205 ../ui/tcosconfig.ui:1579
+#: ../ui/tcosconfig.ui:2949 ../ui/tcosconfig.ui:3635
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" "
@@ -314,6 +320,7 @@ msgstr ""
 msgid "<span size=\"xx-large\"><b>TCOS Templates</b></span>"
 msgstr ""
 
+#. leave paragrahps in simple lines
 #: ../ui/tcosconfig.ui:115
 msgid ""
 "TcosConfig provides some configuration templates to build images quickly.\n"
@@ -432,89 +439,89 @@ msgstr ""
 msgid "default \"src-sinc-fastest\""
 msgstr ""
 
-#: ../ui/tcosconfig.ui:801
+#: ../ui/tcosconfig.ui:804
 msgid "Master and PCM volume"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:814
+#: ../ui/tcosconfig.ui:817
 msgid "Enable ESound over PulseAudio"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:825
+#: ../ui/tcosconfig.ui:828
 msgid "listen esound port (requires more bandwith)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:845
+#: ../ui/tcosconfig.ui:848
 msgid "<b>Sound options</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:871
+#: ../ui/tcosconfig.ui:874
 msgid "enable ivs/ica daemon on thin client"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:890
+#: ../ui/tcosconfig.ui:893
 msgid "X11VNC support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:901
+#: ../ui/tcosconfig.ui:904
 msgid "enable x11vnc server"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:922
+#: ../ui/tcosconfig.ui:925
 msgid "FreeNX support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:933
+#: ../ui/tcosconfig.ui:936
 msgid "enable freenx"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:955
+#: ../ui/tcosconfig.ui:958
 msgid "iTALC MasterEye Support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:967
+#: ../ui/tcosconfig.ui:970
 msgid "rDesktop default server"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:994
+#: ../ui/tcosconfig.ui:997
 msgid ""
 "IP address or hostname\n"
 "of Windows Terminal Server"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1017
+#: ../ui/tcosconfig.ui:1020
 msgid "rDesktop support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1028
+#: ../ui/tcosconfig.ui:1031
 msgid "enable rdesktop"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1049
+#: ../ui/tcosconfig.ui:1052
 msgid "<b>Remote desktop support</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1087
+#: ../ui/tcosconfig.ui:1090
 msgid "enable wireless support (bins)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1107
+#: ../ui/tcosconfig.ui:1110
 msgid "Wireless support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1119
+#: ../ui/tcosconfig.ui:1122
 msgid "Wireless encription"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1146
+#: ../ui/tcosconfig.ui:1149
 msgid "empty, WEP, WPA"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1169
+#: ../ui/tcosconfig.ui:1172
 msgid "Wireless modules"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1196
+#: ../ui/tcosconfig.ui:1199
 msgid ""
 "examples: \n"
 " * ipw2200\n"
@@ -522,498 +529,498 @@ msgid ""
 " * rt61pci,rt73usb"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1222
+#: ../ui/tcosconfig.ui:1225
 msgid "WEP / WPA key"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1249
+#: ../ui/tcosconfig.ui:1252
 msgid ""
 "WEP key in iwconfig format\n"
 "(see man iwconfig)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1273
+#: ../ui/tcosconfig.ui:1276
 msgid "<b>Wireless settings</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1302
+#: ../ui/tcosconfig.ui:1305
 msgid "Intel DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1314
+#: ../ui/tcosconfig.ui:1317
 msgid "ATI DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1325
+#: ../ui/tcosconfig.ui:1328
 msgid "enable Intel DRI (+7MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1341
+#: ../ui/tcosconfig.ui:1344
 msgid "enable DRI for Ati radeon (+9 MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1362
+#: ../ui/tcosconfig.ui:1365
 msgid "Savage DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1373
+#: ../ui/tcosconfig.ui:1376
 msgid "enable DRI for Savage (+2 MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1394
+#: ../ui/tcosconfig.ui:1397
 msgid "SiS DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1405
+#: ../ui/tcosconfig.ui:1408
 msgid "enable DRI for SiS (+2 MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1426
+#: ../ui/tcosconfig.ui:1429
 msgid "Trident DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1437
+#: ../ui/tcosconfig.ui:1440
 msgid "enable DRI for Trident (+2 MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1458
+#: ../ui/tcosconfig.ui:1461
 msgid "Unichrome DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1469
+#: ../ui/tcosconfig.ui:1472
 msgid "enable DRI for Unichrome (+2 MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1490
+#: ../ui/tcosconfig.ui:1493
 msgid "Matrox DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1501
+#: ../ui/tcosconfig.ui:1504
 msgid "enable DRI for Matrox (+2 MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1522
+#: ../ui/tcosconfig.ui:1525
 msgid "<b>Xorg DRI</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1592
+#: ../ui/tcosconfig.ui:1595
 msgid "<span size=\"xx-large\"><b>Advanced settings</b></span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1633
+#: ../ui/tcosconfig.ui:1636
 msgid "debug enable (recomended enable)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1649
+#: ../ui/tcosconfig.ui:1652
 msgid "squashfs disabled (default unchecked)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1667
+#: ../ui/tcosconfig.ui:1670
 msgid "external squashfs (default checked)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1685
+#: ../ui/tcosconfig.ui:1688
 msgid "delete all acpi and raid modules and bins"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1719
+#: ../ui/tcosconfig.ui:1722
 msgid ""
 "min RAM (in Mb) to\n"
 "boot using NFS"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1756
+#: ../ui/tcosconfig.ui:1762
 msgid "Set to 0 to disable limits"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1780
+#: ../ui/tcosconfig.ui:1786
 msgid "Debug building of images"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1792
+#: ../ui/tcosconfig.ui:1798
 msgid "Disable Squashfs support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1806
+#: ../ui/tcosconfig.ui:1812
 msgid ""
 "External squashfs\n"
 "(download with tftp)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1821
+#: ../ui/tcosconfig.ui:1827
 msgid "Min RAM to use NFS boot"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1835
+#: ../ui/tcosconfig.ui:1841
 msgid "Disable ACPI and RAID"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1849
+#: ../ui/tcosconfig.ui:1855
 msgid "Limit memory (in %)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1863
+#: ../ui/tcosconfig.ui:1869
 msgid "Debug tools"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1874
+#: ../ui/tcosconfig.ui:1880
 msgid "include debug tools"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1895
+#: ../ui/tcosconfig.ui:1901
 msgid "Add Bootchartd scripts"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1906
+#: ../ui/tcosconfig.ui:1912
 msgid "add bootchartd scripts (see README.bootchartd)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1927
+#: ../ui/tcosconfig.ui:1933
 msgid "<b>Debug settings</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1953
+#: ../ui/tcosconfig.ui:1959
 msgid "enable inetd"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1974
+#: ../ui/tcosconfig.ui:1980
 msgid "Run SSH server in terminal"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1985
+#: ../ui/tcosconfig.ui:1991
 msgid "ssh enable"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2007
+#: ../ui/tcosconfig.ui:2013
 msgid "Inetd support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2021
+#: ../ui/tcosconfig.ui:2027
 msgid "Include Tcos Installer"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2032
+#: ../ui/tcosconfig.ui:2038
 msgid "include tcosinstaller and tools"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2053
+#: ../ui/tcosconfig.ui:2059
 msgid "Remote filesystem method"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2080
+#: ../ui/tcosconfig.ui:2086
 msgid "Wake on LAN"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2091
+#: ../ui/tcosconfig.ui:2097
 msgid "enable WAKEONLAN support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2112
+#: ../ui/tcosconfig.ui:2118
 msgid "Include ACPI daemon"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2123
+#: ../ui/tcosconfig.ui:2129
 msgid "enable ACPID"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2144
+#: ../ui/tcosconfig.ui:2150
 msgid "Printer support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2155
+#: ../ui/tcosconfig.ui:2161
 msgid "enable printer (JetDirect) requires p910nd or lp-server"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2176
+#: ../ui/tcosconfig.ui:2182
 msgid "TcosMonitor support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2185
+#: ../ui/tcosconfig.ui:2191
 msgid "enable TcosMonitor"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2204
+#: ../ui/tcosconfig.ui:2210
 msgid "SSL encryption in XMLRPC"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2215
+#: ../ui/tcosconfig.ui:2221
 msgid "enable SSL encryption (need stunnel4)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2235
+#: ../ui/tcosconfig.ui:2241
 msgid "Support for Gnetic clone"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2246
+#: ../ui/tcosconfig.ui:2252
 msgid "enable gnetic clone clients support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2266
+#: ../ui/tcosconfig.ui:2272
 msgid "Support for NTFS read/write"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2277
+#: ../ui/tcosconfig.ui:2283
 msgid "enable ntfs-3g support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2298
+#: ../ui/tcosconfig.ui:2304
 msgid "Enable COMPCACHE"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2307
+#: ../ui/tcosconfig.ui:2313
 msgid "enable COMPCACHE support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2341
+#: ../ui/tcosconfig.ui:2350
 msgid "Default 20%"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2364
+#: ../ui/tcosconfig.ui:2373
 msgid "COMPCACHE % size"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2376
+#: ../ui/tcosconfig.ui:2385
 msgid "<b>Services, daemons settings</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2430
+#: ../ui/tcosconfig.ui:2439
 msgid "(leave empty by default)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2461
+#: ../ui/tcosconfig.ui:2470
 msgid "user to be admin of thin clients"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2483
+#: ../ui/tcosconfig.ui:2492
 msgid "Server IP address"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2495
+#: ../ui/tcosconfig.ui:2504
 msgid "Server admin username"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2509
+#: ../ui/tcosconfig.ui:2518
 msgid "Terminal password"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2536
+#: ../ui/tcosconfig.ui:2545
 msgid "root's terminal password (if empty this is root)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2558
+#: ../ui/tcosconfig.ui:2567
 msgid "Protect first console (tty1)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2569
+#: ../ui/tcosconfig.ui:2578
 msgid ""
 "ask for user and password in tty1, \n"
 "others always ask for password"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2591
+#: ../ui/tcosconfig.ui:2600
 msgid "Number of tty shells"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2618
+#: ../ui/tcosconfig.ui:2630
 msgid "between 1 to 6"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2641
+#: ../ui/tcosconfig.ui:2653
 msgid "<b>Users and passwords (auth)</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2680
+#: ../ui/tcosconfig.ui:2692
 msgid "Menu type"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2692
+#: ../ui/tcosconfig.ui:2704
 msgid "Usplash and theme"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2707
+#: ../ui/tcosconfig.ui:2719
 msgid "disable Usplash"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2745
+#: ../ui/tcosconfig.ui:2757
 msgid "No menu, only splash (default)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2760
+#: ../ui/tcosconfig.ui:2772
 msgid "Simple text mode"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2776
+#: ../ui/tcosconfig.ui:2788
 msgid "Graphic menu mode (need BIOS vesa support)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2792
+#: ../ui/tcosconfig.ui:2804
 msgid "Hide menu install options"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2807
+#: ../ui/tcosconfig.ui:2819
 msgid "Hide local boot from hdd"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2834
+#: ../ui/tcosconfig.ui:2846
 msgid "disable Plymouth"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2871
+#: ../ui/tcosconfig.ui:2883
 msgid "Plymouth and theme"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2885
+#: ../ui/tcosconfig.ui:2897
 msgid "<b>Boot menu and splash</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2953
+#: ../ui/tcosconfig.ui:2965
 msgid "<span size=\"xx-large\"><b>Advanced Settings</b></span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2976
+#: ../ui/tcosconfig.ui:2988
 msgid ""
 "Default command\n"
 "line append \n"
 "(for NBI images)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3015
+#: ../ui/tcosconfig.ui:3027
 msgid "Include all modules"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3024
+#: ../ui/tcosconfig.ui:3036
 msgid "include all modules (don't use by default)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3044
+#: ../ui/tcosconfig.ui:3056
 msgid ""
 "Extra kernel modules\n"
 "(coma separated)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3059
+#: ../ui/tcosconfig.ui:3071
 msgid "USB devices support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3070
+#: ../ui/tcosconfig.ui:3082
 msgid "enable USB devices"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3091
+#: ../ui/tcosconfig.ui:3103
 msgid "IDE PATA SATA disk support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3102
+#: ../ui/tcosconfig.ui:3114
 msgid "disable IDE PATA devices"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3123
+#: ../ui/tcosconfig.ui:3135
 msgid "USB support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3134
+#: ../ui/tcosconfig.ui:3146
 msgid "disable USB devices support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3155
+#: ../ui/tcosconfig.ui:3167
 msgid ""
 "Add extra modules here (coma separated)\n"
 "Example:\n"
 "intel-agp,nv,joydev,pcspkr"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3174
+#: ../ui/tcosconfig.ui:3186
 msgid ""
 "Blacklist kernel modules\n"
 "(coma separated)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3189
+#: ../ui/tcosconfig.ui:3201
 msgid ""
 "Blacklist modules (coma separated)\n"
 "Example:\n"
 "intel-agp,nv,joydev,pcspkr"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3207
+#: ../ui/tcosconfig.ui:3219
 msgid "<b>Kernel options</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3251
+#: ../ui/tcosconfig.ui:3263
 msgid "Enable local web browser"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3276
+#: ../ui/tcosconfig.ui:3288
 msgid "Use NFS (for lowmem)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3301
+#: ../ui/tcosconfig.ui:3313
 msgid "Include AUTOFS"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3312
+#: ../ui/tcosconfig.ui:3324
 msgid "enable AUTOFS support"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3333
+#: ../ui/tcosconfig.ui:3345
 msgid "Cache packages"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3362
+#: ../ui/tcosconfig.ui:3374
 msgid "<b>Other settings</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3407
+#: ../ui/tcosconfig.ui:3419
 msgid "EPATEC eTC2300"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3416
+#: ../ui/tcosconfig.ui:3428
 msgid "enable eTC2300 hacks"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3435
+#: ../ui/tcosconfig.ui:3447
 msgid "Intel Dot Station (Paquito)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3446
+#: ../ui/tcosconfig.ui:3458
 msgid "enable dot station hacks"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3467
+#: ../ui/tcosconfig.ui:3479
 msgid "Openchrome VIA driver"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3478
+#: ../ui/tcosconfig.ui:3490
 msgid ""
 "enable Xorg Openchrome VIA video support\n"
 "Thin clients: Epatec 3800 & 2500, HP t5530... etc"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3500
+#: ../ui/tcosconfig.ui:3512
 msgid "EPATEC eTC3800 & eTC2500"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3511
+#: ../ui/tcosconfig.ui:3523
 msgid "enable generic VIA modules"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3532
+#: ../ui/tcosconfig.ui:3544
 msgid "<b>Some thin clients hacks</b>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3553
+#: ../ui/tcosconfig.ui:3565
 msgid "Modify this cmdline append to yours needs"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3570
+#: ../ui/tcosconfig.ui:3582
 msgid "Select kernel version"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3639 ../ui/tcosconfig.ui:3681
+#: ../ui/tcosconfig.ui:3651 ../ui/tcosconfig.ui:3693
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3654
+#: ../ui/tcosconfig.ui:3666
 msgid ""
 "<span size=\"large\">Thin clients can boot with many methods:</span>\n"
 "\n"
@@ -1024,7 +1031,7 @@ msgid ""
 "disk.\n"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3740
+#: ../ui/tcosconfig.ui:3752
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -1032,31 +1039,31 @@ msgid ""
 "image</b></span> » <span size=\"x-large\">3. Finish!</span></span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3764
+#: ../ui/tcosconfig.ui:3776
 msgid "<span size=\"x-large\">Building init images</span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3787
+#: ../ui/tcosconfig.ui:3799
 msgid "Press <b>Start</b> to begin image generation."
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3816
+#: ../ui/tcosconfig.ui:3828
 msgid "Press here to start generation process"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3840
+#: ../ui/tcosconfig.ui:3852
 msgid "Start"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3905
+#: ../ui/tcosconfig.ui:3917
 msgid "View Process"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3922
+#: ../ui/tcosconfig.ui:3934
 msgid "Working..."
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3958
+#: ../ui/tcosconfig.ui:3970
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -1064,11 +1071,11 @@ msgid ""
 "<span size=\"x-large\" foreground=\"black\"><b>3. Finish!</b></span></span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3981
+#: ../ui/tcosconfig.ui:3993
 msgid "<span size=\"xx-large\">Congratulations!</span>"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:3999
+#: ../ui/tcosconfig.ui:4011
 msgid ""
 "<span size=\"xx-large\">The generation has been successfully completed.</"
 "span>\n"
@@ -1077,12 +1084,12 @@ msgid ""
 "<b>DHCP server</b> file."
 msgstr ""
 
-#: ../ui/tcosconfig.ui:4013
+#: ../ui/tcosconfig.ui:4025
 msgid ""
 "Press <b>Finish and Save</b> button to save this build settings or "
 "<b>Cancel</b> to quit."
 msgstr ""
 
-#: ../ui/tcosconfig.ui:4173
+#: ../ui/tcosconfig.ui:4185
 msgid "Finish and save"
 msgstr ""

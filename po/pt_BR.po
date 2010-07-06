@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tcosconfig 0.3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-08 15:53+0200\n"
+"POT-Creation-Date: 2010-07-06 15:45+0200\n"
 "PO-Revision-Date: 2009-07-15 16:07-0300\n"
 "Last-Translator: Aécio dos Santos Pires <aecio@tcosproject.org>\n"
 "Language-Team: Portuguese/Brazil <pt-BR>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,8 +50,8 @@ msgstr ""
 "\n"
 "Você quer compilar um chroot e gerar as imagens TCOS de 32 bits?\n"
 "\n"
-"Se selecionar «Não», o assistente irá gerar as imagens para a arquitetura %"
-"(arch)s."
+"Se selecionar «Não», o assistente irá gerar as imagens para a arquitetura "
+"%(arch)s."
 
 #: ../DetectArch.py:86
 msgid "TcosConfig, invalid architecture"
@@ -76,7 +77,7 @@ msgstr "rDesktop"
 msgid "FreeNX"
 msgstr "FreeNX"
 
-#: ../shared.py:105 ../shared.py:140 ../shared.py:147
+#: ../shared.py:105 ../shared.py:141 ../shared.py:148
 msgid "Disable"
 msgstr "Desabilitar"
 
@@ -117,43 +118,47 @@ msgstr "Detectar automaticamente"
 msgid "Full Automatic detect"
 msgstr "Detectar automaticamente"
 
-#: ../shared.py:141
+#: ../shared.py:121
+msgid "Native Xorg autodetection"
+msgstr ""
+
+#: ../shared.py:142
 msgid "Links2 browser"
 msgstr "Navegador Links2"
 
-#: ../shared.py:142
+#: ../shared.py:143
 msgid "Dillo browser"
 msgstr "Navegador Dillo"
 
-#: ../shared.py:148
+#: ../shared.py:149
 msgid "LTSP filesystem"
 msgstr "Sistema de arquivos LTSP"
 
-#: ../shared.py:149
+#: ../shared.py:150
 msgid "SSH filesystem"
 msgstr "Sistema de arquivos via SSH"
 
-#: ../shared.py:154
+#: ../shared.py:155
 msgid "Eherboot floppy"
 msgstr "Disquete Etherboot"
 
-#: ../shared.py:155
+#: ../shared.py:156
 msgid "PXE booting"
 msgstr "Boot via PXE"
 
-#: ../shared.py:156
+#: ../shared.py:157
 msgid "CDROM booting"
 msgstr "Boot via CD-ROM"
 
-#: ../shared.py:157
+#: ../shared.py:158
 msgid "NFS booting (mem < 38)"
 msgstr "Boot via NFS (memória RAM < 38)"
 
-#: ../shared.py:162
+#: ../shared.py:163
 msgid "None"
 msgstr "Nenhum"
 
-#: ../shared.py:163
+#: ../shared.py:164
 msgid "Use NFS server"
 msgstr "Usar servidor NFS"
 
@@ -217,11 +222,11 @@ msgstr ""
 "Os valores alterados são:\n"
 "%s"
 
-#: ../TcosGui.py:724
+#: ../TcosGui.py:727
 msgid "No template description avalaible"
 msgstr "Não há uma descrição disponível para este template."
 
-#: ../TcosGui.py:735
+#: ../TcosGui.py:738
 msgid "don't use any template"
 msgstr "Não use nenhum desses templates"
 
@@ -302,6 +307,7 @@ msgstr "Compilador de imagens da rede TCOS."
 msgid "TcosConfig web site"
 msgstr "Site do TcosConfig:"
 
+#. TRANSLATORS: Replace this string with your names, one name per line.
 #: ../ui/tcosconfig-aboutdialog.ui:14
 msgid "translator-credits"
 msgstr ""
@@ -342,8 +348,8 @@ msgstr ""
 "Este assistente irá ajudá-lo(a) a configurar e compilar\n"
 "as imagens de inicialização dos terminais."
 
-#: ../ui/tcosconfig.ui:87 ../ui/tcosconfig.ui:205 ../ui/tcosconfig.ui:1576
-#: ../ui/tcosconfig.ui:2937 ../ui/tcosconfig.ui:3623
+#: ../ui/tcosconfig.ui:87 ../ui/tcosconfig.ui:205 ../ui/tcosconfig.ui:1579
+#: ../ui/tcosconfig.ui:2949 ../ui/tcosconfig.ui:3635
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" "
@@ -359,6 +365,7 @@ msgstr ""
 msgid "<span size=\"xx-large\"><b>TCOS Templates</b></span>"
 msgstr "<span size=\"x-large\"><b>Templates de Configuração do TCOS</b></span>"
 
+#. leave paragrahps in simple lines
 #: ../ui/tcosconfig.ui:115
 msgid ""
 "TcosConfig provides some configuration templates to build images quickly.\n"
@@ -491,51 +498,51 @@ msgstr "Método de busca do PulseAudio"
 msgid "default \"src-sinc-fastest\""
 msgstr "por padrão \"src-sinc-fastest\""
 
-#: ../ui/tcosconfig.ui:801
+#: ../ui/tcosconfig.ui:804
 msgid "Master and PCM volume"
 msgstr "Volume do Master e PCM"
 
-#: ../ui/tcosconfig.ui:814
+#: ../ui/tcosconfig.ui:817
 msgid "Enable ESound over PulseAudio"
 msgstr "Habilitar o ESound sobre o PulseAudio"
 
-#: ../ui/tcosconfig.ui:825
+#: ../ui/tcosconfig.ui:828
 msgid "listen esound port (requires more bandwith)"
 msgstr "Escutar o esound na porta (requer mais largura de banda)"
 
-#: ../ui/tcosconfig.ui:845
+#: ../ui/tcosconfig.ui:848
 msgid "<b>Sound options</b>"
 msgstr "<b>Opções do som</b>"
 
-#: ../ui/tcosconfig.ui:871
+#: ../ui/tcosconfig.ui:874
 msgid "enable ivs/ica daemon on thin client"
 msgstr "Habilitar o daemon IVS/ICA no terminal"
 
-#: ../ui/tcosconfig.ui:890
+#: ../ui/tcosconfig.ui:893
 msgid "X11VNC support"
 msgstr "Suporte ao X11VNC"
 
-#: ../ui/tcosconfig.ui:901
+#: ../ui/tcosconfig.ui:904
 msgid "enable x11vnc server"
 msgstr "Habilitar o servidor X11VNC"
 
-#: ../ui/tcosconfig.ui:922
+#: ../ui/tcosconfig.ui:925
 msgid "FreeNX support"
 msgstr "Suporte ao FreeNX"
 
-#: ../ui/tcosconfig.ui:933
+#: ../ui/tcosconfig.ui:936
 msgid "enable freenx"
 msgstr "Habilitar o FreeNX"
 
-#: ../ui/tcosconfig.ui:955
+#: ../ui/tcosconfig.ui:958
 msgid "iTALC MasterEye Support"
 msgstr "Suporte ao iTALC MasterEye"
 
-#: ../ui/tcosconfig.ui:967
+#: ../ui/tcosconfig.ui:970
 msgid "rDesktop default server"
 msgstr "Servidor padrão rDesktop"
 
-#: ../ui/tcosconfig.ui:994
+#: ../ui/tcosconfig.ui:997
 msgid ""
 "IP address or hostname\n"
 "of Windows Terminal Server"
@@ -543,39 +550,39 @@ msgstr ""
 "Endereço IP ou nome do servidor\n"
 "Windows Terminal Server."
 
-#: ../ui/tcosconfig.ui:1017
+#: ../ui/tcosconfig.ui:1020
 msgid "rDesktop support"
 msgstr "Suporte ao rDesktop"
 
-#: ../ui/tcosconfig.ui:1028
+#: ../ui/tcosconfig.ui:1031
 msgid "enable rdesktop"
 msgstr "Habilitar rDesktop"
 
-#: ../ui/tcosconfig.ui:1049
+#: ../ui/tcosconfig.ui:1052
 msgid "<b>Remote desktop support</b>"
 msgstr "<b>Suporte ao acesso remoto</b>"
 
-#: ../ui/tcosconfig.ui:1087
+#: ../ui/tcosconfig.ui:1090
 msgid "enable wireless support (bins)"
 msgstr "Habilitar o suporte a rede sem fio"
 
-#: ../ui/tcosconfig.ui:1107
+#: ../ui/tcosconfig.ui:1110
 msgid "Wireless support"
 msgstr "Suporte a rede sem fio"
 
-#: ../ui/tcosconfig.ui:1119
+#: ../ui/tcosconfig.ui:1122
 msgid "Wireless encription"
 msgstr "Rede sem fio criptografada"
 
-#: ../ui/tcosconfig.ui:1146
+#: ../ui/tcosconfig.ui:1149
 msgid "empty, WEP, WPA"
 msgstr "vazio, WEP, WPA"
 
-#: ../ui/tcosconfig.ui:1169
+#: ../ui/tcosconfig.ui:1172
 msgid "Wireless modules"
 msgstr "Módulos da rede sem fio"
 
-#: ../ui/tcosconfig.ui:1196
+#: ../ui/tcosconfig.ui:1199
 msgid ""
 "examples: \n"
 " * ipw2200\n"
@@ -587,11 +594,11 @@ msgstr ""
 " * madwifi, \n"
 " * rt61pci e rt73usb."
 
-#: ../ui/tcosconfig.ui:1222
+#: ../ui/tcosconfig.ui:1225
 msgid "WEP / WPA key"
 msgstr "chave WEP/WPA "
 
-#: ../ui/tcosconfig.ui:1249
+#: ../ui/tcosconfig.ui:1252
 msgid ""
 "WEP key in iwconfig format\n"
 "(see man iwconfig)"
@@ -600,98 +607,98 @@ msgstr ""
 "(veja a página de manual do iwconfig\n"
 "para obter mais informações)."
 
-#: ../ui/tcosconfig.ui:1273
+#: ../ui/tcosconfig.ui:1276
 msgid "<b>Wireless settings</b>"
 msgstr "<b>Configuração da rede sem fio</b>"
 
-#: ../ui/tcosconfig.ui:1302
+#: ../ui/tcosconfig.ui:1305
 msgid "Intel DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1314
+#: ../ui/tcosconfig.ui:1317
 msgid "ATI DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1325
+#: ../ui/tcosconfig.ui:1328
 msgid "enable Intel DRI (+7MB)"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1341
+#: ../ui/tcosconfig.ui:1344
 #, fuzzy
 msgid "enable DRI for Ati radeon (+9 MB)"
 msgstr "Habilitar o suporte ao DRI extra Ati radeon"
 
-#: ../ui/tcosconfig.ui:1362
+#: ../ui/tcosconfig.ui:1365
 msgid "Savage DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1373
+#: ../ui/tcosconfig.ui:1376
 #, fuzzy
 msgid "enable DRI for Savage (+2 MB)"
 msgstr "Habilitar o suporte DRI (a imagem aumentará em 20 MB)"
 
-#: ../ui/tcosconfig.ui:1394
+#: ../ui/tcosconfig.ui:1397
 msgid "SiS DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1405
+#: ../ui/tcosconfig.ui:1408
 #, fuzzy
 msgid "enable DRI for SiS (+2 MB)"
 msgstr "Habilitar o suporte DRI (a imagem aumentará em 20 MB)"
 
-#: ../ui/tcosconfig.ui:1426
+#: ../ui/tcosconfig.ui:1429
 msgid "Trident DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1437
+#: ../ui/tcosconfig.ui:1440
 #, fuzzy
 msgid "enable DRI for Trident (+2 MB)"
 msgstr "Habilitar o suporte DRI (a imagem aumentará em 20 MB)"
 
-#: ../ui/tcosconfig.ui:1458
+#: ../ui/tcosconfig.ui:1461
 msgid "Unichrome DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1469
+#: ../ui/tcosconfig.ui:1472
 #, fuzzy
 msgid "enable DRI for Unichrome (+2 MB)"
 msgstr "Habilitar o suporte DRI (a imagem aumentará em 20 MB)"
 
-#: ../ui/tcosconfig.ui:1490
+#: ../ui/tcosconfig.ui:1493
 msgid "Matrox DRI"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:1501
+#: ../ui/tcosconfig.ui:1504
 #, fuzzy
 msgid "enable DRI for Matrox (+2 MB)"
 msgstr "Habilitar o suporte DRI (a imagem aumentará em 20 MB)"
 
-#: ../ui/tcosconfig.ui:1522
+#: ../ui/tcosconfig.ui:1525
 #, fuzzy
 msgid "<b>Xorg DRI</b>"
 msgstr "<b>Opções do Xorg</b>"
 
-#: ../ui/tcosconfig.ui:1592
+#: ../ui/tcosconfig.ui:1595
 msgid "<span size=\"xx-large\"><b>Advanced settings</b></span>"
 msgstr "<span size=\"xx-large\"><b>Configurações Avançadas</b></span>"
 
-#: ../ui/tcosconfig.ui:1633
+#: ../ui/tcosconfig.ui:1636
 msgid "debug enable (recomended enable)"
 msgstr "Depuração ativada (recomendado)"
 
-#: ../ui/tcosconfig.ui:1649
+#: ../ui/tcosconfig.ui:1652
 msgid "squashfs disabled (default unchecked)"
 msgstr "Squashfs desabilitado (por padrão)"
 
-#: ../ui/tcosconfig.ui:1667
+#: ../ui/tcosconfig.ui:1670
 msgid "external squashfs (default checked)"
 msgstr "Arquivo squashfs externo (habilitado por padrão)"
 
-#: ../ui/tcosconfig.ui:1685
+#: ../ui/tcosconfig.ui:1688
 msgid "delete all acpi and raid modules and bins"
 msgstr "Apagar todos os modulos e binários do ACPI e RAID"
 
-#: ../ui/tcosconfig.ui:1719
+#: ../ui/tcosconfig.ui:1722
 msgid ""
 "min RAM (in Mb) to\n"
 "boot using NFS"
@@ -699,19 +706,19 @@ msgstr ""
 "Memória RAM mínima (em MB)\n"
 "para iniciar usando o NFS"
 
-#: ../ui/tcosconfig.ui:1756
+#: ../ui/tcosconfig.ui:1762
 msgid "Set to 0 to disable limits"
 msgstr "Informe 0 para desativar os limites"
 
-#: ../ui/tcosconfig.ui:1780
+#: ../ui/tcosconfig.ui:1786
 msgid "Debug building of images"
 msgstr "Depurar a copilação das imagens"
 
-#: ../ui/tcosconfig.ui:1792
+#: ../ui/tcosconfig.ui:1798
 msgid "Disable Squashfs support"
 msgstr "Desabilitar o suporte ao squashfs"
 
-#: ../ui/tcosconfig.ui:1806
+#: ../ui/tcosconfig.ui:1812
 msgid ""
 "External squashfs\n"
 "(download with tftp)"
@@ -719,178 +726,178 @@ msgstr ""
 "Arquivo externo do squashfs\n"
 "(download via TFTP)"
 
-#: ../ui/tcosconfig.ui:1821
+#: ../ui/tcosconfig.ui:1827
 msgid "Min RAM to use NFS boot"
 msgstr ""
 "Limite mínimo de memória RAM\n"
 "para inicializar o terminal usando NFS"
 
-#: ../ui/tcosconfig.ui:1835
+#: ../ui/tcosconfig.ui:1841
 msgid "Disable ACPI and RAID"
 msgstr "Desabilitar o ACPI e o RAID"
 
-#: ../ui/tcosconfig.ui:1849
+#: ../ui/tcosconfig.ui:1855
 msgid "Limit memory (in %)"
 msgstr "Limite de memória RAM (em %)"
 
-#: ../ui/tcosconfig.ui:1863
+#: ../ui/tcosconfig.ui:1869
 msgid "Debug tools"
 msgstr "Ferramentas de depuração"
 
-#: ../ui/tcosconfig.ui:1874
+#: ../ui/tcosconfig.ui:1880
 msgid "include debug tools"
 msgstr "Incluir as ferramentas de depuração"
 
-#: ../ui/tcosconfig.ui:1895
+#: ../ui/tcosconfig.ui:1901
 msgid "Add Bootchartd scripts"
 msgstr "Adicionar os scripts Bootchartd"
 
-#: ../ui/tcosconfig.ui:1906
+#: ../ui/tcosconfig.ui:1912
 msgid "add bootchartd scripts (see README.bootchartd)"
 msgstr "Adicionar os scripts Bootchartd (veja o arquivo README.bootchartd)"
 
-#: ../ui/tcosconfig.ui:1927
+#: ../ui/tcosconfig.ui:1933
 msgid "<b>Debug settings</b>"
 msgstr "<b>Configurações de depuração</b>"
 
-#: ../ui/tcosconfig.ui:1953
+#: ../ui/tcosconfig.ui:1959
 msgid "enable inetd"
 msgstr "Ativar o inetd"
 
-#: ../ui/tcosconfig.ui:1974
+#: ../ui/tcosconfig.ui:1980
 msgid "Run SSH server in terminal"
 msgstr "Executar o servidor SSH no terminal"
 
-#: ../ui/tcosconfig.ui:1985
+#: ../ui/tcosconfig.ui:1991
 msgid "ssh enable"
 msgstr "Habilitar o SSH"
 
-#: ../ui/tcosconfig.ui:2007
+#: ../ui/tcosconfig.ui:2013
 msgid "Inetd support"
 msgstr "Suporte ao inetd"
 
-#: ../ui/tcosconfig.ui:2021
+#: ../ui/tcosconfig.ui:2027
 msgid "Include Tcos Installer"
 msgstr "Incluir o Tcos Installer"
 
-#: ../ui/tcosconfig.ui:2032
+#: ../ui/tcosconfig.ui:2038
 msgid "include tcosinstaller and tools"
 msgstr "Incluir o tcosinstaller e outros utilitários"
 
-#: ../ui/tcosconfig.ui:2053
+#: ../ui/tcosconfig.ui:2059
 msgid "Remote filesystem method"
 msgstr "Sistema de arquivos remoto"
 
-#: ../ui/tcosconfig.ui:2080
+#: ../ui/tcosconfig.ui:2086
 msgid "Wake on LAN"
 msgstr "Wake on LAN"
 
-#: ../ui/tcosconfig.ui:2091
+#: ../ui/tcosconfig.ui:2097
 msgid "enable WAKEONLAN support"
 msgstr "Habilitar o suporte a Wake on LAN"
 
-#: ../ui/tcosconfig.ui:2112
+#: ../ui/tcosconfig.ui:2118
 msgid "Include ACPI daemon"
 msgstr "Incluir o daemon ACPI"
 
-#: ../ui/tcosconfig.ui:2123
+#: ../ui/tcosconfig.ui:2129
 msgid "enable ACPID"
 msgstr "Habilitar o ACPID"
 
-#: ../ui/tcosconfig.ui:2144
+#: ../ui/tcosconfig.ui:2150
 msgid "Printer support"
 msgstr "Suporte a impressoras"
 
-#: ../ui/tcosconfig.ui:2155
+#: ../ui/tcosconfig.ui:2161
 msgid "enable printer (JetDirect) requires p910nd or lp-server"
 msgstr ""
 "Habilitar a impresora (JetDirect) requer os pacotes p910nd ou lp-server"
 
-#: ../ui/tcosconfig.ui:2176
+#: ../ui/tcosconfig.ui:2182
 msgid "TcosMonitor support"
 msgstr "Suporte ao TcosMonitor"
 
-#: ../ui/tcosconfig.ui:2185
+#: ../ui/tcosconfig.ui:2191
 msgid "enable TcosMonitor"
 msgstr "Habilitar o TcosMonitor"
 
-#: ../ui/tcosconfig.ui:2204
+#: ../ui/tcosconfig.ui:2210
 msgid "SSL encryption in XMLRPC"
 msgstr "Criptografia SSL no XMLRPC"
 
-#: ../ui/tcosconfig.ui:2215
+#: ../ui/tcosconfig.ui:2221
 msgid "enable SSL encryption (need stunnel4)"
 msgstr ""
 "Habilitar a criptografia SSL\n"
 "(instale o pacote stunnel4)."
 
-#: ../ui/tcosconfig.ui:2235
+#: ../ui/tcosconfig.ui:2241
 msgid "Support for Gnetic clone"
 msgstr "Suporte ao Gnetic clone"
 
-#: ../ui/tcosconfig.ui:2246
+#: ../ui/tcosconfig.ui:2252
 msgid "enable gnetic clone clients support"
 msgstr "Habilitar o suporte ao gnetic clone"
 
-#: ../ui/tcosconfig.ui:2266
+#: ../ui/tcosconfig.ui:2272
 msgid "Support for NTFS read/write"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2277
+#: ../ui/tcosconfig.ui:2283
 #, fuzzy
 msgid "enable ntfs-3g support"
 msgstr "Habilitar o suporte ao AUTOFS"
 
-#: ../ui/tcosconfig.ui:2298
+#: ../ui/tcosconfig.ui:2304
 msgid "Enable COMPCACHE"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2307
+#: ../ui/tcosconfig.ui:2313
 #, fuzzy
 msgid "enable COMPCACHE support"
 msgstr "Habilitar o suporte ao AUTOFS"
 
-#: ../ui/tcosconfig.ui:2341
+#: ../ui/tcosconfig.ui:2350
 msgid "Default 20%"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2364
+#: ../ui/tcosconfig.ui:2373
 msgid "COMPCACHE % size"
 msgstr ""
 
-#: ../ui/tcosconfig.ui:2376
+#: ../ui/tcosconfig.ui:2385
 msgid "<b>Services, daemons settings</b>"
 msgstr "<b>Configurações dos serviços e daemons</b>"
 
-#: ../ui/tcosconfig.ui:2430
+#: ../ui/tcosconfig.ui:2439
 msgid "(leave empty by default)"
 msgstr "(autodetectado por padrão)"
 
-#: ../ui/tcosconfig.ui:2461
+#: ../ui/tcosconfig.ui:2470
 msgid "user to be admin of thin clients"
 msgstr "usuário administrador dos terminais"
 
-#: ../ui/tcosconfig.ui:2483
+#: ../ui/tcosconfig.ui:2492
 msgid "Server IP address"
 msgstr "Endereço de IP do servidor"
 
-#: ../ui/tcosconfig.ui:2495
+#: ../ui/tcosconfig.ui:2504
 msgid "Server admin username"
 msgstr "Usuário administrador do terminal"
 
-#: ../ui/tcosconfig.ui:2509
+#: ../ui/tcosconfig.ui:2518
 msgid "Terminal password"
 msgstr "Informe a senha"
 
-#: ../ui/tcosconfig.ui:2536
+#: ../ui/tcosconfig.ui:2545
 msgid "root's terminal password (if empty this is root)"
 msgstr "(a senha padrão é root)"
 
-#: ../ui/tcosconfig.ui:2558
+#: ../ui/tcosconfig.ui:2567
 msgid "Protect first console (tty1)"
 msgstr "Proteger o primeiro console (tty1)"
 
-#: ../ui/tcosconfig.ui:2569
+#: ../ui/tcosconfig.ui:2578
 msgid ""
 "ask for user and password in tty1, \n"
 "others always ask for password"
@@ -898,71 +905,71 @@ msgstr ""
 "Perguntar o usuário e a senha na console tty1?\n"
 "Nas outras consoles sempre é perguntado."
 
-#: ../ui/tcosconfig.ui:2591
+#: ../ui/tcosconfig.ui:2600
 msgid "Number of tty shells"
 msgstr "Número de consoles (tty)"
 
-#: ../ui/tcosconfig.ui:2618
+#: ../ui/tcosconfig.ui:2630
 msgid "between 1 to 6"
 msgstr "Entre 1 e 6"
 
-#: ../ui/tcosconfig.ui:2641
+#: ../ui/tcosconfig.ui:2653
 msgid "<b>Users and passwords (auth)</b>"
 msgstr "<b>Usuários e senhas</b>"
 
-#: ../ui/tcosconfig.ui:2680
+#: ../ui/tcosconfig.ui:2692
 msgid "Menu type"
 msgstr "Tipo de menu"
 
-#: ../ui/tcosconfig.ui:2692
+#: ../ui/tcosconfig.ui:2704
 msgid "Usplash and theme"
 msgstr "Usplash e tema"
 
-#: ../ui/tcosconfig.ui:2707
+#: ../ui/tcosconfig.ui:2719
 #, fuzzy
 msgid "disable Usplash"
 msgstr "Desabilitar o usplash"
 
-#: ../ui/tcosconfig.ui:2745
+#: ../ui/tcosconfig.ui:2757
 msgid "No menu, only splash (default)"
 msgstr "Sem menu, somente o splash (padrão)"
 
-#: ../ui/tcosconfig.ui:2760
+#: ../ui/tcosconfig.ui:2772
 msgid "Simple text mode"
 msgstr "Modo texto simples"
 
-#: ../ui/tcosconfig.ui:2776
+#: ../ui/tcosconfig.ui:2788
 msgid "Graphic menu mode (need BIOS vesa support)"
 msgstr "Menu gráfico (a BIOS deverá ter o suporte ao modo VESA)"
 
-#: ../ui/tcosconfig.ui:2792
+#: ../ui/tcosconfig.ui:2804
 msgid "Hide menu install options"
 msgstr "Ocultar as opções de instalação no menu"
 
-#: ../ui/tcosconfig.ui:2807
+#: ../ui/tcosconfig.ui:2819
 msgid "Hide local boot from hdd"
 msgstr "Ocultar o boot local, via HD."
 
-#: ../ui/tcosconfig.ui:2834
+#: ../ui/tcosconfig.ui:2846
 #, fuzzy
 msgid "disable Plymouth"
 msgstr "Desabilitar o usplash"
 
-#: ../ui/tcosconfig.ui:2871
+#: ../ui/tcosconfig.ui:2883
 #, fuzzy
 msgid "Plymouth and theme"
 msgstr "Usplash e tema"
 
-#: ../ui/tcosconfig.ui:2885
+#: ../ui/tcosconfig.ui:2897
 #, fuzzy
 msgid "<b>Boot menu and splash</b>"
 msgstr "<b>Menu de inicialização e usplash</b>"
 
-#: ../ui/tcosconfig.ui:2953
+#: ../ui/tcosconfig.ui:2965
 msgid "<span size=\"xx-large\"><b>Advanced Settings</b></span>"
 msgstr "<span size=\"xx-large\"><b>Configurações Avançadas</b></span>"
 
-#: ../ui/tcosconfig.ui:2976
+#: ../ui/tcosconfig.ui:2988
 msgid ""
 "Default command\n"
 "line append \n"
@@ -972,15 +979,15 @@ msgstr ""
 "pré-definidos e adicionados\n"
 "(para imagens NBI)"
 
-#: ../ui/tcosconfig.ui:3015
+#: ../ui/tcosconfig.ui:3027
 msgid "Include all modules"
 msgstr "Incluir todos os módulos"
 
-#: ../ui/tcosconfig.ui:3024
+#: ../ui/tcosconfig.ui:3036
 msgid "include all modules (don't use by default)"
 msgstr "Incluir todos os módulos (não usados por padrão)."
 
-#: ../ui/tcosconfig.ui:3044
+#: ../ui/tcosconfig.ui:3056
 msgid ""
 "Extra kernel modules\n"
 "(coma separated)"
@@ -988,31 +995,31 @@ msgstr ""
 "Módulos extras do kernel\n"
 "(separados por vírgula)."
 
-#: ../ui/tcosconfig.ui:3059
+#: ../ui/tcosconfig.ui:3071
 msgid "USB devices support"
 msgstr "Suporte aos dispositivos USB"
 
-#: ../ui/tcosconfig.ui:3070
+#: ../ui/tcosconfig.ui:3082
 msgid "enable USB devices"
 msgstr "Habilitar os dispositivos USB"
 
-#: ../ui/tcosconfig.ui:3091
+#: ../ui/tcosconfig.ui:3103
 msgid "IDE PATA SATA disk support"
 msgstr "Suporte aos discos: IDE, PATA e SATA."
 
-#: ../ui/tcosconfig.ui:3102
+#: ../ui/tcosconfig.ui:3114
 msgid "disable IDE PATA devices"
 msgstr "Desabilitar o suporte aos dispositivos IDE e PATA"
 
-#: ../ui/tcosconfig.ui:3123
+#: ../ui/tcosconfig.ui:3135
 msgid "USB support"
 msgstr "Suporte USB"
 
-#: ../ui/tcosconfig.ui:3134
+#: ../ui/tcosconfig.ui:3146
 msgid "disable USB devices support"
 msgstr "Desabilitar o suporte aos dispositivos USB"
 
-#: ../ui/tcosconfig.ui:3155
+#: ../ui/tcosconfig.ui:3167
 msgid ""
 "Add extra modules here (coma separated)\n"
 "Example:\n"
@@ -1022,7 +1029,7 @@ msgstr ""
 "Exemplo:\n"
 "intel-agp,nv,joydev,pcspkr."
 
-#: ../ui/tcosconfig.ui:3174
+#: ../ui/tcosconfig.ui:3186
 msgid ""
 "Blacklist kernel modules\n"
 "(coma separated)"
@@ -1030,7 +1037,7 @@ msgstr ""
 "Lista negra dos módulos do kernel\n"
 "(separados por vírgula)."
 
-#: ../ui/tcosconfig.ui:3189
+#: ../ui/tcosconfig.ui:3201
 msgid ""
 "Blacklist modules (coma separated)\n"
 "Example:\n"
@@ -1040,55 +1047,55 @@ msgstr ""
 "Exemplo:\n"
 "intel-agp,nv,joydev,pcspkr."
 
-#: ../ui/tcosconfig.ui:3207
+#: ../ui/tcosconfig.ui:3219
 msgid "<b>Kernel options</b>"
 msgstr "<b>Opções do kernel</b>"
 
-#: ../ui/tcosconfig.ui:3251
+#: ../ui/tcosconfig.ui:3263
 msgid "Enable local web browser"
 msgstr "Habilitar o navegador web local"
 
-#: ../ui/tcosconfig.ui:3276
+#: ../ui/tcosconfig.ui:3288
 msgid "Use NFS (for lowmem)"
 msgstr "Usar o NFS (quando há pouca memória RAM disponível)"
 
-#: ../ui/tcosconfig.ui:3301
+#: ../ui/tcosconfig.ui:3313
 msgid "Include AUTOFS"
 msgstr "Incluir o AUTOFS"
 
-#: ../ui/tcosconfig.ui:3312
+#: ../ui/tcosconfig.ui:3324
 msgid "enable AUTOFS support"
 msgstr "Habilitar o suporte ao AUTOFS"
 
-#: ../ui/tcosconfig.ui:3333
+#: ../ui/tcosconfig.ui:3345
 msgid "Cache packages"
 msgstr "Fazer cache dos pacotes"
 
-#: ../ui/tcosconfig.ui:3362
+#: ../ui/tcosconfig.ui:3374
 msgid "<b>Other settings</b>"
 msgstr "<b>Outras configurações</b>"
 
-#: ../ui/tcosconfig.ui:3407
+#: ../ui/tcosconfig.ui:3419
 msgid "EPATEC eTC2300"
 msgstr "EPATEC eTC2300"
 
-#: ../ui/tcosconfig.ui:3416
+#: ../ui/tcosconfig.ui:3428
 msgid "enable eTC2300 hacks"
 msgstr "Habilitar suporte ao eTC2300"
 
-#: ../ui/tcosconfig.ui:3435
+#: ../ui/tcosconfig.ui:3447
 msgid "Intel Dot Station (Paquito)"
 msgstr "Intel Dot Station (Paquito)"
 
-#: ../ui/tcosconfig.ui:3446
+#: ../ui/tcosconfig.ui:3458
 msgid "enable dot station hacks"
 msgstr "Habilitar o suporte aos hacks dot station"
 
-#: ../ui/tcosconfig.ui:3467
+#: ../ui/tcosconfig.ui:3479
 msgid "Openchrome VIA driver"
 msgstr "Openchrome VIA driver"
 
-#: ../ui/tcosconfig.ui:3478
+#: ../ui/tcosconfig.ui:3490
 msgid ""
 "enable Xorg Openchrome VIA video support\n"
 "Thin clients: Epatec 3800 & 2500, HP t5530... etc"
@@ -1096,33 +1103,33 @@ msgstr ""
 "Habilitar o suporte ao Xorg Openchrome VIA\n"
 "nos thin clients: Epatec 3800 & 2500, HP t5530 ... etc."
 
-#: ../ui/tcosconfig.ui:3500
+#: ../ui/tcosconfig.ui:3512
 msgid "EPATEC eTC3800 & eTC2500"
 msgstr "EPATEC eTC3800 & eTC2500"
 
-#: ../ui/tcosconfig.ui:3511
+#: ../ui/tcosconfig.ui:3523
 msgid "enable generic VIA modules"
 msgstr "Habilitar os módulos genéricos VIA"
 
-#: ../ui/tcosconfig.ui:3532
+#: ../ui/tcosconfig.ui:3544
 msgid "<b>Some thin clients hacks</b>"
 msgstr "<b>Alguns hacks aos thin clients</b>"
 
-#: ../ui/tcosconfig.ui:3553
+#: ../ui/tcosconfig.ui:3565
 msgid "Modify this cmdline append to yours needs"
 msgstr "Modifique esta linha de comando de acordo com as suas necessidades"
 
-#: ../ui/tcosconfig.ui:3570
+#: ../ui/tcosconfig.ui:3582
 msgid "Select kernel version"
 msgstr ""
 "Selecione a versão\n"
 "do kernel"
 
-#: ../ui/tcosconfig.ui:3639 ../ui/tcosconfig.ui:3681
+#: ../ui/tcosconfig.ui:3651 ../ui/tcosconfig.ui:3693
 msgid "<span size=\"x-large\"><b>Boot method</b></span>"
 msgstr "<span size=\"x-large\"><b>Método de Inicialização</b></span>"
 
-#: ../ui/tcosconfig.ui:3654
+#: ../ui/tcosconfig.ui:3666
 #, fuzzy
 msgid ""
 "<span size=\"large\">Thin clients can boot with many methods:</span>\n"
@@ -1149,7 +1156,7 @@ msgstr ""
 "» Boot via NFS => Inicia os terminais através do serviço NFS.\n"
 "Usado quando eles tiverem menos de 38 MB de memória RAM."
 
-#: ../ui/tcosconfig.ui:3740
+#: ../ui/tcosconfig.ui:3752
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -1162,31 +1169,31 @@ msgstr ""
 "\"><b>2. Compilar</b></span> » <span size=\"x-large\">3. Finalizar!</span></"
 "span>"
 
-#: ../ui/tcosconfig.ui:3764
+#: ../ui/tcosconfig.ui:3776
 msgid "<span size=\"x-large\">Building init images</span>"
 msgstr "<span size=\"x-large\">Compilando as imagens de inicialização</span>"
 
-#: ../ui/tcosconfig.ui:3787
+#: ../ui/tcosconfig.ui:3799
 msgid "Press <b>Start</b> to begin image generation."
 msgstr "Clique no botão <b>Começar</b> para compilar a imagem"
 
-#: ../ui/tcosconfig.ui:3816
+#: ../ui/tcosconfig.ui:3828
 msgid "Press here to start generation process"
 msgstr "Clique aqui para começar o processo de compilação"
 
-#: ../ui/tcosconfig.ui:3840
+#: ../ui/tcosconfig.ui:3852
 msgid "Start"
 msgstr "Começar"
 
-#: ../ui/tcosconfig.ui:3905
+#: ../ui/tcosconfig.ui:3917
 msgid "View Process"
 msgstr "Visualizar o processo"
 
-#: ../ui/tcosconfig.ui:3922
+#: ../ui/tcosconfig.ui:3934
 msgid "Working..."
 msgstr "Compilando..."
 
-#: ../ui/tcosconfig.ui:3958
+#: ../ui/tcosconfig.ui:3970
 msgid ""
 "<span size=\"x-large\" foreground=\"white\" background=\"#96aeea\" ><span "
 "size=\"x-large\" ><b>0. Welcome</b></span> » <span size=\"x-large\" ><b>1. "
@@ -1199,11 +1206,11 @@ msgstr ""
 "span> » <span size=\"x-large\" foreground=\"black\"><b>3. Finalizar!</b></"
 "span></span>"
 
-#: ../ui/tcosconfig.ui:3981
+#: ../ui/tcosconfig.ui:3993
 msgid "<span size=\"xx-large\">Congratulations!</span>"
 msgstr "<span size=\"xx-large\">Parabéns!</span>"
 
-#: ../ui/tcosconfig.ui:3999
+#: ../ui/tcosconfig.ui:4011
 msgid ""
 "<span size=\"xx-large\">The generation has been successfully completed.</"
 "span>\n"
@@ -1216,7 +1223,7 @@ msgstr ""
 "Para utilizar esta imagem nos terminais é preciso\n"
 "configurar o <b>servidor DHCP.</b>."
 
-#: ../ui/tcosconfig.ui:4013
+#: ../ui/tcosconfig.ui:4025
 msgid ""
 "Press <b>Finish and Save</b> button to save this build settings or "
 "<b>Cancel</b> to quit."
@@ -1224,7 +1231,7 @@ msgstr ""
 "Clique no botão <b>Salvar e Finalizar</b> para salvar as configurações ou "
 "clique em <b>Cancelar</b> para descartá-las e sair."
 
-#: ../ui/tcosconfig.ui:4173
+#: ../ui/tcosconfig.ui:4185
 msgid "Finish and save"
 msgstr "Salvar e Finalizar"
 
