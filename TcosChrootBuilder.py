@@ -58,7 +58,7 @@ KERNEL_VERSIONS={
 "intrepid":"2.6.27-17-generic",
 "jaunty":"2.6.28-19-generic",
 "karmic":"2.6.31-22-generic",
-"lucid":"2.6.32-22-generic",
+"lucid":"2.6.32-23-generic",
 }
 
 DISTRO_ALIAS={
