@@ -1,4 +1,4 @@
-tcosconfig (0.3.23.1) max; urgency=low
+tcosconfig (0.3.23.1) unstable; urgency=low
 
   * Add Ubuntu maverick and update Ubuntu Lucid kernel
 
