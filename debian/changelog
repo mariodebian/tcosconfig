@@ -1,3 +1,9 @@
+tcosconfig (0.3.23.1) max; urgency=low
+
+  * Add Ubuntu maverick and update Ubuntu Lucid kernel
+
+ -- Mario Izquierdo Rodríguez (Thinetic Systems SLNE) <mario.izquierdo@thinetic.es>  Fri, 15 Oct 2010 17:54:33 +0200
+
 tcosconfig (0.3.23) unstable; urgency=low
 
   * add xorgauto
