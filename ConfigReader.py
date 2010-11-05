@@ -175,13 +175,10 @@ class ConfigReader:
 
     def getsplash(self):
         #Now work with plymouth
-        
-        if os.path.isdir('/lib/plymouth/themes'):
+        if os.path.isdir(shared.chroot + '/lib/plymouth/themes'):
             self.getplymouth()
-        elif os.path.isdir('/usr/lib/usplash'):
+        elif os.path.isdir(shared.chroot + '/usr/lib/usplash'):
             self.getusplash()
-        else:
-            return
             
     def getplymouth(self):
         self.plymouth_themes=[]
