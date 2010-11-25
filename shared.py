@@ -42,7 +42,7 @@ debug=False
 
 # default TCOS config file (default in this path, if installed use global)
 tcos_config_file="./tcos.conf"
-templates_dir="/usr/share/initramfs-tools-tcos/templates/"
+templates_dir="/usr/share/tcos/templates/"
 tcos_config_base=templates_dir + "/base.conf"
 tcosconfig_template="/etc/tcos/templates/tcosconfig.conf"
 config_file_secrets=('/etc/tcos/secrets/tcosmonitor-secret')
@@ -63,7 +63,7 @@ else:
     IMG_DIR = "/usr/share/tcosconfig/images/"
     LOCALE_DIR = "/usr/share/locale"
     
-# force a default tcos template, example /usr/share/initramfs-tools-tcos/templates/tcos.conf.custom
+# force a default tcos template, example /usr/share/tcos/templates/tcos.conf.custom
 tcos_force_base_template=""
 
 # gettext support
