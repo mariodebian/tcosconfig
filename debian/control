@@ -5,13 +5,13 @@ Maintainer: Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 Build-Depends:  debhelper (>= 7.0.0), cdbs, python, python-support (>= 0.3)
 Standards-Version: 3.8.0
 Vcs-Git: http://tcosproject.org/git/tcosconfig.git
-Vcs-Browser: http://tcosproject.org/cgit/cgit.cgi/tcosconfig.git/
+Vcs-Browser: http://tcosproject.org/cgit/tcosconfig.git/
 Homepage: http://www.tcosproject.org
 
 Package: tcosconfig
 Architecture: all
 Depends:  initramfs-tools-tcos (>= 0.89.37), gksu | kdebase-bin, file,
-          python, python-gtk2, python-glade2, python-vte, 
+          python, python-gtk2,
           ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Description: Small Python GUI to configure and create TCOS boot images
  TCOS, thin Client Operating System is a method to create small embedded os
