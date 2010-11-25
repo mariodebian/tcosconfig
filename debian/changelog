@@ -1,3 +1,10 @@
+tcosconfig (0.3.26) unstable; urgency=low
+
+  * shared.py: change /usr/share/initramfs-tools-tcos => /usr/share/tcos
+  * debian/control: update dependes version initramfs-tools-tcos
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Thu, 25 Nov 2010 15:59:25 +0100
+
 tcosconfig (0.3.25) unstable; urgency=low
 
   * debian/control: Update GIT URL and remove obsolete depends python-
