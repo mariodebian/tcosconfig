@@ -10,7 +10,7 @@ Homepage: http://www.tcosproject.org
 
 Package: tcosconfig
 Architecture: all
-Depends:  initramfs-tools-tcos (>= 0.89.37), gksu | kdebase-bin, file,
+Depends:  initramfs-tools-tcos (>= 0.89.70), gksu | kdebase-bin, file,
           python, python-gtk2,
           ${python:Depends}, ${misc:Depends}, ${shlibs:Depends}
 Description: Small Python GUI to configure and create TCOS boot images
