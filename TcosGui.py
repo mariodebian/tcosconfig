@@ -72,11 +72,11 @@ class TcosGui:
         print_debug ( "__init__ languages=%s" %self.languages)
 
         # Widgets
-        print_debug ("loading %s"%(shared.GLADE_DIR + 'tcosconfig.ui'))
+        print_debug ("loading %s"%(shared.UI_DIR + 'tcosconfig.ui'))
         self.ui = gtk.Builder()
         self.ui.set_translation_domain(shared.PACKAGE)
         print_debug("Loading ui file...")
-        self.ui.add_from_file(shared.GLADE_DIR + 'tcosconfig.ui')
+        self.ui.add_from_file(shared.UI_DIR + 'tcosconfig.ui')
         
         # load all widgets
         for widget in self.ui.get_objects():
@@ -99,7 +99,7 @@ class TcosGui:
 
         self.aboutui=gtk.Builder()
         self.aboutui.set_translation_domain(shared.PACKAGE)
-        self.aboutui.add_from_file(shared.GLADE_DIR + 'tcosconfig-aboutdialog.ui')
+        self.aboutui.add_from_file(shared.UI_DIR + 'tcosconfig-aboutdialog.ui')
         
         self.aboutdialog = self.aboutui.get_object("aboutdialog")
         self.aboutdialog.connect("response", self.on_aboutdialog_response)

@@ -54,12 +54,12 @@ gentcos="/usr/sbin/gentcos"
 # if exec from svn or sources dir
 if os.path.isfile('./tcosconfig.py'):
     LOCALE_DIR = "./po/"
-    GLADE_DIR = "./ui/"
+    UI_DIR = "./ui/"
     IMG_DIR = "./images/"
     print "TcosConfig not installed, exec in SVN place"
     #gentcos="sudo bash gentcos"
 else:
-    GLADE_DIR = "/usr/share/tcosconfig/ui/"
+    UI_DIR = "/usr/share/tcosconfig/ui/"
     IMG_DIR = "/usr/share/tcosconfig/images/"
     LOCALE_DIR = "/usr/share/locale"
     

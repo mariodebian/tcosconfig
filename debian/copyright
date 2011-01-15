@@ -7,7 +7,7 @@ It was created by Mario Izquierdo (mariodebian)
 
 License:
 
-  * tcosconfig.glade: based on guadalinex installer (ubiquity) GPL glade file:
+  * ui/tcosconfig.ui: based on guadalinex installer (ubiquity) GPL glade file:
      Ubiquity was formerly known as "Espresso", and originally as "Ubuntu
      Express", which is written and maintained by Javier Carranza
      <javier.carranza@interactors.coop> and Juanje Ojeda Croissier

@@ -1,8 +1,10 @@
-../ConfigReader.py
 ../TcosChrootBuilder.py
 ../DetectArch.py
-../shared.py
-../tcosconfig.glade
+../setup.py
 ../tcosconfig.py
 ../TcosGui.py
-../tcos-chrootbuilder.glade
+../ConfigReader.py
+../ui/tcosconfig.ui
+../ui/tcos-chrootbuilder.ui
+../ui/tcosconfig-aboutdialog.ui
+../shared.py

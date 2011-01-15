@@ -12,7 +12,7 @@ clean:
 	done
 
 files:
-	find ../ -name "*.py" -o -name "*.glade" > FILES
+	find ../ -name "*.py" -o -name "*.ui" > FILES
 pot:
 #	xgettext  -o tcosconfig.pot --files-from=FILES
 	find ../ -name "*.ui" > FILES.ui.txt

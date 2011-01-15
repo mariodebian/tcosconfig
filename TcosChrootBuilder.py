@@ -93,7 +93,7 @@ class TcosChroot:
         self.ui = gtk.Builder()
         self.ui.set_translation_domain(shared.PACKAGE)
         print_debug("Loading ui file...")
-        self.ui.add_from_file(shared.GLADE_DIR + 'tcos-chrootbuilder.ui')
+        self.ui.add_from_file(shared.UI_DIR + 'tcos-chrootbuilder.ui')
         
         self.scrolledwindow = self.ui.get_object("scrolledwindow")
         
