@@ -1,29 +1,18 @@
-all: fix-glade
+all:
 
 include common.mk
-
-glade:
-	glade-3 ui/$(project).ui
 
 exec:
 	python $(project).py --debug
 
-gedit:
-	gedit-cvs tcosconfig.py Tcos*py ConfigReader.py >/dev/null 2>&1 &
-
 clean:
-	rm -f *~ *.pyc *.orig *.bak *-stamp *glade.backup
+	rm -f *~ *.pyc *.orig *.bak *-stamp
 	rm -rf pixmaps/
 	cd po && make clean
 	dh_clean
 
 pot:
 	cd po && make pot
-
-
-
-
-
 
 
 tcos:
