@@ -230,7 +230,7 @@ class TcosChroot:
 
     def populate_select(self, widget, values, set_text_column=True):
         valuelist = gtk.ListStore(str)
-        print "%s => %s"%(widget.name, values)
+        print_debug ("populate_select() widget=%s => values=%s"%(widget.name, values))
         for value in values:
             print_debug ( "populate_select() appending %s" %([value.split('_')[0]]) ) 
             valuelist.append( [value.split('_')[0]] )
