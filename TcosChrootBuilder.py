@@ -44,7 +44,7 @@ def print_debug(txt):
         print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
-"debian":["unstable", "testing", "lenny"]  ,
+"debian":["unstable", "testing", "squeeze", "lenny"]  ,
 #"ubuntu":["hardy", "intrepid", "jaunty", "karmic", "lucid", "maverick"],
 "ubuntu":["jaunty", "karmic", "lucid", "maverick"],
 }
@@ -53,6 +53,7 @@ DISTRO_VERSIONS={
 
 KERNEL_VERSIONS={
 "lenny":"2.6.26-2-486"  ,
+"squeeze":"2.6.32-5-486"  ,
 "testing":"2.6.32-5-486"  ,
 "unstable":"2.6.32-5-486"  ,
 #"hardy":"2.6.24-28-generic" ,
