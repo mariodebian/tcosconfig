@@ -2,16 +2,18 @@ Format: http://dep.debian.net/deps/dep5
 Upstream-Name: tcosconfig
 Source: http://tcosproject.org/cgit/tcosconfig.git
 
-Files: ui/tcosconfig.ui: based on guadalinex installer (ubiquity)
-Copyright: 2005 Javier Carranza; 2005, 2006  Canonical Ltd.
+Files: ui/tcosconfig.ui
+Comment:  based on guadalinex installer (ubiquity)
+Copyright: 2005 Javier Carranza
+           2005-2006 Canonical Ltd.
 License: GPL-2.0+
 
 Files: *
-Copyright: 2005,2011 Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Copyright: 2005-2011 Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 License: GPL-2.0+
 
 Files: debian/*
-Copyright: 2005,2011 Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
+Copyright: 2005-2011 Mario Izquierdo (mariodebian) <mariodebian@gmail.com>
 License: GPL-2.0+
 
 License: GPL-2.0+
