@@ -391,7 +391,6 @@ class TcosChroot:
         while not self.isfinished:
             #time.sleep(0.1)
             line=stdout.readline().replace('\n','')
-            print_debug("generateimages() %s"%line)
             
             #if len(line) > 0:
             #    counter=counter+step
@@ -399,10 +398,14 @@ class TcosChroot:
             if p.poll() != None:
                 self.isfinished=True
             
-            if line.startswith('bash: no job') or line.startswith('root@'):
+            if 'bash: no job' in line or \
+               'root@' in line or \
+               'df: Warning' in line:
+                print_debug("generateimages() NO VISIBLE LINE %s"%line)
                 continue
+            
+            print_debug("generateimages() %s"%line)
             gtk.gdk.threads_enter()
-            #self.updateprogressbar(counter)
             self.writeoutputtxt( line )
             gtk.gdk.threads_leave()
         
