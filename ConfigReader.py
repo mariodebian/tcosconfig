@@ -315,6 +315,11 @@ class ConfigReader:
             self.create_tree(chroot_template)
             shutil.copy(shared.tcosconfig_template, chroot_template )
             os.chmod(chroot_template, 0600)
+            # copy /etc/tcos/hacking scripts
+            self.create_tree(shared.chroot + '/etc/tcos/hacking')
+            for _file in glob.glob('/etc/tcos/hacking/*'):
+                print_debug ("setup_chroot() copying %s => %s"%(_file, shared.chroot + _file))
+                shutil.copy(_file, shared.chroot + _file)
         else:
             print_debug("setup_chroot() no chroot defined '%s'"%shared.chroot)
 
