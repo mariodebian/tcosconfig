@@ -114,8 +114,12 @@ TCOS_XORG_VIDEO_DRIVER_VALUES=[
 ['vesa', _("VESA") ] ,
 ['auto', _("Automatic detect") ] ,
 ['fullauto', _("Full Automatic detect") ] ,
-['xorgauto', _("Native Xorg autodetection") ] ,
 ]
+# only allow xorgauto if Xorg supports
+if os.path.isdir('/usr/share/X11/xorg.conf.d/') or \
+   os.path.isdir('/usr/lib/X11/xorg.conf.d/'):
+    TCOS_XORG_VIDEO_DRIVER_VALUES.append( ['xorgauto', _("Native Xorg autodetection") ] )
+
 
 TCOS_XORG_VIDEO_RES_VALUES=[
 ["640x480", "640x480"],

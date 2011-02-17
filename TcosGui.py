@@ -828,6 +828,15 @@ class TcosGui:
 
             if wtype == gtk.ComboBoxEntry:
                 self.populate_select( widget, exp )
+                if exp == 'TCOS_XORG_VIDEO_DRIVER':
+                    # by default set xorgauto if supported
+                    if self.config.templates.has_key('tcosconfig.conf'):
+                        if not self.config.templates['tcosconfig.conf'].has_key('TCOS_XORG_VIDEO_DRIVER'):
+                            # not found configured video driver
+                            if os.path.isdir('/usr/share/X11/xorg.conf.d/') or \
+                               os.path.isdir('/usr/lib/X11/xorg.conf.d/'):
+                                value='xorgauto'
+                                print_debug("loadsettings() TCOS_XORG_VIDEO_DRIVER not found in tcosconfig.conf, ****force**** 'xorgauto'")
                 self.set_active_select( widget, exp, value )
 
             elif wtype == gtk.Entry:
@@ -916,6 +925,7 @@ class TcosGui:
 
 
 if __name__ == '__main__':
+    shared.debug=True
     gui = TcosGui()
     # Run app
     gtk.main()
