@@ -51,7 +51,7 @@ KERNEL_VERSIONS={
 "lenny":"2.6.26-2-486"  ,
 "squeeze":"2.6.32-5-486"  ,
 "testing":"2.6.32-5-486"  ,
-"unstable":"2.6.32-5-486"  ,
+"unstable":"2.6.37-1-486"  ,
 #"hardy":"2.6.24-28-generic" ,
 #"intrepid":"2.6.27-17-generic",
 "jaunty":"2.6.28-19-generic",
@@ -61,7 +61,7 @@ KERNEL_VERSIONS={
 }
 
 DISTRO_ALIAS={
-"testing":"squeeze",
+"testing":"wheezy",
 "unstable":"sid",
 }
 
