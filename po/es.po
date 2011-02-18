@@ -1118,7 +1118,7 @@ msgstr "<span size=\"xx-large\">Constructor del chroot</span>"
 
 #: ../ui/tcos-chrootbuilder.ui:81
 msgid "Select distro version"
-msgstr "Seleccionar distribución"
+msgstr "Seleccionar versión distribución"
 
 #: ../ui/tcos-chrootbuilder.ui:106
 msgid "Select architecture"
