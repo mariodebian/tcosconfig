@@ -1,3 +1,17 @@
+tcosconfig (0.3.28) unstable; urgency=low
+
+  * debian/copyright: Machine readable debian/copyright format
+  * update debian/copyright
+  * global license headers fix
+  * add .gitignore for .pyc files
+  * ConfigReader.py: copy /etc/tcos/hacking/* files in chroot
+  * TcosChrootBuilder.py TcosGui.py: hide some ugly lines in output
+  * shared.py TcosGui.py: Use TCOS_XORG_VIDEO_DRIVER=xorgauto by default if supported
+  * TcosChrootBuilder.py: change unstable kernel and set testing->wheezy alias
+  * po/es.po: Fix Spanish translation of 'Select distro version'
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 25 Feb 2011 22:54:06 +0100
+
 tcosconfig (0.3.27) unstable; urgency=low
 
   * TcosChrootBuilder.py: use print_debug instead of print in
