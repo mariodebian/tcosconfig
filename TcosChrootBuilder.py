@@ -42,7 +42,7 @@ def print_debug(txt):
 DISTRO_VERSIONS={
 "debian":["unstable", "testing", "squeeze", "lenny"]  ,
 #"ubuntu":["hardy", "intrepid", "jaunty", "karmic", "lucid", "maverick"],
-"ubuntu":["jaunty", "karmic", "lucid", "maverick"],
+"ubuntu":["lucid", "maverick", "natty"],
 }
 
 
@@ -51,16 +51,18 @@ KERNEL_VERSIONS={
 "lenny":"2.6.26-2-486"  ,
 "squeeze":"2.6.32-5-486"  ,
 "testing":"2.6.32-5-486"  ,
-"unstable":"2.6.37-1-486"  ,
+"unstable":"2.6.39-1-486"  ,
 #"hardy":"2.6.24-28-generic" ,
 #"intrepid":"2.6.27-17-generic",
-"jaunty":"2.6.28-19-generic",
-"karmic":"2.6.31-22-generic",
-"lucid":"2.6.32-25-generic",
-"maverick":"2.6.35-22-generic",
+#"jaunty":"2.6.28-19-generic",
+#"karmic":"2.6.31-22-generic",
+"lucid":"2.6.32-31-generic",
+"maverick":"2.6.35-28-generic",
+"natty":"2.6.35-22-generic",
 }
 
 DISTRO_ALIAS={
+"stable":"squeeze",
 "testing":"wheezy",
 "unstable":"sid",
 }
