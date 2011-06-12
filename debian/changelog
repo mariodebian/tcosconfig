@@ -1,3 +1,9 @@
+tcosconfig (0.3.29) unstable; urgency=low
+
+  * TcosChrootBuilder.py: remove Ubuntu Jaunty and Karmic, add squeeze as stable alias
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Sun, 12 Jun 2011 13:49:25 +0200
+
 tcosconfig (0.3.28) unstable; urgency=low
 
   * debian/copyright: Machine readable debian/copyright format
