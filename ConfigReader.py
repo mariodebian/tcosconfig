@@ -19,6 +19,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import os
+import sys
 import shared
 from gettext import gettext as _
 import time
@@ -137,13 +138,9 @@ class ConfigReader:
                             self.ignored_widgets.append(line.strip().split('=')[0])
         except Exception, err:
             print ( "Unable to read %s file, error: %s" %(filename, err) )
-            import sys
             sys.exit(1)
 
     def getkernels(self):
-        # valid kernel >= 2.6.12
-        # perpahps we can try to build initrd image instead of initramfs
-        # in kernel < 2.6.12, this require a lot of work in gentcos and init scripts
         for _file in glob.glob(shared.chroot + '/boot/vmlinuz*'):
             try:
                 os.stat(_file)
@@ -152,21 +149,7 @@ class ConfigReader:
                 continue
             kernel=os.path.basename(_file).replace('vmlinuz-','')
             print_debug("getkernels() found %s"%kernel)
-            # split only 3 times
-            try:
-                (kmay, kmed, kmin) = kernel.split('.',2)
-            except Exception, err:
-                print_debug("getkernels() exception spliting kernel '%s' version, %s"%(kernel,err))
-                continue
-            import re
-            pattern = re.compile ('[-_.+]')
-            (kmin, kextra) = pattern.split(kmin,1)
-            # need kernel >= 2.6.12
-            if int(kmay)==2 and int(kmed)==6 and int(kmin)>=12:
-                #print_debug( "getkernels() VALID kernel %s" %(kernel) )
-                self.kernels.append(kernel)
-            else:
-                print_debug( "getkernels() INVALID OLD kernel %s" %(kernel) )
+            self.kernels.append(kernel)
         return
 
     def getsplash(self):
