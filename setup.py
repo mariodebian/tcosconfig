@@ -56,6 +56,7 @@ class tcosconfig_install_data(install_data):
         new=os.path.abspath( self.install_dir + '/bin/tcosconfig' )
         old=new + ".sh"
         os.rename( old, new )
+        process_version(new)
         
 
 def process_version(pyfile):
