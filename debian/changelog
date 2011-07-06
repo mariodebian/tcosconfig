@@ -1,3 +1,10 @@
+tcosconfig (0.3.30) unstable; urgency=low
+
+  * ConfigReader.py: Disable kernel version check (allow 3.0 kernels)
+  * setup.py: process __VERSION__ in script file
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Wed, 06 Jul 2011 14:38:47 +0200
+
 tcosconfig (0.3.29) unstable; urgency=low
 
   * TcosChrootBuilder.py: remove Ubuntu Jaunty and Karmic, add squeeze as stable alias
