@@ -1,15 +1,10 @@
 #!/usr/bin/make -f
 
-DEB_PYTHON_SYSTEM=pysupport
-DEB_PYTHON_PRIVATE_MODULES_DIRS = /usr/share/tcosconfig
+%:
+	dh $@ --with python2
 
-
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/python-distutils.mk
-
-
-cleanbuilddir/tcosconfig::
+override_dh_auto_clean:
 	$(MAKE) -C po clean
-
+	dh_auto_clean
 
 
