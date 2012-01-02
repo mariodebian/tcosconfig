@@ -1,3 +1,10 @@
+tcosconfig (0.3.31) unstable; urgency=low
+
+  * tcosconfig.desktop: Remove Encoding from desktop file
+  * Switch from CDBS to dh7 and format 3.0 (native)
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Mon, 02 Jan 2012 16:44:23 +0100
+
 tcosconfig (0.3.30) unstable; urgency=low
 
   * ConfigReader.py: Disable kernel version check (allow 3.0 kernels)
