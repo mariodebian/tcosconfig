@@ -40,25 +40,22 @@ def print_debug(txt):
         print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
-"debian":["unstable", "testing", "squeeze", "lenny"]  ,
-#"ubuntu":["hardy", "intrepid", "jaunty", "karmic", "lucid", "maverick"],
-"ubuntu":["lucid", "maverick", "natty"],
+"debian":["unstable", "testing", "squeeze"]  ,
+"ubuntu":["precise", "oneiric", "natty", "maverick","lucid"],
 }
 
 
 
 KERNEL_VERSIONS={
-"lenny":"2.6.26-2-486"  ,
-"squeeze":"2.6.32-5-486"  ,
-"testing":"2.6.32-5-486"  ,
-"unstable":"2.6.39-1-486"  ,
-#"hardy":"2.6.24-28-generic" ,
-#"intrepid":"2.6.27-17-generic",
-#"jaunty":"2.6.28-19-generic",
-#"karmic":"2.6.31-22-generic",
-"lucid":"2.6.32-31-generic",
-"maverick":"2.6.35-28-generic",
-"natty":"2.6.35-22-generic",
+"squeeze":"2.6.32-5-486",
+"testing":"3.1.0-1-486",
+"unstable":"3.1.0-1-486",
+
+"lucid":"2.6.32-37-generic",
+"maverick":"2.6.35-31-generic",
+"natty":"2.6.38-13-generic",
+"oneiric":"3.0.0-14-generic",
+"precise":"3.2.0-7-generic",
 }
 
 DISTRO_ALIAS={
@@ -86,7 +83,7 @@ BUILD_CHROOT_CMD="/usr/sbin/tcos-buildchroot"
 class TcosChroot:
     def __init__(self):
         
-        self.buildvars={}
+        self.buildvars={"DISTRIBUTION":"debian", "TCOS_KERNEL":KERNEL_VERSIONS["unstable"]}
 
         # Widgets
         self.ui = gtk.Builder()
@@ -132,7 +129,7 @@ class TcosChroot:
         self.combo_distribution.connect('changed', self.on_distribution_combo_change)
         
         self.populate_select(self.combo_distribution, DISTRO_VERSIONS.keys())
-        self.populate_select(self.combo_arch, ['i386','amd64', 'ppc'])
+        self.populate_select(self.combo_arch, ['i386','amd64'])
         
         # extra mirrors
         self.entry_securitymirror = self.ui.get_object("entry_securitymirror")
@@ -200,13 +197,22 @@ class TcosChroot:
 
     def loadData(self):
         print_debug("loadData() init")
-        version_data=self.getFile("/etc/tcos/version.conf")
+        version_data=[]
+        if os.path.isfile("/var/lib/tcos/version.conf"):
+            version_data=self.getFile("/var/lib/tcos/version.conf")
+
+        elif os.path.isfile("/etc/tcos/version.conf"):
+            version_data=self.getFile("/etc/tcos/version.conf")
+
         for line in version_data:
             self.buildvars[line.split("=")[0]]=line.split("=")[1].replace('"','')
         
         tcos_data=self.getFile("/etc/tcos/tcos.conf")
         for line in tcos_data:
+            if "TCOS_KERNEL" in line: continue
+            if "NEWEST_VMLINUZ" in line: continue
             self.buildvars[line.split("=")[0]]=line.split("=")[1].replace('"','')
+        print_debug("loadData() %s" %self.buildvars)
         
         
     def on_distro_combo_change(self, widget):
