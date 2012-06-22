@@ -1,3 +1,10 @@
+tcosconfig (0.3.33) unstable; urgency=low
+
+  * Update French translation (closes: #673941)
+    Thanks to Julien Patriarca <patriarcaj@gmail.com>
+
+ -- Mario Izquierdo (mariodebian) <mariodebian@gmail.com>  Fri, 22 Jun 2012 13:39:06 +0200
+
 tcosconfig (0.3.32) unstable; urgency=low
 
   * TcosChrootBuilder.py: 
