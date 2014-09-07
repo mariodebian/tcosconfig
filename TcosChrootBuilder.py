@@ -40,22 +40,23 @@ def print_debug(txt):
         print ( "TcosChrootBuilder::%s " %(txt) )
 
 DISTRO_VERSIONS={
-"debian":["unstable", "testing", "squeeze"]  ,
-"ubuntu":["precise", "oneiric", "natty", "maverick","lucid"],
+"debian":["unstable", "wheezy", "squeeze"]  ,
+"ubuntu":["trusty", "precise", "oneiric", "natty", "maverick","lucid"],
 }
 
 
 
 KERNEL_VERSIONS={
 "squeeze":"2.6.32-5-486",
-"testing":"3.1.0-1-486",
-"unstable":"3.1.0-1-486",
+"wheezy":"3.2.0-4-486",
+"unstable":"3.14-2-amd64",
 
 "lucid":"2.6.32-37-generic",
 "maverick":"2.6.35-31-generic",
 "natty":"2.6.38-13-generic",
 "oneiric":"3.0.0-14-generic",
-"precise":"3.2.0-7-generic",
+"precise":"3.2.0-23-generic",
+"trusty":"3.13.0-24-generic",
 }
 
 DISTRO_ALIAS={
